@@ -9,6 +9,12 @@
 import UIKit
 
 class FirstViewController: UIViewController {
+    
+    struct box {
+        @IBOutlet weak var cell: UICollectionViewCell!
+        @IBOutlet weak var label: UILabel!
+        @IBOutlet weak var button: UIButton!
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
