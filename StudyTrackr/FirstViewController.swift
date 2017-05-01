@@ -13,7 +13,7 @@ class FirstViewController: UIViewController {
     struct box {
         @IBOutlet weak var cell: UICollectionViewCell!
         @IBOutlet weak var label: UILabel!
-        @IBOutlet weak var button: UIButton!
+        @IBAction weak var button: UIButton!
     }
 
     override func viewDidLoad() {
