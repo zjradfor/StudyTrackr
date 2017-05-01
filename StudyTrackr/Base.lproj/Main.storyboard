@@ -292,9 +292,6 @@
                                             <rect key="frame" x="2" y="12" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Button"/>
-                                            <connections>
-                                                <action selector="button1:" destination="cLe-px-V1W" eventType="touchUpInside" id="c9c-Sq-EnC"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                 </view>
@@ -306,9 +303,6 @@
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Calendar" id="fwL-ce-Krz"/>
-                    <connections>
-                        <outlet property="what" destination="Ccu-mH-hbR" id="gAN-mE-H4f"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKI-gl-V4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
