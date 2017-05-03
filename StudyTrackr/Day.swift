@@ -8,6 +8,15 @@
 
 import Foundation
 
-class Day{
-    
+class Day {
+    var dayOfMonth: Int
+    var weekDay: String
+    var month: String
+    var year: Int
+    init () {
+        dayOfMonth = 0
+        weekDay = "Void"
+        month = "Void"
+        year = 0
+    }
 }
