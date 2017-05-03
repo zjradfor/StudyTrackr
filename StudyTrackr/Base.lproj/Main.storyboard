@@ -165,6 +165,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="1uf-gV-PlX"/>
                     <connections>
+                        <outlet property="doneButton" destination="9Rf-b3-F7m" id="quc-Yd-fUi"/>
+                        <outlet property="pauseButton" destination="RGy-FO-fic" id="bVD-At-U4H"/>
+                        <outlet property="startButton" destination="jxy-iy-hYB" id="7Nt-zt-jYo"/>
                         <outlet property="timrtLabel" destination="dwK-DP-yca" id="TaJ-rn-PVh"/>
                     </connections>
                 </viewController>

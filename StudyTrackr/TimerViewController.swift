@@ -21,6 +21,7 @@ import UIKit
         @IBAction func startButtonTapped(_ sender: UIButton) {
             if isTimerRunning == false{
                 runTimer()
+                self.startButton.isEnabled = false
             }
         }
         
@@ -28,8 +29,10 @@ import UIKit
             if self.resumeTapped == false{
                 timer.invalidate()
                 self.resumeTapped = true
+                self.pauseButton.setTitle("Resume", for: .normal)
             }else{
                 self.resumeTapped = false
+                self.pauseButton.setTitle("Pause", for: .normal)
             }
         }
         
@@ -37,15 +40,24 @@ import UIKit
             timer.invalidate()
             seconds = 60
             timerLabel.text = String(seconds)
+            isTimerRunning = false
+            pauseButton.isEnabled = false
         }
         
         func runTimer(){
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updateTimer)), userInfo: nil, repeats: true)
+            isTimerRunning = true
+            pauseButton.isEnabled = true
         }
         
         func updateTimer() {
-            seconds -= 1
-            timerLabel.text = timeString(time: TimeInterval(seconds))
+            if seconds < 1{
+                timer.invalidate()
+                //Send alert to indicate time's up
+            }else{
+                seconds -= 1
+                timerLabel.text = timeString(time: TimeInterval(seconds))
+            }
         }
         
         func timeString(time:TimeInterval) -> String {
@@ -55,27 +67,20 @@ import UIKit
             return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
         }
         
+        @IBOutlet weak var pauseButton: UIButton!
 
+        @IBOutlet weak var startButton: UIButton!
+
+        @IBOutlet weak var doneButton: UIButton!
+
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        pauseButton.isEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
