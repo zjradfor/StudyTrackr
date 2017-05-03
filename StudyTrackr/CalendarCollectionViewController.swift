@@ -44,23 +44,22 @@ class CalendarCollectionViewController: UICollectionViewController {
     */
 
     // MARK: UICollectionViewDataSource
-    //Vertical
     
+    //Vertical Cells
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 6
     }
 
-    // Horizontal
+    // Horizontal Cells
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return 7
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
-        cell.backgroundColor = UIColor.blue
+        //cell.backgroundColor = UIColor.blue
+        
         cell.textLabel.text = "\(x)"
         x += 1
         // Configure the cell
