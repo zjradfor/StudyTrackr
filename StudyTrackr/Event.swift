@@ -1,5 +1,5 @@
 //
-//  Day.swift
+//  Event.swift
 //  StudyTrackr
 //
 //  Created by Owen Read on 2017-05-02.
