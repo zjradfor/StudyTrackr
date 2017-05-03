@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DEC18D491EB2375B00F9935C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D481EB2375B00F9935C /* AppDelegate.swift */; };
-		DEC18D4B1EB2375B00F9935C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D4A1EB2375B00F9935C /* FirstViewController.swift */; };
 		DEC18D4D1EB2375B00F9935C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D4C1EB2375B00F9935C /* SecondViewController.swift */; };
 		DEC18D501EB2375B00F9935C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D4E1EB2375B00F9935C /* Main.storyboard */; };
 		DEC18D521EB2375B00F9935C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D511EB2375B00F9935C /* Assets.xcassets */; };
@@ -22,7 +21,6 @@
 /* Begin PBXFileReference section */
 		DEC18D451EB2375B00F9935C /* StudyTrackr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyTrackr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC18D481EB2375B00F9935C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DEC18D4A1EB2375B00F9935C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		DEC18D4C1EB2375B00F9935C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		DEC18D4F1EB2375B00F9935C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DEC18D511EB2375B00F9935C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				DEC18D481EB2375B00F9935C /* AppDelegate.swift */,
-				DEC18D4A1EB2375B00F9935C /* FirstViewController.swift */,
 				DEC18D4C1EB2375B00F9935C /* SecondViewController.swift */,
 				F1850D3B1EB778C600D75B01 /* TableViewController.swift */,
 				F1850D3D1EB77B9F00D75B01 /* CalendarCollectionViewController.swift */,
@@ -156,7 +153,6 @@
 				F1F18B821EB8C93B00B1B7E4 /* CalendarCell.swift in Sources */,
 				DEC18D491EB2375B00F9935C /* AppDelegate.swift in Sources */,
 				F1850D3E1EB77B9F00D75B01 /* CalendarCollectionViewController.swift in Sources */,
-				DEC18D4B1EB2375B00F9935C /* FirstViewController.swift in Sources */,
 				F1850D3C1EB778C600D75B01 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
