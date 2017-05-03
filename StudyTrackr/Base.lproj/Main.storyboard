@@ -120,7 +120,7 @@
         <!--TimerViewController-->
         <scene sceneID="9bW-cg-6xT">
             <objects>
-                <viewController title="TimerViewController" id="TNf-sl-4rk" sceneMemberID="viewController">
+                <viewController title="TimerViewController" id="TNf-sl-4rk" customClass="TimerViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5kW-FZ-fX8"/>
                         <viewControllerLayoutGuide type="bottom" id="Q9r-Oi-5fh"/>
@@ -136,10 +136,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxy-iy-hYB">
+                                <rect key="frame" x="52" y="486" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="startButtonTapped:" destination="TNf-sl-4rk" eventType="touchUpInside" id="SH1-PA-Dcx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGy-FO-fic">
+                                <rect key="frame" x="157" y="486" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pauseButtonTapped:" destination="TNf-sl-4rk" eventType="touchUpInside" id="eUP-RY-OhX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Rf-b3-F7m">
+                                <rect key="frame" x="286" y="486" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="TNf-sl-4rk" eventType="touchUpInside" id="dPJ-2g-u51"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="1uf-gV-PlX"/>
+                    <connections>
+                        <outlet property="timrtLabel" destination="dwK-DP-yca" id="TaJ-rn-PVh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d65-EC-9Au" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
