@@ -22,7 +22,7 @@ class CalendarCollectionViewController: UICollectionViewController {
         let formatter = DateFormatter()
         formatter.dateStyle = .full
         formatter.timeStyle = .none
-      //  dateHeader.text = "\(formatter.string(from: date))"
+        //  dateHeader.text = "\(formatter.string(from: date))"
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
