@@ -9,14 +9,37 @@
 import UIKit
     
     class TimerViewController: UIViewController {
-        
-
         @IBOutlet weak var timerLabel: UILabel!
         
         var seconds = 70
         var timer = Timer()
         var isTimerRunning = false
         var resumeTapped = false
+        
+        @IBOutlet weak var breakTime_10: UIButton!
+        @IBOutlet weak var breakTime_15: UIButton!
+        @IBOutlet weak var breakTime_20: UIButton!
+        @IBOutlet weak var breakTime_25: UIButton!
+        @IBOutlet weak var breakTime_30: UIButton!
+        @IBOutlet weak var breakTime_35: UIButton!
+        
+        
+        
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         @IBAction func startButtonTapped(_ sender: UIButton) {
             if isTimerRunning == false{
