@@ -8,6 +8,9 @@
 
 import UIKit
 
+//Temp variable
+var x = 1
+
 private let reuseIdentifier = "Cell"
 
 class CalendarCollectionViewController: UICollectionViewController {
@@ -45,21 +48,21 @@ class CalendarCollectionViewController: UICollectionViewController {
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 6
     }
 
     // Horizontal
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 2
+        return 7
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
-        
-        cell.textLabel.text = "1"
-        
+        cell.backgroundColor = UIColor.blue
+        cell.textLabel.text = "\(x)"
+        x += 1
         // Configure the cell
     
         return cell
