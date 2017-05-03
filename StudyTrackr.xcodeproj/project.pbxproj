@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */; };
 		DEC18D491EB2375B00F9935C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D481EB2375B00F9935C /* AppDelegate.swift */; };
 		DEC18D4B1EB2375B00F9935C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D4A1EB2375B00F9935C /* FirstViewController.swift */; };
 		DEC18D4D1EB2375B00F9935C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D4C1EB2375B00F9935C /* SecondViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		DEC18D451EB2375B00F9935C /* StudyTrackr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyTrackr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC18D481EB2375B00F9935C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC18D4A1EB2375B00F9935C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				DEC18D481EB2375B00F9935C /* AppDelegate.swift */,
 				DEC18D4A1EB2375B00F9935C /* FirstViewController.swift */,
 				DEC18D4C1EB2375B00F9935C /* SecondViewController.swift */,
+				90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */,
 				DEC18D4E1EB2375B00F9935C /* Main.storyboard */,
 				DEC18D511EB2375B00F9935C /* Assets.xcassets */,
 				DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */,
 				DEC18D4D1EB2375B00F9935C /* SecondViewController.swift in Sources */,
 				DEC18D491EB2375B00F9935C /* AppDelegate.swift in Sources */,
 				DEC18D4B1EB2375B00F9935C /* FirstViewController.swift in Sources */,
@@ -303,6 +307,7 @@
 				DEC18D5B1EB2375B00F9935C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
