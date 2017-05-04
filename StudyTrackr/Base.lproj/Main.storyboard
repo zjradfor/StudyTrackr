@@ -165,6 +165,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="10"/>
                                 <connections>
+                                    <action selector="breakTime10:" destination="TNf-sl-4rk" eventType="touchDown" id="dwr-RU-lvk"/>
                                     <action selector="setBreakTime_10:" destination="TNf-sl-4rk" eventType="touchDown" id="IlA-ly-qWX"/>
                                 </connections>
                             </button>
@@ -172,26 +173,41 @@
                                 <rect key="frame" x="77" y="28" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="15"/>
+                                <connections>
+                                    <action selector="breakTime15:" destination="TNf-sl-4rk" eventType="touchDown" id="V4G-92-JJ1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldf-9I-ra8">
                                 <rect key="frame" x="133" y="28" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="20"/>
+                                <connections>
+                                    <action selector="breakTime20:" destination="TNf-sl-4rk" eventType="touchDown" id="hnz-Pr-Ihv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGI-yz-PaA">
                                 <rect key="frame" x="189" y="28" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="25"/>
+                                <connections>
+                                    <action selector="breakTime25:" destination="TNf-sl-4rk" eventType="touchDown" id="qV1-wp-W9I"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aub-Yc-kuL">
                                 <rect key="frame" x="255" y="28" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="30"/>
+                                <connections>
+                                    <action selector="breakTime30:" destination="TNf-sl-4rk" eventType="touchDown" id="QJp-L4-10u"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCE-KO-FZC">
                                 <rect key="frame" x="310" y="28" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="35"/>
+                                <connections>
+                                    <action selector="breakTime35:" destination="TNf-sl-4rk" eventType="touchDown" id="RAl-52-d1K"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Break Times" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvz-40-4EP">
                                 <rect key="frame" x="133" y="8" width="95" height="21"/>

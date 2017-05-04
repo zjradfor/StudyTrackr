@@ -15,6 +15,8 @@ import UIKit
         var timer = Timer()
         var isTimerRunning = false
         var resumeTapped = false
+        var breakTime:Int = 0
+        var isBreakTimeAdded:Bool = false
         
         @IBOutlet weak var breakTime_10: UIButton!
         @IBOutlet weak var breakTime_15: UIButton!
@@ -24,11 +26,35 @@ import UIKit
         @IBOutlet weak var breakTime_35: UIButton!
         
         
+        @IBAction func breakTime10(_ sender: UIButton) {
+            breakTime = 10
+            isBreakTimeAdded = true
+        }
         
+        @IBAction func breakTime15(_ sender: UIButton) {
+            breakTime = 15
+            isBreakTimeAdded = true
+        }
        
+        @IBAction func breakTime20(_ sender: UIButton) {
+            breakTime = 20
+            isBreakTimeAdded = true
+        }
         
+        @IBAction func breakTime25(_ sender: UIButton) {
+            breakTime = 25
+            isBreakTimeAdded = true
+        }
         
+        @IBAction func breakTime30(_ sender: UIButton) {
+            breakTime = 30
+            isBreakTimeAdded = true
+        }
         
+        @IBAction func breakTime35(_ sender: UIButton) {
+            breakTime = 35
+            isBreakTimeAdded = true
+        }
         
         
         
