@@ -12,6 +12,7 @@ import UIKit
         
 
         @IBOutlet weak var timerLabel: UILabel!
+    
         
         var seconds = 70
         var timer = Timer()
