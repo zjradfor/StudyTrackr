@@ -92,7 +92,7 @@
         <!--Item-->
         <scene sceneID="cgl-IU-ZRt">
             <objects>
-                <viewController id="2D6-TX-0Gu" sceneMemberID="viewController">
+                <viewController id="2D6-TX-0Gu" customClass="RewardsViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nxN-fO-5Rd"/>
                         <viewControllerLayoutGuide type="bottom" id="itz-JG-zT0"/>
@@ -131,7 +131,9 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="EeP-5N-jlv" kind="presentation" id="SfP-iw-tlk"/>
+                                    <segue destination="EeP-5N-jlv" kind="popoverPresentation" popoverAnchorView="6JO-Rb-X8z" id="SfP-iw-tlk">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLt-y1-Scg">
@@ -165,7 +167,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="rewards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH2-WO-eIS">
-                                <rect key="frame" x="143" y="323" width="71" height="21"/>
+                                <rect key="frame" x="152" y="323" width="71" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -178,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gW1-qg-vI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1212" y="1029.5352323838081"/>
+            <point key="canvasLocation" x="-1095" y="807"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Bev-sY-QjM">
@@ -197,7 +199,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="circle-clip-art-yToeE5KLc"/>
                                 <connections>
-                                    <segue destination="2D6-TX-0Gu" kind="presentation" id="RVP-lm-9KG"/>
+                                    <segue destination="2D6-TX-0Gu" kind="presentation" id="icE-UX-rtA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bx2-Kb-egn">
@@ -220,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Jj-Mt-uAO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1900" y="1755.4722638680662"/>
+            <point key="canvasLocation" x="-2089" y="1737"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="rEz-o5-hHn">
@@ -239,7 +241,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="circle-clip-art-yToeE5KLc"/>
                                 <connections>
-                                    <segue destination="2D6-TX-0Gu" kind="presentation" id="Ygy-52-YPZ"/>
+                                    <segue destination="2D6-TX-0Gu" kind="presentation" id="cuh-Rf-dSs"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dm0-9X-g2M">
@@ -281,7 +283,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="circle-clip-art-yToeE5KLc"/>
                                 <connections>
-                                    <segue destination="2D6-TX-0Gu" kind="presentation" id="Ai0-Tm-O5e"/>
+                                    <segue destination="2D6-TX-0Gu" kind="presentation" id="AkH-LF-j35"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5H-HK-Jcr">
@@ -316,7 +318,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="circle-clip-art-yToeE5KLc"/>
                                 <connections>
-                                    <segue destination="2D6-TX-0Gu" kind="presentation" id="x4G-VR-nad"/>
+                                    <segue destination="2D6-TX-0Gu" kind="presentation" id="INW-sD-piM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nG-LI-S9L">
@@ -397,6 +399,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ai0-Tm-O5e"/>
+        <segue reference="cuh-Rf-dSs"/>
     </inferredMetricsTieBreakers>
 </document>
