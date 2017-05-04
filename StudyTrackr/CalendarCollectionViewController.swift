@@ -26,8 +26,9 @@ class CalendarCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(CalendarCell.self, forCellWithReuseIdentifier: "Cell")
-
+        
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +45,7 @@ class CalendarCollectionViewController: UICollectionViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
     // MARK: UICollectionViewDataSource
     
     //Vertical Cells
@@ -57,11 +58,20 @@ class CalendarCollectionViewController: UICollectionViewController {
         return 7
     }
 
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath as IndexPath) as! UICollectionReusableView
+        
+            headerView.backgroundColor = UIColor.red
+            return headerView
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
-        //cell.backgroundColor = UIColor.blue
-        
+        cell.sizeToFit()
+        cell.backgroundColor = UIColor.blue
+
         cell.textLabel.text = "\(x)"
         x += 1
         // Configure the cell
