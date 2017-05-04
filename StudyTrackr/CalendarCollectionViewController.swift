@@ -29,8 +29,9 @@ class CalendarCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(CalendarCell.self, forCellWithReuseIdentifier: "Cell")
-
+        
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,7 +65,7 @@ class CalendarCollectionViewController: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
         //cell.backgroundColor = UIColor.blue
-        
+        cell
         cell.textLabel.text = "\(x)"
         x += 1
         // Configure the cell
