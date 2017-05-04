@@ -10,5 +10,17 @@ import UIKit
 
 class CalendarHeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var dateHeader: UILabel!
+     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> CalendarHeaderCollectionReusableView
+    {
     
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath as IndexPath) as! CalendarHeaderCollectionReusableView
+        
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        formatter.timeStyle = .none
+        header.dateHeader.text = "\(formatter.string(from: date))"
+        
+        return header
+    }
 }
