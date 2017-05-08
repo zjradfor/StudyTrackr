@@ -12,7 +12,8 @@ class RewardsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-self.tabBarController?.tabBar.isHidden = false
+self.tabBarController?.tabBar.isHidden = true // cannot make tabbar stay, so we will force it to be hidden and then create a button used in order to go back to our main menu screen once it it exists
+        
         // Do any additional setup after loading the view.
     }
 
