@@ -58,28 +58,26 @@ class CalendarCollectionViewController: UICollectionViewController {
         return 7
     }
 
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath as IndexPath) as! UICollectionReusableView
-        
-            headerView.backgroundColor = UIColor.red
-            return headerView
-    }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
-        cell.sizeToFit()
         cell.backgroundColor = UIColor.blue
-
         cell.textLabel.text = "\(x)"
         x += 1
-        // Configure the cell
-    
+
+        //cell.button.tag = indexPath.row
+        //cell.button.target(forAction: Selector(connected(sender: CalendarCell.button)), withSender: self)
+        
+        //print(cell.button.tag)
+        
+        
+        
         return cell
     }
     
-    
+    func connected(sender: UIButton!) {
+        print("pressed")
+        }
     
     
     

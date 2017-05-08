@@ -9,7 +9,7 @@
 import UIKit
 
 class CalendarHeaderCollectionReusableView: UICollectionReusableView {
-    @IBOutlet weak var dateHeader: UILabel!
+    var dateHeader: UILabel!
      func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> CalendarHeaderCollectionReusableView
     {
     
