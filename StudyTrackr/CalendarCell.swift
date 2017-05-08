@@ -11,10 +11,10 @@ import UIKit
 class CalendarCell: UICollectionViewCell {
     var textLabel: UILabel
     var button: UIButton
-    
+
     override init(frame: CGRect){
         textLabel = UILabel(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height/2))
-        button = UIButton(frame: CGRect(x: frame.size.width / 2, y: frame.size.height / 2, width: frame.size.width, height: frame.size.height)
+        button = UIButton(frame: CGRect(x: frame.size.width / 2, y: frame.size.height / 2, width: frame.size.width, height: frame.size.height))
         super.init(frame: frame)
         //x: 0, y: 20
         textLabel = UILabel(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height/2))
@@ -22,7 +22,7 @@ class CalendarCell: UICollectionViewCell {
         textLabel.textAlignment = .natural
         textLabel.textColor = UIColor.darkText
         contentView.addSubview(textLabel)
-        button = UIButton(frame: CGRect(x: frame.size.width / 2, y: frame.size.height / 2, width: frame.size.width, height: frame.size.height)
+        button = UIButton(frame: CGRect(x: frame.size.width / 2, y: frame.size.height / 2, width: frame.size.width, height: frame.size.height))
         button.addTarget(self, action: #selector(ratingButtonTapped), for: .touchUpInside)
     }
     
