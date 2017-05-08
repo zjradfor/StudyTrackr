@@ -9,5 +9,6 @@
 import UIKit
 
 class CalendarHeaderCollectionReusableView: UICollectionReusableView {
-    var dateHeader: UILabel!
+    @IBOutlet weak var dateHeader: UILabel!
+    
     }
