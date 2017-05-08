@@ -11,7 +11,7 @@ import UIKit
 class CalendarCell: UICollectionViewCell {
     var textLabel: UILabel
     var button: UIButton
-    
+
     override init(frame: CGRect){
         //Text
         textLabel = UILabel(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height/2))

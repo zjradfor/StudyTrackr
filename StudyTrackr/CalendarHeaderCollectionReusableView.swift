@@ -23,4 +23,3 @@ class CalendarHeaderCollectionReusableView: UICollectionReusableView {
         
         return header
     }
-}
