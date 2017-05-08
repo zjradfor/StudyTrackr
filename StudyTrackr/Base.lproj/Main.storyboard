@@ -216,15 +216,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00:00:00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bqG-sf-KIC">
+                                <rect key="frame" x="122" y="379" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="userTimeInput:" destination="TNf-sl-4rk" eventType="editingDidEnd" id="rbb-tQ-NEp"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="1uf-gV-PlX"/>
                     <connections>
+                        <outlet property="TimerValue" destination="bqG-sf-KIC" id="fha-Yb-3hB"/>
                         <outlet property="doneButton" destination="9Rf-b3-F7m" id="quc-Yd-fUi"/>
                         <outlet property="pauseButton" destination="RGy-FO-fic" id="bVD-At-U4H"/>
                         <outlet property="startButton" destination="jxy-iy-hYB" id="7Nt-zt-jYo"/>
                         <outlet property="timerLabel" destination="dwK-DP-yca" id="A0L-55-pNx"/>
+                        <outlet property="timerValue" destination="dwK-DP-yca" id="4MG-Om-Vce"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d65-EC-9Au" userLabel="First Responder" sceneMemberID="firstResponder"/>

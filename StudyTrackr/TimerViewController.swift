@@ -11,21 +11,21 @@ import UIKit
     class TimerViewController: UIViewController {
         @IBOutlet weak var timerLabel: UILabel!
     
-        
+    // For the user input on the timer: Need to figure out how we can read the value user inputs and then set seconds to this value. Seems like best way to go about it.
         var seconds = 70
         var timer = Timer()
         var isTimerRunning = false
         var resumeTapped = false
         var breakTime:Int = 0
         var isBreakTimeAdded:Bool = false
-        
+        @IBOutlet weak var TimerValue: UITextField!
         @IBOutlet weak var breakTime_10: UIButton!
         @IBOutlet weak var breakTime_15: UIButton!
         @IBOutlet weak var breakTime_20: UIButton!
         @IBOutlet weak var breakTime_25: UIButton!
         @IBOutlet weak var breakTime_30: UIButton!
         @IBOutlet weak var breakTime_35: UIButton!
-        
+        lazy var buttons: [UIButton] = [self.breakTime_10, self.breakTime_15, self.breakTime_20, self.breakTime_25, self.breakTime_30, self.breakTime_35]
         
         @IBAction func breakTime10(_ sender: UIButton) {
             breakTime = 10
@@ -58,13 +58,9 @@ import UIKit
         }
         
         
-        
-        
-        
-        
-        
-        
-        
+        @IBAction func userTimeInput(_ sender: UITextField) {
+            seconds = Int(TimerValue.text!)!
+        }
         
         
         
@@ -89,6 +85,8 @@ import UIKit
         @IBAction func doneButtonTapped(_ sender: UIButton) {
             timer.invalidate()
             seconds = 60
+            
+        
             timerLabel.text = String(seconds)
             isTimerRunning = false
             pauseButton.isEnabled = false
@@ -127,6 +125,11 @@ import UIKit
     override func viewDidLoad() {
         super.viewDidLoad()
         pauseButton.isEnabled = false
+        if isBreakTimeAdded == true{
+            for button in self.buttons{
+                button.isEnabled = false
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
