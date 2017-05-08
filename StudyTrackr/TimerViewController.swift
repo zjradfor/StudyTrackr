@@ -86,12 +86,12 @@ import UIKit
         
         @IBAction func doneButtonTapped(_ sender: UIButton) {
             timer.invalidate()
-            seconds = 60
+            seconds = Int(TimerValue.text!)!
             
         
             timerLabel.text = String(seconds)
             isTimerRunning = false
-            seconds = 70
+            seconds = Int(TimerValue.text!)!
             pauseButton.isEnabled = false
             startButton.isEnabled = true
         }
