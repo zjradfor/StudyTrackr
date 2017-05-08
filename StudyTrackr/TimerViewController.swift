@@ -68,6 +68,7 @@ import UIKit
             if isTimerRunning == false{
                 runTimer()
                 self.startButton.isEnabled = false
+                timerLabel.text = timeString(time:TimeInterval(seconds))
             }
         }
         
@@ -79,6 +80,7 @@ import UIKit
             }else{
                 self.resumeTapped = false
                 self.pauseButton.setTitle("Pause", for: .normal)
+                runTimer()
             }
         }
         
@@ -89,7 +91,9 @@ import UIKit
         
             timerLabel.text = String(seconds)
             isTimerRunning = false
+            seconds = 70
             pauseButton.isEnabled = false
+            startButton.isEnabled = true
         }
         
         func runTimer(){
