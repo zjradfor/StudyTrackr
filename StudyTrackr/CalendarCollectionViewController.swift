@@ -32,21 +32,26 @@ class CalendarCollectionViewController: UICollectionViewController {
     }
     
     //Header
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> CalendarHeaderCollectionReusableView
-    {
-        
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath as IndexPath) as! CalendarHeaderCollectionReusableView
-        
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateStyle = .full
-        formatter.timeStyle = .none
-        header.dateHeader.text = "\(formatter.string(from: date))"
-        
-        return header
+    override func collectionView(_ collectionView: UICollectionView,
+                                 viewForSupplementaryElementOfKind kind: String,
+                                 at indexPath: IndexPath) -> UICollectionReusableView {
+        //1
+        switch kind {
+        //2
+        case UICollectionElementKindSectionHeader:
+            //3
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateStyle = .full
+            formatter.timeStyle = .none
+            headerView.dateHeader.text = "\(formatter.string(from: date))"
+        return headerView
+        default:
+            //4
+            assert(false, "Unexpected element kind")
+        }
     }
-
-    
     
     
     
@@ -69,12 +74,12 @@ class CalendarCollectionViewController: UICollectionViewController {
     
     //Vertical Cells
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 6
+        return 1
     }
 
     // Horizontal Cells
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        return 42
     }
 
     
