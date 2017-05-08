@@ -84,19 +84,11 @@ class CalendarCollectionViewController: UICollectionViewController {
         cell.textLabel.text = "\(x)"
         x += 1
 
-        //cell.button.tag = indexPath.row
-        //cell.button.target(forAction: Selector(connected(sender: CalendarCell.button)), withSender: self)
-        
-        //print(cell.button.tag)
-        
-        
         
         return cell
     }
     
-    func connected(sender: UIButton!) {
-        print("pressed")
-        }
+    
     
     
     
