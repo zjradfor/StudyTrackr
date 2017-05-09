@@ -9,7 +9,23 @@
 import UIKit
 
 class DailyGiftViewController: UIViewController {
+   
 
+   
+    
+
+
+    @IBAction func GiftAPressed(_ sender: UIButton) {
+    
+    _ = (arc4random_uniform(25) + 1)
+    
+    }
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
