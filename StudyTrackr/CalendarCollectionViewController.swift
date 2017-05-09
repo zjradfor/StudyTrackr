@@ -9,8 +9,9 @@
 import UIKit
 
 //Temp variable
-var x = 1
-
+var tag = 1
+var x:CGFloat = 0
+var y:CGFloat = 0
 private let reuseIdentifier = "Cell"
 
 class CalendarCollectionViewController: UICollectionViewController {
@@ -81,14 +82,21 @@ class CalendarCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 42
     }
-
+    
+    let screenSize = UIScreen.main.bounds
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
+        cell.frame = CGRect(x: x * (screenSize.width / 7), y: y * (screenSize.height / 6), width: (screenSize.width / 7) - 1, height: (screenSize.height / 6) - 1)
         cell.backgroundColor = UIColor.blue
-        cell.textLabel.text = "\(x)"
+        cell.textLabel.text = "\(tag)"
+        tag += 1
         x += 1
-
+        if x == 7{
+            y += 1
+            x = 0
+        }
         
         return cell
     }
