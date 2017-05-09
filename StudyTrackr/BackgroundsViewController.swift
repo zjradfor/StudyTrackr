@@ -10,6 +10,18 @@ import UIKit
 
 class BackgroundsViewController: UIViewController {
 
+    @IBAction func DefaultBackground(_ sender: Any) {
+    }
+
+    @IBAction func PurpleBackground(_ sender: Any) {
+    }
+    
+    @IBAction func PinkBackground(_ sender: Any) {
+    }
+    
+    @IBAction func YellowBackground(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

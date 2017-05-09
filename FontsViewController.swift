@@ -10,6 +10,18 @@ import UIKit
 
 class FontsViewController: UIViewController {
 
+    @IBAction func DefaultFont(_ sender: Any) {
+    }
+    
+    @IBAction func SyncopateFont(_ sender: Any) {
+    }
+    
+    @IBAction func IndieFlowerFont(_ sender: Any) {
+    }
+    
+    @IBAction func PacificoFont(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
