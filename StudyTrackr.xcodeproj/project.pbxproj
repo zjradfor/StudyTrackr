@@ -12,6 +12,7 @@
 		DEC18D501EB2375B00F9935C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D4E1EB2375B00F9935C /* Main.storyboard */; };
 		DEC18D521EB2375B00F9935C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D511EB2375B00F9935C /* Assets.xcassets */; };
 		DEC18D551EB2375B00F9935C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */; };
+		F11D7A271EC20762004F4E14 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11D7A261EC20762004F4E14 /* MainTabBarViewController.swift */; };
 		F1850D3C1EB778C600D75B01 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1850D3B1EB778C600D75B01 /* TableViewController.swift */; };
 		F1850D3E1EB77B9F00D75B01 /* CalendarCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1850D3D1EB77B9F00D75B01 /* CalendarCollectionViewController.swift */; };
 		F1F18B821EB8C93B00B1B7E4 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F18B811EB8C93B00B1B7E4 /* CalendarCell.swift */; };
@@ -26,6 +27,7 @@
 		DEC18D511EB2375B00F9935C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEC18D541EB2375B00F9935C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEC18D561EB2375B00F9935C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F11D7A261EC20762004F4E14 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		F1850D3B1EB778C600D75B01 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		F1850D3D1EB77B9F00D75B01 /* CalendarCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewController.swift; sourceTree = "<group>"; };
 		F1F18B811EB8C93B00B1B7E4 /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				F1850D3B1EB778C600D75B01 /* TableViewController.swift */,
 				F1850D3D1EB77B9F00D75B01 /* CalendarCollectionViewController.swift */,
 				F1F18B811EB8C93B00B1B7E4 /* CalendarCell.swift */,
+				F11D7A261EC20762004F4E14 /* MainTabBarViewController.swift */,
 				F1F18B831EB8D22700B1B7E4 /* Day.swift */,
 				DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */,
 				DEC18D4E1EB2375B00F9935C /* Main.storyboard */,
@@ -152,6 +155,7 @@
 				DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */,
 				F1F18B841EB8D22700B1B7E4 /* Day.swift in Sources */,
 				F1F18B821EB8C93B00B1B7E4 /* CalendarCell.swift in Sources */,
+				F11D7A271EC20762004F4E14 /* MainTabBarViewController.swift in Sources */,
 				DEC18D491EB2375B00F9935C /* AppDelegate.swift in Sources */,
 				F1850D3E1EB77B9F00D75B01 /* CalendarCollectionViewController.swift in Sources */,
 				F1850D3C1EB778C600D75B01 /* TableViewController.swift in Sources */,

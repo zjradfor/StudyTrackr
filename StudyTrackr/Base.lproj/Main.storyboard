@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,6 +13,7 @@
         <!--Title-->
         <scene sceneID="ig7-qm-Rve">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dcI-xR-EMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="Ijc-8v-Frg" customClass="TableViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="G3U-jF-aHh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -23,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X49-dv-KFq" id="S5H-5o-Xhs">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -35,7 +36,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="euQ-yO-kdk"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dcI-xR-EMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2446" y="-322"/>
         </scene>
@@ -77,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
+            <point key="canvasLocation" x="750" y="432"/>
         </scene>
         <!--Item-->
         <scene sceneID="cgl-IU-ZRt">
@@ -183,10 +183,10 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-322.48875562218893"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="MainTabBarViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -207,6 +207,7 @@
         <!--Navigation Controller-->
         <scene sceneID="VnH-p3-ajC">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b8a-Ba-i27" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fAB-Kh-L3K" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="z7r-f7-5HO">
@@ -218,7 +219,6 @@
                         <segue destination="Ijc-8v-Frg" kind="relationship" relationship="rootViewController" id="hD7-pp-Mh1"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b8a-Ba-i27" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1504.8" y="-321.58920539730138"/>
         </scene>

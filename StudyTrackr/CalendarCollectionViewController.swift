@@ -15,10 +15,9 @@ var y:CGFloat = 0
 private let reuseIdentifier = "Cell"
 
 class CalendarCollectionViewController: UICollectionViewController {
-
+    
     
     override func viewDidLoad() {
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -80,13 +79,14 @@ class CalendarCollectionViewController: UICollectionViewController {
         return 42
     }
     
-    let screenSize = UIScreen.main.bounds
     
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        let screenSize = UIScreen.main.bounds
+        let screenHeight = screenSize.height - 62 //- MainTabBarViewController.tabBarHeight
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
-        cell.frame = CGRect(x: x * (screenSize.width / 7), y: (y * (screenSize.height / 6)) + 62, width: (screenSize.width / 7) - 1, height: (screenSize.height / 6) - 1)
+        cell.frame = CGRect(x: x * (screenSize.width / 7), y: (y * (screenHeight / 6)) + 62, width: (screenSize.width / 7) - 3, height: (screenHeight / 6) - 3)
         cell.backgroundColor = UIColor.blue
         cell.textLabel.text = "\(tag)"
         tag += 1
@@ -98,10 +98,6 @@ class CalendarCollectionViewController: UICollectionViewController {
         
         return cell
     }
-    
-    
-    
-    
     
     
 
