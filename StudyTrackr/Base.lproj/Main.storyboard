@@ -301,21 +301,33 @@
                                 <rect key="frame" x="0.0" y="216" width="375" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Font Cost"/>
+                                <connections>
+                                    <action selector="SyncopateFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="Gmp-S1-3hz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a09-c3-m1f">
                                 <rect key="frame" x="0.0" y="63" width="375" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Font Cost"/>
+                                <connections>
+                                    <action selector="DefaultFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="1Yf-Fp-Jkz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cf6-Eb-zSx">
                                 <rect key="frame" x="0.0" y="369" width="375" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Font Cost"/>
+                                <connections>
+                                    <action selector="IndieFlowerFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="83U-jH-E3I"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTe-XW-Cck">
                                 <rect key="frame" x="0.0" y="522" width="375" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Font Cost"/>
+                                <connections>
+                                    <action selector="PacificoFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="arN-tP-ji3"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toQ-UA-N0W">
                                 <rect key="frame" x="37" y="118" width="63" height="35"/>
