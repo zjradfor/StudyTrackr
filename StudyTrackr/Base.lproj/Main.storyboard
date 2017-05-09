@@ -232,16 +232,25 @@
                                 <rect key="frame" x="0.0" y="108" width="375" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Spike Button"/>
+                                <connections>
+                                    <action selector="AvatarSpike:" destination="pL3-Ks-nn6" eventType="touchUpInside" id="tSW-r8-pcr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWg-pS-ZHu">
                                 <rect key="frame" x="0.0" y="261" width="375" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Lola Button"/>
+                                <connections>
+                                    <action selector="AvatarLola:" destination="pL3-Ks-nn6" eventType="touchUpInside" id="rzs-nl-PFh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dm5-6m-NrN">
                                 <rect key="frame" x="0.0" y="414" width="375" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Flub Button"/>
+                                <connections>
+                                    <action selector="AvatarFlub:" destination="pL3-Ks-nn6" eventType="touchUpInside" id="s8Y-kx-5OP"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle-clip-art-yToeE5KLc" translatesAutoresizingMaskIntoConstraints="NO" id="SG9-TS-ex2">
                                 <rect key="frame" x="22" y="287" width="90" height="92"/>
@@ -569,6 +578,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="INW-sD-piM"/>
+        <segue reference="icE-UX-rtA"/>
     </inferredMetricsTieBreakers>
 </document>

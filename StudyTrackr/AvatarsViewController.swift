@@ -10,6 +10,15 @@ import UIKit
 
 class AvatarsViewController: UIViewController {
 
+    @IBAction func AvatarSpike(_ sender: Any) {
+    }
+    
+    @IBAction func AvatarLola(_ sender: Any) {
+    }
+    
+    @IBAction func AvatarFlub(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
