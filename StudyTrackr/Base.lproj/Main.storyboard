@@ -194,10 +194,10 @@
             </objects>
             <point key="canvasLocation" x="-1095.2" y="806.44677661169419"/>
         </scene>
-        <!--View Controller-->
+        <!--Avatars View Controller-->
         <scene sceneID="Bev-sY-QjM">
             <objects>
-                <viewController id="pL3-Ks-nn6" sceneMemberID="viewController">
+                <viewController id="pL3-Ks-nn6" customClass="AvatarsViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YSB-Mh-AOd"/>
                         <viewControllerLayoutGuide type="bottom" id="ecx-b4-9IL"/>
@@ -263,10 +263,10 @@
             </objects>
             <point key="canvasLocation" x="-2090.4000000000001" y="1736.5817091454273"/>
         </scene>
-        <!--View Controller-->
+        <!--Fonts View Controller-->
         <scene sceneID="rEz-o5-hHn">
             <objects>
-                <viewController id="EeP-5N-jlv" sceneMemberID="viewController">
+                <viewController id="EeP-5N-jlv" customClass="FontsViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oER-ea-lJB"/>
                         <viewControllerLayoutGuide type="bottom" id="ikD-sB-hZK"/>
@@ -362,10 +362,10 @@
             </objects>
             <point key="canvasLocation" x="-1212" y="2579.4602698650679"/>
         </scene>
-        <!--View Controller-->
+        <!--Backgrounds View Controller-->
         <scene sceneID="FfG-HM-oHP">
             <objects>
-                <viewController id="Sdn-nJ-TW6" sceneMemberID="viewController">
+                <viewController id="Sdn-nJ-TW6" customClass="BackgroundsViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xPF-R7-S9N"/>
                         <viewControllerLayoutGuide type="bottom" id="EBB-nO-wTp"/>
@@ -461,6 +461,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="icE-UX-rtA"/>
+        <segue reference="INW-sD-piM"/>
     </inferredMetricsTieBreakers>
 </document>
