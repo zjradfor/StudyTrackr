@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X49-dv-KFq" id="S5H-5o-Xhs">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -153,15 +154,20 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84P-Ww-Tlb">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84P-Ww-Tlb">
                                     <rect key="frame" x="96" y="21" width="183" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="84P-Ww-Tlb" firstAttribute="top" secondItem="2Yx-zf-Fql" secondAttribute="topMargin" constant="13" id="UbD-aV-xUG"/>
+                                <constraint firstItem="84P-Ww-Tlb" firstAttribute="centerX" secondItem="2Yx-zf-Fql" secondAttribute="centerX" id="fj3-U9-sZ5"/>
+                                <constraint firstItem="84P-Ww-Tlb" firstAttribute="centerY" secondItem="2Yx-zf-Fql" secondAttribute="centerY" id="vlW-U1-T8h"/>
+                                <constraint firstItem="84P-Ww-Tlb" firstAttribute="leading" secondItem="2Yx-zf-Fql" secondAttribute="leadingMargin" constant="88" id="wgp-VJ-VB7"/>
+                            </constraints>
                             <connections>
                                 <outlet property="dateHeader" destination="84P-Ww-Tlb" id="65G-Qo-ZA5"/>
                             </connections>

@@ -18,9 +18,6 @@ class CalendarCollectionViewController: UICollectionViewController {
 
     
     override func viewDidLoad() {
-        
-
-                //  dateHeader.text = "\(formatter.string(from: date))"
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -32,7 +29,7 @@ class CalendarCollectionViewController: UICollectionViewController {
         
     }
     
-    //Header
+    //Header Class connection to UICollectionView
     override func collectionView(_ collectionView: UICollectionView,
                                  viewForSupplementaryElementOfKind kind: String,
                                  at indexPath: IndexPath) -> UICollectionReusableView {
@@ -40,8 +37,8 @@ class CalendarCollectionViewController: UICollectionViewController {
         switch kind {
         //2
         case UICollectionElementKindSectionHeader:
-            //3
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
+        //3
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
             let date = Date()
             let formatter = DateFormatter()
             formatter.dateStyle = .full
@@ -49,7 +46,7 @@ class CalendarCollectionViewController: UICollectionViewController {
             headerView.dateHeader.text = "\(formatter.string(from: date))"
         return headerView
         default:
-            //4
+        //4
             assert(false, "Unexpected element kind")
         }
     }
