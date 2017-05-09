@@ -85,10 +85,11 @@ class CalendarCollectionViewController: UICollectionViewController {
     
     let screenSize = UIScreen.main.bounds
     
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
-        cell.frame = CGRect(x: x * (screenSize.width / 7), y: y * (screenSize.height / 6), width: (screenSize.width / 7) - 1, height: (screenSize.height / 6) - 1)
+        cell.frame = CGRect(x: x * (screenSize.width / 7), y: (y * (screenSize.height / 6)) + 62, width: (screenSize.width / 7) - 1, height: (screenSize.height / 6) - 1)
         cell.backgroundColor = UIColor.blue
         cell.textLabel.text = "\(tag)"
         tag += 1
