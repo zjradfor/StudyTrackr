@@ -29,38 +29,38 @@ import UIKit
         lazy var buttons: [UIButton] = [self.breakTime_10, self.breakTime_15, self.breakTime_20, self.breakTime_25, self.breakTime_30, self.breakTime_35]
         
         @IBAction func breakTime10(_ sender: UIButton) {
-            seconds = (10*60)
+            seconds = seconds + (10*60)
             isBreakTimeAdded = true
         }
         
         @IBAction func breakTime15(_ sender: UIButton) {
-            seconds = (15*60)
+            seconds = seconds + (15*60)
             isBreakTimeAdded = true
         }
        
         @IBAction func breakTime20(_ sender: UIButton) {
-            seconds = (20*60)
+            seconds = seconds + (20*60)
             isBreakTimeAdded = true
         }
         
         @IBAction func breakTime25(_ sender: UIButton) {
-            seconds = (25*60)
+            seconds = seconds + (25*60)
             isBreakTimeAdded = true
         }
         
         @IBAction func breakTime30(_ sender: UIButton) {
-            seconds = (30*60)
+            seconds = seconds + (30*60)
             isBreakTimeAdded = true
         }
         
         @IBAction func breakTime35(_ sender: UIButton) {
-            seconds = (35*60)
+            seconds = seconds + (35*60)
             isBreakTimeAdded = true
         }
     
 
         @IBAction func userTime(_ sender: UITextField) {
-            seconds = seconds + Int(TimerValue.text!)!
+            seconds = seconds + (Int(TimerValue.text!)!*60)
             label.text = TimerValue.text
         }
         
