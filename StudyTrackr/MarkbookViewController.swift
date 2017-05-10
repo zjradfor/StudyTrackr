@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  MarkbookViewController.swift
 //  StudyTrackr
 //
 //  Created by John Slomka on 2017-04-27.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class MarkbookViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
