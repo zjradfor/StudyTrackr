@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		079DF05A1EB8C850000D811E /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079DF0591EB8C850000D811E /* Subject.swift */; };
+		07B290D11EC3552D0061AE6C /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B290D01EC3552D0061AE6C /* SubjectViewController.swift */; };
 		DEC18D491EB2375B00F9935C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D481EB2375B00F9935C /* AppDelegate.swift */; };
 		DEC18D4B1EB2375B00F9935C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D4A1EB2375B00F9935C /* FirstViewController.swift */; };
 		DEC18D4D1EB2375B00F9935C /* MarkbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D4C1EB2375B00F9935C /* MarkbookViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		079DF0591EB8C850000D811E /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		07B290D01EC3552D0061AE6C /* SubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		DEC18D451EB2375B00F9935C /* StudyTrackr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyTrackr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC18D481EB2375B00F9935C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC18D4A1EB2375B00F9935C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				DEC18D481EB2375B00F9935C /* AppDelegate.swift */,
 				DEC18D4A1EB2375B00F9935C /* FirstViewController.swift */,
 				DEC18D4C1EB2375B00F9935C /* MarkbookViewController.swift */,
+				07B290D01EC3552D0061AE6C /* SubjectViewController.swift */,
 				079DF0591EB8C850000D811E /* Subject.swift */,
 				DEC18D4E1EB2375B00F9935C /* Main.storyboard */,
 				DEC18D511EB2375B00F9935C /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 			files = (
 				079DF05A1EB8C850000D811E /* Subject.swift in Sources */,
 				DEC18D4D1EB2375B00F9935C /* MarkbookViewController.swift in Sources */,
+				07B290D11EC3552D0061AE6C /* SubjectViewController.swift in Sources */,
 				DEC18D491EB2375B00F9935C /* AppDelegate.swift in Sources */,
 				DEC18D4B1EB2375B00F9935C /* FirstViewController.swift in Sources */,
 			);
