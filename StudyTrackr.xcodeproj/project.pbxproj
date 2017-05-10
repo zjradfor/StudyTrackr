@@ -13,6 +13,7 @@
 		7350C8DA1EC1FECE0054200B /* FontsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7350C8D81EC1FECE0054200B /* FontsViewController.xib */; };
 		7350C8DF1EC1FF1A0054200B /* BackgroundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C8DD1EC1FF1A0054200B /* BackgroundsViewController.swift */; };
 		7350C8E01EC1FF1A0054200B /* BackgroundsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7350C8DE1EC1FF1A0054200B /* BackgroundsViewController.xib */; };
+		739C48331EC20D7E00BFCC21 /* Rewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739C48321EC20D7E00BFCC21 /* Rewards.swift */; };
 		73D108AE1EBB750E00F2765F /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D108AC1EBB750E00F2765F /* RewardsViewController.swift */; };
 		73D108AF1EBB750E00F2765F /* RewardsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D108AD1EBB750E00F2765F /* RewardsViewController.xib */; };
 		73D108B71EC0BB4A00F2765F /* DailyGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D108B51EC0BB4A00F2765F /* DailyGiftViewController.swift */; };
@@ -32,6 +33,7 @@
 		7350C8D81EC1FECE0054200B /* FontsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FontsViewController.xib; path = ../FontsViewController.xib; sourceTree = "<group>"; };
 		7350C8DD1EC1FF1A0054200B /* BackgroundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundsViewController.swift; sourceTree = "<group>"; };
 		7350C8DE1EC1FF1A0054200B /* BackgroundsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BackgroundsViewController.xib; sourceTree = "<group>"; };
+		739C48321EC20D7E00BFCC21 /* Rewards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rewards.swift; sourceTree = "<group>"; };
 		73D108AC1EBB750E00F2765F /* RewardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
 		73D108AD1EBB750E00F2765F /* RewardsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RewardsViewController.xib; sourceTree = "<group>"; };
 		73D108B51EC0BB4A00F2765F /* DailyGiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyGiftViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				73D108AD1EBB750E00F2765F /* RewardsViewController.xib */,
 				7350C8DD1EC1FF1A0054200B /* BackgroundsViewController.swift */,
 				7350C8DE1EC1FF1A0054200B /* BackgroundsViewController.xib */,
+				739C48321EC20D7E00BFCC21 /* Rewards.swift */,
 			);
 			name = "Rewards Code Files";
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			files = (
 				DEC18D4D1EB2375B00F9935C /* SecondViewController.swift in Sources */,
 				7350C8D91EC1FECE0054200B /* FontsViewController.swift in Sources */,
+				739C48331EC20D7E00BFCC21 /* Rewards.swift in Sources */,
 				7350C8D41EC1FE6D0054200B /* AvatarsViewController.swift in Sources */,
 				73D108AE1EBB750E00F2765F /* RewardsViewController.swift in Sources */,
 				7350C8DF1EC1FF1A0054200B /* BackgroundsViewController.swift in Sources */,

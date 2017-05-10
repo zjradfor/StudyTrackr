@@ -401,18 +401,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUl-yQ-Mdb">
-                                <rect key="frame" x="228" y="310" width="110" height="120"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZB-Wk-2JB" userLabel="Gift B">
+                                <rect key="frame" x="20" y="395" width="110" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="gift-clipart-Present5"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZB-Wk-2JB">
-                                <rect key="frame" x="53" y="405" width="110" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="gift-clipart-Present5"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWX-Qe-aCl">
-                                <rect key="frame" x="71" y="192" width="110" height="120"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWX-Qe-aCl" userLabel="Gift C">
+                                <rect key="frame" x="233" y="395" width="110" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="gift-clipart-Present5"/>
                             </button>
@@ -423,9 +418,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUl-yQ-Mdb" userLabel="Gift A">
+                                <rect key="frame" x="132" y="205" width="110" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="gift-clipart-Present5"/>
+                                <connections>
+                                    <action selector="GiftA:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="LEi-kd-Bqd"/>
+                                    <action selector="GiftboxA:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="fFw-5n-Gtd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="GiftA" destination="oUl-yQ-Mdb" id="yAe-N1-dJr"/>
+                        <outlet property="GiftB" destination="QZB-Wk-2JB" id="Jxe-0w-vQO"/>
+                        <outlet property="GiftC" destination="iWX-Qe-aCl" id="ahe-bl-4VU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J3g-5e-NF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
