@@ -25,6 +25,7 @@ import UIKit
         @IBOutlet weak var breakTime_25: UIButton!
         @IBOutlet weak var breakTime_30: UIButton!
         @IBOutlet weak var breakTime_35: UIButton!
+        @IBOutlet weak var label: UILabel!
         lazy var buttons: [UIButton] = [self.breakTime_10, self.breakTime_15, self.breakTime_20, self.breakTime_25, self.breakTime_30, self.breakTime_35]
         
         @IBAction func breakTime10(_ sender: UIButton) {
@@ -57,12 +58,14 @@ import UIKit
             isBreakTimeAdded = true
         }
         
-        
-        @IBAction func userTimeInput(_ sender: UITextField) {
+        @IBAction func userTime(_ sender: UITextField) {
             seconds = Int(TimerValue.text!)!
+            label.text = TimerValue.text
         }
+    
+
         
-        
+       
         
         @IBAction func startButtonTapped(_ sender: UIButton) {
             if isTimerRunning == false{
@@ -86,7 +89,7 @@ import UIKit
         
         @IBAction func doneButtonTapped(_ sender: UIButton) {
             timer.invalidate()
-            seconds = Int(TimerValue.text!)!
+            seconds = 60
             
         
             timerLabel.text = String(seconds)
