@@ -67,12 +67,12 @@
 				7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */,
 				7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */,
 				73D108B51EC0BB4A00F2765F /* DailyGiftViewController.swift */,
-				739C48321EC20D7E00BFCC21 /* Rewards.swift */,
 				73D108B61EC0BB4A00F2765F /* DailyGiftViewController.xib */,
 				73D108AC1EBB750E00F2765F /* RewardsViewController.swift */,
 				73D108AD1EBB750E00F2765F /* RewardsViewController.xib */,
 				7350C8DD1EC1FF1A0054200B /* BackgroundsViewController.swift */,
 				7350C8DE1EC1FF1A0054200B /* BackgroundsViewController.xib */,
+				739C48321EC20D7E00BFCC21 /* Rewards.swift */,
 			);
 			name = "Rewards Code Files";
 			sourceTree = "<group>";

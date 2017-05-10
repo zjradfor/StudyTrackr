@@ -15,5 +15,8 @@ class Rewards {
     init(coins : UInt32) {
         self.coins = coins
     }
+
+    func DailyReward () {
+
 }
-    
+}
