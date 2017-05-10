@@ -17,6 +17,7 @@ class Rewards {
     }
 
     func DailyReward () {
+ coins = arc4random_uniform(25) + 1
 
 }
 }
