@@ -12,7 +12,7 @@ import UIKit
         @IBOutlet weak var timerLabel: UILabel!
     
     // For the user input on the timer: Need to figure out how we can read the value user inputs and then set seconds to this value. Seems like best way to go about it.
-        var seconds = 70
+        var seconds = 0
         var timer = Timer()
         var isTimerRunning = false
         var resumeTapped = false
@@ -29,38 +29,38 @@ import UIKit
         lazy var buttons: [UIButton] = [self.breakTime_10, self.breakTime_15, self.breakTime_20, self.breakTime_25, self.breakTime_30, self.breakTime_35]
         
         @IBAction func breakTime10(_ sender: UIButton) {
-            breakTime = 10
+            seconds = (10*60)
             isBreakTimeAdded = true
         }
         
         @IBAction func breakTime15(_ sender: UIButton) {
-            breakTime = 15
+            seconds = (15*60)
             isBreakTimeAdded = true
         }
        
         @IBAction func breakTime20(_ sender: UIButton) {
-            breakTime = 20
+            seconds = (20*60)
             isBreakTimeAdded = true
         }
         
         @IBAction func breakTime25(_ sender: UIButton) {
-            breakTime = 25
+            seconds = (25*60)
             isBreakTimeAdded = true
         }
         
         @IBAction func breakTime30(_ sender: UIButton) {
-            breakTime = 30
+            seconds = (30*60)
             isBreakTimeAdded = true
         }
         
         @IBAction func breakTime35(_ sender: UIButton) {
-            breakTime = 35
+            seconds = (35*60)
             isBreakTimeAdded = true
         }
     
 
         @IBAction func userTime(_ sender: UITextField) {
-            seconds = Int(TimerValue.text!)!
+            seconds = seconds + Int(TimerValue.text!)!
             label.text = TimerValue.text
         }
         
@@ -88,12 +88,12 @@ import UIKit
         
         @IBAction func doneButtonTapped(_ sender: UIButton) {
             timer.invalidate()
-            seconds = 60
+            seconds = 0
             
         
             timerLabel.text = String(seconds)
             isTimerRunning = false
-            seconds = Int(TimerValue.text!)!
+            seconds = 0
             pauseButton.isEnabled = false
             startButton.isEnabled = true
         }
