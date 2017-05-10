@@ -2,7 +2,7 @@
 //  SubjectViewController.swift
 //  StudyTrackr
 //
-//  Created by Zach Radford on 2017-05-02.
+//  Created by Zach Radford on 2017-05-10.
 //  Copyright © 2017 John Slomka. All rights reserved.
 //
 
@@ -10,8 +10,19 @@ import UIKit
 
 class SubjectViewController: UIViewController {
 
+    @IBOutlet weak var subjectTitleLabel: UILabel!
+    
+    var currentSubject: String = ""
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        subjectTitleLabel.text = currentSubject
 
         // Do any additional setup after loading the view.
     }

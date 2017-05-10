@@ -52,7 +52,7 @@
         <!--Markbook-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="MarkbookViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -61,18 +61,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="mark book" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="103" y="20" width="169" height="42"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9O-8S-tRb">
                                 <rect key="frame" x="59" y="117" width="80" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="1"/>
                                 <connections>
+                                    <action selector="ButtonOne:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="RBa-2U-9tI"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="8yZ-I5-3x4"/>
                                 </connections>
                             </button>
@@ -81,6 +75,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="2"/>
                                 <connections>
+                                    <action selector="ButtonTwo:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="f4x-Yq-cIG"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="NSt-gv-HGC"/>
                                 </connections>
                             </button>
@@ -89,6 +84,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="3"/>
                                 <connections>
+                                    <action selector="ButtonThree:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="suh-pW-D7G"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="DuD-yR-ixK"/>
                                 </connections>
                             </button>
@@ -97,6 +93,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="4"/>
                                 <connections>
+                                    <action selector="ButtonFour:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="dRS-f3-miy"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="8fI-gy-yBr"/>
                                 </connections>
                             </button>
@@ -105,6 +102,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="5"/>
                                 <connections>
+                                    <action selector="ButtonFive:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="WmN-Bj-mCk"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="sWa-yr-5Qh"/>
                                 </connections>
                             </button>
@@ -140,12 +138,15 @@
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="gVc-pm-zbq"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mark Book" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDM-t2-egu">
+                                <rect key="frame" x="114" y="28" width="143" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Markbook" image="second" id="cPa-gy-q4n"/>
                 </viewController>
@@ -153,10 +154,10 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
         </scene>
-        <!--View Controller-->
+        <!--Subject View Controller-->
         <scene sceneID="onh-fj-tW4">
             <objects>
-                <viewController id="Bt5-Mc-EHT" sceneMemberID="viewController">
+                <viewController id="Bt5-Mc-EHT" customClass="SubjectViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qTG-uY-yck"/>
                         <viewControllerLayoutGuide type="bottom" id="qEB-pM-8lC"/>
@@ -183,6 +184,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="subjectTitleLabel" destination="iPE-Hw-eTL" id="EQ4-8u-h4x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1T-SX-PdJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
