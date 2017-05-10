@@ -11,13 +11,19 @@ import Foundation
 
 class Rewards {
     var coins : UInt32
-    
     init(coins : UInt32) {
         self.coins = coins
     }
 
     func DailyReward () {
- coins = arc4random_uniform(25) + 1
+let GiftCoins = arc4random_uniform(25) + 1
 
-}
+coins = GiftCoins + coins  //The Coins recieved from the daily gift is added to the total amount of coins
+        }
+    
+//    switch (purchase) {
+//    var price
+//if coins < price
+//    }
+    
 }
