@@ -359,13 +359,6 @@
                                     <action selector="DefaultFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="1Yf-Fp-Jkz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="fonts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXP-yw-NWb">
-                                <rect key="frame" x="157" y="13" width="87" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -526,6 +519,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="BackgroundView" destination="wj9-y3-PTX" id="VKL-MF-nij"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yhk-av-9Ig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -591,6 +587,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cuh-Rf-dSs"/>
+        <segue reference="INW-sD-piM"/>
     </inferredMetricsTieBreakers>
 </document>
