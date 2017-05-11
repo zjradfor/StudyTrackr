@@ -15,13 +15,6 @@ class DailyGiftViewController: UIViewController {
     
 
 
-    @IBAction func GiftAPressed(_ sender: UIButton) {
-    
-    _ = (arc4random_uniform(25) + 1)
-    
-    }
-    
-    
     
     
     

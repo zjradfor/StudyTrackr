@@ -10,16 +10,28 @@ import UIKit
 
 class BackgroundsViewController: UIViewController {
 
+
+    
+    @IBOutlet var BackgroundView: UIView!
+    
     @IBAction func DefaultBackground(_ sender: Any) {
+
+        BackgroundView.backgroundColor = UIColor.white
+
     }
 
     @IBAction func PurpleBackground(_ sender: Any) {
+        BackgroundView.backgroundColor = UIColor.purple
     }
     
     @IBAction func PinkBackground(_ sender: Any) {
+        BackgroundView.backgroundColor = UIColor(red:1.00, green:0.76, blue:0.95, alpha:1.0)
+        
+        
     }
     
     @IBAction func YellowBackground(_ sender: Any) {
+        BackgroundView.backgroundColor = UIColor.yellow
     }
     
     override func viewDidLoad() {
