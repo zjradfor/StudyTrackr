@@ -111,6 +111,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="6"/>
                                 <connections>
+                                    <action selector="ButtonSix:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="9ti-PI-kjL"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="HHP-VO-mzJ"/>
                                 </connections>
                             </button>
@@ -119,6 +120,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="7"/>
                                 <connections>
+                                    <action selector="ButtonSeven:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="GdN-Py-ncP"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="s3T-4x-eO6"/>
                                 </connections>
                             </button>
@@ -127,6 +129,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="8"/>
                                 <connections>
+                                    <action selector="ButtonEight:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="GOQ-Hw-AF4"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="Ckz-FQ-zTs"/>
                                 </connections>
                             </button>
@@ -135,6 +138,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="9"/>
                                 <connections>
+                                    <action selector="ButtonNine:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ddD-lL-3zW"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="gVc-pm-zbq"/>
                                 </connections>
                             </button>

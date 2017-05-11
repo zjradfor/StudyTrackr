@@ -31,5 +31,9 @@ class Subject {
     //overallMark()
     //addTime()
 
+    func addSubject(subjectName:String){
+        self.subjectName = subjectName
+    }
+    
 }
 
