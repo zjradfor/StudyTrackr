@@ -22,6 +22,7 @@ class CalendarCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
+        
         self.collectionView!.register(CalendarCell.self, forCellWithReuseIdentifier: "Cell")
         self.collectionView!.register(CalendarHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
         // Do any additional setup after loading the view.
@@ -80,12 +81,13 @@ class CalendarCollectionViewController: UICollectionViewController {
     }
     
     
+    var selectedLabels = String()
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let screenSize = UIScreen.main.bounds
         let screenHeight = screenSize.height - 62 //- MainTabBarViewController.tabBarHeight
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
+        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
         cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight / 6)) + 65, width: (screenSize.width / 7) - 4, height: (screenHeight / 6) - 2)
         cell.backgroundColor = UIColor.white
         cell.textLabel.text = "\(tag)"
@@ -98,9 +100,29 @@ class CalendarCollectionViewController: UICollectionViewController {
         
         return cell
     }
-    
-    
+    var dayToSegue:IndexPath = []
 
+    // Cell Tapped
+        override func collectionView(_ collectionView: UICollectionView,
+                                     shouldSelectItemAt indexPath: IndexPath) -> Bool {
+            print("tapped \(indexPath)")
+            
+            dayToSegue = indexPath
+            self.performSegue(withIdentifier: "daySegue", sender: self)
+            //largePhotoIndexPath = largePhotoIndexPath == indexPath ? nil : indexPath
+            return false
+        }
+    
+    
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "daySegue"){
+            let vc = segue.destination as! TableViewController
+            vc.dayFromSegue = dayToSegue
+        }
+    }
+    
+    
+    
     // MARK: UICollectionViewDelegate
 
     /*

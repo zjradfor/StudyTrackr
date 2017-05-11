@@ -10,6 +10,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
+    var dayFromSegue:IndexPath = []
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -10,34 +10,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Day-->
         <scene sceneID="ig7-qm-Rve">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dcI-xR-EMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="Ijc-8v-Frg" customClass="TableViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="G3U-jF-aHh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="X49-dv-KFq">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X49-dv-KFq" id="S5H-5o-Xhs">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Ijc-8v-Frg" id="lEM-z5-gTb"/>
-                            <outlet property="delegate" destination="Ijc-8v-Frg" id="RNK-as-6yv"/>
-                        </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="euQ-yO-kdk"/>
+                    <navigationItem key="navigationItem" title="Day" id="euQ-yO-kdk"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dcI-xR-EMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2446" y="-322"/>
+            <point key="canvasLocation" x="1846" y="-339"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -139,7 +125,7 @@
         <scene sceneID="Hbp-Y4-XYC">
             <objects>
                 <collectionViewController id="cLe-px-V1W" customClass="CalendarCollectionViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" minimumZoomScale="0.0" dataMode="prototypes" id="6AP-4V-DKl">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" dataMode="prototypes" id="6AP-4V-DKl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -175,6 +161,7 @@
                         <connections>
                             <outlet property="dataSource" destination="cLe-px-V1W" id="cLf-4Q-UAt"/>
                             <outlet property="delegate" destination="cLe-px-V1W" id="wfX-XQ-s3r"/>
+                            <outlet property="prefetchDataSource" destination="cLe-px-V1W" id="Cfd-OX-hnd"/>
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Calendar" id="fwL-ce-Krz"/>
@@ -203,24 +190,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="VnH-p3-ajC">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b8a-Ba-i27" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fAB-Kh-L3K" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z7r-f7-5HO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Ijc-8v-Frg" kind="relationship" relationship="rootViewController" id="hD7-pp-Mh1"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="1504.8" y="-321.58920539730138"/>
         </scene>
     </scenes>
     <resources>
