@@ -10,8 +10,6 @@ import UIKit
     
     class TimerViewController: UIViewController {
         @IBOutlet weak var timerLabel: UILabel!
-    
-    // For the user input on the timer: Need to figure out how we can read the value user inputs and then set seconds to this value. Seems like best way to go about it.
         var seconds = 0
         var timer = Timer()
         var isTimerRunning = false
