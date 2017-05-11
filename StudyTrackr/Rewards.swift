@@ -27,3 +27,17 @@ coins = GiftCoins + coins  //The Coins recieved from the daily gift is added to 
 //    }
     
 }
+
+
+class Background {
+    var BkgndCol : Bool
+    init (BkgndCol: Bool) {
+   self.BkgndCol = BkgndCol
+
+    }
+    
+    func SetColour () {
+    BkgndCol = true
+    
+    }
+}
