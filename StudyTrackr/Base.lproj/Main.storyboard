@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -226,27 +226,13 @@
                                     <action selector="userTime:" destination="TNf-sl-4rk" eventType="editingDidEndOnExit" id="NUu-Zt-uPq"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LD2-6W-P86">
-                                <rect key="frame" x="77" y="111" width="164" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="1uf-gV-PlX"/>
                     <connections>
                         <outlet property="TimerValue" destination="bqG-sf-KIC" id="fha-Yb-3hB"/>
-                        <outlet property="breakTime_10" destination="kn0-Bl-fem" id="Mdi-lT-808"/>
-                        <outlet property="breakTime_15" destination="gXT-cC-8sZ" id="ELz-ET-O57"/>
-                        <outlet property="breakTime_20" destination="Ldf-9I-ra8" id="g05-eM-u0v"/>
-                        <outlet property="breakTime_25" destination="mGI-yz-PaA" id="UoV-Q3-Fxx"/>
-                        <outlet property="breakTime_30" destination="aub-Yc-kuL" id="6hX-2B-TVU"/>
-                        <outlet property="breakTime_35" destination="KCE-KO-FZC" id="96x-YC-86O"/>
                         <outlet property="doneButton" destination="9Rf-b3-F7m" id="quc-Yd-fUi"/>
-                        <outlet property="label" destination="LD2-6W-P86" id="XVB-db-RPC"/>
                         <outlet property="pauseButton" destination="RGy-FO-fic" id="bVD-At-U4H"/>
                         <outlet property="startButton" destination="jxy-iy-hYB" id="7Nt-zt-jYo"/>
                         <outlet property="timerLabel" destination="dwK-DP-yca" id="A0L-55-pNx"/>

@@ -19,49 +19,37 @@ import UIKit
         var breakTime:Int = 0
         var isBreakTimeAdded:Bool = false
         @IBOutlet weak var TimerValue: UITextField!
-        @IBOutlet weak var breakTime_10: UIButton!
-        @IBOutlet weak var breakTime_15: UIButton!
-        @IBOutlet weak var breakTime_20: UIButton!
-        @IBOutlet weak var breakTime_25: UIButton!
-        @IBOutlet weak var breakTime_30: UIButton!
-        @IBOutlet weak var breakTime_35: UIButton!
-        @IBOutlet weak var label: UILabel!
-        lazy var buttons: [UIButton] = [self.breakTime_10, self.breakTime_15, self.breakTime_20, self.breakTime_25, self.breakTime_30, self.breakTime_35]
+
+      
         
         @IBAction func breakTime10(_ sender: UIButton) {
             seconds = seconds + (10*60)
-            isBreakTimeAdded = true
         }
         
         @IBAction func breakTime15(_ sender: UIButton) {
             seconds = seconds + (15*60)
-            isBreakTimeAdded = true
         }
        
         @IBAction func breakTime20(_ sender: UIButton) {
             seconds = seconds + (20*60)
-            isBreakTimeAdded = true
         }
         
         @IBAction func breakTime25(_ sender: UIButton) {
             seconds = seconds + (25*60)
-            isBreakTimeAdded = true
         }
         
         @IBAction func breakTime30(_ sender: UIButton) {
             seconds = seconds + (30*60)
-            isBreakTimeAdded = true
         }
         
         @IBAction func breakTime35(_ sender: UIButton) {
             seconds = seconds + (35*60)
-            isBreakTimeAdded = true
+
         }
     
 
         @IBAction func userTime(_ sender: UITextField) {
             seconds = seconds + (Int(TimerValue.text!)!*60)
-            label.text = TimerValue.text
         }
         
        
@@ -131,12 +119,7 @@ import UIKit
     override func viewDidLoad() {
         super.viewDidLoad()
         pauseButton.isEnabled = false
-        if isBreakTimeAdded == true{
-            for button in self.buttons{
-                button.isEnabled = false
             }
-        }
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
