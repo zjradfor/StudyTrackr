@@ -12,21 +12,24 @@ import UIKit
 class Subject {
     var subjectName: String
 
-    var totalStudyTime: Double
-    var overallMark: Double
-    var red : CGFloat
-    var green : CGFloat
-    var blue : CGFloat
+    //var totalStudyTime: Double
+   // var overallMark: Double
+   // var red : CGFloat
+   // var green : CGFloat
+   // var blue : CGFloat
     //var colour: (red, green, blue)
     
     init(){
     self.subjectName = "subject"
-    self.overallMark = 0
-    self.red = 125/255
-    self.green = 125/255
-    self.blue = 125/255
-    self.totalStudyTime = 0
+   // self.overallMark = 0
+   // self.red = 125/255
+   // self.green = 125/255
+   // self.blue = 125/255
+   // self.totalStudyTime = 0
 }
+    init(subjectName: String){
+        self.subjectName = subjectName
+    }
     
     //overallMark()
     //addTime()
