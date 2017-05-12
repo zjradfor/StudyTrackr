@@ -304,6 +304,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Font Cost"/>
                                 <connections>
+                                    <action selector="NoteworthyFault:" destination="EeP-5N-jlv" eventType="touchUpInside" id="wm3-Iu-jHf"/>
                                     <action selector="SyncopateFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="Gmp-S1-3hz"/>
                                 </connections>
                             </button>
@@ -313,6 +314,7 @@
                                 <state key="normal" title="Font Cost"/>
                                 <connections>
                                     <action selector="IndieFlowerFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="83U-jH-E3I"/>
+                                    <action selector="MarkerFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="k8T-TA-LFi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTe-XW-Cck">
@@ -321,6 +323,7 @@
                                 <state key="normal" title="Font Cost"/>
                                 <connections>
                                     <action selector="PacificoFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="arN-tP-ji3"/>
+                                    <action selector="RoundhandFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="RiM-AB-42D"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toQ-UA-N0W">
@@ -349,12 +352,37 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Select Font"/>
                                 <connections>
-                                    <action selector="DefaultFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="1Yf-Fp-Jkz"/>
+                                    <action selector="DefaultFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="btE-R5-nvn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UF2-Zy-nR3">
+                                <rect key="frame" x="0.0" y="209" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Font Cost"/>
+                                <connections>
+                                    <action selector="TypewriterFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="jjE-iE-wzq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="American Typewriter" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydJ-oq-9vV">
+                                <rect key="frame" x="16" y="238" width="112" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Snell Roundhand" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4e-aE-xDI">
+                                <rect key="frame" x="24" y="557" width="97" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="MarkerFont" destination="Cf6-Eb-zSx" id="siI-de-jGO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OB9-9w-9gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -581,6 +609,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="INW-sD-piM"/>
+        <segue reference="cuh-Rf-dSs"/>
     </inferredMetricsTieBreakers>
 </document>
