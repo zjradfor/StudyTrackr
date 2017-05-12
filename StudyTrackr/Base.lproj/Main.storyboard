@@ -141,7 +141,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84P-Ww-Tlb">
-                                    <rect key="frame" x="96" y="21" width="183" height="21"/>
+                                    <rect key="frame" x="96" y="33" width="183" height="21"/>
                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -149,10 +149,10 @@
                             </subviews>
                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstItem="84P-Ww-Tlb" firstAttribute="top" secondItem="2Yx-zf-Fql" secondAttribute="topMargin" constant="13" id="UbD-aV-xUG"/>
-                                <constraint firstItem="84P-Ww-Tlb" firstAttribute="centerX" secondItem="2Yx-zf-Fql" secondAttribute="centerX" id="fj3-U9-sZ5"/>
-                                <constraint firstItem="84P-Ww-Tlb" firstAttribute="centerY" secondItem="2Yx-zf-Fql" secondAttribute="centerY" id="vlW-U1-T8h"/>
-                                <constraint firstItem="84P-Ww-Tlb" firstAttribute="leading" secondItem="2Yx-zf-Fql" secondAttribute="leadingMargin" constant="88" id="wgp-VJ-VB7"/>
+                                <constraint firstItem="84P-Ww-Tlb" firstAttribute="centerX" secondItem="2Yx-zf-Fql" secondAttribute="centerX" id="3tQ-bt-izO"/>
+                                <constraint firstItem="84P-Ww-Tlb" firstAttribute="top" secondItem="2Yx-zf-Fql" secondAttribute="topMargin" constant="25" id="JOu-ke-uBH"/>
+                                <constraint firstItem="84P-Ww-Tlb" firstAttribute="bottom" secondItem="2Yx-zf-Fql" secondAttribute="bottomMargin" id="UoM-o7-7fK"/>
+                                <constraint firstItem="84P-Ww-Tlb" firstAttribute="leading" secondItem="2Yx-zf-Fql" secondAttribute="leadingMargin" constant="88" id="dKW-8g-EzH"/>
                             </constraints>
                             <connections>
                                 <outlet property="dateHeader" destination="84P-Ww-Tlb" id="65G-Qo-ZA5"/>
