@@ -108,8 +108,7 @@ class CalendarCollectionViewController: UICollectionViewController {
             print("tapped \(indexPath)")
             
             dayToSegue = indexPath
-            self.performSegue(withIdentifier: "daySegue", sender: self)
-            //largePhotoIndexPath = largePhotoIndexPath == indexPath ? nil : indexPath
+            //self.performSegue(withIdentifier: "daySegue", sender: self)
             return false
         }
     
