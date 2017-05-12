@@ -10,11 +10,18 @@ import UIKit
 
 class FontsViewController: UIViewController {
 
+    @IBOutlet weak var FontStyle: UILabel!
+    
     @IBAction func DefaultFont(_ sender: Any) {
+ 
     }
-    @IBAction func TypewriterFont(_ sender: Any) {
+    
+    @IBAction func SyncopateFont(_ sender: Any) {
+      
     }
-    @IBAction func NoteworthyFault(_ sender: Any) {
+    
+    @IBAction func IndieFlowerFont(_ sender: Any) {
+      
     }
     @IBAction func MarkerFont(_ sender: Any) {
     }
