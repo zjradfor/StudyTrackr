@@ -9,7 +9,7 @@
 import UIKit
 
 class Garbage: UINavigationController {
-
+    var dayFromSegue:IndexPath = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
