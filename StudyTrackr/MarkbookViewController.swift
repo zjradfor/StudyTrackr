@@ -14,6 +14,7 @@ class MarkbookViewController: UIViewController {
         current = "math"
     }
     @IBAction func ButtonTwo(_ sender: UIButton) {
+        current = "English"
     }
     @IBAction func ButtonThree(_ sender: UIButton) {
     }
@@ -21,7 +22,15 @@ class MarkbookViewController: UIViewController {
     }
     @IBAction func ButtonFive(_ sender: UIButton) {
     }
-    //rest of buttons
+    @IBAction func ButtonSix(_ sender: UIButton) {
+    }
+    @IBAction func ButtonSeven(_ sender: UIButton) {
+    }
+    @IBAction func ButtonEight(_ sender: UIButton) {
+    }
+    @IBAction func ButtonNine(_ sender: UIButton) {
+    }
+    
     
     var current: String = "test"
     
