@@ -63,7 +63,7 @@ class CalendarCollectionViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "day"){
-            let vc = segue.destination as! TableViewController
+            let vc = segue.destination as! EventsViewController
             vc.dayFromSegue = dayToSegue
         }
         else{
