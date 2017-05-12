@@ -113,9 +113,9 @@ class CalendarCollectionViewController: UICollectionViewController {
             dayToSegue = indexPath
             
             self.performSegue(withIdentifier: "day", sender: self)
-            return true
+            return false
         }
-    
+
     
     
     
