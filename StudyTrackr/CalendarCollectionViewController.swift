@@ -58,18 +58,21 @@ class CalendarCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "day"){
+            let vc = segue.destination as! TableViewController
+            vc.dayFromSegue = dayToSegue
+        }
+        else{
+            print("Not working")
+        }
     }
-    */
-    
+ 
     // MARK: UICollectionViewDataSource
-    
+ 
     //Vertical Cells
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -102,23 +105,17 @@ class CalendarCollectionViewController: UICollectionViewController {
     }
     var dayToSegue:IndexPath = []
 
-    // Cell Tapped
+    // MARK: Cell Pressing
+    
         override func collectionView(_ collectionView: UICollectionView,
                                      shouldSelectItemAt indexPath: IndexPath) -> Bool {
             print("tapped \(indexPath)")
-            
             dayToSegue = indexPath
-            //self.performSegue(withIdentifier: "daySegue", sender: self)
+            
+            self.performSegue(withIdentifier: "day", sender: self)
             return false
         }
-    
-    
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "daySegue"){
-            let vc = segue.destination as! TableViewController
-            vc.dayFromSegue = dayToSegue
-        }
-    }
+
     
     
     
