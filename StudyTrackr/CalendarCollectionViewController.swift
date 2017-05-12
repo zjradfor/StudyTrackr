@@ -90,7 +90,7 @@ class CalendarCollectionViewController: UICollectionViewController {
         
         let screenSize = UIScreen.main.bounds
         let screenHeight = screenSize.height - 62 //- MainTabBarViewController.tabBarHeight
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
         cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight / 6)) + 65, width: (screenSize.width / 7) - 4, height: (screenHeight / 6) - 2)
         cell.backgroundColor = UIColor.white
         cell.textLabel.text = "\(tag)"
@@ -103,20 +103,6 @@ class CalendarCollectionViewController: UICollectionViewController {
         
         return cell
     }
-    var dayToSegue:IndexPath = []
-
-    // MARK: Cell Pressing
-    
-        override func collectionView(_ collectionView: UICollectionView,
-                                     shouldSelectItemAt indexPath: IndexPath) -> Bool {
-            print("tapped \(indexPath)")
-            dayToSegue = indexPath
-            
-            self.performSegue(withIdentifier: "day", sender: self)
-            return false
-        }
-
-    
     
     // MARK: UICollectionViewDelegate
 
@@ -126,13 +112,16 @@ class CalendarCollectionViewController: UICollectionViewController {
         return true
     }
     */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
+    
+    //Selected Cell
+    var dayToSegue:IndexPath = []
+    override func collectionView(_ collectionView: UICollectionView,
+                                 shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        print("tapped \(indexPath)")
+        dayToSegue = indexPath
+        self.performSegue(withIdentifier: "day", sender: self)
+        return false
     }
-    */
 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
