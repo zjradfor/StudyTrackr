@@ -10,15 +10,21 @@ import UIKit
 
 class FontsViewController: UIViewController {
 
+    @IBOutlet weak var FontStyle: UILabel!
+    
     @IBAction func DefaultFont(_ sender: Any) {
     }
     @IBAction func TypewriterFont(_ sender: Any) {
+        FontStyle.font = UIFont(name: "AmericanTypewriter", size: 16.0 )
     }
     @IBAction func NoteworthyFont(_ sender: Any) {
+        FontStyle.font = UIFont(name: "Noteworthy-Bold", size: 16.0 )
     }
     @IBAction func MarkerFont(_ sender: Any) {
+        FontStyle.font = UIFont(name: "MarkerFelt-Thin", size: 16.0 )
     }
     @IBAction func RoundhandFont(_ sender: Any) {
+        FontStyle.font = UIFont(name: "SnellRoundhand-Bold", size: 16.0)
     }
     
     override func viewDidLoad() {

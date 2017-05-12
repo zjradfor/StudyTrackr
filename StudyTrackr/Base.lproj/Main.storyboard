@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -304,9 +304,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Font Cost"/>
                                 <connections>
-                                    <action selector="NoteworthyFault:" destination="EeP-5N-jlv" eventType="touchUpInside" id="wm3-Iu-jHf"/>
                                     <action selector="NoteworthyFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="nwi-mw-Fh3"/>
-                                    <action selector="SyncopateFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="Gmp-S1-3hz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cf6-Eb-zSx">
@@ -314,7 +312,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Font Cost"/>
                                 <connections>
-                                    <action selector="IndieFlowerFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="83U-jH-E3I"/>
                                     <action selector="MarkerFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="Qdg-zx-kYT"/>
                                 </connections>
                             </button>
@@ -323,7 +320,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Font Cost"/>
                                 <connections>
-                                    <action selector="PacificoFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="arN-tP-ji3"/>
                                     <action selector="RoundhandFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="QPu-CQ-H00"/>
                                 </connections>
                             </button>
@@ -378,8 +374,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Font" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEe-4P-TTw">
-                                <rect key="frame" x="153" y="35" width="68" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Font Style" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEe-4P-TTw">
+                                <rect key="frame" x="142" y="35" width="90" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -388,6 +384,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="FontStyle" destination="oEe-4P-TTw" id="uW5-jb-vGX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OB9-9w-9gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
