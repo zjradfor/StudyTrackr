@@ -10,7 +10,7 @@ import UIKit
 
 class EventsViewController: UIViewController {
     @IBOutlet weak var Header: UILabel!
-
+    var dayFromSegue:IndexPath = []
     override func viewDidLoad() {
         super.viewDidLoad()
         

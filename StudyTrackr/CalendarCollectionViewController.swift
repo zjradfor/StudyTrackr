@@ -118,7 +118,6 @@ class CalendarCollectionViewController: UICollectionViewController {
 
     
     
-    
     // MARK: UICollectionViewDelegate
 
     /*
