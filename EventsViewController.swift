@@ -15,11 +15,7 @@ class EventsViewController: UIViewController {
         super.viewDidLoad()
         
         //Getting current date
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateStyle = .full
-        formatter.timeStyle = .none
-        Header.text = "\(formatter.string(from: date))"
+        Header.text = "\(dayFromSegue)"
 
         // Do any additional setup after loading the view.
     }
