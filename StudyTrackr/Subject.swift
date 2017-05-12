@@ -27,6 +27,9 @@ class Subject {
     self.blue = 125/255
     self.totalStudyTime = 0
 }
+    init(subjectName: String){
+        self.subjectName = subjectName
+    }
     
     //overallMark()
     //addTime()
