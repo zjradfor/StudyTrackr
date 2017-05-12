@@ -8,6 +8,10 @@
 
 import Foundation
 
+var days = [Day]()
+
+
+
 class Day {
     var dayOfMonth: Int
     var weekDay: String

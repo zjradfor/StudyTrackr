@@ -20,6 +20,40 @@ class CalendarCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        let date = Date()
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        var firstWeekday = calendar.firstWeekday
+        //Initialize days
+        for var i in 1...366 {
+            //Fill Weekday
+            if (firstWeekday == 1) {
+                days[i].weekDay = "Sunday"
+            } else if (firstWeekday == 2) {
+                days[i].weekDay = "Monday"
+            } else if (firstWeekday == 3) {
+                days[i].weekDay = "Tuesday"
+            } else if (firstWeekday == 4) {
+                days[i].weekDay = "Wednesday"
+            } else if (firstWeekday == 5) {
+                days[i].weekDay = "Thursday"
+            } else if (firstWeekday == 6) {
+                days[i].weekDay = "Friday"
+            } else if (firstWeekday == 7) {
+                days[i].weekDay = "Saturday"
+            }
+            if (firstWeekday < 7) {
+                firstWeekday += 1
+            } else {
+                firstWeekday = 1
+            }
+            //Fill Month
+            if (i < 32) {
+                days[i].month = "January"
+            } else if (i > 31 && i < 59) {
+                days[i].month = "February"
+            }
+        }
 
         // Register cell classes
         
