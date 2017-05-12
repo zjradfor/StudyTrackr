@@ -304,6 +304,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Font Cost"/>
                                 <connections>
+                                    <action selector="NoteworthyFault:" destination="EeP-5N-jlv" eventType="touchUpInside" id="wm3-Iu-jHf"/>
                                     <action selector="SyncopateFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="Gmp-S1-3hz"/>
                                 </connections>
                             </button>
@@ -313,6 +314,7 @@
                                 <state key="normal" title="Font Cost"/>
                                 <connections>
                                     <action selector="IndieFlowerFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="83U-jH-E3I"/>
+                                    <action selector="MarkerFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="k8T-TA-LFi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTe-XW-Cck">
@@ -321,6 +323,7 @@
                                 <state key="normal" title="Font Cost"/>
                                 <connections>
                                     <action selector="PacificoFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="arN-tP-ji3"/>
+                                    <action selector="RoundhandFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="RiM-AB-42D"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toQ-UA-N0W">
@@ -349,7 +352,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Select Font"/>
                                 <connections>
-                                    <action selector="DefaultFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="1Yf-Fp-Jkz"/>
+                                    <action selector="DefaultFont:" destination="EeP-5N-jlv" eventType="touchUpInside" id="btE-R5-nvn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fonts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFx-v4-Wuc">
@@ -591,6 +594,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="INW-sD-piM"/>
+        <segue reference="cuh-Rf-dSs"/>
     </inferredMetricsTieBreakers>
 </document>
