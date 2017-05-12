@@ -1,5 +1,5 @@
 //
-//  EventsViewController.swift
+//  Garbage.swift
 //  StudyTrackr
 //
 //  Created by John Slomka on 2017-05-12.
@@ -8,28 +8,17 @@
 
 import UIKit
 
-class EventsViewController: UIViewController {
-    @IBOutlet weak var Header: UILabel!
+class Garbage: UINavigationController {
     var dayFromSegue:IndexPath = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Getting current date
-        Header.text = "\(dayFromSegue)"
 
         // Do any additional setup after loading the view.
     }
-    @IBOutlet weak var TableView: UITableView!
-    
-    
-    
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-       // self.TableView!.register(TableCell.self, forCellWithReuseIdentifier: "tableCell")
     }
     
 
