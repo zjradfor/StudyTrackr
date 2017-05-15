@@ -7,23 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE0AF5411EC5F62B0054F125 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */; };
+		DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */; };
 		DEC18D491EB2375B00F9935C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D481EB2375B00F9935C /* AppDelegate.swift */; };
+
 		DEC18D4B1EB2375B00F9935C /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D4A1EB2375B00F9935C /* Calendar.swift */; };
 		DEC18D4D1EB2375B00F9935C /* MarkBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D4C1EB2375B00F9935C /* MarkBook.swift */; };
+
+
 		DEC18D501EB2375B00F9935C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D4E1EB2375B00F9935C /* Main.storyboard */; };
 		DEC18D521EB2375B00F9935C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D511EB2375B00F9935C /* Assets.xcassets */; };
 		DEC18D551EB2375B00F9935C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */; };
+		F16DB9711EC5FFAD001CD23A /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16DB9701EC5FFAD001CD23A /* TableCell.swift */; };
+		F1850D3E1EB77B9F00D75B01 /* CalendarCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1850D3D1EB77B9F00D75B01 /* CalendarCollectionViewController.swift */; };
+		F1F18B821EB8C93B00B1B7E4 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F18B811EB8C93B00B1B7E4 /* CalendarCell.swift */; };
+		F1F18B841EB8D22700B1B7E4 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F18B831EB8D22700B1B7E4 /* Day.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = ../EventsViewController.swift; sourceTree = "<group>"; };
+		DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		DEC18D451EB2375B00F9935C /* StudyTrackr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyTrackr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC18D481EB2375B00F9935C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+
 		DEC18D4A1EB2375B00F9935C /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		DEC18D4C1EB2375B00F9935C /* MarkBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkBook.swift; sourceTree = "<group>"; };
+
 		DEC18D4F1EB2375B00F9935C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DEC18D511EB2375B00F9935C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEC18D541EB2375B00F9935C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEC18D561EB2375B00F9935C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F16DB9701EC5FFAD001CD23A /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		F1850D3D1EB77B9F00D75B01 /* CalendarCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewController.swift; sourceTree = "<group>"; };
+		F1F18B811EB8C93B00B1B7E4 /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		F1F18B831EB8D22700B1B7E4 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +74,31 @@
 			isa = PBXGroup;
 			children = (
 				DEC18D481EB2375B00F9935C /* AppDelegate.swift */,
+
 				DEC18D4A1EB2375B00F9935C /* Calendar.swift */,
 				DEC18D4C1EB2375B00F9935C /* MarkBook.swift */,
+
+				F11ECEB81EC9EE3A00ECBBB1 /* Calendar */,
+
 				DEC18D4E1EB2375B00F9935C /* Main.storyboard */,
 				DEC18D511EB2375B00F9935C /* Assets.xcassets */,
 				DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */,
 				DEC18D561EB2375B00F9935C /* Info.plist */,
 			);
 			path = StudyTrackr;
+			sourceTree = "<group>";
+		};
+		F11ECEB81EC9EE3A00ECBBB1 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				F16DB9701EC5FFAD001CD23A /* TableCell.swift */,
+				F1850D3D1EB77B9F00D75B01 /* CalendarCollectionViewController.swift */,
+				F1F18B811EB8C93B00B1B7E4 /* CalendarCell.swift */,
+				F1F18B831EB8D22700B1B7E4 /* Day.swift */,
+				DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */,
+				DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */,
+			);
+			name = Calendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +133,7 @@
 				TargetAttributes = {
 					DEC18D441EB2375B00F9935C = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 48V3J7K575;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -139,9 +174,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				DEC18D4D1EB2375B00F9935C /* MarkBook.swift in Sources */,
 				DEC18D491EB2375B00F9935C /* AppDelegate.swift in Sources */,
 				DEC18D4B1EB2375B00F9935C /* Calendar.swift in Sources */,
+
+				DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */,
+				F1F18B841EB8D22700B1B7E4 /* Day.swift in Sources */,
+				F1F18B821EB8C93B00B1B7E4 /* CalendarCell.swift in Sources */,
+				F16DB9711EC5FFAD001CD23A /* TableCell.swift in Sources */,
+				DE0AF5411EC5F62B0054F125 /* EventsViewController.swift in Sources */,
+				DEC18D491EB2375B00F9935C /* AppDelegate.swift in Sources */,
+				F1850D3E1EB77B9F00D75B01 /* CalendarCollectionViewController.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +309,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 48V3J7K575;
 				INFOPLIST_FILE = StudyTrackr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Slomdog.StudyTrackr;
@@ -276,6 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 48V3J7K575;
 				INFOPLIST_FILE = StudyTrackr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Slomdog.StudyTrackr;
