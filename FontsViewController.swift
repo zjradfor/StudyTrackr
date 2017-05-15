@@ -13,6 +13,7 @@ class FontsViewController: UIViewController {
     @IBOutlet weak var FontStyle: UILabel!
     
     @IBAction func DefaultFont(_ sender: Any) {
+        FontStyle.font = UIFont(name: "ArialMT", size: 16.0)
     }
     @IBAction func TypewriterFont(_ sender: Any) {
         FontStyle.font = UIFont(name: "AmericanTypewriter", size: 16.0 )
