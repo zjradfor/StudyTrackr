@@ -25,10 +25,10 @@ class CalendarCollectionViewController: UICollectionViewController {
         let year = calendar.component(.year, from: date)
         var firstWeekday = calendar.firstWeekday
         //Initialize days
-        for var i in 1...366 {
+        /*for var i in 1...366 {
             //Fill Weekday
             if (firstWeekday == 1) {
-                days[i].weekDay = "Sunday"
+                days[i].append(Day(weekDay: "Sunday"))
             } else if (firstWeekday == 2) {
                 days[i].weekDay = "Monday"
             } else if (firstWeekday == 3) {
@@ -54,7 +54,7 @@ class CalendarCollectionViewController: UICollectionViewController {
                 days[i].month = "February"
             }
         }
-
+         */
         // Register cell classes
         
         self.collectionView!.register(CalendarCell.self, forCellWithReuseIdentifier: "Cell")
@@ -97,7 +97,7 @@ class CalendarCollectionViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "day"){
-            let vc = segue.destination as! Garbage
+            let vc = segue.destination as! EventsViewController
             vc.dayFromSegue = dayToSegue
         }
         else{

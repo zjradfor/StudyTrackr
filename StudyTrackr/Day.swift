@@ -8,7 +8,7 @@
 
 import Foundation
 
-var days = [Day]()
+//var days = [Day]()
 
 
 

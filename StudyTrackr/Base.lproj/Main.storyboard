@@ -151,7 +151,7 @@
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Calendar" id="fwL-ce-Krz"/>
                     <connections>
-                        <segue destination="VzG-Xz-MJf" kind="show" identifier="day" id="jvY-wG-kRr"/>
+                        <segue destination="8CJ-vs-Fp8" kind="show" identifier="day" id="mct-gd-GmQ"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKI-gl-V4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -281,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hTP-pH-zJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2836" y="-340.47976011994007"/>
+            <point key="canvasLocation" x="1934" y="-340"/>
         </scene>
         <!--Main Tab Bar View Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -303,24 +303,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
-        </scene>
-        <!--Garbage-->
-        <scene sceneID="0hP-Gn-VST">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VzG-Xz-MJf" customClass="Garbage" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tum-Xw-yC2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="8CJ-vs-Fp8" kind="relationship" relationship="rootViewController" id="fPz-4N-lVo"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="614-aA-DSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1896.8" y="-340.47976011994007"/>
         </scene>
     </scenes>
     <resources>
