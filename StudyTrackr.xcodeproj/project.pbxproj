@@ -41,6 +41,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07909ABB1EC9EC0700F260BD /* Markbook */ = {
+			isa = PBXGroup;
+			children = (
+				DEC18D4C1EB2375B00F9935C /* MarkbookViewController.swift */,
+				07B290D01EC3552D0061AE6C /* SubjectViewController.swift */,
+				079DF0591EB8C850000D811E /* Subject.swift */,
+			);
+			name = Markbook;
+			sourceTree = "<group>";
+		};
 		DEC18D3C1EB2375B00F9935C = {
 			isa = PBXGroup;
 			children = (
@@ -62,9 +72,7 @@
 			children = (
 				DEC18D481EB2375B00F9935C /* AppDelegate.swift */,
 				DEC18D4A1EB2375B00F9935C /* FirstViewController.swift */,
-				DEC18D4C1EB2375B00F9935C /* MarkbookViewController.swift */,
-				07B290D01EC3552D0061AE6C /* SubjectViewController.swift */,
-				079DF0591EB8C850000D811E /* Subject.swift */,
+				07909ABB1EC9EC0700F260BD /* Markbook */,
 				DEC18D4E1EB2375B00F9935C /* Main.storyboard */,
 				DEC18D511EB2375B00F9935C /* Assets.xcassets */,
 				DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */,

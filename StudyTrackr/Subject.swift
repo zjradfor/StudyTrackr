@@ -5,6 +5,9 @@
 //  Created by Zach Radford on 2017-05-02.
 //  Copyright © 2017 John Slomka. All rights reserved.
 //
+// jonny researching new functions to use in data model class
+// zach did current code
+//
 
 import Foundation
 import UIKit

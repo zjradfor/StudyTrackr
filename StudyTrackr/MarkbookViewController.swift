@@ -5,6 +5,9 @@
 //  Created by John Slomka on 2017-04-27.
 //  Copyright © 2017 John Slomka. All rights reserved.
 //
+// Alex researching segues into other viewcontrollers. Working on edit button to add new subjects
+// Zach did current code
+//
 
 import UIKit
 
@@ -17,12 +20,16 @@ class MarkbookViewController: UIViewController {
         current = "English"
     }
     @IBAction func ButtonThree(_ sender: UIButton) {
+        current = "Science"
     }
     @IBAction func ButtonFour(_ sender: UIButton) {
+        current = "french"
     }
     @IBAction func ButtonFive(_ sender: UIButton) {
+        current = "gym"
     }
     @IBAction func ButtonSix(_ sender: UIButton) {
+        current = "art"
     }
     @IBAction func ButtonSeven(_ sender: UIButton) {
     }
