@@ -39,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C592F64A1EC9EC5E004961AD /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */,
+			);
+			name = Timer;
+			sourceTree = "<group>";
+		};
 		DEC18D3C1EB2375B00F9935C = {
 			isa = PBXGroup;
 			children = (
@@ -61,7 +69,7 @@
 				DEC18D481EB2375B00F9935C /* AppDelegate.swift */,
 				DEC18D4A1EB2375B00F9935C /* FirstViewController.swift */,
 				DEC18D4C1EB2375B00F9935C /* SecondViewController.swift */,
-				90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */,
+				C592F64A1EC9EC5E004961AD /* Timer */,
 				DEC18D4E1EB2375B00F9935C /* Main.storyboard */,
 				DEC18D511EB2375B00F9935C /* Assets.xcassets */,
 				DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */,

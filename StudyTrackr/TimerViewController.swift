@@ -7,7 +7,8 @@
 //
 
 import UIKit
-    
+    //Steph and Nadia worked on timer function (Timer and buttons)
+// Emily worked on break buttons and user input for the timer.
     class TimerViewController: UIViewController {
         @IBOutlet weak var timerLabel: UILabel!
         var seconds = 0
