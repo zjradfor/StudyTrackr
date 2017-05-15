@@ -13,9 +13,19 @@ import UIKit
 
 class MarkbookViewController: UIViewController {
 
-    @IBAction func ButtonOne(_ sender: UIButton) {
+    
+    @IBOutlet weak var ButtonOne: UIButton!
+    
+    
+    @IBAction func ButtonOnePressed(_ sender: UIButton) {
         current = "math"
+     //   ButtonOne.setTitle
+        
+        
+      //  var subjectOne = Subject() //in brackets is from textfield value
     }
+    
+ 
     @IBAction func ButtonTwo(_ sender: UIButton) {
         current = "English"
     }

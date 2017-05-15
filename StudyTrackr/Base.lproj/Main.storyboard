@@ -164,7 +164,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="ButtonOne:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="RBa-2U-9tI"/>
+                                    <action selector="ButtonOnePressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="9JZ-Uf-bMk"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="8yZ-I5-3x4"/>
                                 </connections>
                             </button>
@@ -172,6 +172,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Markbook" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="ButtonOne" destination="m9O-8S-tRb" id="uTb-HO-fVU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -299,7 +302,7 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sWa-yr-5Qh"/>
         <segue reference="37F-Bu-HDC"/>
+        <segue reference="NSt-gv-HGC"/>
     </inferredMetricsTieBreakers>
 </document>
