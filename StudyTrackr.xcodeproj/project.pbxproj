@@ -7,11 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		DE0AF5411EC5F62B0054F125 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */; };
 		DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */; };
 		DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D481EB2375B00F9935C /* AppDelegate.swift */; };
 		DEC18D4B1EB2375B00F9935C /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D4A1EB2375B00F9935C /* Calendar.swift */; };
 		DEC18D4D1EB2375B00F9935C /* MarkBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D4C1EB2375B00F9935C /* MarkBook.swift */; };
+
+		7350C8D41EC1FE6D0054200B /* AvatarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */; };
+		7350C8D51EC1FE6D0054200B /* AvatarsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */; };
+		7350C8D91EC1FECE0054200B /* FontsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C8D71EC1FECE0054200B /* FontsViewController.swift */; };
+		7350C8DA1EC1FECE0054200B /* FontsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7350C8D81EC1FECE0054200B /* FontsViewController.xib */; };
+		7350C8DF1EC1FF1A0054200B /* BackgroundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C8DD1EC1FF1A0054200B /* BackgroundsViewController.swift */; };
+		7350C8E01EC1FF1A0054200B /* BackgroundsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7350C8DE1EC1FF1A0054200B /* BackgroundsViewController.xib */; };
+		739C48331EC20D7E00BFCC21 /* Rewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739C48321EC20D7E00BFCC21 /* Rewards.swift */; };
+		73D108AE1EBB750E00F2765F /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D108AC1EBB750E00F2765F /* RewardsViewController.swift */; };
+		73D108AF1EBB750E00F2765F /* RewardsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D108AD1EBB750E00F2765F /* RewardsViewController.xib */; };
+		73D108B71EC0BB4A00F2765F /* DailyGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D108B51EC0BB4A00F2765F /* DailyGiftViewController.swift */; };
+		73D108B81EC0BB4A00F2765F /* DailyGiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D108B61EC0BB4A00F2765F /* DailyGiftViewController.xib */; };
+		DEC18D491EB2375B00F9935C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D481EB2375B00F9935C /* AppDelegate.swift */; };
+		DEC18D4B1EB2375B00F9935C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D4A1EB2375B00F9935C /* FirstViewController.swift */; };
+		DEC18D4D1EB2375B00F9935C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D4C1EB2375B00F9935C /* SecondViewController.swift */; };
+
 		DEC18D501EB2375B00F9935C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D4E1EB2375B00F9935C /* Main.storyboard */; };
 		DEC18D521EB2375B00F9935C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D511EB2375B00F9935C /* Assets.xcassets */; };
 		DEC18D551EB2375B00F9935C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */; };
@@ -22,8 +39,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+
 		DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = ../EventsViewController.swift; sourceTree = "<group>"; };
 		DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+
+		7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarsViewController.swift; sourceTree = "<group>"; };
+		7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarsViewController.xib; sourceTree = "<group>"; };
+		7350C8D71EC1FECE0054200B /* FontsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontsViewController.swift; path = ../FontsViewController.swift; sourceTree = "<group>"; };
+		7350C8D81EC1FECE0054200B /* FontsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FontsViewController.xib; path = ../FontsViewController.xib; sourceTree = "<group>"; };
+		7350C8DD1EC1FF1A0054200B /* BackgroundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundsViewController.swift; sourceTree = "<group>"; };
+		7350C8DE1EC1FF1A0054200B /* BackgroundsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BackgroundsViewController.xib; sourceTree = "<group>"; };
+		739C48321EC20D7E00BFCC21 /* Rewards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rewards.swift; sourceTree = "<group>"; };
+		73D108AC1EBB750E00F2765F /* RewardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
+		73D108AD1EBB750E00F2765F /* RewardsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RewardsViewController.xib; sourceTree = "<group>"; };
+		73D108B51EC0BB4A00F2765F /* DailyGiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyGiftViewController.swift; sourceTree = "<group>"; };
+		73D108B61EC0BB4A00F2765F /* DailyGiftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyGiftViewController.xib; sourceTree = "<group>"; };
+
 		DEC18D451EB2375B00F9935C /* StudyTrackr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyTrackr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC18D481EB2375B00F9935C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC18D4A1EB2375B00F9935C /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
@@ -49,6 +80,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7350C8D61EC1FEA60054200B /* Rewards Code Files */ = {
+			isa = PBXGroup;
+			children = (
+				7350C8D71EC1FECE0054200B /* FontsViewController.swift */,
+				7350C8D81EC1FECE0054200B /* FontsViewController.xib */,
+				7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */,
+				7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */,
+				73D108B51EC0BB4A00F2765F /* DailyGiftViewController.swift */,
+				73D108B61EC0BB4A00F2765F /* DailyGiftViewController.xib */,
+				73D108AC1EBB750E00F2765F /* RewardsViewController.swift */,
+				73D108AD1EBB750E00F2765F /* RewardsViewController.xib */,
+				7350C8DD1EC1FF1A0054200B /* BackgroundsViewController.swift */,
+				7350C8DE1EC1FF1A0054200B /* BackgroundsViewController.xib */,
+				739C48321EC20D7E00BFCC21 /* Rewards.swift */,
+			);
+			name = "Rewards Code Files";
+			sourceTree = "<group>";
+		};
 		DEC18D3C1EB2375B00F9935C = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +122,7 @@
 				DEC18D4A1EB2375B00F9935C /* Calendar.swift */,
 				DEC18D4C1EB2375B00F9935C /* MarkBook.swift */,
 				DEC18D4E1EB2375B00F9935C /* Main.storyboard */,
+				7350C8D61EC1FEA60054200B /* Rewards Code Files */,
 				DEC18D511EB2375B00F9935C /* Assets.xcassets */,
 				DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */,
 				DEC18D561EB2375B00F9935C /* Info.plist */,
@@ -153,9 +203,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7350C8E01EC1FF1A0054200B /* BackgroundsViewController.xib in Resources */,
 				DEC18D551EB2375B00F9935C /* LaunchScreen.storyboard in Resources */,
+				7350C8D51EC1FE6D0054200B /* AvatarsViewController.xib in Resources */,
+				7350C8DA1EC1FECE0054200B /* FontsViewController.xib in Resources */,
+				73D108AF1EBB750E00F2765F /* RewardsViewController.xib in Resources */,
 				DEC18D521EB2375B00F9935C /* Assets.xcassets in Resources */,
 				DEC18D501EB2375B00F9935C /* Main.storyboard in Resources */,
+				73D108B81EC0BB4A00F2765F /* DailyGiftViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */,
 				DEC18D4D1EB2375B00F9935C /* MarkBook.swift in Sources */,
 				DEC18D4B1EB2375B00F9935C /* Calendar.swift in Sources */,
@@ -175,6 +231,17 @@
 				F16DB9711EC5FFAD001CD23A /* TableCell.swift in Sources */,
 				DE0AF5411EC5F62B0054F125 /* EventsViewController.swift in Sources */,
 				F1850D3E1EB77B9F00D75B01 /* CalendarCollectionViewController.swift in Sources */,
+
+				DEC18D4D1EB2375B00F9935C /* SecondViewController.swift in Sources */,
+				7350C8D91EC1FECE0054200B /* FontsViewController.swift in Sources */,
+				739C48331EC20D7E00BFCC21 /* Rewards.swift in Sources */,
+				7350C8D41EC1FE6D0054200B /* AvatarsViewController.swift in Sources */,
+				73D108AE1EBB750E00F2765F /* RewardsViewController.swift in Sources */,
+				7350C8DF1EC1FF1A0054200B /* BackgroundsViewController.swift in Sources */,
+				DEC18D491EB2375B00F9935C /* AppDelegate.swift in Sources */,
+				73D108B71EC0BB4A00F2765F /* DailyGiftViewController.swift in Sources */,
+				DEC18D4B1EB2375B00F9935C /* FirstViewController.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +366,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 48V3J7K575;
 				INFOPLIST_FILE = StudyTrackr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Slomdog.StudyTrackr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -312,6 +380,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 48V3J7K575;
 				INFOPLIST_FILE = StudyTrackr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Slomdog.StudyTrackr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
