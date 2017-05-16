@@ -39,7 +39,7 @@ class CalendarCollectionViewController: UICollectionViewController {
             //Fill Weekday
             days.append(Day.init())
             if (firstWeekday == 1) {
-                days[i].append(Day(weekDay: "Sunday"))
+                days[i].weekDay = "Sunday"
             } else if (firstWeekday == 2) {
                 days[i].weekDay = "Monday"
             } else if (firstWeekday == 3) {
