@@ -13,6 +13,7 @@ var tag = 1
 var x:CGFloat = 0
 var y:CGFloat = 0
 private let reuseIdentifier = "Cell"
+var days = [Day]()
 
 class CalendarCollectionViewController: UICollectionViewController {
     
@@ -20,13 +21,22 @@ class CalendarCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        // Get January first
         let date = Date()
         let calendar = Calendar.current
         let year = calendar.component(.year, from: date)
         var firstWeekday = calendar.firstWeekday
+        var leapYear = false
+        var add: Int
+        if (leapYear == false) {
+           add = 0
+        } else {
+            add = 1
+        }
         //Initialize days
-        for var i in 1...366 {
+        for var i in 0...366 {
             //Fill Weekday
+            days.append(Day.init())
             if (firstWeekday == 1) {
                 days[i].weekDay = "Sunday"
             } else if (firstWeekday == 2) {
@@ -47,12 +57,49 @@ class CalendarCollectionViewController: UICollectionViewController {
             } else {
                 firstWeekday = 1
             }
-            //Fill Month
+            
+            //Fill Month and Day
             if (i < 32) {
                 days[i].month = "January"
-            } else if (i > 31 && i < 59) {
+                days[i].dayOfMonth = i
+            } else if (i > 31 && i < (60 + add)) {              //Plus add part is to account for leap
                 days[i].month = "February"
+                days[i].dayOfMonth = i - 31
+            } else if (i > (59 + add) && i < (91 + add)) {
+                days[i].month = "March"
+                days[i].dayOfMonth = i - 59
+            } else if (i > (90 + add) && i < (121 + add)) {
+                days[i].month = "April"
+                days[i].dayOfMonth = i - 90
+            } else if (i > (120 + add) && i < (152 + add)) {
+                days[i].month = "May"
+                days[i].dayOfMonth = i - 120
+            } else if (i > (151 + add) && i < (182 + add)) {
+                days[i].month = "June"
+                days[i].dayOfMonth = i - 151
+            } else if (i > (181 + add) && i < (213 + add)) {
+                days[i].month = "July"
+                days[i].dayOfMonth = i - 181
+            } else if (i > (212 + add) && i < (244 + add)) {
+                days[i].month = "August"
+                days[i].dayOfMonth = i - 212
+            } else if (i > (243 + add) && i < (274 + add)) {
+                days[i].month = "September"
+                days[i].dayOfMonth = i - 243
+            } else if (i > (273 + add) && i < (305 + add)) {
+                days[i].month = "October"
+                days[i].dayOfMonth = i - 273
+            } else if (i > (304 + add) && i < (335 + add)) {
+                days[i].month = "November"
+                days[i].dayOfMonth = i - 304
+            } else {
+                days[i].month = "December"
+                days[i].dayOfMonth = i - 334
             }
+            
+            //Fill Year
+            days[i].year = year
+            
         }
 
         // Register cell classes
