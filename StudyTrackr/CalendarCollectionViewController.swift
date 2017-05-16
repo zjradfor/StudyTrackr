@@ -67,6 +67,7 @@ class CalendarCollectionViewController: UICollectionViewController {
         super.viewWillAppear(animated)
         self.CalendarCollectionView?.reloadData()
         self.collectionView?.reloadData()
+        
         x = 0
         y = 0
         tag = 0
