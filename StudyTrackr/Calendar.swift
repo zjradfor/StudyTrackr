@@ -15,12 +15,6 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,4 +26,3 @@ class FirstViewController: UIViewController {
 
 
 }
-
