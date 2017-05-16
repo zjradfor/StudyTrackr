@@ -17,6 +17,7 @@ var days = [Day]()
 
 class CalendarCollectionViewController: UICollectionViewController {
     
+    @IBOutlet var CalendarCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         // Uncomment the following line to preserve selection between presentations
@@ -38,7 +39,7 @@ class CalendarCollectionViewController: UICollectionViewController {
             //Fill Weekday
             days.append(Day.init())
             if (firstWeekday == 1) {
-                days[i].weekDay = "Sunday"
+                days[i].append(Day(weekDay: "Sunday"))
             } else if (firstWeekday == 2) {
                 days[i].weekDay = "Monday"
             } else if (firstWeekday == 3) {
@@ -107,8 +108,17 @@ class CalendarCollectionViewController: UICollectionViewController {
         self.collectionView!.register(CalendarCell.self, forCellWithReuseIdentifier: "Cell")
         self.collectionView!.register(CalendarHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
         // Do any additional setup after loading the view.
-        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.CalendarCollectionView?.reloadData()
+        self.collectionView?.reloadData()
+        x = 0
+        y = 0
+        tag = 0
+    }
+ 
     
     //Header Class connection to UICollectionView
     override func collectionView(_ collectionView: UICollectionView,
@@ -144,21 +154,19 @@ class CalendarCollectionViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "day"){
-            let vc = segue.destination as! Garbage
+            let vc = segue.destination as! EventsViewController
             vc.dayFromSegue = dayToSegue
-        }
-        else{
-            print("Not working")
         }
     }
  
     // MARK: UICollectionViewDataSource
- 
+    
     //Vertical Cells
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
+        
     // Horizontal Cells
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 42
@@ -181,7 +189,6 @@ class CalendarCollectionViewController: UICollectionViewController {
             y += 1
             x = 0
         }
-        
         return cell
     }
     
@@ -203,7 +210,8 @@ class CalendarCollectionViewController: UICollectionViewController {
         self.performSegue(withIdentifier: "day", sender: self)
         return false
     }
-
+    
+    
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
