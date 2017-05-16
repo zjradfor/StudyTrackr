@@ -35,7 +35,7 @@ class CalendarCollectionViewController: UICollectionViewController {
             add = 1
         }
         //Initialize days
-        /*for var i in 1...366 {
+        for var i in 1...366 {
             //Fill Weekday
             days.append(Day.init())
             if (firstWeekday == 1) {
@@ -102,7 +102,7 @@ class CalendarCollectionViewController: UICollectionViewController {
             days[i].year = year
             
         }
-         */
+ 
         // Register cell classes
         
         self.collectionView!.register(CalendarCell.self, forCellWithReuseIdentifier: "Cell")
