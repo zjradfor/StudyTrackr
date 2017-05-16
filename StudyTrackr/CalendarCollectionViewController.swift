@@ -34,7 +34,7 @@ class CalendarCollectionViewController: UICollectionViewController {
             add = 1
         }
         //Initialize days
-        for var i in 0...366 {
+        
             //Fill Weekday
             days.append(Day.init())
             if (firstWeekday == 1) {
