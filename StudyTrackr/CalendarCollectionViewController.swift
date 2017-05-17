@@ -27,7 +27,7 @@ class CalendarCollectionViewController: UICollectionViewController {
         let calendar = Calendar.current
         let year = calendar.component(.year, from: date)
         var firstWeekday = calendar.firstWeekday
-        var leapYear = false
+        /*var leapYear = false
         var add: Int
         if (leapYear == false) {
            add = 0
@@ -102,7 +102,7 @@ class CalendarCollectionViewController: UICollectionViewController {
             days[i].year = year
             
         }
- 
+         */
         // Register cell classes
         
         self.collectionView!.register(CalendarCell.self, forCellWithReuseIdentifier: "Cell")
