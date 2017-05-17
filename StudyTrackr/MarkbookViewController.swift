@@ -5,31 +5,41 @@
 //  Created by John Slomka on 2017-04-27.
 //  Copyright © 2017 John Slomka. All rights reserved.
 //
+// Alex researching segues into other viewcontrollers. Working on edit button to add new subjects
+// Zach did current code
+//
 
 import UIKit
 
 class MarkbookViewController: UIViewController {
 
-    @IBAction func ButtonOne(_ sender: UIButton) {
+    
+    @IBOutlet weak var ButtonOne: UIButton!
+    
+    
+    @IBAction func ButtonOnePressed(_ sender: UIButton) {
+        //ButtonOne.setTitle("math", for: .normal)
         current = "math"
     }
-    @IBAction func ButtonTwo(_ sender: UIButton) {
-        current = "English"
+    @IBAction func ButtonTwoPressed(_ sender: UIButton) {
     }
-    @IBAction func ButtonThree(_ sender: UIButton) {
+    @IBAction func ButtonThreePressed(_ sender: UIButton) {
     }
-    @IBAction func ButtonFour(_ sender: UIButton) {
+    @IBAction func ButtonFourPressed(_ sender: UIButton) {
     }
-    @IBAction func ButtonFive(_ sender: UIButton) {
+    @IBAction func ButtonFivePressed(_ sender: UIButton) {
     }
-    @IBAction func ButtonSix(_ sender: UIButton) {
+    @IBAction func ButtonSixPressed(_ sender: UIButton) {
     }
-    @IBAction func ButtonSeven(_ sender: UIButton) {
+    @IBAction func ButtonSevenPressed(_ sender: UIButton) {
     }
-    @IBAction func ButtonEight(_ sender: UIButton) {
+    @IBAction func ButtonEightPressed(_ sender: UIButton) {
     }
-    @IBAction func ButtonNine(_ sender: UIButton) {
+    @IBAction func ButtonNinePressed(_ sender: UIButton) {
     }
+    
+ 
+
     
     
     var current: String = "test"
@@ -40,6 +50,8 @@ class MarkbookViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         current = "SUBJECT"
+        let subjectOne = Subject(subjectName: "math")
+        ButtonOne.setTitle(subjectOne.subjectName, for: .normal)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
