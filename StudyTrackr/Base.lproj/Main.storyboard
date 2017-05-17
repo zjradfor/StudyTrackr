@@ -68,7 +68,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="ButtonTwo:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="f4x-Yq-cIG"/>
+                                    <action selector="ButtonTwoPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="LYj-Vt-Wwl"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="NSt-gv-HGC"/>
                                 </connections>
                             </button>
@@ -79,7 +79,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="ButtonThree:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="suh-pW-D7G"/>
+                                    <action selector="ButtonThreePressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="PTz-nl-a2z"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="DuD-yR-ixK"/>
                                 </connections>
                             </button>
@@ -90,7 +90,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="ButtonFour:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="dRS-f3-miy"/>
+                                    <action selector="ButtonFourPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="VmV-49-0JW"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="8fI-gy-yBr"/>
                                 </connections>
                             </button>
@@ -101,7 +101,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="ButtonFive:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="WmN-Bj-mCk"/>
+                                    <action selector="ButtonFivePressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="UtF-hh-iV3"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="sWa-yr-5Qh"/>
                                 </connections>
                             </button>
@@ -112,7 +112,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="ButtonSix:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="9ti-PI-kjL"/>
+                                    <action selector="ButtonSixPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Qez-xW-XAp"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="HHP-VO-mzJ"/>
                                 </connections>
                             </button>
@@ -123,7 +123,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="ButtonSeven:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="GdN-Py-ncP"/>
+                                    <action selector="ButtonSevenPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="erA-Zr-1Wm"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="s3T-4x-eO6"/>
                                 </connections>
                             </button>
@@ -134,7 +134,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="ButtonEight:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="GOQ-Hw-AF4"/>
+                                    <action selector="ButtonEightPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="L5D-YD-VYU"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="Ckz-FQ-zTs"/>
                                 </connections>
                             </button>
@@ -146,7 +146,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="ButtonNine:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ddD-lL-3zW"/>
+                                    <action selector="ButtonNinePressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="x1j-Es-URp"/>
                                     <segue destination="Bt5-Mc-EHT" kind="presentation" id="gVc-pm-zbq"/>
                                 </connections>
                             </button>
@@ -302,7 +302,7 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="37F-Bu-HDC"/>
+        <segue reference="lzU-1b-eKA"/>
         <segue reference="NSt-gv-HGC"/>
     </inferredMetricsTieBreakers>
 </document>
