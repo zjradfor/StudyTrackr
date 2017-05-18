@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -641,7 +640,6 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hTP-pH-zJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-
             <point key="canvasLocation" x="1934" y="-340"/>
         </scene>
         <!--Main Tab Bar View Controller-->
@@ -657,14 +655,14 @@
                     <connections>
                         <segue destination="cLe-px-V1W" kind="relationship" relationship="viewControllers" id="ChF-zf-h1f"/>
                         <segue destination="2D6-TX-0Gu" kind="relationship" relationship="viewControllers" id="1oA-xm-fgC"/>
+                        <segue destination="TNf-sl-4rk" kind="relationship" relationship="viewControllers" id="MlE-Xx-69K"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
-
             </objects>
-            <point key="canvasLocation" x="1093.5999999999999" y="995.35232383808102"/>
+            <point key="canvasLocation" x="-404" y="-107"/>
         </scene>
-           <!--TimerViewController-->
+        <!--TimerViewController-->
         <scene sceneID="9bW-cg-6xT">
             <objects>
                 <viewController title="TimerViewController" id="TNf-sl-4rk" customClass="TimerViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
@@ -796,7 +794,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d65-EC-9Au" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="997"/>
+            <point key="canvasLocation" x="905" y="493"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="aHN-4I-Q5H">
@@ -811,7 +809,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A2O-ZG-sxH" id="3sH-RT-zAH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PL-d8-zcQ">
@@ -845,7 +843,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1Q-nV-azK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1093.5999999999999" y="995.35232383808102"/>
+            <point key="canvasLocation" x="1665" y="493"/>
         </scene>
     </scenes>
     <resources>
@@ -858,5 +856,4 @@
     <inferredMetricsTieBreakers>
         <segue reference="1oA-xm-fgC"/>
     </inferredMetricsTieBreakers>
-
 </document>

@@ -91,7 +91,9 @@
 				C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */,
 				C5EE25C21ECB45B1003A6904 /* StudyEventTableViewCell.swift */,
 			);
-			name = Timer;
+			name = "Timer";
+			sourceTree = "<group>";
+		};
 
 		7350C8D61EC1FEA60054200B /* Rewards Code Files */ = {
 			isa = PBXGroup;
