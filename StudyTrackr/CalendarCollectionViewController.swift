@@ -181,7 +181,7 @@ class CalendarCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let screenSize = UIScreen.main.bounds
-        let screenHeight = screenSize.height - 62 //- MainTabBarViewController.tabBarHeight
+        let screenHeight = screenSize.height - (62 + 49 + 3) //Tab bar is 49, 3 for border
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
         cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight / 6)) + 65, width: (screenSize.width / 7) - 4, height: (screenHeight / 6) - 2)
         cell.backgroundColor = UIColor.white
@@ -205,11 +205,11 @@ class CalendarCollectionViewController: UICollectionViewController {
     */
     
     //Selected Cell
-    var dayToSegue:IndexPath = []
+    var dayToSegue = 0
     override func collectionView(_ collectionView: UICollectionView,
                                  shouldSelectItemAt indexPath: IndexPath) -> Bool {
         print("tapped \(indexPath)")
-        dayToSegue = indexPath
+        dayToSegue = indexPath.row
         self.performSegue(withIdentifier: "day", sender: self)
         return false
     }
