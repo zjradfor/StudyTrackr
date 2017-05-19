@@ -261,7 +261,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudyEventTableViewCell" rowHeight="90" id="A2O-ZG-sxH" customClass="StudyEventTableViewCell" customModule="StudyTrackr" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="studyEventTableViewCell" rowHeight="90" id="A2O-ZG-sxH" customClass="studyEventTableViewCell" customModule="StudyTrackr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A2O-ZG-sxH" id="3sH-RT-zAH">
@@ -269,14 +269,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PL-d8-zcQ">
-                                            <rect key="frame" x="27" y="8" width="204" height="21"/>
+                                            <rect key="frame" x="27" y="22" width="204" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqR-0z-fwN">
-                                            <rect key="frame" x="27" y="29" width="320" height="30"/>
+                                            <rect key="frame" x="27" y="51" width="320" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -285,8 +285,8 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="dateLabel" destination="3PL-d8-zcQ" id="wuj-SF-upE"/>
-                                    <outlet property="studyTimeLabel" destination="AqR-0z-fwN" id="dtd-md-Irj"/>
+                                    <outlet property="dateStudied" destination="3PL-d8-zcQ" id="HVc-Fj-DSN"/>
+                                    <outlet property="timeStudied" destination="AqR-0z-fwN" id="A66-6e-b7H"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
