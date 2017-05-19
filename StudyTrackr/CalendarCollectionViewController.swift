@@ -205,7 +205,7 @@ class CalendarCollectionViewController: UICollectionViewController {
             cell.textLabel.text = "\(weekChar[tag])"
         }
         else{
-        cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight2 / 6) - (screenHeight / 12) - 2 + 65), width: (screenSize.width / 7) - 4, height: (screenHeight2 / 6) - 2)
+        cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight2 / 6) - (screenHeight / 12) + 74), width: (screenSize.width / 7) - 4, height: (screenHeight2 / 6) - 2)
         cell.backgroundColor = UIColor.white
         cell.textLabel.text = "\(tag)"
         }
