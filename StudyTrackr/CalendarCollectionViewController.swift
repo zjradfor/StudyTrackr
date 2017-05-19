@@ -8,8 +8,9 @@
 
 import UIKit
 
-//Temp variable
-var tag = 1
+//Temp variables
+let weekChar = ["S","M","T","W","T","F","S"]
+var tag = 0
 var x:CGFloat = 0
 var y:CGFloat = 0
 private let reuseIdentifier = "Cell"
@@ -186,7 +187,7 @@ class CalendarCollectionViewController: UICollectionViewController {
         
     // Horizontal Cells
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 42
+        return 49
     }
     
     
@@ -196,10 +197,18 @@ class CalendarCollectionViewController: UICollectionViewController {
         
         let screenSize = UIScreen.main.bounds
         let screenHeight = screenSize.height - (62 + 49 + 3) //Tab bar is 49, 3 for border
+        let screenHeight2 = screenHeight - (screenHeight / 12) - 2
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
-        cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight / 6)) + 65, width: (screenSize.width / 7) - 4, height: (screenHeight / 6) - 2)
+        if y == 0 {
+            cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight / 6)) + 65, width: (screenSize.width / 7) - 4, height: (screenHeight / 12) - 2)
+            cell.backgroundColor = UIColor.white
+            cell.textLabel.text = "\(weekChar[tag])"
+        }
+        else{
+        cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight2 / 6) - (screenHeight / 12) - 2 + 65), width: (screenSize.width / 7) - 4, height: (screenHeight2 / 6) - 2)
         cell.backgroundColor = UIColor.white
         cell.textLabel.text = "\(tag)"
+        }
         tag += 1
         x += 1
         if x == 7{
