@@ -8,14 +8,14 @@
 
 import UIKit
 class StudyEvent{
-    var time:Int
+    var studyTime:Int
     var subject:String
     var date:String
-    init?(time:Int, subject:String, date:String){
-        guard (time>=0)else{
+    init?(studyTime:Int, subject:String, date:String){
+        guard (studyTime>=0)else{
             return nil
         }
-        self.time = time
+        self.studyTime = studyTime
         self.subject = subject
         self.date = date
         
