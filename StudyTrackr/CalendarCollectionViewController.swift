@@ -23,19 +23,34 @@ class CalendarCollectionViewController: UICollectionViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Get January first
-        let date = Date()
+        let date = Date()                           //Get current calendar info
         let calendar = Calendar.current
         let year = calendar.component(.year, from: date)
         var firstWeekday = calendar.firstWeekday
-        /*var leapYear = false
-        var add: Int
-        if (leapYear == false) {
+        
+        var leapYear: Bool                          //Determine if leap year
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    leapYear = true
+                } else {
+                    leapYear = false
+                }
+            } else {
+                leapYear = true
+            }
+        } else {
+            leapYear = false
+        }
+        
+        var add: Int                                //Leap year needs to add an extra day
+        if (leapYear == false) {                    //See Month/Day initalization
            add = 0
         } else {
             add = 1
         }
-        //Initialize days
-        for var i in 1...366 {
+                                                            //Initialize days
+        for var i in 0...365 + add {
             //Fill Weekday
             days.append(Day.init())
             if (firstWeekday == 1) {
@@ -97,12 +112,11 @@ class CalendarCollectionViewController: UICollectionViewController {
                 days[i].month = "December"
                 days[i].dayOfMonth = i - 334
             }
-            
-            //Fill Year
+                                                                    //Fill Year
             days[i].year = year
-            
+            i += 1
         }
-         */
+        
         // Register cell classes
         
         self.collectionView!.register(CalendarCell.self, forCellWithReuseIdentifier: "Cell")
