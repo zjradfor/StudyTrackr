@@ -35,7 +35,7 @@ class EventsViewController: UIViewController {
     // MARK: - Navigation
     
      @IBAction func unwindToVC1(_ sender: Any) {
-        performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
+        performSegue(withIdentifier: "unwindSegueToVC2", sender: self)
      }
     
 
@@ -46,7 +46,7 @@ class EventsViewController: UIViewController {
         vc.eventDayFromSegue = dayFromSegue
         }
     }
-    
+    @IBAction func unwindToVC2(segue:UIStoryboardSegue) { }
 
 }
 extension EventsViewController: UITableViewDataSource{

@@ -26,9 +26,13 @@ class NewEventViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
+     @IBAction func goBackToOneButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "unwindSegueToVC2", sender: self)
+     }
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
