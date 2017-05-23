@@ -148,7 +148,7 @@ class CalendarCollectionViewController: UICollectionViewController {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
             let date = Date()
             let formatter = DateFormatter()
-            formatter.dateStyle = .full
+            formatter.dateStyle = .medium
             formatter.timeStyle = .none
             headerView.dateHeader.text = "\(formatter.string(from: date))"
         return headerView
