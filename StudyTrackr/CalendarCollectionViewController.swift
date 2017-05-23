@@ -209,6 +209,8 @@ class CalendarCollectionViewController: UICollectionViewController {
         }
         else{
         cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight2 / 6) - (screenHeight / 12) + 74), width: (screenSize.width / 7) - 4, height: (screenHeight2 / 6) - 2)
+        cell.textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+        cell.textLabel.textAlignment = .natural
         cell.backgroundColor = UIColor.white
         cell.textLabel.text = "\(tag)"
         }
@@ -236,7 +238,9 @@ class CalendarCollectionViewController: UICollectionViewController {
                                  shouldSelectItemAt indexPath: IndexPath) -> Bool {
         print("tapped \(indexPath)")
         dayToSegue = indexPath.row
+        if (dayToSegue > 6){
         self.performSegue(withIdentifier: "day", sender: self)
+        }
         return false
     }
     
