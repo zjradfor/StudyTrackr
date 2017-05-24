@@ -19,6 +19,9 @@ import UIKit
         var breakTime:Int = 0
         var whenIsBreak = 0
         var isBreakTimeAdded:Bool = false
+        var studyEvents = [StudyEvent]()
+        var studyTime = 0
+        let date = String(describing: Date())
         @IBOutlet weak var TimerValue: UITextField!
 
       
@@ -57,6 +60,8 @@ import UIKit
 
         @IBAction func userTime(_ sender: UITextField) {
             seconds = seconds + (Int(TimerValue.text!)!*60)
+            
+        studyTime = studyTime + (Int(TimerValue.text!)!*60)
 
         }
         
@@ -87,13 +92,15 @@ import UIKit
         @IBAction func doneButtonTapped(_ sender: UIButton) {
             timer.invalidate()
             seconds = 0
-            
-        
             timerLabel.text = String(seconds)
             isTimerRunning = false
             seconds = 0
             pauseButton.isEnabled = false
             startButton.isEnabled = true
+            guard let newStudyEvent = StudyEvent(studyTime:                       studyTime, subject: "Math", date:date)else{
+                fatalError("Cannot create new study event")
+            }
+            studyEvents += [newStudyEvent]
         }
         
         func runTimer(){
