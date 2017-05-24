@@ -10,9 +10,9 @@ import UIKit
 
 class studyEventTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var timeStudied: UILabel!
-    
     @IBOutlet weak var dateStudied: UILabel!
+   
+    @IBOutlet weak var timeStudied: UILabel!
     
     
 

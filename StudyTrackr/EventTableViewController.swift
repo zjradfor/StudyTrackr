@@ -13,7 +13,9 @@ class EventTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("hello")
         loadSampleEvent()
+        print("hello")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -42,16 +44,16 @@ class EventTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("function")
         let cellIdentifier = "studyEventTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? studyEventTableViewCell else{
             fatalError("This is not of type studyEventTableViewCell")
         }
-        let Event = events[indexPath.row]
-        cell.dateStudied.text = Event.date
-        cell.timeStudied.text = String(Event.studyTime)
-        
-
-        // Configure the cell...
+            let Event = events[indexPath.row]
+            cell.dateStudied.text = Event.date
+            print(cell.dateStudied.text)
+            cell.timeStudied.text = String(Event.studyTime)
+            print(cell.timeStudied.text)
 
         return cell
     }
