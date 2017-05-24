@@ -56,19 +56,19 @@ class CalendarCollectionViewController: UICollectionViewController {
         for var i in 0...365 + add {
             //Fill Weekday
             days.append(Day.init())
-            if (firstWeekday == 1) {
+            if (firstWeekday == 0) {
                 days[i].weekDay = "Sunday"
-            } else if (firstWeekday == 2) {
+            } else if (firstWeekday == 1) {
                 days[i].weekDay = "Monday"
-            } else if (firstWeekday == 3) {
+            } else if (firstWeekday == 2) {
                 days[i].weekDay = "Tuesday"
-            } else if (firstWeekday == 4) {
+            } else if (firstWeekday == 3) {
                 days[i].weekDay = "Wednesday"
-            } else if (firstWeekday == 5) {
+            } else if (firstWeekday == 4) {
                 days[i].weekDay = "Thursday"
-            } else if (firstWeekday == 6) {
+            } else if (firstWeekday == 5) {
                 days[i].weekDay = "Friday"
-            } else if (firstWeekday == 7) {
+            } else if (firstWeekday == 6) {
                 days[i].weekDay = "Saturday"
             }
             if (firstWeekday < 7) {
@@ -172,19 +172,19 @@ class CalendarCollectionViewController: UICollectionViewController {
         }
         
         if firstWeekDay == "Sunday" {
-            tileBuffer = -1
-        } else if firstWeekDay == "Monday" {
-            tileBuffer = -2
-        } else if firstWeekDay == "Tuesday" {
-            tileBuffer = -3
-        } else if firstWeekDay == "Wednesday" {
-            tileBuffer = -4
-        } else if firstWeekDay == "Thursday" {
-            tileBuffer = -5
-        } else if firstWeekDay == "Friday" {
             tileBuffer = -6
-        } else {
+        } else if firstWeekDay == "Monday" {
             tileBuffer = -7
+        } else if firstWeekDay == "Tuesday" {
+            tileBuffer = -8
+        } else if firstWeekDay == "Wednesday" {
+            tileBuffer = -9
+        } else if firstWeekDay == "Thursday" {
+            tileBuffer = -10
+        } else if firstWeekDay == "Friday" {
+            tileBuffer = -11
+        } else {
+            tileBuffer = -12
         }
     }
  
