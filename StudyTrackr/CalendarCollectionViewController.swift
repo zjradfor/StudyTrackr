@@ -11,6 +11,7 @@ import UIKit
 //Temp variables
 let weekChar = ["S","M","T","W","T","F","S"]
 var tag = 0
+var weekTag = 0
 var x:CGFloat = 0
 var y:CGFloat = 0
 private let reuseIdentifier = "Cell"
@@ -136,6 +137,8 @@ class CalendarCollectionViewController: UICollectionViewController {
         y = 0
         tag = 0
         tileBuffer = 0
+        weekTag = 0
+        
         let date = Date()
         let calendar = Calendar.current
         let currentMonth = calendar.component(.month, from: date)
@@ -281,10 +284,10 @@ class CalendarCollectionViewController: UICollectionViewController {
         if y == 0 {
             cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight / 6)) + 65, width: (screenSize.width / 7) - 4, height: (screenHeight / 12) - 2)
             cell.backgroundColor = UIColor.blue
-            cell.textLabel.text = "\(weekChar[tag])"
+            cell.textLabel.text = "\(weekChar[weekTag])"
+            weekTag += 1
             cell.textLabel.textAlignment = .center
             cell.textLabel.font = UIFont.systemFont(ofSize: 20)
-
         }
         else{
         cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight2 / 6) - (screenHeight / 12) + 74), width: (screenSize.width / 7) - 4, height: (screenHeight2 / 6) - 2)
@@ -321,7 +324,7 @@ class CalendarCollectionViewController: UICollectionViewController {
                                  shouldSelectItemAt indexPath: IndexPath) -> Bool {
         print("tapped \(indexPath)")
         dayToSegue = indexPath.row - 7
-        if (indexPath.row > 6){
+        if (dayToSegue > 0){
         self.performSegue(withIdentifier: "day", sender: self)
         }
         return false
