@@ -64,10 +64,9 @@ extension NewEventViewController: UITableViewDataSource{
         return 5
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath)
         return cell
+        
     }
 
 }
