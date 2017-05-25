@@ -19,51 +19,57 @@ import UIKit
         var breakTime:Int = 0
         var whenIsBreak = 0
         var isBreakTimeAdded:Bool = false
+        var studyEvents = [StudyEvent]()
+        var studyTime = 0
+        let date = String(describing: Date())
+        
+        @IBOutlet weak var testLabel: UILabel!
         @IBOutlet weak var TimerValue: UITextField!
 
       
         
         @IBAction func breakTime10(_ sender: UIButton) {
             seconds = seconds + (1*60)
-            breakTime = 1
+            breakTime = 1 * 60
         }
         
         @IBAction func breakTime15(_ sender: UIButton) {
             seconds = seconds + (15*60)
-            breakTime = 15
+            breakTime = 15 * 60
         }
        
         @IBAction func breakTime20(_ sender: UIButton) {
             seconds = seconds + (20*60)
-            breakTime = 20
+            breakTime = 20 * 60
         }
         
         @IBAction func breakTime25(_ sender: UIButton) {
             seconds = seconds + (25*60)
-            breakTime = 25
+            breakTime = 25 * 60
         }
         
         @IBAction func breakTime30(_ sender: UIButton) {
             seconds = seconds + (30*60)
-            breakTime = 30
+            breakTime = 30 * 60
         }
         
         @IBAction func breakTime35(_ sender: UIButton) {
             seconds = seconds + (35*60)
-            breakTime = 35
+            breakTime = 35 * 60
 
         }
     
 
         @IBAction func userTime(_ sender: UITextField) {
             seconds = seconds + (Int(TimerValue.text!)!*60)
+            whenIsBreak = (Int(TimerValue.text!)!*60) / 2
+            studyTime = (Int(TimerValue.text!)!*60)
 
         }
         
        
         
         @IBAction func startButtonTapped(_ sender: UIButton) {
-            let whenIsBreak = seconds / 2
             if isTimerRunning == false{
                 runTimer()
                 self.startButton.isEnabled = false
@@ -94,6 +100,11 @@ import UIKit
             seconds = 0
             pauseButton.isEnabled = false
             startButton.isEnabled = true
+            
+            guard let newStudyEvent = StudyEvent(studyTime: studyTime, subject: "Math", date: date) else{
+                fatalError("cannot create study event")
+            }
+            studyEvents += [newStudyEvent]
         }
         
         func runTimer(){
@@ -103,32 +114,33 @@ import UIKit
             
         }
         
-        func updateTimer() {
-            if seconds < 1{
-                timer.invalidate()
-                //Send alert to indicate time's up
-            }else{
-                seconds -= 1
-                timerLabel.text = timeString(time: TimeInterval(seconds))
-                if whenIsBreak == seconds {
-                    timer.invalidate()
-                    runBreakTimer()
-                    timerLabel.text = timeString(time:TimeInterval(breakTime))
-                    if breakTime < 1 {
-                        breakTimer.invalidate()
-                    } else {
-                        breakTime -= 1
-                        timerLabel.text = timeString(time:TimeInterval(breakTime))
-                    }
-                    
-                }else{
-                    breakTimer.invalidate()
-                }
-
-            }
+func updateTimer() {
+    if seconds < 1{
+        timer.invalidate()
+        //Send alert to indicate time's up
+    }
+    else{
+        seconds -= 1
+        timerLabel.text = timeString(time: TimeInterval(seconds))
+    if whenIsBreak == seconds{
+        timer.invalidate()
+        runbreakTimer()
+        timerLabel.text = timeString(time:TimeInterval(breakTime))
+        updatebreakTimer()
         }
-        
-        
+    else{
+        breakTimer.invalidate()
+        }
+    }
+    
+}
+    func runbreakTimer(){
+        breakTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updateTimer)), userInfo: nil, repeats: true)
+    
+    }
+
+
+
         func timeString(time:TimeInterval) -> String {
             let hours = Int(time) / 3600
             let minutes = Int(time) / 60 % 60
@@ -137,21 +149,20 @@ import UIKit
         }
         
         
-       /* func breakTimer() {
-            if whenIsBreak == seconds {
-                timer.invalidate()
-                runBreakTimer()
-                timerLabel.text = timeString(time:TimeInterval(breakTime))
-                
-            }else{
-                breakTimer.invalidate()
-            }
-        }*/
-        
         func runBreakTimer(){
             breakTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updateTimer)), userInfo: nil, repeats: true)
         }
-        
+func updatebreakTimer(){
+    if breakTime<1 {
+        breakTimer.invalidate()
+        runTimer()
+    }
+    else{
+        breakTime -= 1
+        timerLabel.text = timeString(time:TimeInterval(breakTime))
+    }
+}
+    
         @IBOutlet weak var pauseButton: UIButton!
 
         @IBOutlet weak var startButton: UIButton!

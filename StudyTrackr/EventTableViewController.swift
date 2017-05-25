@@ -9,8 +9,7 @@
 import UIKit
 
 class EventTableViewController: UITableViewController {
-    var events = [StudyEvent]()
-
+    var events= 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("hello")
@@ -44,17 +43,13 @@ class EventTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("function")
         let cellIdentifier = "studyEventTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? studyEventTableViewCell else{
             fatalError("This is not of type studyEventTableViewCell")
         }
             let Event = events[indexPath.row]
             cell.dateStudied.text = Event.date
-            print(cell.dateStudied.text)
             cell.timeStudied.text = String(Event.studyTime)
-            print(cell.timeStudied.text)
-
         return cell
     }
     
