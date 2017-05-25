@@ -10,13 +10,30 @@ import UIKit
 
 class NewEventViewController: UIViewController {
     @IBOutlet weak var eventTitle: UILabel!
+    @IBOutlet weak var currentEventTitle: UILabel!
     var eventFromSegue = 0
     var eventDayFromSegue = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        eventTitle.text = "Day: \(eventDayFromSegue) Event: \(eventFromSegue)"
+        if eventFromSegue == 0{
+            currentEventTitle.text = "Test"
+        }
+        else if eventFromSegue == 1{
+            currentEventTitle.text = "Assignment"
+        }
+        else if eventFromSegue == 2{
+            currentEventTitle.text = "Homework"
+        }
+        else if eventFromSegue == 3{
+            currentEventTitle.text = "Event"
+        }
+        else if eventFromSegue == 4{
+            currentEventTitle.text = "Other"
+        }
+        
+        eventTitle.text = "Day: \(eventDayFromSegue)"
         // Do any additional setup after loading the view.
     }
 
@@ -41,3 +58,29 @@ class NewEventViewController: UIViewController {
     */
 
 }
+
+extension NewEventViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath)
+        return cell
+    }
+
+}
+
+/*
+extension NewEventViewController: UITableViewDelegate{
+    
+    
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+ //       eventToSegue = indexPath.row
+        self.performSegue(withIdentifier: "event", sender: self)
+        print ("tappedE \(indexPath.row)")
+    }
+}
+
+*/

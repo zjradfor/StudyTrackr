@@ -237,8 +237,8 @@ class CalendarCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView,
                                  shouldSelectItemAt indexPath: IndexPath) -> Bool {
         print("tapped \(indexPath)")
-        dayToSegue = indexPath.row
-        if (dayToSegue > 6){
+        dayToSegue = indexPath.row - 7
+        if (indexPath.row > 6){
         self.performSegue(withIdentifier: "day", sender: self)
         }
         return false
