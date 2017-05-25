@@ -134,6 +134,8 @@ class CalendarCollectionViewController: UICollectionViewController {
         
         x = 0
         y = 0
+        tag = 0
+        tileBuffer = 0
         let date = Date()
         let calendar = Calendar.current
         let currentMonth = calendar.component(.month, from: date)
