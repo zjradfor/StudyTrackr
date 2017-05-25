@@ -11,12 +11,15 @@ import Foundation
 class Day {
     var dayOfMonth: Int
     var weekDay: String
-    var month: String
+    var month: Int
     var year: Int
     init () {
         dayOfMonth = 0
         weekDay = "Void"
-        month = "Void"
+        month = 0
         year = 0
+    }
+    func getWeekDay() -> String {
+        return weekDay
     }
 }
