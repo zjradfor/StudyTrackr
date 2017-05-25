@@ -139,8 +139,6 @@ class CalendarCollectionViewController: UICollectionViewController {
         tileBuffer = 0
         weekTag = 0
         
-        let date = Date()
-        let calendar = Calendar.current
         let currentMonth = calendar.component(.month, from: date)
         var firstWeekDay = "Sunday"
 
