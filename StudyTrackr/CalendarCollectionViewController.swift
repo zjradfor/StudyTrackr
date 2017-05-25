@@ -140,41 +140,9 @@ class CalendarCollectionViewController: UICollectionViewController {
         tag = 0
         tileBuffer = 0
         
-        
-        let currentMonth = calendar.component(.month, from: date)
         var firstWeekDay = "Sunday"
 
-        var add = 0
-        
-        if leapYear == true {
-            add = 1
-        }
-        
-        if currentMonth == 1 {
-            firstWeekDay = days[0].getWeekDay()
-        } else if currentMonth == 2 {
-            firstWeekDay = days[31].getWeekDay()
-        } else if currentMonth == 3 {
-            firstWeekDay = days[59 + add].getWeekDay()
-        } else if currentMonth == 4 {
-            firstWeekDay = days[90 + add].getWeekDay()
-        } else if currentMonth == 5 {
-            firstWeekDay = days[120 + add].getWeekDay()
-        } else if currentMonth == 6 {
-            firstWeekDay = days[151 + add].getWeekDay()
-        } else if currentMonth == 7 {
-            firstWeekDay = days[181 + add].getWeekDay()
-        } else if currentMonth == 8 {
-            firstWeekDay = days[212 + add].getWeekDay()
-        } else if currentMonth == 9 {
-            firstWeekDay = days[243 + add].getWeekDay()
-        } else if currentMonth == 10 {
-            firstWeekDay = days[273 + add].getWeekDay()
-        } else if currentMonth == 11 {
-            firstWeekDay = days[304 + add].getWeekDay()
-        } else if currentMonth == 12 {
-            firstWeekDay = days[334 + add].getWeekDay()
-        }
+        firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: days)
         
         if firstWeekDay == "Sunday" {
             tileBuffer = -5
@@ -342,5 +310,42 @@ class CalendarCollectionViewController: UICollectionViewController {
     
     }
     */
+    
+    func getFirstWeekDayOfMonth(leapYear: Bool, days: [Day]) -> String {
+        var add = 0
+        let currentMonth = calendar.component(.month, from: date)
+        var firstWeekDay = "Sunday"
+        
+        if leapYear == true {
+            add = 1
+        }
+        
+        if currentMonth == 1 {
+            firstWeekDay = days[0].getWeekDay()
+        } else if currentMonth == 2 {
+            firstWeekDay = days[31].getWeekDay()
+        } else if currentMonth == 3 {
+            firstWeekDay = days[59 + add].getWeekDay()
+        } else if currentMonth == 4 {
+            firstWeekDay = days[90 + add].getWeekDay()
+        } else if currentMonth == 5 {
+            firstWeekDay = days[120 + add].getWeekDay()
+        } else if currentMonth == 6 {
+            firstWeekDay = days[151 + add].getWeekDay()
+        } else if currentMonth == 7 {
+            firstWeekDay = days[181 + add].getWeekDay()
+        } else if currentMonth == 8 {
+            firstWeekDay = days[212 + add].getWeekDay()
+        } else if currentMonth == 9 {
+            firstWeekDay = days[243 + add].getWeekDay()
+        } else if currentMonth == 10 {
+            firstWeekDay = days[273 + add].getWeekDay()
+        } else if currentMonth == 11 {
+            firstWeekDay = days[304 + add].getWeekDay()
+        } else if currentMonth == 12 {
+            firstWeekDay = days[334 + add].getWeekDay()
+        }
+        return firstWeekDay
+    }
 
 }
