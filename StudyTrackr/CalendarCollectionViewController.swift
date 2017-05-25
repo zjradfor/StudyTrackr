@@ -202,10 +202,34 @@ class CalendarCollectionViewController: UICollectionViewController {
         //3
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
             let date = Date()
-            let formatter = DateFormatter()
-            formatter.dateStyle = .medium
-            formatter.timeStyle = .none
-            headerView.dateHeader.text = "\(formatter.string(from: date))"
+        
+            let calendar = Calendar.current
+            let month = calendar.component(.month, from: date)
+        if month == 1 {
+            headerView.dateHeader.text = "January"
+        } else if month == 2 {
+            headerView.dateHeader.text = "February"
+        } else if month == 3 {
+            headerView.dateHeader.text = "March"
+        } else if month == 4 {
+            headerView.dateHeader.text = "April"
+        } else if month == 5 {
+            headerView.dateHeader.text = "May"
+        } else if month == 6 {
+            headerView.dateHeader.text = "June"
+        } else if month == 7 {
+            headerView.dateHeader.text = "July"
+        } else if month == 8 {
+            headerView.dateHeader.text = "August"
+        } else if month == 9 {
+            headerView.dateHeader.text = "September"
+        } else if month == 10 {
+            headerView.dateHeader.text = "October"
+        } else if month == 11 {
+            headerView.dateHeader.text = "November"
+        } else if month == 12 {
+            headerView.dateHeader.text = "December"
+        }
         return headerView
         default:
         //4
