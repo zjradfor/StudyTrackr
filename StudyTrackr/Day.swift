@@ -13,6 +13,7 @@ class Day {
     var weekDay: String
     var month: String
     var year: Int
+    
     init () {
         dayOfMonth = 0
         weekDay = "Void"

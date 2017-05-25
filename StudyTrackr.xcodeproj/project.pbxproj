@@ -82,9 +82,9 @@
 				F1850D3D1EB77B9F00D75B01 /* CalendarCollectionViewController.swift */,
 				F1F18B811EB8C93B00B1B7E4 /* CalendarCell.swift */,
 				DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */,
-				DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */,
 				F11C3B3B1ECDE4E6002DD1FD /* NewEventViewController.swift */,
 				F1F18B831EB8D22700B1B7E4 /* Day.swift */,
+				DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */,
 				F117F08D1ECF2B3B0073424B /* Event.swift */,
 			);
 			name = Calendar;
