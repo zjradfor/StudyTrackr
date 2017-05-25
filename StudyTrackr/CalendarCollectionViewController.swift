@@ -17,7 +17,9 @@ private let reuseIdentifier = "Cell"
 var days = [Day]()
 var leapYear = false
 var tileBuffer = 0
-
+let calendar = Calendar.current
+let date = Date()
+let month = calendar.component(.month, from: date)
 class CalendarCollectionViewController: UICollectionViewController {
     
     @IBOutlet var CalendarCollectionView: UICollectionView!
@@ -26,8 +28,8 @@ class CalendarCollectionViewController: UICollectionViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Get January first
-        let date = Date()                           //Get current calendar info
-        let calendar = Calendar.current
+                                   //Get current calendar info
+        
         let year = calendar.component(.year, from: date)
         var firstWeekday = calendar.firstWeekday
         print(firstWeekday)
@@ -136,8 +138,8 @@ class CalendarCollectionViewController: UICollectionViewController {
         y = 0
         tag = 0
         tileBuffer = 0
-        let date = Date()
-        let calendar = Calendar.current
+        
+        
         let currentMonth = calendar.component(.month, from: date)
         var firstWeekDay = "Sunday"
 
@@ -201,10 +203,7 @@ class CalendarCollectionViewController: UICollectionViewController {
         case UICollectionElementKindSectionHeader:
         //3
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
-            let date = Date()
         
-            let calendar = Calendar.current
-            let month = calendar.component(.month, from: date)
         if month == 1 {
             headerView.dateHeader.text = "January"
         } else if month == 2 {
