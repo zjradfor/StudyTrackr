@@ -15,7 +15,7 @@ class NewEventViewController: UIViewController {
     @IBOutlet weak var currentEventTitle: UILabel!
     var eventFromSegue = 0
     var eventDayFromSegue = 0
-    
+    var cellCounter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +37,7 @@ class NewEventViewController: UIViewController {
         
         eventTitle.text = "Day: \(eventDayFromSegue)"
         // Do any additional setup after loading the view.
+        cellCounter = 0
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,14 +64,35 @@ class NewEventViewController: UIViewController {
 
 extension NewEventViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print ("ran")
         return 5
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath)
-        print ("ran")
+        if cellCounter == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath)
+                    cellCounter += 1
+            return cell
+        }
+        else if cellCounter == 1{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "timeCell", for: indexPath)
+                    cellCounter += 1
+            return cell
+        }
+        else if cellCounter == 2{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath)
+                    cellCounter += 1
+            return cell
+        }
+        else if cellCounter == 3{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath)
+                    cellCounter += 1
+            return cell
+        }
+        else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath)
+                    cellCounter += 1
+            return cell
+        }
 
-        return cell
     }
 
 }
