@@ -9,6 +9,8 @@
 import UIKit
 
 class NewEventViewController: UIViewController {
+    
+    @IBOutlet weak var neweventtableView: UITableView!
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var currentEventTitle: UILabel!
     var eventFromSegue = 0
@@ -61,25 +63,28 @@ class NewEventViewController: UIViewController {
 
 extension NewEventViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print ("ran")
         return 5
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath)
+        print ("ran")
+
         return cell
-        
     }
 
 }
 
-/*
+
 extension NewEventViewController: UITableViewDelegate{
     
-    
+    /*
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
  //       eventToSegue = indexPath.row
         self.performSegue(withIdentifier: "event", sender: self)
         print ("tappedE \(indexPath.row)")
     }
+ */
 }
 
-*/
+

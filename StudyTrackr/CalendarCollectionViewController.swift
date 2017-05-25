@@ -118,7 +118,7 @@ class CalendarCollectionViewController: UICollectionViewController {
                 days[i].month = 12
                 days[i].dayOfMonth = i - 334
             }
-                                                                    //Fill Year
+            //Fill Year
             days[i].year = year
             i += 1
         }
@@ -139,7 +139,7 @@ class CalendarCollectionViewController: UICollectionViewController {
         y = 0
         tag = 0
         tileBuffer = 0
-        
+        weekTag = 0
         
         let currentMonth = calendar.component(.month, from: date)
         var firstWeekDay = "Sunday"
@@ -250,7 +250,7 @@ class CalendarCollectionViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "day"){
             let vc = segue.destination as! EventsViewController
-            //vc.monthFromSegue = month
+            vc.monthFromSegue = month
             vc.dayFromSegue = dayToSegue
         }
     }
@@ -292,7 +292,12 @@ class CalendarCollectionViewController: UICollectionViewController {
         cell.textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         cell.textLabel.textAlignment = .natural
         cell.backgroundColor = UIColor.white
-        cell.textLabel.text = "\(tag)"
+            if tag != 0{
+                cell.textLabel.text = "\(tag)"
+            }
+            else if tag == 0{
+                cell.textLabel.text = ""
+            }
         }
         if tileBuffer <= 0 {
             tileBuffer += 1
@@ -328,20 +333,5 @@ class CalendarCollectionViewController: UICollectionViewController {
         return false
     }
     
-    
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
 
 }
