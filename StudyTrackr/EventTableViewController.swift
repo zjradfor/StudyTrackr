@@ -9,7 +9,7 @@
 import UIKit
 
 class EventTableViewController: UITableViewController {
-    var events= 
+    var events = [StudyEvent]()
     override func viewDidLoad() {
         super.viewDidLoad()
         print("hello")

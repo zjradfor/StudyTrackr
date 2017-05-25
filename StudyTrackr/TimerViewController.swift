@@ -23,38 +23,39 @@ import UIKit
         var studyTime = 0
         let date = String(describing: Date())
         
-        @IBOutlet weak var testLabel: UILabel!
+
         @IBOutlet weak var TimerValue: UITextField!
+        @IBOutlet weak var breakOrStudy: UILabel!
 
       
         
         @IBAction func breakTime10(_ sender: UIButton) {
-            seconds = seconds + (1*60)
+            //seconds = seconds + (1*60)
             breakTime = 1 * 60
         }
         
         @IBAction func breakTime15(_ sender: UIButton) {
-            seconds = seconds + (15*60)
+            //seconds = seconds + (15*60)
             breakTime = 15 * 60
         }
        
         @IBAction func breakTime20(_ sender: UIButton) {
-            seconds = seconds + (20*60)
+            //seconds = seconds + (20*60)
             breakTime = 20 * 60
         }
         
         @IBAction func breakTime25(_ sender: UIButton) {
-            seconds = seconds + (25*60)
+            //seconds = seconds + (25*60)
             breakTime = 25 * 60
         }
         
         @IBAction func breakTime30(_ sender: UIButton) {
-            seconds = seconds + (30*60)
+            //seconds = seconds + (30*60)
             breakTime = 30 * 60
         }
         
         @IBAction func breakTime35(_ sender: UIButton) {
-            seconds = seconds + (35*60)
+            //seconds = seconds + (35*60)
             breakTime = 35 * 60
 
         }
@@ -127,15 +128,17 @@ func updateTimer() {
         runbreakTimer()
         timerLabel.text = timeString(time:TimeInterval(breakTime))
         updatebreakTimer()
+        breakOrStudy.text = "Break Time!"
         }
     else{
         breakTimer.invalidate()
+        breakOrStudy.text = "Get Studying!"
         }
     }
     
 }
     func runbreakTimer(){
-        breakTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updateTimer)), userInfo: nil, repeats: true)
+        breakTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updatebreakTimer)), userInfo: nil, repeats: true)
     
     }
 
@@ -148,10 +151,10 @@ func updateTimer() {
             return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
         }
         
-        
         func runBreakTimer(){
-            breakTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updateTimer)), userInfo: nil, repeats: true)
+            breakTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updatebreakTimer)), userInfo: nil, repeats: true)
         }
+        
 func updatebreakTimer(){
     if breakTime<1 {
         breakTimer.invalidate()
