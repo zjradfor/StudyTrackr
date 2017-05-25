@@ -33,6 +33,10 @@ class BackgroundsViewController: UIViewController {
     @IBAction func YellowBackground(_ sender: Any) {
         BackgroundView.backgroundColor = UIColor.yellow
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

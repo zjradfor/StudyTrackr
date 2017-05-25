@@ -27,6 +27,10 @@ class FontsViewController: UIViewController {
     @IBAction func RoundhandFont(_ sender: Any) {
         FontStyle.font = UIFont(name: "SnellRoundhand-Bold", size: 16.0)
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

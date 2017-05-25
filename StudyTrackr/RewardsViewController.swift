@@ -9,12 +9,33 @@
 import UIKit
 
 class RewardsViewController: UIViewController {
+   
+    @IBAction func DailyRewardButton(_ sender: Any) {
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "DailyGiftViewController") as! DailyGiftViewController
+        navigationController?.pushViewController(myVC, animated: true)
 
+    }
+    @IBAction func AvatarsButton(_ sender: Any) {
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "AvatarsViewController") as! AvatarsViewController
+        navigationController?.pushViewController(myVC, animated: true)
+    }
+
+    @IBAction func FontsButton(_ sender: Any) {
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "FontsViewController") as! FontsViewController
+        navigationController?.pushViewController(myVC, animated: true)
+
+    }
+    @IBAction func BackgroundsButton(_ sender: Any) {
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "BackgroundsViewController") as! BackgroundsViewController
+        navigationController?.pushViewController(myVC, animated: true)
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+ self.tabBarController?.tabBar.isHidden = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-self.tabBarController?.tabBar.isHidden = true // cannot make tabbar stay, so we will force it to be hidden and then create a button used in order to go back to our main menu screen once it exists
-        
-        // Do any additional setup after loading the view.
+                // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
