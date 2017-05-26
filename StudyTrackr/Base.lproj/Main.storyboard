@@ -766,7 +766,7 @@
         <!--Add SubjectVC-->
         <scene sceneID="x04-TP-Gs0">
             <objects>
-                <viewController id="pZ4-Hn-Jh4" customClass="AddSubjectVC" sceneMemberID="viewController">
+                <viewController id="pZ4-Hn-Jh4" customClass="AddSubjectVC" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x5I-NE-Emg"/>
                         <viewControllerLayoutGuide type="bottom" id="AoK-Wh-6lU"/>
@@ -775,19 +775,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m9d-eE-yTa">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="XPE-be-YUw"/>
-                                </items>
-                            </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add a new subject 👈" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YsT-0t-vwJ">
                                 <rect key="frame" x="16" y="229" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01k-d3-eNb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01k-d3-eNb">
                                 <rect key="frame" x="117" y="329" width="141" height="51"/>
                                 <state key="normal" title="Add Subject"/>
                                 <connections>
@@ -797,14 +791,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="m9d-eE-yTa" firstAttribute="centerX" secondItem="01k-d3-eNb" secondAttribute="centerX" id="1iN-vD-Ajm"/>
-                            <constraint firstItem="m9d-eE-yTa" firstAttribute="leading" secondItem="SRT-N7-wp9" secondAttribute="leading" id="Dff-mN-2HO"/>
-                            <constraint firstItem="m9d-eE-yTa" firstAttribute="centerX" secondItem="YsT-0t-vwJ" secondAttribute="centerX" id="UT9-rc-gqc"/>
+                            <constraint firstItem="AoK-Wh-6lU" firstAttribute="top" secondItem="01k-d3-eNb" secondAttribute="bottom" constant="238" id="2iY-Dt-aRv"/>
+                            <constraint firstItem="01k-d3-eNb" firstAttribute="leading" secondItem="SRT-N7-wp9" secondAttribute="leadingMargin" constant="101" id="9bt-JW-76n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="01k-d3-eNb" secondAttribute="trailing" constant="101" id="ZEK-mE-sl2"/>
+                            <constraint firstItem="01k-d3-eNb" firstAttribute="top" secondItem="x5I-NE-Emg" secondAttribute="bottom" constant="265" id="avF-wo-tzK"/>
                             <constraint firstItem="01k-d3-eNb" firstAttribute="top" secondItem="YsT-0t-vwJ" secondAttribute="bottom" constant="70" id="fFq-G7-WR2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YsT-0t-vwJ" secondAttribute="trailing" id="ld9-h4-ppQ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="YsT-0t-vwJ" secondAttribute="leading" id="tUc-no-UsQ"/>
-                            <constraint firstItem="m9d-eE-yTa" firstAttribute="top" secondItem="SRT-N7-wp9" secondAttribute="top" id="y2n-qR-s9y"/>
-                            <constraint firstItem="YsT-0t-vwJ" firstAttribute="top" secondItem="m9d-eE-yTa" secondAttribute="bottom" constant="185" id="yOU-ui-Ori"/>
                         </constraints>
                     </view>
                     <connections>
