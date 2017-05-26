@@ -7,18 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
-
-		90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */; };
-		C57F79CD1ECC8CD400E69B2A /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57F79CC1ECC8CD400E69B2A /* EventTableViewController.swift */; };
-		C596BB321ECDDEC000D1018F /* studyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */; };
-		C5EE25C11ECB3DAF003A6904 /* StudyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */; };
-
-		C5EE25C31ECB45B1003A6904 /* StudyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EE25C21ECB45B1003A6904 /* StudyEventTableViewCell.swift */; };
-
-		DEC18D4B1EB2375B00F9935C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D4A1EB2375B00F9935C /* FirstViewController.swift */; };
-		DEC18D4D1EB2375B00F9935C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D4C1EB2375B00F9935C /* SecondViewController.swift */; };
-
 		7350C8D41EC1FE6D0054200B /* AvatarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */; };
 		7350C8D51EC1FE6D0054200B /* AvatarsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */; };
 		7350C8D91EC1FECE0054200B /* FontsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C8D71EC1FECE0054200B /* FontsViewController.swift */; };
@@ -37,7 +25,6 @@
 		DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */; };
 		DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D481EB2375B00F9935C /* AppDelegate.swift */; };
 		DEC18D4B1EB2375B00F9935C /* (null) in Sources */ = {isa = PBXBuildFile; };
-		DEC18D4D1EB2375B00F9935C /* MarkBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D4C1EB2375B00F9935C /* MarkBook.swift */; };
 		DEC18D501EB2375B00F9935C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D4E1EB2375B00F9935C /* Main.storyboard */; };
 		DEC18D521EB2375B00F9935C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D511EB2375B00F9935C /* Assets.xcassets */; };
 		DEC18D551EB2375B00F9935C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */; };
@@ -49,15 +36,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-
-
-		90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
-		C57F79CC1ECC8CD400E69B2A /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
-		C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = studyEventTableViewCell.swift; path = ../studyEventTableViewCell.swift; sourceTree = "<group>"; };
-		C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyEvent.swift; sourceTree = "<group>"; };
-
-		C5EE25C21ECB45B1003A6904 /* StudyEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyEventTableViewCell.swift; sourceTree = "<group>"; };
-
 		7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarsViewController.swift; sourceTree = "<group>"; };
 		7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarsViewController.xib; sourceTree = "<group>"; };
 		7350C8D71EC1FECE0054200B /* FontsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontsViewController.swift; path = ../FontsViewController.swift; sourceTree = "<group>"; };
@@ -99,19 +77,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-
-		C592F64A1EC9EC5E004961AD /* Timer */ = {
-			isa = PBXGroup;
-			children = (
-				90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */,
-				C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */,
-				C57F79CC1ECC8CD400E69B2A /* EventTableViewController.swift */,
-				C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */,
-			);
-			name = "Timer";
-			sourceTree = "<group>";
-		};
-
 		7350C8D61EC1FEA60054200B /* Rewards Code Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,18 +231,8 @@
 			files = (
 				C5EE25C11ECB3DAF003A6904 /* StudyEvent.swift in Sources */,
 				90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */,
-
-				DEC18D4D1EB2375B00F9935C /* MarkBook.swift in Sources */,
 				C5EE25C31ECB45B1003A6904 /* StudyEventTableViewCell.swift in Sources */,
-
-				C57F79CD1ECC8CD400E69B2A /* EventTableViewController.swift in Sources */,
-				DEC18D4D1EB2375B00F9935C /* SecondViewController.swift in Sources */,
-
-				DEC18D491EB2375B00F9935C /* AppDelegate.swift in Sources */,
-				C596BB321ECDDEC000D1018F /* studyEventTableViewCell.swift in Sources */,
-
-				DEC18D4B1EB2375B00F9935C /* FirstViewController.swift in Sources */,
-
+				DEC18D4B1EB2375B00F9935C /* (null) in Sources */,
 				DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */,
 				F117F08E1ECF2B3B0073424B /* Event.swift in Sources */,
 				DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */,
