@@ -14,6 +14,7 @@ class EventsViewController: UIViewController {
     var eventTextCounter = 0 // for cylcing through event labels
     let eventText = ["Test","Assignment","Homework","Event","Other"]
     var dayFromSegue = 0
+    var monthFromSegue = 0
     var eventToSegue = 0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,7 @@ class EventsViewController: UIViewController {
         automaticallyAdjustsScrollViewInsets = false
         
         //Getting current date
-        Header.text = "\(dayFromSegue)"
+        Header.text = "Day: \(dayFromSegue) Month: \(monthFromSegue)"
 
         // Do any additional setup after loading the view.
     }
