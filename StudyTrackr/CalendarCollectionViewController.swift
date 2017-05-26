@@ -262,10 +262,10 @@ class CalendarCollectionViewController: UICollectionViewController {
         cell.textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         cell.textLabel.textAlignment = .natural
         cell.backgroundColor = UIColor.white
-            if tag != 0{
+            if tag != 0 && tag <= 31{
                 cell.textLabel.text = "\(tag)"
             }
-            else if tag == 0{
+            else if( tag == 0 || tag > 31){
                 cell.textLabel.text = ""
             }
         }
