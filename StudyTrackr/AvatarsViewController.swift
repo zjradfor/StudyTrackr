@@ -10,6 +10,9 @@ import UIKit
 
 class AvatarsViewController: UIViewController {
 
+    @IBAction func AvatarSmile(_ sender: Any) {
+    }
+    
     @IBAction func AvatarSpike(_ sender: Any) {
     }
     
