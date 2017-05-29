@@ -12,10 +12,13 @@ class NewEventViewController: UIViewController {
     
     @IBOutlet weak var neweventtableView: UITableView!
     @IBOutlet weak var eventTitle: UILabel!
+    @IBOutlet weak var colourView: UIView!
     @IBOutlet weak var currentEventTitle: UILabel!
+    @IBOutlet weak var colourButton: UIButton!
     var eventFromSegue = 0
     var eventDayFromSegue = 0
     var cellCounter = 0
+    var eventColour = "Black"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +41,7 @@ class NewEventViewController: UIViewController {
         eventTitle.text = "Day: \(eventDayFromSegue)"
         // Do any additional setup after loading the view.
         cellCounter = 0
+        //colourButton.setTitle(eventColour, for: any)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,13 +49,17 @@ class NewEventViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        cellCounter = 0
+    }
     
     // MARK: - Navigation
 
      @IBAction func goBackToOneButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "unwindSegueToVC2", sender: self)
      }
+    @IBAction func unwindToVC3(segue:UIStoryboardSegue) { }
+
     /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -63,6 +71,7 @@ class NewEventViewController: UIViewController {
 }
 
 extension NewEventViewController: UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
@@ -73,7 +82,7 @@ extension NewEventViewController: UITableViewDataSource{
             return cell
         }
         else if cellCounter == 1{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "timeCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "dpCell", for: indexPath)
                     cellCounter += 1
             return cell
         }
@@ -83,30 +92,31 @@ extension NewEventViewController: UITableViewDataSource{
             return cell
         }
         else if cellCounter == 3{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "colourCell", for: indexPath)
                     cellCounter += 1
             return cell
         }
         else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "notesCell", for: indexPath)
                     cellCounter += 1
             return cell
         }
 
     }
-
-}
-
-
-extension NewEventViewController: UITableViewDelegate{
-    
-    /*
-    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
- //       eventToSegue = indexPath.row
-        self.performSegue(withIdentifier: "event", sender: self)
-        print ("tappedE \(indexPath.row)")
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let row = indexPath.row
+        
+        switch row {
+        case 0: return 44
+        case 1: return 245
+        case 2...3: return 44
+        case 4: return 112
+        default: return 0
+        }
     }
- */
+    
+
 }
+
 
 
