@@ -23,6 +23,7 @@
 		C5EE25C31ECB45B1003A6904 /* StudyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EE25C21ECB45B1003A6904 /* StudyEventTableViewCell.swift */; };
 		DE0AF5411EC5F62B0054F125 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */; };
 		DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */; };
+		DE1867001ED8731B007ADA3C /* CalendarSwipeGestureRecongnizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1866FF1ED8731B007ADA3C /* CalendarSwipeGestureRecongnizer.swift */; };
 		DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D481EB2375B00F9935C /* AppDelegate.swift */; };
 		DEC18D4B1EB2375B00F9935C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		DEC18D501EB2375B00F9935C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D4E1EB2375B00F9935C /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		C5EE25C21ECB45B1003A6904 /* StudyEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyEventTableViewCell.swift; sourceTree = "<group>"; };
 		DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = ../EventsViewController.swift; sourceTree = "<group>"; };
 		DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		DE1866FF1ED8731B007ADA3C /* CalendarSwipeGestureRecongnizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarSwipeGestureRecongnizer.swift; sourceTree = "<group>"; };
 		DEC18D451EB2375B00F9935C /* StudyTrackr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyTrackr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC18D481EB2375B00F9935C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC18D4C1EB2375B00F9935C /* MarkBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkBook.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			files = (
 				C5EE25C11ECB3DAF003A6904 /* StudyEvent.swift in Sources */,
 				90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */,
+				DE1867001ED8731B007ADA3C /* CalendarSwipeGestureRecongnizer.swift in Sources */,
 				C5EE25C31ECB45B1003A6904 /* StudyEventTableViewCell.swift in Sources */,
 				DEC18D4B1EB2375B00F9935C /* (null) in Sources */,
 				DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */,

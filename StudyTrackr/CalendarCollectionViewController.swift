@@ -20,7 +20,7 @@ var leapYear = false
 var tileBuffer = 0
 let calendar = Calendar.current
 let date = Date()
-let month = calendar.component(.month, from: date)
+var month = calendar.component(.month, from: date)
 class CalendarCollectionViewController: UICollectionViewController {
     
     @IBOutlet var CalendarCollectionView: UICollectionView!
@@ -128,6 +128,21 @@ class CalendarCollectionViewController: UICollectionViewController {
         self.collectionView!.register(CalendarCell.self, forCellWithReuseIdentifier: "Cell")
         self.collectionView!.register(CalendarHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
         // Do any additional setup after loading the view.
+        
+        //Gesture 
+        /*
+        let swipeRightRec = CalendarSwipeGestureRecongnizer()
+        let swipeLeftRec = CalendarSwipeGestureRecongnizer()
+        
+        swipeRightRec.addTarget(self, action: #selector(CalendarCollectionViewController.swipedRight) )
+        swipeRightRec.direction = .right
+        self.view!.addGestureRecognizer(swipeRightRec)
+        
+        
+        swipeLeftRec.addTarget(self, action: #selector(CalendarCollectionViewController.swipedLeft) )
+        swipeLeftRec.direction = .left
+        self.view!.addGestureRecognizer(swipeLeftRec)
+         */
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -168,6 +183,19 @@ class CalendarCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView,
                                  viewForSupplementaryElementOfKind kind: String,
                                  at indexPath: IndexPath) -> UICollectionReusableView {
+        //Swipe Buttons
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
+            headerView.rightButton(Any)
+            headerView.leftButton(Any)
+            return headerView
+        default:
+            assert(false, "Unexpected element kind")
+        }
+    
+
+        
         //1
         switch kind {
         //2
