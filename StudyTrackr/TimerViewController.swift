@@ -13,52 +13,63 @@ import UIKit
         @IBOutlet weak var timerLabel: UILabel!
         var seconds = 0
         var timer = Timer()
+        var breakTimer = Timer()
         var isTimerRunning = false
         var resumeTapped = false
         var breakTime:Int = 0
+        var whenIsBreak = 0
         var isBreakTimeAdded:Bool = false
         @IBOutlet weak var TimerValue: UITextField!
 
       
         
         @IBAction func breakTime10(_ sender: UIButton) {
-            seconds = seconds + (10*60)
+            seconds = seconds + (1*60)
+            breakTime = 1
         }
         
         @IBAction func breakTime15(_ sender: UIButton) {
             seconds = seconds + (15*60)
+            breakTime = 15
         }
        
         @IBAction func breakTime20(_ sender: UIButton) {
             seconds = seconds + (20*60)
+            breakTime = 20
         }
         
         @IBAction func breakTime25(_ sender: UIButton) {
             seconds = seconds + (25*60)
+            breakTime = 25
         }
         
         @IBAction func breakTime30(_ sender: UIButton) {
             seconds = seconds + (30*60)
+            breakTime = 30
         }
         
         @IBAction func breakTime35(_ sender: UIButton) {
             seconds = seconds + (35*60)
+            breakTime = 35
 
         }
     
 
         @IBAction func userTime(_ sender: UITextField) {
             seconds = seconds + (Int(TimerValue.text!)!*60)
+
         }
         
        
         
         @IBAction func startButtonTapped(_ sender: UIButton) {
+            let whenIsBreak = seconds / 2
             if isTimerRunning == false{
                 runTimer()
                 self.startButton.isEnabled = false
                 timerLabel.text = timeString(time:TimeInterval(seconds))
             }
+
         }
         
         @IBAction func pauseButtonTapped(_ sender: UIButton) {
@@ -89,6 +100,7 @@ import UIKit
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updateTimer)), userInfo: nil, repeats: true)
             isTimerRunning = true
             pauseButton.isEnabled = true
+            
         }
         
         func updateTimer() {
@@ -98,14 +110,46 @@ import UIKit
             }else{
                 seconds -= 1
                 timerLabel.text = timeString(time: TimeInterval(seconds))
+                if whenIsBreak == seconds {
+                    timer.invalidate()
+                    runBreakTimer()
+                    timerLabel.text = timeString(time:TimeInterval(breakTime))
+                    if breakTime < 1 {
+                        breakTimer.invalidate()
+                    } else {
+                        breakTime -= 1
+                        timerLabel.text = timeString(time:TimeInterval(breakTime))
+                    }
+                    
+                }else{
+                    breakTimer.invalidate()
+                }
+
             }
         }
+        
         
         func timeString(time:TimeInterval) -> String {
             let hours = Int(time) / 3600
             let minutes = Int(time) / 60 % 60
             let seconds = Int(time) % 60
             return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+        }
+        
+        
+       /* func breakTimer() {
+            if whenIsBreak == seconds {
+                timer.invalidate()
+                runBreakTimer()
+                timerLabel.text = timeString(time:TimeInterval(breakTime))
+                
+            }else{
+                breakTimer.invalidate()
+            }
+        }*/
+        
+        func runBreakTimer(){
+            breakTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updateTimer)), userInfo: nil, repeats: true)
         }
         
         @IBOutlet weak var pauseButton: UIButton!
