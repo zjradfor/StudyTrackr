@@ -21,6 +21,8 @@ var tileBuffer = 0
 let calendar = Calendar.current
 let date = Date()
 var month = calendar.component(.month, from: date)
+var buttonIsPressedR = false
+var buttonIsPressedL = false
 class CalendarCollectionViewController: UICollectionViewController {
     
     @IBOutlet var CalendarCollectionView: UICollectionView!
@@ -156,10 +158,10 @@ class CalendarCollectionViewController: UICollectionViewController {
         tileBuffer = 0
         weekTag = 0
         
-        let currentMonth = calendar.component(.month, from: date)
+        
         var firstWeekDay = "Sunday"
 
-        firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: days, month: currentMonth)
+        firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: days, month: month)
         
         if firstWeekDay == "Sunday" {
             tileBuffer = -5
@@ -189,6 +191,18 @@ class CalendarCollectionViewController: UICollectionViewController {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
             headerView.rightButton(Any)
             headerView.leftButton(Any)
+            
+            if buttonIsPressedL == true {
+                month -= 1
+                viewWillAppear(true)
+                buttonIsPressedL = false
+            }
+            if buttonIsPressedR == true {
+                month += 1
+                viewWillAppear(true)
+                buttonIsPressedR = false
+            }
+ 
             return headerView
         default:
             assert(false, "Unexpected element kind")
@@ -287,6 +301,8 @@ class CalendarCollectionViewController: UICollectionViewController {
         }
         else{
         cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight2 / 6) - (screenHeight / 12) + 74), width: (screenSize.width / 7) - 4, height: (screenHeight2 / 6) - 2)
+        
+        //TAGS
         cell.textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         cell.textLabel.textAlignment = .natural
         cell.backgroundColor = UIColor.white
@@ -297,6 +313,8 @@ class CalendarCollectionViewController: UICollectionViewController {
                 cell.textLabel.text = ""
             }
         }
+        
+        
         if tileBuffer <= 0 {
             tileBuffer += 1
         } else {
@@ -348,6 +366,8 @@ class CalendarCollectionViewController: UICollectionViewController {
     
     }
     */
+    
+    
     func getFirstWeekDayOfMonth(leapYear: Bool, days: [Day], month: Int) -> String {
                 var add = 0
                 var firstWeekDay = "Sunday"

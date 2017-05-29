@@ -25,7 +25,6 @@
 		DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */; };
 		DE1867001ED8731B007ADA3C /* CalendarSwipeGestureRecongnizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1866FF1ED8731B007ADA3C /* CalendarSwipeGestureRecongnizer.swift */; };
 		DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D481EB2375B00F9935C /* AppDelegate.swift */; };
-		DEC18D4B1EB2375B00F9935C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		DEC18D501EB2375B00F9935C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D4E1EB2375B00F9935C /* Main.storyboard */; };
 		DEC18D521EB2375B00F9935C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D511EB2375B00F9935C /* Assets.xcassets */; };
 		DEC18D551EB2375B00F9935C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */; };
@@ -236,7 +235,6 @@
 				90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */,
 				DE1867001ED8731B007ADA3C /* CalendarSwipeGestureRecongnizer.swift in Sources */,
 				C5EE25C31ECB45B1003A6904 /* StudyEventTableViewCell.swift in Sources */,
-				DEC18D4B1EB2375B00F9935C /* (null) in Sources */,
 				DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */,
 				F117F08E1ECF2B3B0073424B /* Event.swift in Sources */,
 				DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */,
