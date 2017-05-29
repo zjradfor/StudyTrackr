@@ -111,6 +111,16 @@
 			name = Timer;
 			sourceTree = "<group>";
 		};
+		DE0588241EDC89FD00D30E6F /* Markbook */ = {
+			isa = PBXGroup;
+			children = (
+				DE05881B1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld */,
+				DE0588201EDC891800D30E6F /* AddSubjectVC.swift */,
+				DE0588211EDC891800D30E6F /* MarkbookViewController.swift */,
+			);
+			name = Markbook;
+			sourceTree = "<group>";
+		};
 		DEC18D3C1EB2375B00F9935C = {
 			isa = PBXGroup;
 			children = (
@@ -138,9 +148,7 @@
 				DEC18D4C1EB2375B00F9935C /* MarkBook.swift */,
 				DEC18D511EB2375B00F9935C /* Assets.xcassets */,
 				DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */,
-				DE05881B1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld */,
-				DE0588201EDC891800D30E6F /* AddSubjectVC.swift */,
-				DE0588211EDC891800D30E6F /* MarkbookViewController.swift */,
+				DE0588241EDC89FD00D30E6F /* Markbook */,
 				DEC18D561EB2375B00F9935C /* Info.plist */,
 			);
 			path = StudyTrackr;
