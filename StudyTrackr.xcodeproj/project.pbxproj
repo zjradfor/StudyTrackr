@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
+		360D64031ED5C64C00D58FE8 /* MarkbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D64021ED5C64C00D58FE8 /* MarkbookViewController.swift */; };
+		360D64071ED5CD0800D58FE8 /* StudyTrackr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 360D64051ED5CD0800D58FE8 /* StudyTrackr.xcdatamodeld */; };
+		360D64091ED5D34800D58FE8 /* AddSubjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D64081ED5D34800D58FE8 /* AddSubjectVC.swift */; };
+
 		7350C8D41EC1FE6D0054200B /* AvatarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */; };
 		7350C8D51EC1FE6D0054200B /* AvatarsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */; };
 		7350C8D91EC1FECE0054200B /* FontsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C8D71EC1FECE0054200B /* FontsViewController.swift */; };
@@ -25,6 +30,9 @@
 		DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */; };
 		DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D481EB2375B00F9935C /* AppDelegate.swift */; };
 		DEC18D4B1EB2375B00F9935C /* (null) in Sources */ = {isa = PBXBuildFile; };
+
+		DEC18D4D1EB2375B00F9935C /* MarkBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D4C1EB2375B00F9935C /* MarkBook.swift */; };
+
 		DEC18D501EB2375B00F9935C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D4E1EB2375B00F9935C /* Main.storyboard */; };
 		DEC18D521EB2375B00F9935C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D511EB2375B00F9935C /* Assets.xcassets */; };
 		DEC18D551EB2375B00F9935C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */; };
@@ -36,6 +44,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+
+		360D64021ED5C64C00D58FE8 /* MarkbookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkbookViewController.swift; sourceTree = "<group>"; };
+		360D64061ED5CD0800D58FE8 /* StudyTrackr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudyTrackr.xcdatamodel; sourceTree = "<group>"; };
+		360D64081ED5D34800D58FE8 /* AddSubjectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSubjectVC.swift; sourceTree = "<group>"; };
+
 		7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarsViewController.swift; sourceTree = "<group>"; };
 		7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarsViewController.xib; sourceTree = "<group>"; };
 		7350C8D71EC1FECE0054200B /* FontsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontsViewController.swift; path = ../FontsViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +90,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+
+		360D64041ED5C6A400D58FE8 /* MArkbook */ = {
+			isa = PBXGroup;
+			children = (
+				360D64081ED5D34800D58FE8 /* AddSubjectVC.swift */,
+				360D64021ED5C64C00D58FE8 /* MarkbookViewController.swift */,
+				360D64051ED5CD0800D58FE8 /* StudyTrackr.xcdatamodeld */,
+			);
+			name = MArkbook;
+			sourceTree = "<group>";
+		};
+
 		7350C8D61EC1FEA60054200B /* Rewards Code Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,12 +149,8 @@
 		DEC18D471EB2375B00F9935C /* StudyTrackr */ = {
 			isa = PBXGroup;
 			children = (
-				F11ECEB81EC9EE3A00ECBBB1 /* Calendar */,
-				DEC18D4E1EB2375B00F9935C /* Main.storyboard */,
-				7350C8D61EC1FEA60054200B /* Rewards Code Files */,
-				DEC18D481EB2375B00F9935C /* AppDelegate.swift */,
-				C592F64A1EC9EC5E004961AD /* Timer */,
-				DEC18D4C1EB2375B00F9935C /* MarkBook.swift */,
+				360D64041ED5C6A400D58FE8 /* MArkbook */,
+
 				DEC18D511EB2375B00F9935C /* Assets.xcassets */,
 				DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */,
 				DEC18D561EB2375B00F9935C /* Info.plist */,
@@ -231,19 +252,27 @@
 			files = (
 				C5EE25C11ECB3DAF003A6904 /* StudyEvent.swift in Sources */,
 				90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */,
+
+				DEC18D4D1EB2375B00F9935C /* MarkBook.swift in Sources */,
+
 				C5EE25C31ECB45B1003A6904 /* StudyEventTableViewCell.swift in Sources */,
 				DEC18D4B1EB2375B00F9935C /* (null) in Sources */,
 				DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */,
 				F117F08E1ECF2B3B0073424B /* Event.swift in Sources */,
 				DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */,
 				F1F18B841EB8D22700B1B7E4 /* Day.swift in Sources */,
+				360D64071ED5CD0800D58FE8 /* StudyTrackr.xcdatamodeld in Sources */,
 				F1F18B821EB8C93B00B1B7E4 /* CalendarCell.swift in Sources */,
 				DE0AF5411EC5F62B0054F125 /* EventsViewController.swift in Sources */,
 				F11C3B3C1ECDE4E6002DD1FD /* NewEventViewController.swift in Sources */,
+
+				360D64091ED5D34800D58FE8 /* AddSubjectVC.swift in Sources */,
+
 				F1850D3E1EB77B9F00D75B01 /* CalendarCollectionViewController.swift in Sources */,
 				7350C8D91EC1FECE0054200B /* FontsViewController.swift in Sources */,
 				739C48331EC20D7E00BFCC21 /* Rewards.swift in Sources */,
 				7350C8D41EC1FE6D0054200B /* AvatarsViewController.swift in Sources */,
+				360D64031ED5C64C00D58FE8 /* MarkbookViewController.swift in Sources */,
 				73D108AE1EBB750E00F2765F /* RewardsViewController.swift in Sources */,
 				7350C8DF1EC1FF1A0054200B /* BackgroundsViewController.swift in Sources */,
 				73D108B71EC0BB4A00F2765F /* DailyGiftViewController.swift in Sources */,
@@ -417,6 +446,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		360D64051ED5CD0800D58FE8 /* StudyTrackr.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				360D64061ED5CD0800D58FE8 /* StudyTrackr.xcdatamodel */,
+			);
+			currentVersion = 360D64061ED5CD0800D58FE8 /* StudyTrackr.xcdatamodel */;
+			path = StudyTrackr.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DEC18D3D1EB2375B00F9935C /* Project object */;
 }
