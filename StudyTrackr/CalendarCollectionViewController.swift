@@ -35,7 +35,7 @@ class CalendarCollectionViewController: UICollectionViewController {
         
         let year = calendar.component(.year, from: date)
         var firstWeekday = calendar.firstWeekday
-        print(firstWeekday)
+        //print(firstWeekday)
                                         //Determine if leap year
         if (year % 4 == 0) {
             if (year % 100 == 0) {
@@ -341,7 +341,7 @@ class CalendarCollectionViewController: UICollectionViewController {
     var dayToSegue = 0
     override func collectionView(_ collectionView: UICollectionView,
                                  shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        print("tapped \(indexPath)")
+        //print("tapped \(indexPath)")
         dayToSegue = indexPath.row - 7
         if (dayToSegue > 0){
         self.performSegue(withIdentifier: "day", sender: self)
