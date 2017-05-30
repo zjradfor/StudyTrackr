@@ -14,6 +14,7 @@ class studyEventTableViewCell: UITableViewCell {
    
     @IBOutlet weak var timeStudied: UILabel!
     
+    @IBOutlet weak var subjectStudied: UILabel!
     
 
     override func awakeFromNib() {

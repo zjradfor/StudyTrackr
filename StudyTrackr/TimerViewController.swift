@@ -64,7 +64,7 @@ import UIKit
         @IBAction func userTime(_ sender: UITextField) {
             seconds = seconds + (Int(TimerValue.text!)!*60)
             whenIsBreak = (Int(TimerValue.text!)!*60) / 2
-            studyTime = (Int(TimerValue.text!)!*60)
+            studyTime = (Int(TimerValue.text!)!)
 
         }
         
@@ -182,4 +182,8 @@ func updatebreakTimer(){
         super.didReceiveMemoryWarning()
         
     }
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            let EventTableViewController = segue.destination as! EventTableViewController
+            EventTableViewController.events = studyEvents
+        }
 }

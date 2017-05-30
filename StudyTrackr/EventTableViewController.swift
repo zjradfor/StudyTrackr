@@ -50,6 +50,7 @@ class EventTableViewController: UITableViewController {
             let Event = events[indexPath.row]
             cell.dateStudied.text = Event.date
             cell.timeStudied.text = String(Event.studyTime)
+        cell.subjectStudied.text = Event.subject
         return cell
     }
     
