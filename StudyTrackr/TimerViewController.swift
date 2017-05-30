@@ -62,12 +62,17 @@ import UIKit
     
 
         @IBAction func userTime(_ sender: UITextField) {
-            seconds = seconds + (Int(TimerValue.text!)!*60)
-            whenIsBreak = (Int(TimerValue.text!)!*60) / 2
-            studyTime = (Int(TimerValue.text!)!)
-
+            
+                if let unWrappedInt = Int(TimerValue.text!){
+                    seconds = unWrappedInt * 60
+                    whenIsBreak = (Int(TimerValue.text!)!*60) / 2
+                    studyTime = (Int(TimerValue.text!)!)
+                }
+                else{
+                    TimerValue.text = ""
+                    seconds = 0
+                }
         }
-        
        
         
         @IBAction func startButtonTapped(_ sender: UIButton) {
@@ -101,11 +106,12 @@ import UIKit
             seconds = 0
             pauseButton.isEnabled = false
             startButton.isEnabled = true
-            
+            if (studyTime > 0){
             guard let newStudyEvent = StudyEvent(studyTime: studyTime, subject: "Math", date: date) else{
                 fatalError("cannot create study event")
             }
             studyEvents += [newStudyEvent]
+            }
         }
         
         func runTimer(){
