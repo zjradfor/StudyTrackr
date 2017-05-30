@@ -18,10 +18,11 @@ class NewEventViewController: UIViewController {
     var eventFromSegue = 0
     var eventDayFromSegue = 0
     var cellCounter = 0
-    var eventColour = "Black"
+    var eventColour = UIColor.green
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("What am i now? : \(eventColour)")
         if eventFromSegue == 0{
             currentEventTitle.text = "Test"
         }
@@ -67,6 +68,10 @@ class NewEventViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func getColour() -> UIColor{
+        print("Setting: \(eventColour)")
+        return eventColour
+    }
 
 }
 
@@ -78,34 +83,39 @@ extension NewEventViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if cellCounter == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath)
+            //print(cellCounter)
                     cellCounter += 1
             return cell
         }
         else if cellCounter == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "dpCell", for: indexPath)
+            //print(cellCounter)
                     cellCounter += 1
             return cell
         }
         else if cellCounter == 2{
             let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath)
+            //print(cellCounter)
                     cellCounter += 1
             return cell
         }
         else if cellCounter == 3{
             let cell = tableView.dequeueReusableCell(withIdentifier: "colourCell", for: indexPath)
+            //print(cellCounter)
                     cellCounter += 1
             return cell
         }
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "notesCell", for: indexPath)
+            //print(cellCounter)
                     cellCounter += 1
             return cell
         }
 
     }
+    //func tableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let row = indexPath.row
-        
         switch row {
         case 0: return 44
         case 1: return 245
@@ -118,5 +128,8 @@ extension NewEventViewController: UITableViewDataSource{
 
 }
 
+extension NewEventViewController: UITableViewDelegate{
+    
+}
 
 

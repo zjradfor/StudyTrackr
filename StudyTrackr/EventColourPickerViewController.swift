@@ -31,59 +31,60 @@ class EventColourPickerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "colour"){
             let vc = segue.destination as! NewEventViewController
+            print("Sent: \(colourPicked)")
             vc.eventColour = colourPicked
         }
     }
     
     // MARK: - Colour Picking
-    var colourPicked = "Black"
+    var colourPicked = UIColor.black
     @IBAction func yellowPicker(_ sender: Any) {
+        colourPicked = UIColor.yellow
         self.performSegue(withIdentifier: "colour", sender: self)
-        colourPicked = "Yellow"
     }
     @IBAction func bluePicker(_ sender: Any) {
+        colourPicked = UIColor.blue
         self.performSegue(withIdentifier: "colour", sender: self)
-        colourPicked = "Blue"
     }
     @IBAction func redPicker(_ sender: Any) {
+        colourPicked = UIColor.red
         self.performSegue(withIdentifier: "colour", sender: self)
-        colourPicked = "Red"
     }
     @IBAction func cyanPicker(_ sender: Any) {
+        colourPicked = UIColor.cyan
         self.performSegue(withIdentifier: "colour", sender: self)
-        colourPicked = "Cyan"
     }
     @IBAction func greenPicker(_ sender: Any) {
+        colourPicked = UIColor.green
         self.performSegue(withIdentifier: "colour", sender: self)
-        colourPicked = "Green"
     }
     @IBAction func magentaPicker(_ sender: Any) {
+        colourPicked = UIColor.magenta
         self.performSegue(withIdentifier: "colour", sender: self)
-        colourPicked = "Magenta"
     }
     @IBAction func orangePicker(_ sender: Any) {
+        colourPicked = UIColor.orange
         self.performSegue(withIdentifier: "colour", sender: self)
-        colourPicked = "Orange"
     }
     @IBAction func purplePicker(_ sender: Any) {
+        colourPicked = UIColor.purple
         self.performSegue(withIdentifier: "colour", sender: self)
-        colourPicked = "Purple"
     }
     @IBAction func brownPicker(_ sender: Any) {
+        colourPicked = UIColor.brown
         self.performSegue(withIdentifier: "colour", sender: self)
-        colourPicked = "Brown"
     }
     @IBAction func blackPicker(_ sender: Any) {
+        colourPicked = UIColor.black
         self.performSegue(withIdentifier: "colour", sender: self)
-        colourPicked = "Black"
     }
     @IBAction func lightGreyPicker(_ sender: Any) {
+        colourPicked = UIColor.lightGray
         self.performSegue(withIdentifier: "colour", sender: self)
-        colourPicked = "Light Grey"
     }
     @IBAction func darkGreyPicker(_ sender: Any) {
+        colourPicked = UIColor.darkGray
         self.performSegue(withIdentifier: "colour", sender: self)
-        colourPicked = "Dark Grey"
     }
     
     /*

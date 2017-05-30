@@ -14,7 +14,7 @@ class dpTableViewCell: UITableViewCell {
     
     @IBAction func pickingDate(_ sender: Any) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.dateFormat = "h:mm a"
         timeLabel.text = "Time: \(dateFormatter.string(from: dpShowDate.date))"
     }
     

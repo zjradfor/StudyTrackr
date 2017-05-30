@@ -10,8 +10,11 @@ import UIKit
 
 class colourCell: UITableViewCell {
 
-    
+    @IBOutlet weak var colourView: UIView!
+    @IBOutlet weak var colourButton: UIButton!
     override func awakeFromNib() {
+        colourView.backgroundColor = NewEventViewController().getColour()
+        
         super.awakeFromNib()
         // Initialization code
     }
