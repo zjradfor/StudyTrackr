@@ -26,6 +26,7 @@ var buttonIsPressedL = false
 class CalendarCollectionViewController: UICollectionViewController {
     
     @IBOutlet var CalendarCollectionView: UICollectionView!
+    var firstWeekDay = "Sunday"
     
     override func viewDidLoad() {
         // Uncomment the following line to preserve selection between presentations
@@ -192,7 +193,7 @@ class CalendarCollectionViewController: UICollectionViewController {
             headerView.rightButton(Any)
             headerView.leftButton(Any)
             
-            if buttonIsPressedL == true {
+            /*if buttonIsPressedL == true {
                 month -= 1
                 viewWillAppear(true)
                 buttonIsPressedL = false
@@ -201,7 +202,7 @@ class CalendarCollectionViewController: UICollectionViewController {
                 month += 1
                 viewWillAppear(true)
                 buttonIsPressedR = false
-            }
+            }*/
  
             return headerView
         default:
@@ -370,7 +371,6 @@ class CalendarCollectionViewController: UICollectionViewController {
     
     func getFirstWeekDayOfMonth(leapYear: Bool, days: [Day], month: Int) -> String {
                 var add = 0
-                var firstWeekDay = "Sunday"
         
                 if leapYear == true {
                         add = 1
