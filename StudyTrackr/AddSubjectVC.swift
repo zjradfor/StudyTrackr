@@ -11,8 +11,8 @@ import UIKit
 class AddSubjectVC: UIViewController {
 
     
-    @IBOutlet weak var AddSubjectField: UITextField!
     
+    @IBOutlet weak var AddSubjectField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +28,12 @@ class AddSubjectVC: UIViewController {
         // save to coredata
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        let _ = navigationController?.popViewController(animated: true)
+        let _ = navigationController?.popViewController(animated: true)    }
+*/
+ 
         
     }
-*/
+
    
    // override func didReceiveMemoryWarning() {
      //   super.didReceiveMemoryWarning()
@@ -39,14 +41,14 @@ class AddSubjectVC: UIViewController {
     //}
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   // override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+    //}
+    
 
-}
+//}
