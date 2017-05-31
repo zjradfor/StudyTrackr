@@ -954,6 +954,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="yellowPicker:" destination="nXB-4N-SfF" eventType="touchUpInside" id="14u-3r-TEh"/>
+                                                    <segue destination="nnR-KS-qXs" kind="unwind" unwindAction="colourPickedWithSegue:" id="j6T-qo-jGB"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjN-Zo-crd">
