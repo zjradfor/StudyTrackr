@@ -13,7 +13,7 @@ class MarkbookViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     
-    //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var subjects: [Subject] = [] // init empty array for subjects
     
@@ -27,7 +27,7 @@ class MarkbookViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     override func viewWillAppear(_ animated: Bool) {
-     //   getData()
+        getData()
         tableView.reloadData()
     }
 
@@ -45,7 +45,7 @@ class MarkbookViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         return cell
     }
-    /*
+    
     func getData(){
         do {
             subjects = try context.fetch(Subject.fetchRequest())
@@ -70,7 +70,7 @@ class MarkbookViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         tableView.reloadData()
     }
- */
+ 
     
 //    override func didReceiveMemoryWarning() {
   //      super.didReceiveMemoryWarning()
