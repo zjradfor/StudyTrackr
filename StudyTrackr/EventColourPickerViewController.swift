@@ -31,7 +31,11 @@ class EventColourPickerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "colour"){
             let vc = segue.destination as! NewEventViewController
+            
         }
+        if (segue.identifier == "unwindSegueToVC3"){
+        }
+        
     }
     
     // MARK: - Colour Picking
