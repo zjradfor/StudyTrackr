@@ -19,7 +19,7 @@ class AddSubjectVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    /*
+    
     @IBAction func ASButtonTapped(_ sender: UIButton) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
@@ -29,16 +29,16 @@ class AddSubjectVC: UIViewController {
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         let _ = navigationController?.popViewController(animated: true)    }
-*/
+
  
         
     }
 
    
-   // override func didReceiveMemoryWarning() {
-     //   super.didReceiveMemoryWarning()
+  // override func didReceiveMemoryWarning() {
+   //    super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    //}
+   // }
     
 
     
