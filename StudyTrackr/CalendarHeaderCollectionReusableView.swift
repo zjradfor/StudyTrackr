@@ -12,10 +12,12 @@ import UIKit
 class CalendarHeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var dateHeader: UILabel!
     @IBAction func rightButton(_ sender: Any) {
-     month += month
+     buttonIsPressedR = true
+        month += month
     }
     @IBAction func leftButton(_ sender: Any) {
-     month -= month
+     buttonIsPressedL = true
+        month -= month
     }
     
     
