@@ -72,6 +72,10 @@ class NewEventViewController: UIViewController {
         print("Setting: \(eventColour)")
         return eventColour
     }
+    
+    @IBAction func addEvent(_ sender: Any) {
+        DateInfoArr[].events.append(Event.init())
+    }
 
 }
 
@@ -131,5 +135,4 @@ extension NewEventViewController: UITableViewDataSource{
 extension NewEventViewController: UITableViewDelegate{
     
 }
-
 

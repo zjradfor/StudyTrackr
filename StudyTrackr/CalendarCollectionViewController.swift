@@ -18,6 +18,7 @@ private let reuseIdentifier = "Cell"
 struct DateInfo {
     var day = Day.init()
     var events = [Event]()
+    
 }
 var DateInfoArr = [DateInfo]()
 //var days = [Day]()
