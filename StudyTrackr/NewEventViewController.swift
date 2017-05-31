@@ -76,6 +76,10 @@ class NewEventViewController: UIViewController {
         return eventColour
         
     }
+    
+    @IBAction func addEvent(_ sender: Any) {
+        
+    }
 
 }
 
@@ -135,5 +139,4 @@ extension NewEventViewController: UITableViewDataSource{
 extension NewEventViewController: UITableViewDelegate{
     
 }
-
 
