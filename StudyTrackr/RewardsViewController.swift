@@ -8,8 +8,48 @@
 
 import UIKit
 
+
+
 class RewardsViewController: UIViewController {
+
+    @IBOutlet var RewardsView: UIView!
    
+     var RecievedCol = String()
+    
+    
+    
+    func BackgroundCol(BackCol: String) {
+        
+        
+         let BackCol = RecievedCol
+        
+        switch BackCol {
+            
+        case "White":
+            RewardsView.backgroundColor = UIColor.white
+            
+        case "Purple":
+            RewardsView.backgroundColor = UIColor.purple
+            
+        case "Pink":
+            RewardsView.backgroundColor = UIColor(red:1.00, green:0.76, blue:0.95, alpha:1.0)
+            
+        case "Yellow":
+            RewardsView.backgroundColor = UIColor.yellow
+            
+        default: break
+            
+        }
+        
+    }
+    
+    
+
+    
+
+    
+    
+        
     @IBAction func DailyRewardButton(_ sender: Any) {
         let myVC = storyboard?.instantiateViewController(withIdentifier: "DailyGiftViewController") as! DailyGiftViewController
         navigationController?.pushViewController(myVC, animated: true)
@@ -33,10 +73,13 @@ class RewardsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
  self.tabBarController?.tabBar.isHidden = false
     }
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        }
                 // Do any additional setup after loading the view.
-    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -44,7 +87,8 @@ class RewardsViewController: UIViewController {
     }
     
 
-    /*
+
+      /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

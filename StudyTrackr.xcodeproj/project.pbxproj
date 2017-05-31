@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		731E46C61EDC66F8001A12EA /* BackgroundColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731E46C51EDC66F8001A12EA /* BackgroundColour.swift */; };
 		7350C8D41EC1FE6D0054200B /* AvatarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */; };
 		7350C8D51EC1FE6D0054200B /* AvatarsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */; };
 		7350C8D91EC1FECE0054200B /* FontsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C8D71EC1FECE0054200B /* FontsViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		731E46C51EDC66F8001A12EA /* BackgroundColour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColour.swift; sourceTree = "<group>"; };
 		7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarsViewController.swift; sourceTree = "<group>"; };
 		7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarsViewController.xib; sourceTree = "<group>"; };
 		7350C8D71EC1FECE0054200B /* FontsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontsViewController.swift; path = ../FontsViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				73D108B61EC0BB4A00F2765F /* DailyGiftViewController.xib */,
 				7350C8DD1EC1FF1A0054200B /* BackgroundsViewController.swift */,
 				7350C8DE1EC1FF1A0054200B /* BackgroundsViewController.xib */,
+				731E46C51EDC66F8001A12EA /* BackgroundColour.swift */,
 				739C48321EC20D7E00BFCC21 /* Rewards.swift */,
 			);
 			name = "Rewards Code Files";
@@ -247,6 +250,7 @@
 				739C48331EC20D7E00BFCC21 /* Rewards.swift in Sources */,
 				7350C8D41EC1FE6D0054200B /* AvatarsViewController.swift in Sources */,
 				73D108AE1EBB750E00F2765F /* RewardsViewController.swift in Sources */,
+				731E46C61EDC66F8001A12EA /* BackgroundColour.swift in Sources */,
 				7350C8DF1EC1FF1A0054200B /* BackgroundsViewController.swift in Sources */,
 				73D108B71EC0BB4A00F2765F /* DailyGiftViewController.swift in Sources */,
 			);
