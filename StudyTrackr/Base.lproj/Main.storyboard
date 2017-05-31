@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -497,7 +497,7 @@
                                         <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <connections>
-                                        <action selector="rightButton:" destination="2Yx-zf-Fql" eventType="touchUpInside" id="iqc-zK-cCs"/>
+                                        <action selector="rightButton:" destination="2Yx-zf-Fql" eventType="touchUpInside" id="eka-Mh-heb"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jW-5I-rcq">
@@ -507,7 +507,7 @@
                                         <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <connections>
-                                        <action selector="leftButton:" destination="2Yx-zf-Fql" eventType="touchUpInside" id="bVl-Ci-uUo"/>
+                                        <action selector="leftButton:" destination="2Yx-zf-Fql" eventType="touchUpInside" id="EkN-1D-b9g"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -521,6 +521,8 @@
                             </constraints>
                             <connections>
                                 <outlet property="dateHeader" destination="84P-Ww-Tlb" id="65G-Qo-ZA5"/>
+                                <outlet property="leftButton" destination="VEk-qi-etU" id="4U7-Hr-Lx7"/>
+                                <outlet property="rightButton" destination="7jW-5I-rcq" id="qMH-a0-VaC"/>
                             </connections>
                         </collectionReusableView>
                         <connections>
