@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67F8F1571EDF051A009B3F8A /* HelpButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F8F1561EDF051A009B3F8A /* HelpButtonViewController.swift */; };
 		90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */; };
 		C57F79CD1ECC8CD400E69B2A /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57F79CC1ECC8CD400E69B2A /* EventTableViewController.swift */; };
 		C596BB321ECDDEC000D1018F /* studyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67F8F1561EDF051A009B3F8A /* HelpButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelpButtonViewController.swift; path = ../HelpButtonViewController.swift; sourceTree = "<group>"; };
 		90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		C57F79CC1ECC8CD400E69B2A /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = studyEventTableViewCell.swift; path = ../studyEventTableViewCell.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		C592F64A1EC9EC5E004961AD /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				67F8F1561EDF051A009B3F8A /* HelpButtonViewController.swift */,
 				90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */,
 				C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */,
 				C57F79CC1ECC8CD400E69B2A /* EventTableViewController.swift */,
@@ -164,6 +167,7 @@
 				C57F79CD1ECC8CD400E69B2A /* EventTableViewController.swift in Sources */,
 				DEC18D4D1EB2375B00F9935C /* SecondViewController.swift in Sources */,
 				DEC18D491EB2375B00F9935C /* AppDelegate.swift in Sources */,
+				67F8F1571EDF051A009B3F8A /* HelpButtonViewController.swift in Sources */,
 				C596BB321ECDDEC000D1018F /* studyEventTableViewCell.swift in Sources */,
 				DEC18D4B1EB2375B00F9935C /* FirstViewController.swift in Sources */,
 			);
