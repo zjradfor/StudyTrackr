@@ -15,7 +15,13 @@ var weekTag = 0
 var x:CGFloat = 0
 var y:CGFloat = 0
 private let reuseIdentifier = "Cell"
-var days = [Day]()
+struct DateInfo {
+    var day = Day.init()
+    var events = [Event]()
+}
+var DateInfoArr = [DateInfo]()
+//var days = [Day]()
+//var events = [Event]()
 var leapYear = false
 var tileBuffer = 0
 let calendar = Calendar.current
@@ -23,6 +29,7 @@ let date = Date()
 var month = calendar.component(.month, from: date)
 var buttonIsPressedR = false
 var buttonIsPressedL = false
+
 class CalendarCollectionViewController: UICollectionViewController {
     
     @IBOutlet var CalendarCollectionView: UICollectionView!
@@ -61,21 +68,21 @@ class CalendarCollectionViewController: UICollectionViewController {
                                                             //Initialize days
         for var i in 0...365 + add {
             //Fill Weekday
-            days.append(Day.init())
+            DateInfoArr.append(DateInfo())
             if (firstWeekday == 1) {
-                days[i].weekDay = "Sunday"
+                DateInfoArr[i].day.weekDay = "Sunday"
             } else if (firstWeekday == 2) {
-                days[i].weekDay = "Monday"
+                DateInfoArr[i].day.weekDay = "Monday"
             } else if (firstWeekday == 3) {
-                days[i].weekDay = "Tuesday"
+                DateInfoArr[i].day.weekDay = "Tuesday"
             } else if (firstWeekday == 4) {
-                days[i].weekDay = "Wednesday"
+                DateInfoArr[i].day.weekDay = "Wednesday"
             } else if (firstWeekday == 5) {
-                days[i].weekDay = "Thursday"
+                DateInfoArr[i].day.weekDay = "Thursday"
             } else if (firstWeekday == 6) {
-                days[i].weekDay = "Friday"
+                DateInfoArr[i].day.weekDay = "Friday"
             } else if (firstWeekday == 7) {
-                days[i].weekDay = "Saturday"
+                DateInfoArr[i].day.weekDay = "Saturday"
             }
             if (firstWeekday < 7) {
                 firstWeekday += 1
@@ -85,44 +92,44 @@ class CalendarCollectionViewController: UICollectionViewController {
             
             //Fill Month and Day
             if (i < 32) {
-                days[i].month = 1
-                days[i].dayOfMonth = i
+                DateInfoArr[i].day.month = 1
+                DateInfoArr[i].day.dayOfMonth = i
             } else if (i > 31 && i < (60 + add)) {              //Plus add part is to account for leap
-                days[i].month = 2
-                days[i].dayOfMonth = i - 31
+                DateInfoArr[i].day.month = 2
+                DateInfoArr[i].day.dayOfMonth = i - 31
             } else if (i > (59 + add) && i < (91 + add)) {
-                days[i].month = 3
-                days[i].dayOfMonth = i - 59
+                DateInfoArr[i].day.month = 3
+                DateInfoArr[i].day.dayOfMonth = i - 59
             } else if (i > (90 + add) && i < (121 + add)) {
-                days[i].month = 4
-                days[i].dayOfMonth = i - 90
+                DateInfoArr[i].day.month = 4
+                DateInfoArr[i].day.dayOfMonth = i - 90
             } else if (i > (120 + add) && i < (152 + add)) {
-                days[i].month = 5
-                days[i].dayOfMonth = i - 120
+                DateInfoArr[i].day.month = 5
+                DateInfoArr[i].day.dayOfMonth = i - 120
             } else if (i > (151 + add) && i < (182 + add)) {
-                days[i].month = 6
-                days[i].dayOfMonth = i - 151
+                DateInfoArr[i].day.month = 6
+                DateInfoArr[i].day.dayOfMonth = i - 151
             } else if (i > (181 + add) && i < (213 + add)) {
-                days[i].month = 7
-                days[i].dayOfMonth = i - 181
+                DateInfoArr[i].day.month = 7
+                DateInfoArr[i].day.dayOfMonth = i - 181
             } else if (i > (212 + add) && i < (244 + add)) {
-                days[i].month = 8
-                days[i].dayOfMonth = i - 212
+                DateInfoArr[i].day.month = 8
+                DateInfoArr[i].day.dayOfMonth = i - 212
             } else if (i > (243 + add) && i < (274 + add)) {
-                days[i].month = 9
-                days[i].dayOfMonth = i - 243
+                DateInfoArr[i].day.month = 9
+                DateInfoArr[i].day.dayOfMonth = i - 243
             } else if (i > (273 + add) && i < (305 + add)) {
-                days[i].month = 10
-                days[i].dayOfMonth = i - 273
+                DateInfoArr[i].day.month = 10
+                DateInfoArr[i].day.dayOfMonth = i - 273
             } else if (i > (304 + add) && i < (335 + add)) {
-                days[i].month = 11
-                days[i].dayOfMonth = i - 304
+                DateInfoArr[i].day.month = 11
+                DateInfoArr[i].day.dayOfMonth = i - 304
             } else {
-                days[i].month = 12
-                days[i].dayOfMonth = i - 334
+                DateInfoArr[i].day.month = 12
+                DateInfoArr[i].day.dayOfMonth = i - 334
             }
             //Fill Year
-            days[i].year = year
+            DateInfoArr[i].day.year = year
             i += 1
         }
         
@@ -162,7 +169,7 @@ class CalendarCollectionViewController: UICollectionViewController {
         
         var firstWeekDay = "Sunday"
 
-        firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: days, month: month)
+        firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr, month: month)
         
         if firstWeekDay == "Sunday" {
             tileBuffer = -5
@@ -369,7 +376,7 @@ class CalendarCollectionViewController: UICollectionViewController {
     */
     
     
-    func getFirstWeekDayOfMonth(leapYear: Bool, days: [Day], month: Int) -> String {
+    func getFirstWeekDayOfMonth(leapYear: Bool, days: [DateInfo], month: Int) -> String {
                 var add = 0
         
                 if leapYear == true {
@@ -377,29 +384,29 @@ class CalendarCollectionViewController: UICollectionViewController {
                     }
         
                 if month == 1 {
-                        firstWeekDay = days[0].getWeekDay()
+                        firstWeekDay = days[0].day.getWeekDay()
                     } else if month == 2 {
-                        firstWeekDay = days[31].getWeekDay()
+                        firstWeekDay = days[31].day.getWeekDay()
                     } else if month == 3 {
-                        firstWeekDay = days[59 + add].getWeekDay()
+                        firstWeekDay = days[59 + add].day.getWeekDay()
                     } else if month == 4 {
-                        firstWeekDay = days[90 + add].getWeekDay()
+                        firstWeekDay = days[90 + add].day.getWeekDay()
                     } else if month == 5 {
-                        firstWeekDay = days[120 + add].getWeekDay()
+                        firstWeekDay = days[120 + add].day.getWeekDay()
                     } else if month == 6 {
-                        firstWeekDay = days[151 + add].getWeekDay()
+                        firstWeekDay = days[151 + add].day.getWeekDay()
                     } else if month == 7 {
-                        firstWeekDay = days[181 + add].getWeekDay()
+                        firstWeekDay = days[181 + add].day.getWeekDay()
                     } else if month == 8 {
-                        firstWeekDay = days[212 + add].getWeekDay()
+                        firstWeekDay = days[212 + add].day.getWeekDay()
                     } else if month == 9 {
-                        firstWeekDay = days[243 + add].getWeekDay()
+                        firstWeekDay = days[243 + add].day.getWeekDay()
                     } else if month == 10 {
-                        firstWeekDay = days[273 + add].getWeekDay()
+                        firstWeekDay = days[273 + add].day.getWeekDay()
                     } else if month == 11 {
-                        firstWeekDay = days[304 + add].getWeekDay()
+                        firstWeekDay = days[304 + add].day.getWeekDay()
                     } else if month == 12 {
-                        firstWeekDay = days[334 + add].getWeekDay()
+                        firstWeekDay = days[334 + add].day.getWeekDay()
                     }
                 return firstWeekDay
             }
