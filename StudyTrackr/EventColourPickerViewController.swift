@@ -9,7 +9,7 @@
 import UIKit
 
 class EventColourPickerViewController: UIViewController {
-
+    var colour = UIColor.blue
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,20 +27,20 @@ class EventColourPickerViewController: UIViewController {
      @IBAction func goBack(_ sender: Any) {
         performSegue(withIdentifier: "unwindSegueToVC3", sender: self)
      }
-    
+    @IBAction func colourPicked(_ sender: Any) {
+        performSegue(withIdentifier: "colourPickedSegue", sender: self)
+        NewEventViewController().eventColour = colour
+    }
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "colour"){
             let vc = segue.destination as! NewEventViewController
-            
         }
-        if (segue.identifier == "unwindSegueToVC3"){
-        }
-        
     }
-    
+    */
     // MARK: - Colour Picking
     @IBAction func yellowPicker(_ sender: Any) {
-        colourCell().setViewColour(colour: UIColor.yellow)
+        colour = UIColor.yellow
     }
     @IBAction func bluePicker(_ sender: Any) {
         colourCell().setViewColour(colour: UIColor.blue)
