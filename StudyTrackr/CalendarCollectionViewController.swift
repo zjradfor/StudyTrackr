@@ -31,7 +31,7 @@ var month = calendar.component(.month, from: date)
 var buttonIsPressedR = false
 var buttonIsPressedL = false
 
-class CalendarCollectionViewController: UICollectionViewController {
+class CalendarCollectionViewController: UICollectionViewController, CalendarHeaderDelegate {
     
     @IBOutlet var CalendarCollectionView: UICollectionView!
     var firstWeekDay = "Sunday"
@@ -140,20 +140,7 @@ class CalendarCollectionViewController: UICollectionViewController {
         self.collectionView!.register(CalendarHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
         // Do any additional setup after loading the view.
         
-        //Gesture 
-        /*
-        let swipeRightRec = CalendarSwipeGestureRecongnizer()
-        let swipeLeftRec = CalendarSwipeGestureRecongnizer()
         
-        swipeRightRec.addTarget(self, action: #selector(CalendarCollectionViewController.swipedRight) )
-        swipeRightRec.direction = .right
-        self.view!.addGestureRecognizer(swipeRightRec)
-        
-        
-        swipeLeftRec.addTarget(self, action: #selector(CalendarCollectionViewController.swipedLeft) )
-        swipeLeftRec.direction = .left
-        self.view!.addGestureRecognizer(swipeLeftRec)
-         */
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -191,6 +178,7 @@ class CalendarCollectionViewController: UICollectionViewController {
  
     
     //Header Class connection to UICollectionView
+    
     override func collectionView(_ collectionView: UICollectionView,
                                  viewForSupplementaryElementOfKind kind: String,
                                  at indexPath: IndexPath) -> UICollectionReusableView {
@@ -198,18 +186,18 @@ class CalendarCollectionViewController: UICollectionViewController {
         switch kind {
         case UICollectionElementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
-            headerView.rightButton(headerView.rightButton)
-            headerView.leftButton(headerView.leftButton)
+            headerView.delegate = self as! CalendarHeaderDelegate
             
             if buttonIsPressedL == true {
                 month -= 1
+                x = 0
+                y = 0
+                tag = 0
+                tileBuffer = 0
+                weekTag = 0
+                print(month)
                 print("Made it")
                 buttonIsPressedL = false
-            }
-            if buttonIsPressedR == true {
-                month += 1
-                print("Made it")
-                buttonIsPressedR = false
             }
  
             return headerView
@@ -258,7 +246,9 @@ class CalendarCollectionViewController: UICollectionViewController {
         }
     }
     
-    
+    func updateCalendarCollectionView() {
+        self.CalendarCollectionView.reloadData()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
