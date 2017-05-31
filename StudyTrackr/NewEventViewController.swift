@@ -77,7 +77,7 @@ class NewEventViewController: UIViewController {
     }
     
     @IBAction func addEvent(_ sender: Any) {
-        
+        DateInfoArr[eventDayFromSegue].events.append(Event.init())
     }
 
 }

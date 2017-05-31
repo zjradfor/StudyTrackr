@@ -225,7 +225,7 @@ class CalendarCollectionViewController: UICollectionViewController {
         case UICollectionElementKindSectionHeader:
         //3
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
-        
+    
         if month == 1 {
             headerView.dateHeader.text = "January"
         } else if month == 2 {
