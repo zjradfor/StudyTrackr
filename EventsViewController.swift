@@ -45,6 +45,7 @@ class EventsViewController: UIViewController {
         let vc = segue.destination as! NewEventViewController
         vc.eventFromSegue = eventToSegue
         vc.eventDayFromSegue = dayFromSegue
+        vc.eventMonthFromSegue = monthFromSegue
         }
     }
     @IBAction func unwindToVC2(segue:UIStoryboardSegue) { }
