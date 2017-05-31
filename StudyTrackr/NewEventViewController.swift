@@ -20,6 +20,7 @@ class NewEventViewController: UIViewController {
     var cellCounter = 0
     var eventColour = UIColor.green
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("What am i now? : \(eventColour)")
@@ -69,8 +70,9 @@ class NewEventViewController: UIViewController {
     }
     */
     func getColour() -> UIColor{
-        print("Setting: \(eventColour)")
+        print("Setting colour to: \(eventColour)")
         return eventColour
+        
     }
 
 }
