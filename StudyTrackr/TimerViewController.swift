@@ -188,8 +188,8 @@ func updatebreakTimer(){
         super.didReceiveMemoryWarning()
         
     }
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             let EventTableViewController = segue.destination as! EventTableViewController
             EventTableViewController.events = studyEvents
-        }
+        }*/
 }
