@@ -19,8 +19,10 @@ class NewEventViewController: UIViewController {
     var eventDayFromSegue = 0
     var cellCounter = 0
     var eventColour = UIColor.green
+    var eventMonthFromSegue = 0
     
     override func viewDidLoad() {
+        print(eventMonthFromSegue)
         super.viewDidLoad()
         print("What am i now? : \(eventColour)")
         if eventFromSegue == 0{
@@ -69,8 +71,9 @@ class NewEventViewController: UIViewController {
     }
     */
     func getColour() -> UIColor{
-        print("Setting: \(eventColour)")
+        print("Setting colour to: \(eventColour)")
         return eventColour
+        
     }
     
     @IBAction func addEvent(_ sender: Any) {
