@@ -198,19 +198,19 @@ class CalendarCollectionViewController: UICollectionViewController {
         switch kind {
         case UICollectionElementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
-            headerView.rightButton(Any)
-            headerView.leftButton(Any)
+            headerView.rightButton(headerView.rightButton)
+            headerView.leftButton(headerView.leftButton)
             
-            /*if buttonIsPressedL == true {
+            if buttonIsPressedL == true {
                 month -= 1
-                viewWillAppear(true)
+                print("Made it")
                 buttonIsPressedL = false
             }
             if buttonIsPressedR == true {
                 month += 1
-                viewWillAppear(true)
+                print("Made it")
                 buttonIsPressedR = false
-            }*/
+            }
  
             return headerView
         default:
