@@ -481,19 +481,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZB-Wk-2JB" userLabel="Gift B">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZB-Wk-2JB" userLabel="Gift B">
                                 <rect key="frame" x="20" y="395" width="110" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="eeO-ZK-jvT"/>
+                                    <constraint firstAttribute="height" constant="120" id="hLc-ak-RAQ"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="gift-clipart-Present5"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWX-Qe-aCl" userLabel="Gift C">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWX-Qe-aCl" userLabel="Gift C">
                                 <rect key="frame" x="233" y="395" width="110" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="dWz-lJ-HUb"/>
+                                    <constraint firstAttribute="height" constant="120" id="oKM-9F-sql"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="gift-clipart-Present5"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUl-yQ-Mdb" userLabel="Gift A">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUl-yQ-Mdb" userLabel="Gift A">
                                 <rect key="frame" x="132" y="205" width="110" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="3Hz-JL-mNl"/>
+                                    <constraint firstAttribute="height" constant="120" id="T01-Fi-WBI"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="gift-clipart-Present5"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Gift" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smg-zJ-znQ">
@@ -510,7 +519,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Smg-zJ-znQ" firstAttribute="centerX" secondItem="BYv-et-yKL" secondAttribute="centerX" id="1db-3S-yKP"/>
+                            <constraint firstItem="oUl-yQ-Mdb" firstAttribute="centerX" secondItem="BYv-et-yKL" secondAttribute="centerX" id="5fF-oH-aYF"/>
+                            <constraint firstItem="iWX-Qe-aCl" firstAttribute="top" secondItem="Smg-zJ-znQ" secondAttribute="bottom" constant="325" id="9wK-aH-dRk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QZB-Wk-2JB" secondAttribute="trailing" constant="229" id="CP4-Wa-ura"/>
                             <constraint firstItem="Smg-zJ-znQ" firstAttribute="top" secondItem="hVQ-FR-SJB" secondAttribute="bottom" constant="8" id="ZdH-5z-Ifl"/>
+                            <constraint firstItem="QZB-Wk-2JB" firstAttribute="top" secondItem="Smg-zJ-znQ" secondAttribute="bottom" constant="325" id="l2b-KC-g1V"/>
+                            <constraint firstItem="oUl-yQ-Mdb" firstAttribute="top" secondItem="Smg-zJ-znQ" secondAttribute="bottom" constant="135" id="tpA-ul-0Je"/>
+                            <constraint firstItem="iWX-Qe-aCl" firstAttribute="leading" secondItem="BYv-et-yKL" secondAttribute="leadingMargin" constant="217" id="vkX-bv-62K"/>
                         </constraints>
                     </view>
                 </viewController>
