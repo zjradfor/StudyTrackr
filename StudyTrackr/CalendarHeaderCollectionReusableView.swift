@@ -28,6 +28,7 @@ class CalendarHeaderCollectionReusableView: UICollectionReusableView {
             if year == calendar.component(.year, from: date) + 1 {
                 month = 12
                 year -= 1
+                yearToShow = 0
                 print("Month should be 12 \(month)")
                 self.delegate?.updateCalendarCollectionView()
             }
@@ -43,6 +44,7 @@ class CalendarHeaderCollectionReusableView: UICollectionReusableView {
             if year == calendar.component(.year, from: date) {
                 month = 1
                 year += 1
+                yearToShow = 1
                 print("Month should be 1 \(month)")
                 self.delegate?.updateCalendarCollectionView()
             }

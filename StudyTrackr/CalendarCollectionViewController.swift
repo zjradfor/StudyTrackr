@@ -20,6 +20,7 @@ struct DateInfo {
     var events = [Event]()
     
 }
+var yearToShow = 0
 var DateInfoArr = [[DateInfo]]()
 var leapYear = false
 var leapYear2 = false
@@ -58,9 +59,9 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             leapYear = false
         }
         
-        if (year + 1 % 4 == 0) {
-            if (year + 1 % 100 == 0) {
-                if (year + 1 % 400 == 0) {
+        if ((year + 1) % 4 == 0) {
+            if ((year + 1) % 100 == 0) {
+                if ((year + 1) % 400 == 0) {
                     leapYear2 = true
                 } else {
                     leapYear2 = false
@@ -85,10 +86,11 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             add = 1
             add2 = 0
         }
-        for var j in 0...1 {                                                  //Initialize days
+        for var j in 0...1 {
+            DateInfoArr.append([DateInfo()])            //Initialize days
         for var i in 0...365 + add + add2 {
             //Fill Weekday
-            DateInfoArr.append([DateInfo()])
+            DateInfoArr[j].append(DateInfo())
             if (firstWeekday == 1) {
                 DateInfoArr[j][i].day.weekDay = "Sunday"
             } else if (firstWeekday == 2) {
@@ -153,6 +155,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             i += 1
         }
             j += 1
+            firstWeekday -= 1
         }
         // Register cell classes
         
@@ -177,7 +180,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         
         var firstWeekDay = "Sunday"
 
-        firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[0], month: month)
+        firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[yearToShow], month: month)
         
         if firstWeekDay == "Sunday" {
             tileBuffer = -5
@@ -209,7 +212,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         case UICollectionElementKindSectionHeader:
         //3
         let headerLabel = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
-            headerLabel.delegate = self as CalendarHeaderDelegate
+            headerLabel.delegate = self as! CalendarHeaderDelegate
         if month == 1 {
             headerLabel.dateHeader.text = "January"
         } else if month == 2 {
@@ -258,7 +261,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         weekTag = 0
         var firstWeekDay = "Sunday"
         
-        firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[0], month: month)
+        firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[yearToShow], month: month)
         
         if firstWeekDay == "Sunday" {
             tileBuffer = -5
