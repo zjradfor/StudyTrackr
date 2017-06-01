@@ -14,10 +14,10 @@ protocol CalendarHeaderDelegate {
 }
 //This is the Label being connected to the header class
 class CalendarHeaderCollectionReusableView: UICollectionReusableView {
-    
-    var delegate: CalendarHeaderDelegate?
     @IBOutlet weak var dateHeader: UILabel!
     
+    var delegate: CalendarHeaderDelegate?
+  
     
     
     

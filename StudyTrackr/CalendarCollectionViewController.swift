@@ -182,54 +182,40 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     override func collectionView(_ collectionView: UICollectionView,
                                  viewForSupplementaryElementOfKind kind: String,
                                  at indexPath: IndexPath) -> UICollectionReusableView {
-        //Swipe Buttons
-        switch kind {
-        case UICollectionElementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
-            headerView.delegate = self as! CalendarHeaderDelegate
-            
-           
- 
-            return headerView
-        default:
-            assert(false, "Unexpected element kind")
-        }
-    
-
         
         //1
         switch kind {
         //2
         case UICollectionElementKindSectionHeader:
         //3
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
-    
+        let headerLabel = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
+            headerLabel.delegate = self as! CalendarHeaderDelegate
         if month == 1 {
-            headerView.dateHeader.text = "January"
+            headerLabel.dateHeader.text = "January"
         } else if month == 2 {
-            headerView.dateHeader.text = "February"
+            headerLabel.dateHeader.text = "February"
         } else if month == 3 {
-            headerView.dateHeader.text = "March"
+            headerLabel.dateHeader.text = "March"
         } else if month == 4 {
-            headerView.dateHeader.text = "April"
+            headerLabel.dateHeader.text = "April"
         } else if month == 5 {
-            headerView.dateHeader.text = "May"
+            headerLabel.dateHeader.text = "May"
         } else if month == 6 {
-            headerView.dateHeader.text = "June"
+            headerLabel.dateHeader.text = "June"
         } else if month == 7 {
-            headerView.dateHeader.text = "July"
+            headerLabel.dateHeader.text = "July"
         } else if month == 8 {
-            headerView.dateHeader.text = "August"
+            headerLabel.dateHeader.text = "August"
         } else if month == 9 {
-            headerView.dateHeader.text = "September"
+            headerLabel.dateHeader.text = "September"
         } else if month == 10 {
-            headerView.dateHeader.text = "October"
+            headerLabel.dateHeader.text = "October"
         } else if month == 11 {
-            headerView.dateHeader.text = "November"
+            headerLabel.dateHeader.text = "November"
         } else if month == 12 {
-            headerView.dateHeader.text = "December"
+            headerLabel.dateHeader.text = "December"
         }
-        return headerView
+        return headerLabel
         default:
         //4
             assert(false, "Unexpected element kind")

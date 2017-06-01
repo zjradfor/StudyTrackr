@@ -520,7 +520,7 @@
                                 <constraint firstItem="84P-Ww-Tlb" firstAttribute="leading" secondItem="2Yx-zf-Fql" secondAttribute="leadingMargin" constant="88" id="dKW-8g-EzH"/>
                             </constraints>
                             <connections>
-                                <outlet property="dateHeader" destination="84P-Ww-Tlb" id="65G-Qo-ZA5"/>
+                                <outlet property="dateHeader" destination="84P-Ww-Tlb" id="QAp-6c-lZ8"/>
                                 <outlet property="leftButton" destination="VEk-qi-etU" id="4U7-Hr-Lx7"/>
                                 <outlet property="rightButton" destination="7jW-5I-rcq" id="qMH-a0-VaC"/>
                             </connections>
