@@ -13,16 +13,8 @@ class RewardsViewController: UIViewController {
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
     @IBOutlet weak var myLabel: UILabel!
-    var myInt = 5
     
-    
-    @IBAction func goButton(_ sender: AnyObject) {
-        let RewardsViewController = storyboard?.instantiateViewController(withIdentifier: "FontsViewController") as! FontsViewController
-        RewardsViewController.stringPassed = myLabel.text!
-        RewardsViewController.intPassed = myInt
-        navigationController?.pushViewController(RewardsViewController, animated: true)
-    }
-    
+    var myInt = 4
     
     //let myVC = storyboard?.instantiateViewControllerWithIdentifier("SecondVC") as! SecondVC
     //myVC.stringPassed = myLabel.text!
@@ -30,10 +22,6 @@ class RewardsViewController: UIViewController {
     
     ///////////////////////////////////////////////////////////////////////////////////////////////
 
-    
-    
-    
-    
     @IBOutlet var RewardsView: UIView!
    
      var RecievedCol = String()
@@ -73,23 +61,32 @@ class RewardsViewController: UIViewController {
     
         
     @IBAction func DailyRewardButton(_ sender: Any) {
-        let myVC = storyboard?.instantiateViewController(withIdentifier: "DailyGiftViewController") as! DailyGiftViewController
-        navigationController?.pushViewController(myVC, animated: true)
+        let RewardsViewController = storyboard?.instantiateViewController(withIdentifier: "DailyGiftViewController") as! DailyGiftViewController
+        RewardsViewController.stringPassed = myLabel.text!
+        RewardsViewController.intPassed = myInt
+        navigationController?.pushViewController(RewardsViewController, animated: true)
+
 
     }
     @IBAction func AvatarsButton(_ sender: Any) {
-        let myVC = storyboard?.instantiateViewController(withIdentifier: "AvatarsViewController") as! AvatarsViewController
-        navigationController?.pushViewController(myVC, animated: true)
+        let RewardsViewController = storyboard?.instantiateViewController(withIdentifier: "AvatarsViewController") as! AvatarsViewController
+        RewardsViewController.stringPassed = myLabel.text!
+        RewardsViewController.intPassed = myInt
+        navigationController?.pushViewController(RewardsViewController, animated: true)
     }
 
     @IBAction func FontsButton(_ sender: Any) {
-        let myVC = storyboard?.instantiateViewController(withIdentifier: "FontsViewController") as! FontsViewController
-        navigationController?.pushViewController(myVC, animated: true)
-
+        let RewardsViewController = storyboard?.instantiateViewController(withIdentifier: "FontsViewController") as! FontsViewController
+        RewardsViewController.stringPassed = myLabel.text!
+        RewardsViewController.intPassed = myInt
+        navigationController?.pushViewController(RewardsViewController, animated: true)
     }
+    
     @IBAction func BackgroundsButton(_ sender: Any) {
-        let myVC = storyboard?.instantiateViewController(withIdentifier: "BackgroundsViewController") as! BackgroundsViewController
-        navigationController?.pushViewController(myVC, animated: true)
+        let RewardsViewController = storyboard?.instantiateViewController(withIdentifier: "BackgroundsViewController") as! BackgroundsViewController
+        RewardsViewController.stringPassed = myLabel.text!
+        RewardsViewController.intPassed = myInt
+        navigationController?.pushViewController(RewardsViewController, animated: true)
 
     }
     override func viewWillAppear(_ animated: Bool) {

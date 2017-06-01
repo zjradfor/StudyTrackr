@@ -41,12 +41,13 @@ class FontsViewController: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            secondLabel.text = stringPassed + "my Int: \(intPassed)"
+            secondLabel.text = stringPassed + "\(intPassed)"
         
-        
-        // Do any additional setup after loading the view.
     }
 ////////////////////////////////////////////////////////////////////////////////
+    
+      // Do any additional setup after loading the view.
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -28,6 +28,7 @@ class BackgroundsViewController: UIViewController {
             BackgroundView.backgroundColor = UIColor.yellow
             
         default: break
+        
             
         }
 
@@ -62,12 +63,20 @@ class BackgroundsViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    
+    //////////////////////////////////////////////////////////////////////////////
+    @IBOutlet weak var secondLabel: UILabel!
+    
+    var stringPassed = ""
+    var intPassed = Int()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        secondLabel.text = stringPassed + "\(intPassed)"
         
-        
-        }
+    }
+    ////////////////////////////////////////////////////////////////////////////////
 
     
     

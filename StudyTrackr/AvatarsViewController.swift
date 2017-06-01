@@ -24,13 +24,26 @@ class AvatarsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+        
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  
 
+        //////////////////////////////////////////////////////////////////////////////
+        @IBOutlet weak var secondLabel: UILabel!
+    
+        var stringPassed = ""
+        var intPassed = Int()
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            secondLabel.text = stringPassed + "\(intPassed)"
+            
+        }
+        ////////////////////////////////////////////////////////////////////////////////
+        
         // Do any additional setup after loading the view.
-    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
