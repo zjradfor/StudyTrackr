@@ -97,32 +97,44 @@ class NewEventViewController: UIViewController {
         if eventMonthFromSegue == 2 {
             addMonth = 31
         } else if eventMonthFromSegue == 3 {
-            addMonth = 59
+            addMonth = 59 + add
         } else if eventMonthFromSegue == 4 {
-            addMonth = 90
+            addMonth = 90 + add
         } else if eventMonthFromSegue == 5 {
-            addMonth = 120
+            addMonth = 120 + add
         } else if eventMonthFromSegue == 6 {
-            addMonth = 151
+            addMonth = 151 + add
         } else if eventMonthFromSegue == 7 {
-            addMonth = 181
+            addMonth = 181 + add
         } else if eventMonthFromSegue == 8 {
-            addMonth = 212
+            addMonth = 212 + add
         } else if eventMonthFromSegue == 9 {
-            addMonth = 243
+            addMonth = 243 + add
         } else if eventMonthFromSegue == 10 {
-            addMonth = 273
+            addMonth = 273 + add
         } else if eventMonthFromSegue == 11 {
-            addMonth = 304
+            addMonth = 304 + add
         } else if eventMonthFromSegue == 12 {
-            addMonth = 334
+            addMonth = 334 + add
         } else {
             addMonth = 0
         }
-        i = eventDayFromSegue + addMonth + add
+        i = eventDayFromSegue + addMonth
         DateInfoArr[i].events.insert(Event.init(), at: 0)
         DateInfoArr[i].events[0].type = currentEventTitle.text!
         DateInfoArr[i].events[0].colour = eventColour
+        //Storing subject
+        DateInfoArr[i].events[0].subject = SubjectTableViewCell().subjectTextField.text!
+        //Storing location
+        DateInfoArr[i].events[0].location = LocationTableViewCell().locationTextField.text!
+        //Storing notes
+        DateInfoArr[i].events[0].notes = NotesTableViewCell().notesTextField.text!
+        
+        
+        
+        
+        
+        
     }
 
 }

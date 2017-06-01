@@ -13,6 +13,8 @@ class Event {
     var description: String
     var type: String
     var subject: String
+    var location: String
+    var notes: String
     var dueDate: Day
     var isComplete: Bool
     var studyTime: Int
@@ -22,6 +24,8 @@ class Event {
         description = "Void"
         type = "Void"
         subject = "Void"
+        location = "Void"
+        notes = "Void"
         dueDate = Day()
         isComplete = false
         studyTime = 0
