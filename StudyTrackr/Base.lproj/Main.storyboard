@@ -195,7 +195,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Avatars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJD-95-LM4">
-                                <rect key="frame" x="16" y="28" width="343" height="21"/>
+                                <rect key="frame" x="16" y="59" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -203,27 +203,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GDa-5D-QHV" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="167" id="1ba-Im-32u"/>
-                            <constraint firstItem="YvS-4R-GHI" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="499" id="1wa-am-hR5"/>
-                            <constraint firstItem="qvb-nc-IZ6" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="41" id="3Ko-wS-rEs"/>
+                            <constraint firstItem="GDa-5D-QHV" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="136" id="1ba-Im-32u"/>
+                            <constraint firstItem="YvS-4R-GHI" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="468" id="1wa-am-hR5"/>
+                            <constraint firstItem="qvb-nc-IZ6" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="10" id="3Ko-wS-rEs"/>
                             <constraint firstItem="Dm5-6m-NrN" firstAttribute="leading" secondItem="YvS-4R-GHI" secondAttribute="trailing" constant="-112" id="3fE-GG-HT2"/>
-                            <constraint firstItem="Ul3-ko-Odq" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="382" id="4LD-VF-PcG"/>
+                            <constraint firstItem="Ul3-ko-Odq" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="351" id="4LD-VF-PcG"/>
+                            <constraint firstItem="SJD-95-LM4" firstAttribute="top" secondItem="YSB-Mh-AOd" secondAttribute="bottom" constant="39" id="7l7-Nd-iQo"/>
                             <constraint firstItem="dd2-0q-Xox" firstAttribute="leading" secondItem="qvb-nc-IZ6" secondAttribute="trailing" constant="-112" id="9Mq-LR-zQJ"/>
-                            <constraint firstItem="Dm5-6m-NrN" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="473" id="EAF-ZN-beh"/>
-                            <constraint firstItem="dd2-0q-Xox" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="15" id="GCi-xf-dvl"/>
+                            <constraint firstItem="Dm5-6m-NrN" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="442" id="EAF-ZN-beh"/>
+                            <constraint firstItem="dd2-0q-Xox" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="-16" id="GCi-xf-dvl"/>
                             <constraint firstItem="VWg-pS-ZHu" firstAttribute="leading" secondItem="SG9-TS-ex2" secondAttribute="trailing" constant="-112" id="Kqy-tu-Lhd"/>
                             <constraint firstItem="dTm-lI-x0u" firstAttribute="leading" secondItem="GDa-5D-QHV" secondAttribute="trailing" constant="-167" id="Lal-wx-Bew"/>
                             <constraint firstItem="Ul3-ko-Odq" firstAttribute="leading" secondItem="VWg-pS-ZHu" secondAttribute="trailing" constant="-167" id="M9d-wi-cmG"/>
-                            <constraint firstItem="dTm-lI-x0u" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="229" id="NY6-UC-Cne"/>
+                            <constraint firstItem="dTm-lI-x0u" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="198" id="NY6-UC-Cne"/>
                             <constraint firstItem="GDa-5D-QHV" firstAttribute="leading" secondItem="aUb-yd-I6P" secondAttribute="trailing" constant="-112" id="WCb-OH-TzP"/>
                             <constraint firstItem="5Ua-Uw-rrq" firstAttribute="leading" secondItem="dd2-0q-Xox" secondAttribute="trailing" constant="-167" id="WkJ-Ea-Cwo"/>
-                            <constraint firstItem="MdK-de-iJw" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="535" id="XDz-vF-xM9"/>
+                            <constraint firstItem="MdK-de-iJw" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="504" id="XDz-vF-xM9"/>
                             <constraint firstItem="MdK-de-iJw" firstAttribute="leading" secondItem="Dm5-6m-NrN" secondAttribute="trailing" constant="-167" id="YKl-9y-0WT"/>
-                            <constraint firstItem="5Ua-Uw-rrq" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="77" id="ZVA-dL-3bA"/>
-                            <constraint firstItem="SG9-TS-ex2" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="346" id="cVL-uO-scd"/>
-                            <constraint firstItem="VWg-pS-ZHu" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="320" id="fly-Bz-xd1"/>
-                            <constraint firstItem="SJD-95-LM4" firstAttribute="top" secondItem="YSB-Mh-AOd" secondAttribute="bottom" constant="8" id="od4-nC-P1S"/>
-                            <constraint firstItem="aUb-yd-I6P" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="193" id="t6r-cT-vbv"/>
+                            <constraint firstItem="5Ua-Uw-rrq" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="46" id="ZVA-dL-3bA"/>
+                            <constraint firstItem="SG9-TS-ex2" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="315" id="cVL-uO-scd"/>
+                            <constraint firstItem="VWg-pS-ZHu" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="289" id="fly-Bz-xd1"/>
+                            <constraint firstItem="aUb-yd-I6P" firstAttribute="top" secondItem="SJD-95-LM4" secondAttribute="bottom" constant="162" id="t6r-cT-vbv"/>
                             <constraint firstItem="SJD-95-LM4" firstAttribute="centerX" secondItem="UTq-NS-XHD" secondAttribute="centerX" id="wTf-fn-7IS"/>
                         </constraints>
                     </view>
