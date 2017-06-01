@@ -20,14 +20,14 @@ struct DateInfo {
     var events = [Event]()
     
 }
-var DateInfoArr = [DateInfo]()
-//var days = [Day]()
-//var events = [Event]()
+var DateInfoArr = [[DateInfo]]()
 var leapYear = false
+var leapYear2 = false
 var tileBuffer = 0
 let calendar = Calendar.current
 let date = Date()
 var month = calendar.component(.month, from: date)
+var year = calendar.component(.year, from: date)
 var buttonIsPressedR = false
 var buttonIsPressedL = false
 
@@ -39,12 +39,10 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     override func viewDidLoad() {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        // Get January first
+                                    // Get January first
                                    //Get current calendar info
-        
-        let year = calendar.component(.year, from: date)
         var firstWeekday = calendar.firstWeekday
-        //print(firstWeekday)
+        print(year)
                                         //Determine if leap year
         if (year % 4 == 0) {
             if (year % 100 == 0) {
@@ -60,30 +58,51 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             leapYear = false
         }
         
-        var add: Int                                //Leap year needs to add an extra day
+        if (year + 1 % 4 == 0) {
+            if (year + 1 % 100 == 0) {
+                if (year + 1 % 400 == 0) {
+                    leapYear2 = true
+                } else {
+                    leapYear2 = false
+                }
+            } else {
+                leapYear2 = true
+            }
+        } else {
+            leapYear2 = false
+        }
+        
+        var add: Int
+        var add2: Int                               //Leap year needs to add an extra day
         if (leapYear == false) {                    //See Month/Day initalization
            add = 0
+            if leapYear2 == false {
+                add2 = 0
+            } else {
+                add2 = 1
+            }
         } else {
             add = 1
+            add2 = 0
         }
-                                                            //Initialize days
-        for var i in 0...365 + add {
+        for var j in 0...1 {                                                  //Initialize days
+        for var i in 0...365 + add + add2 {
             //Fill Weekday
-            DateInfoArr.append(DateInfo())
+            DateInfoArr.append([DateInfo()])
             if (firstWeekday == 1) {
-                DateInfoArr[i].day.weekDay = "Sunday"
+                DateInfoArr[j][i].day.weekDay = "Sunday"
             } else if (firstWeekday == 2) {
-                DateInfoArr[i].day.weekDay = "Monday"
+                DateInfoArr[j][i].day.weekDay = "Monday"
             } else if (firstWeekday == 3) {
-                DateInfoArr[i].day.weekDay = "Tuesday"
+                DateInfoArr[j][i].day.weekDay = "Tuesday"
             } else if (firstWeekday == 4) {
-                DateInfoArr[i].day.weekDay = "Wednesday"
+                DateInfoArr[j][i].day.weekDay = "Wednesday"
             } else if (firstWeekday == 5) {
-                DateInfoArr[i].day.weekDay = "Thursday"
+                DateInfoArr[j][i].day.weekDay = "Thursday"
             } else if (firstWeekday == 6) {
-                DateInfoArr[i].day.weekDay = "Friday"
+                DateInfoArr[j][i].day.weekDay = "Friday"
             } else if (firstWeekday == 7) {
-                DateInfoArr[i].day.weekDay = "Saturday"
+                DateInfoArr[j][i].day.weekDay = "Saturday"
             }
             if (firstWeekday < 7) {
                 firstWeekday += 1
@@ -93,47 +112,48 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             
             //Fill Month and Day
             if (i < 32) {
-                DateInfoArr[i].day.month = 1
-                DateInfoArr[i].day.dayOfMonth = i
+                DateInfoArr[j][i].day.month = 1
+                DateInfoArr[j][i].day.dayOfMonth = i
             } else if (i > 31 && i < (60 + add)) {              //Plus add part is to account for leap
-                DateInfoArr[i].day.month = 2
-                DateInfoArr[i].day.dayOfMonth = i - 31
+                DateInfoArr[j][i].day.month = 2
+                DateInfoArr[j][i].day.dayOfMonth = i - 31
             } else if (i > (59 + add) && i < (91 + add)) {
-                DateInfoArr[i].day.month = 3
-                DateInfoArr[i].day.dayOfMonth = i - 59
+                DateInfoArr[j][i].day.month = 3
+                DateInfoArr[j][i].day.dayOfMonth = i - 59
             } else if (i > (90 + add) && i < (121 + add)) {
-                DateInfoArr[i].day.month = 4
-                DateInfoArr[i].day.dayOfMonth = i - 90
+                DateInfoArr[j][i].day.month = 4
+                DateInfoArr[j][i].day.dayOfMonth = i - 90
             } else if (i > (120 + add) && i < (152 + add)) {
-                DateInfoArr[i].day.month = 5
-                DateInfoArr[i].day.dayOfMonth = i - 120
+                DateInfoArr[j][i].day.month = 5
+                DateInfoArr[j][i].day.dayOfMonth = i - 120
             } else if (i > (151 + add) && i < (182 + add)) {
-                DateInfoArr[i].day.month = 6
-                DateInfoArr[i].day.dayOfMonth = i - 151
+                DateInfoArr[j][i].day.month = 6
+                DateInfoArr[j][i].day.dayOfMonth = i - 151
             } else if (i > (181 + add) && i < (213 + add)) {
-                DateInfoArr[i].day.month = 7
-                DateInfoArr[i].day.dayOfMonth = i - 181
+                DateInfoArr[j][i].day.month = 7
+                DateInfoArr[j][i].day.dayOfMonth = i - 181
             } else if (i > (212 + add) && i < (244 + add)) {
-                DateInfoArr[i].day.month = 8
-                DateInfoArr[i].day.dayOfMonth = i - 212
+                DateInfoArr[j][i].day.month = 8
+                DateInfoArr[j][i].day.dayOfMonth = i - 212
             } else if (i > (243 + add) && i < (274 + add)) {
-                DateInfoArr[i].day.month = 9
-                DateInfoArr[i].day.dayOfMonth = i - 243
+                DateInfoArr[j][i].day.month = 9
+                DateInfoArr[j][i].day.dayOfMonth = i - 243
             } else if (i > (273 + add) && i < (305 + add)) {
-                DateInfoArr[i].day.month = 10
-                DateInfoArr[i].day.dayOfMonth = i - 273
+                DateInfoArr[j][i].day.month = 10
+                DateInfoArr[j][i].day.dayOfMonth = i - 273
             } else if (i > (304 + add) && i < (335 + add)) {
-                DateInfoArr[i].day.month = 11
-                DateInfoArr[i].day.dayOfMonth = i - 304
+                DateInfoArr[j][i].day.month = 11
+                DateInfoArr[j][i].day.dayOfMonth = i - 304
             } else {
-                DateInfoArr[i].day.month = 12
-                DateInfoArr[i].day.dayOfMonth = i - 334
+                DateInfoArr[j][i].day.month = 12
+                DateInfoArr[j][i].day.dayOfMonth = i - 334
             }
             //Fill Year
-            DateInfoArr[i].day.year = year
+            DateInfoArr[j][i].day.year = year
             i += 1
         }
-        
+            j += 1
+        }
         // Register cell classes
         
         self.collectionView!.register(CalendarCell.self, forCellWithReuseIdentifier: "Cell")
@@ -157,7 +177,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         
         var firstWeekDay = "Sunday"
 
-        firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr, month: month)
+        firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[0], month: month)
         
         if firstWeekDay == "Sunday" {
             tileBuffer = -5
@@ -189,7 +209,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         case UICollectionElementKindSectionHeader:
         //3
         let headerLabel = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
-            headerLabel.delegate = self as! CalendarHeaderDelegate
+            headerLabel.delegate = self as CalendarHeaderDelegate
         if month == 1 {
             headerLabel.dateHeader.text = "January"
         } else if month == 2 {
@@ -238,7 +258,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         weekTag = 0
         var firstWeekDay = "Sunday"
         
-        firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr, month: month)
+        firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[0], month: month)
         
         if firstWeekDay == "Sunday" {
             tileBuffer = -5
@@ -415,5 +435,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                     }
                 return firstWeekDay
             }
+    
+    
 
 }
