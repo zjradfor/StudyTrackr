@@ -23,6 +23,10 @@ import UIKit
         var studyTime = 0
         let date = String(describing: Date())
         
+        @IBAction func segueToStudyEvents(_ sender: Any) {
+            
+        }
+        
 
         @IBOutlet weak var TimerValue: UITextField!
         @IBOutlet weak var breakOrStudy: UILabel!
@@ -106,12 +110,11 @@ import UIKit
             seconds = 0
             pauseButton.isEnabled = false
             startButton.isEnabled = true
-            if (studyTime > 0){
             guard let newStudyEvent = StudyEvent(studyTime: studyTime, subject: "Math", date: date) else{
                 fatalError("cannot create study event")
             }
             studyEvents += [newStudyEvent]
-            }
+            
         }
         
         func runTimer(){
@@ -188,8 +191,13 @@ func updatebreakTimer(){
         super.didReceiveMemoryWarning()
         
     }
-       /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            let EventTableViewController = segue.destination as! EventTableViewController
-            EventTableViewController.events = studyEvents
-        }*/
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "studyEventSegue"{
+                if let SecondViewController = segue.destination as? EventTableViewController{
+                   SecondViewController.events = studyEvents
+                }
+            }
+          
+        }
 }
+
