@@ -23,15 +23,13 @@ class CalendarHeaderCollectionReusableView: UICollectionReusableView {
     
     
     @IBAction func leftButton(_ sender: UIButton) {
+        if month > 1 {
             month -= 1
-        print("Month should be lower \(month)")
-        self.delegate?.updateCalendarCollectionView()
-        
-        
-        
-        
+            print("Month should be lower \(month)")
+            self.delegate?.updateCalendarCollectionView()
+
+        }
     }
-    @IBOutlet weak var leftButton: UIButton!
     
     
     
@@ -39,26 +37,14 @@ class CalendarHeaderCollectionReusableView: UICollectionReusableView {
     
     
     @IBAction func rightButton(_ sender: UIButton) {
-        month += 1
-        print("Month should be higher \(month)")
-        self.delegate?.updateCalendarCollectionView()
-        
+        if month < 12 {
+            month += 1
+            print("Month should be higher \(month)")
+            self.delegate?.updateCalendarCollectionView()
+        }
     }
-    @IBOutlet weak var rightButton: UIButton!
     
     
-    
-    
-    /*@IBAction func rightButton(_ sender: Any) {
-     buttonIsPressedR = true
-        print("buttonActivated")
-        //month += month
-    }
-    @IBAction func leftButton(_ sender: Any) {
-     buttonIsPressedL = true
-        //month -= month
-    }
-    */
     
     
     }
