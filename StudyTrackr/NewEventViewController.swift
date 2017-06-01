@@ -12,9 +12,7 @@ class NewEventViewController: UIViewController {
     
     @IBOutlet weak var neweventtableView: UITableView!
     @IBOutlet weak var eventTitle: UILabel!
-    @IBOutlet weak var colourView: UIView!
     @IBOutlet weak var currentEventTitle: UILabel!
-    @IBOutlet weak var colourButton: UIButton!
     var eventFromSegue = 0
     var eventDayFromSegue = 0
     var cellCounter = 0
@@ -64,7 +62,7 @@ class NewEventViewController: UIViewController {
      }
     @IBAction func unwindToVC3(segue:UIStoryboardSegue) { }
     
-    @IBAction func colourPicked(segue:UIStoryboardSegue) { }
+    //@IBAction func colourPicked(segue:UIStoryboardSegue) { }
     
     @IBAction func colourPicked(sender:UIStoryboardSegue) {
         if let sourceViewController = sender.source as? EventColourPickerViewController {
