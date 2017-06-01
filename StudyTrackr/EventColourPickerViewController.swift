@@ -28,8 +28,8 @@ class EventColourPickerViewController: UIViewController {
         performSegue(withIdentifier: "unwindSegueToVC3", sender: self)
      }
     @IBAction func colourPicked(_ sender: Any) {
+        print("colour for segue \(colour)")
         performSegue(withIdentifier: "colourPickedSegue", sender: self)
-        NewEventViewController().eventColour = colour
     }
     /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -43,7 +43,7 @@ class EventColourPickerViewController: UIViewController {
         colour = UIColor.yellow
     }
     @IBAction func bluePicker(_ sender: Any) {
-        colourCell().setViewColour(colour: UIColor.blue)
+        colour = UIColor.blue
     }
     @IBAction func redPicker(_ sender: Any) {
         colourCell().setViewColour(colour: UIColor.red)

@@ -18,13 +18,12 @@ class NewEventViewController: UIViewController {
     var eventFromSegue = 0
     var eventDayFromSegue = 0
     var cellCounter = 0
-    var eventColour = UIColor.green
+    var eventColour = UIColor.blue
     var eventMonthFromSegue = 0
     
     override func viewDidLoad() {
         print(eventMonthFromSegue)
         super.viewDidLoad()
-        print("What am i now? : \(eventColour)")
         if eventFromSegue == 0{
             currentEventTitle.text = "Test"
         }
@@ -54,6 +53,8 @@ class NewEventViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         cellCounter = 0
+        //print("Event Colour: \(eventColour)")
+        colourCell().setViewColour(colour: eventColour)
     }
     
     // MARK: - Navigation
@@ -64,6 +65,15 @@ class NewEventViewController: UIViewController {
     @IBAction func unwindToVC3(segue:UIStoryboardSegue) { }
     
     @IBAction func colourPicked(segue:UIStoryboardSegue) { }
+    
+    @IBAction func colourPicked(sender:UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? EventColourPickerViewController {
+            eventColour = sourceViewController.colour
+        }
+    }
+    
+    
+    
     /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -72,9 +82,8 @@ class NewEventViewController: UIViewController {
     }
     */
     func getColour() -> UIColor{
-        print("Setting colour to: \(eventColour)")
+        //print("Setting colour to: \(eventColour)")
         return eventColour
-        
     }
     
     @IBAction func addEvent(_ sender: Any) {
