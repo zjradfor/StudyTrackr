@@ -9,9 +9,31 @@
 import UIKit
 
 
-
 class RewardsViewController: UIViewController {
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    @IBOutlet weak var myLabel: UILabel!
+    var myInt = 5
+    
+    
+    @IBAction func goButton(_ sender: AnyObject) {
+        let RewardsViewController = storyboard?.instantiateViewController(withIdentifier: "FontsViewController") as! FontsViewController
+        RewardsViewController.stringPassed = myLabel.text!
+        RewardsViewController.intPassed = myInt
+        navigationController?.pushViewController(RewardsViewController, animated: true)
+    }
+    
+    
+    //let myVC = storyboard?.instantiateViewControllerWithIdentifier("SecondVC") as! SecondVC
+    //myVC.stringPassed = myLabel.text!
+    //navigationController?.pushViewController(myVC, animated: true)
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    
+    
+    
+    
     @IBOutlet var RewardsView: UIView!
    
      var RecievedCol = String()
@@ -79,7 +101,6 @@ class RewardsViewController: UIViewController {
         
         }
                 // Do any additional setup after loading the view.
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

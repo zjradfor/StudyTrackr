@@ -32,12 +32,21 @@ class FontsViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    //////////////////////////////////////////////////////////////////////////////
+        
+    @IBOutlet weak var secondLabel: UILabel!
+        var stringPassed = ""
+        var intPassed = Int()
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            secondLabel.text = stringPassed + "my Int: \(intPassed)"
+        
+        
         // Do any additional setup after loading the view.
     }
-
+////////////////////////////////////////////////////////////////////////////////
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
