@@ -31,7 +31,7 @@ var month = calendar.component(.month, from: date)
 var buttonIsPressedR = false
 var buttonIsPressedL = false
 
-class CalendarCollectionViewController: UICollectionViewController {
+class CalendarCollectionViewController: UICollectionViewController, CalendarHeaderDelegate {
     
     @IBOutlet var CalendarCollectionView: UICollectionView!
     var firstWeekDay = "Sunday"
@@ -139,21 +139,8 @@ class CalendarCollectionViewController: UICollectionViewController {
         self.collectionView!.register(CalendarCell.self, forCellWithReuseIdentifier: "Cell")
         self.collectionView!.register(CalendarHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
         // Do any additional setup after loading the view.
+       
         
-        //Gesture 
-        /*
-        let swipeRightRec = CalendarSwipeGestureRecongnizer()
-        let swipeLeftRec = CalendarSwipeGestureRecongnizer()
-        
-        swipeRightRec.addTarget(self, action: #selector(CalendarCollectionViewController.swipedRight) )
-        swipeRightRec.direction = .right
-        self.view!.addGestureRecognizer(swipeRightRec)
-        
-        
-        swipeLeftRec.addTarget(self, action: #selector(CalendarCollectionViewController.swipedLeft) )
-        swipeLeftRec.direction = .left
-        self.view!.addGestureRecognizer(swipeLeftRec)
-         */
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -191,72 +178,89 @@ class CalendarCollectionViewController: UICollectionViewController {
  
     
     //Header Class connection to UICollectionView
+    
     override func collectionView(_ collectionView: UICollectionView,
                                  viewForSupplementaryElementOfKind kind: String,
                                  at indexPath: IndexPath) -> UICollectionReusableView {
-        //Swipe Buttons
-        switch kind {
-        case UICollectionElementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
-            headerView.rightButton(headerView.rightButton)
-            headerView.leftButton(headerView.leftButton)
-            
-            if buttonIsPressedL == true {
-                month -= 1
-                print("Made it")
-                buttonIsPressedL = false
-            }
-            if buttonIsPressedR == true {
-                month += 1
-                print("Made it")
-                buttonIsPressedR = false
-            }
- 
-            return headerView
-        default:
-            assert(false, "Unexpected element kind")
-        }
-    
-
         
         //1
         switch kind {
         //2
         case UICollectionElementKindSectionHeader:
         //3
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
-        
+        let headerLabel = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
+            headerLabel.delegate = self as! CalendarHeaderDelegate
         if month == 1 {
-            headerView.dateHeader.text = "January"
+            headerLabel.dateHeader.text = "January"
         } else if month == 2 {
-            headerView.dateHeader.text = "February"
+            headerLabel.dateHeader.text = "February"
         } else if month == 3 {
-            headerView.dateHeader.text = "March"
+            headerLabel.dateHeader.text = "March"
         } else if month == 4 {
-            headerView.dateHeader.text = "April"
+            headerLabel.dateHeader.text = "April"
         } else if month == 5 {
-            headerView.dateHeader.text = "May"
+            headerLabel.dateHeader.text = "May"
         } else if month == 6 {
-            headerView.dateHeader.text = "June"
+            headerLabel.dateHeader.text = "June"
         } else if month == 7 {
-            headerView.dateHeader.text = "July"
+            headerLabel.dateHeader.text = "July"
         } else if month == 8 {
-            headerView.dateHeader.text = "August"
+            headerLabel.dateHeader.text = "August"
         } else if month == 9 {
-            headerView.dateHeader.text = "September"
+            headerLabel.dateHeader.text = "September"
         } else if month == 10 {
-            headerView.dateHeader.text = "October"
+            headerLabel.dateHeader.text = "October"
         } else if month == 11 {
-            headerView.dateHeader.text = "November"
+            headerLabel.dateHeader.text = "November"
         } else if month == 12 {
-            headerView.dateHeader.text = "December"
+            headerLabel.dateHeader.text = "December"
         }
-        return headerView
+        return headerLabel
         default:
         //4
             assert(false, "Unexpected element kind")
         }
     }
+    
+    
+    
+    //FUNCTION TYOU ARE LOOKING FOR
+    func updateCalendarCollectionView() {
+        
+        self.CalendarCollectionView?.reloadData()
+        self.collectionView?.reloadData()
+
+        
+        x = 0
+        y = 0
+        tag = 0
+        tileBuffer = 0
+        weekTag = 0
+        var firstWeekDay = "Sunday"
+        
+        firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr, month: month)
+        
+        if firstWeekDay == "Sunday" {
+            tileBuffer = -5
+        } else if firstWeekDay == "Monday" {
+            tileBuffer = -6
+        } else if firstWeekDay == "Tuesday" {
+            tileBuffer = -7
+        } else if firstWeekDay == "Wednesday" {
+            tileBuffer = -8
+        } else if firstWeekDay == "Thursday" {
+            tileBuffer = -9
+        } else if firstWeekDay == "Friday" {
+            tileBuffer = -10
+        } else {
+            tileBuffer = -11
+        }
+        
+        
+    }
+    
+    
+    
     
     
     

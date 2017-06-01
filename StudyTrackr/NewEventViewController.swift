@@ -88,6 +88,43 @@ class NewEventViewController: UIViewController {
     
     @IBAction func addEvent(_ sender: Any) {
         
+        var add = 0
+        var addMonth = 0
+        var i = 0
+        
+        if leapYear == true {
+            add = 1
+        }
+
+        if eventMonthFromSegue == 2 {
+            addMonth = 31
+        } else if eventMonthFromSegue == 3 {
+            addMonth = 59
+        } else if eventMonthFromSegue == 4 {
+            addMonth = 90
+        } else if eventMonthFromSegue == 5 {
+            addMonth = 120
+        } else if eventMonthFromSegue == 6 {
+            addMonth = 151
+        } else if eventMonthFromSegue == 7 {
+            addMonth = 181
+        } else if eventMonthFromSegue == 8 {
+            addMonth = 212
+        } else if eventMonthFromSegue == 9 {
+            addMonth = 243
+        } else if eventMonthFromSegue == 10 {
+            addMonth = 273
+        } else if eventMonthFromSegue == 11 {
+            addMonth = 304
+        } else if eventMonthFromSegue == 12 {
+            addMonth = 334
+        } else {
+            addMonth = 0
+        }
+        i = eventDayFromSegue + addMonth + add
+        DateInfoArr[i].events.insert(Event.init(), at: 0)
+        DateInfoArr[i].events[0].type = currentEventTitle.text!
+        DateInfoArr[i].events[0].colour = eventColour
     }
 
 }

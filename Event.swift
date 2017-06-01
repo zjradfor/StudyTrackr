@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Event {
     var description: String
@@ -16,7 +17,7 @@ class Event {
     var isComplete: Bool
     var studyTime: Int
     var mark: Double
-    var colour: String
+    var colour: UIColor
     init () {
         description = "Void"
         type = "Void"
@@ -25,6 +26,6 @@ class Event {
         isComplete = false
         studyTime = 0
         mark = 0.0
-        colour = "white"
+        colour = UIColor.white
     }
 }

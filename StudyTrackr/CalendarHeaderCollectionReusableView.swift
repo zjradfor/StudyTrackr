@@ -7,37 +7,44 @@
 //
 
 import UIKit
-
+var stopR = false
+var stopL = false
+protocol CalendarHeaderDelegate {
+    func updateCalendarCollectionView()
+}
 //This is the Label being connected to the header class
 class CalendarHeaderCollectionReusableView: UICollectionReusableView {
-    
     @IBOutlet weak var dateHeader: UILabel!
     
+    var delegate: CalendarHeaderDelegate?
+  
+    
+    
+    
+    
     @IBAction func leftButton(_ sender: UIButton) {
-        buttonIsPressedL = true
-        //month -= month
+        if month > 1 {
+            month -= 1
+            print("Month should be lower \(month)")
+            self.delegate?.updateCalendarCollectionView()
+
+        }
     }
-    @IBOutlet weak var leftButton: UIButton!
+    
+    
+    
+    
+    
+    
     @IBAction func rightButton(_ sender: UIButton) {
-        buttonIsPressedR = true
-        print("buttonActivated")
-        //month += month
+        if month < 12 {
+            month += 1
+            print("Month should be higher \(month)")
+            self.delegate?.updateCalendarCollectionView()
+        }
     }
-    @IBOutlet weak var rightButton: UIButton!
     
     
-    
-    
-    /*@IBAction func rightButton(_ sender: Any) {
-     buttonIsPressedR = true
-        print("buttonActivated")
-        //month += month
-    }
-    @IBAction func leftButton(_ sender: Any) {
-     buttonIsPressedL = true
-        //month -= month
-    }
-    */
     
     
     }
