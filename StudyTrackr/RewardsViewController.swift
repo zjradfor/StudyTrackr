@@ -14,7 +14,7 @@ class RewardsViewController: UIViewController {
     ///////////////////////////////////////////////////////////////////////////////////////////////
     @IBOutlet weak var myLabel: UILabel!
     
-    var myInt = 4
+    var myInt = 900
     
     //let myVC = storyboard?.instantiateViewControllerWithIdentifier("SecondVC") as! SecondVC
     //myVC.stringPassed = myLabel.text!
@@ -85,9 +85,12 @@ class RewardsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
  self.tabBarController?.tabBar.isHidden = false
     }
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        myLabel.text = "Coins: " + "\(myInt)"
+        
         
         }
                 // Do any additional setup after loading the view.
@@ -97,8 +100,6 @@ class RewardsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-
       /*
     // MARK: - Navigation
 

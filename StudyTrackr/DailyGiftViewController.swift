@@ -27,7 +27,7 @@ class DailyGiftViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        secondLabel.text = stringPassed + "\(intPassed)"
+        secondLabel.text = "Coins: " + "\(intPassed)"
         
     }
     ////////////////////////////////////////////////////////////////////////////////
