@@ -22,6 +22,7 @@
 		90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */; };
 		C57F79CD1ECC8CD400E69B2A /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57F79CC1ECC8CD400E69B2A /* EventTableViewController.swift */; };
 		C5EE25C11ECB3DAF003A6904 /* StudyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */; };
+		DE01F72A1EE5ACA700E5BA8C /* studyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */; };
 		DE05881F1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE05881B1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld */; };
 		DE0588221EDC891800D30E6F /* AddSubjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0588201EDC891800D30E6F /* AddSubjectVC.swift */; };
 		DE0588231EDC891800D30E6F /* MarkbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0588211EDC891800D30E6F /* MarkbookViewController.swift */; };
@@ -276,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE01F72A1EE5ACA700E5BA8C /* studyEventTableViewCell.swift in Sources */,
 				C5EE25C11ECB3DAF003A6904 /* StudyEvent.swift in Sources */,
 				90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */,
 				C57F79CD1ECC8CD400E69B2A /* EventTableViewController.swift in Sources */,
