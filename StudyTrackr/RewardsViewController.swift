@@ -53,13 +53,6 @@ class RewardsViewController: UIViewController {
         
     }
     
-    
-
-    
-
-    
-    
-        
     @IBAction func DailyRewardButton(_ sender: Any) {
         let RewardsViewController = storyboard?.instantiateViewController(withIdentifier: "DailyGiftViewController") as! DailyGiftViewController
         RewardsViewController.stringPassed = myLabel.text!
