@@ -81,7 +81,7 @@ extension EventsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         eventToSegue = indexPath.row
         self.performSegue(withIdentifier: "event", sender: self)
-        //print ("tappedE \(indexPath.row)")
+        //print ("tapped \(indexPath.row)")
     }
 }
 

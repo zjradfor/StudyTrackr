@@ -51,8 +51,7 @@ class NewEventViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         cellCounter = 0
-        //print("Event Colour: \(eventColour)")
-        colourCell().setViewColour(colour: eventColour)
+        //colourCell().setViewColour(colour: eventColour)
     }
     
     // MARK: - Navigation
@@ -64,14 +63,13 @@ class NewEventViewController: UIViewController {
     
     //@IBAction func colourPicked(segue:UIStoryboardSegue) { }
     
-    @IBAction func colourPicked(sender:UIStoryboardSegue) {
+    @IBAction func colourPicked(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? EventColourPickerViewController {
             eventColour = sourceViewController.colour
+            print("Set Colour to \(eventColour)")
+            colourCell().setViewColour(colour: eventColour)
         }
     }
-    
-    
-    
     /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -79,10 +77,7 @@ class NewEventViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    func getColour() -> UIColor{
-        //print("Setting colour to: \(eventColour)")
-        return eventColour
-    }
+
     
     @IBAction func addEvent(_ sender: Any) {
         

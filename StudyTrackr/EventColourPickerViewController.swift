@@ -21,23 +21,11 @@ class EventColourPickerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    
     // MARK: - Navigation
      @IBAction func goBack(_ sender: Any) {
         performSegue(withIdentifier: "unwindSegueToVC3", sender: self)
-     }
-    @IBAction func colourPicked(_ sender: Any) {
-        print("colour for segue \(colour)")
-        performSegue(withIdentifier: "colourPickedSegue", sender: self)
     }
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "colour"){
-            let vc = segue.destination as! NewEventViewController
-        }
-    }
-    */
+
     // MARK: - Colour Picking
     @IBAction func yellowPicker(_ sender: Any) {
         colour = UIColor.yellow
@@ -46,34 +34,34 @@ class EventColourPickerViewController: UIViewController {
         colour = UIColor.blue
     }
     @IBAction func redPicker(_ sender: Any) {
-        colourCell().setViewColour(colour: UIColor.red)
+        colour = UIColor.red
     }
     @IBAction func cyanPicker(_ sender: Any) {
-        colourCell().setViewColour(colour: UIColor.cyan)
+        colour = UIColor.cyan
     }
     @IBAction func greenPicker(_ sender: Any) {
-        colourCell().setViewColour(colour: UIColor.green)
+        colour = UIColor.green
     }
     @IBAction func magentaPicker(_ sender: Any) {
-        colourCell().setViewColour(colour: UIColor.magenta)
+        colour = UIColor.magenta
     }
     @IBAction func orangePicker(_ sender: Any) {
-        colourCell().setViewColour(colour: UIColor.orange)
+        colour = UIColor.orange
     }
     @IBAction func purplePicker(_ sender: Any) {
-        colourCell().setViewColour(colour: UIColor.purple)
+        colour = UIColor.purple
     }
     @IBAction func brownPicker(_ sender: Any) {
-        colourCell().setViewColour(colour: UIColor.brown)
+        colour = UIColor.brown
     }
     @IBAction func blackPicker(_ sender: Any) {
-        colourCell().setViewColour(colour: UIColor.black)
+        colour = UIColor.black
     }
     @IBAction func lightGreyPicker(_ sender: Any) {
-        colourCell().setViewColour(colour: UIColor.lightGray)
+        colour = UIColor.lightGray
     }
     @IBAction func darkGreyPicker(_ sender: Any) {
-        colourCell().setViewColour(colour: UIColor.darkGray)
+        colour = UIColor.darkGray
     }
     
     /*
