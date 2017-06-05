@@ -45,6 +45,7 @@ class EventsViewController: UIViewController {
         let vc = segue.destination as! NewEventViewController
         vc.eventFromSegue = eventToSegue
         vc.eventDayFromSegue = dayFromSegue
+        vc.eventMonthFromSegue = monthFromSegue
         }
     }
     @IBAction func unwindToVC2(segue:UIStoryboardSegue) { }
@@ -80,7 +81,7 @@ extension EventsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         eventToSegue = indexPath.row
         self.performSegue(withIdentifier: "event", sender: self)
-        print ("tappedE \(indexPath.row)")
+        //print ("tapped \(indexPath.row)")
     }
 }
 
