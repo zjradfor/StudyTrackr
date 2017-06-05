@@ -725,7 +725,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iHG-kR-krg">
-                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="518"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -1172,13 +1172,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a new subject" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lQi-Ah-Z3e">
-                                <rect key="frame" x="16" y="259" width="343" height="30"/>
+                                <rect key="frame" x="16" y="166" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmJ-lr-5RB">
-                                <rect key="frame" x="136" y="411" width="102" height="30"/>
+                                <rect key="frame" x="136" y="318" width="102" height="30"/>
                                 <state key="normal" title="Add subject"/>
                                 <connections>
                                     <action selector="ASButtonTapped:" destination="6k1-kB-ZDv" eventType="touchUpInside" id="wZg-w9-66x"/>
@@ -1189,9 +1189,8 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="lQi-Ah-Z3e" secondAttribute="trailing" id="407-75-SW9"/>
                             <constraint firstItem="jmJ-lr-5RB" firstAttribute="leading" secondItem="9ly-SS-sNE" secondAttribute="leadingMargin" constant="120" id="9mF-FG-zbk"/>
-                            <constraint firstItem="lQi-Ah-Z3e" firstAttribute="top" secondItem="EF1-Va-BLX" secondAttribute="bottom" constant="195" id="AGT-PO-Vsg"/>
-                            <constraint firstItem="V8a-63-5sh" firstAttribute="top" secondItem="jmJ-lr-5RB" secondAttribute="bottom" constant="270" id="TvN-36-Q9q"/>
-                            <constraint firstItem="jmJ-lr-5RB" firstAttribute="top" secondItem="lQi-Ah-Z3e" secondAttribute="bottom" constant="122" id="YFU-sn-w0X"/>
+                            <constraint firstItem="jmJ-lr-5RB" firstAttribute="centerY" secondItem="9ly-SS-sNE" secondAttribute="centerY" id="mZZ-9h-2bt"/>
+                            <constraint firstItem="lQi-Ah-Z3e" firstAttribute="top" secondItem="EF1-Va-BLX" secondAttribute="bottom" constant="102" id="sr8-zF-qYZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jmJ-lr-5RB" secondAttribute="trailing" constant="121" id="t3O-Bt-oh4"/>
                             <constraint firstAttribute="leadingMargin" secondItem="lQi-Ah-Z3e" secondAttribute="leading" id="yAt-af-dgA"/>
                         </constraints>
@@ -1207,7 +1206,7 @@
         <!--Main Tab Bar View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="MainTabBarViewController" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="MainTabBarViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -1642,6 +1641,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1oA-xm-fgC"/>
-        <segue reference="688-pf-hHW"/>
+        <segue reference="6Or-vz-Wwl"/>
     </inferredMetricsTieBreakers>
 </document>
