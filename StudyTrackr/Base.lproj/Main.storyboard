@@ -834,7 +834,7 @@
                                                     <rect key="frame" x="77" y="4" width="35" height="35"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nv3-XQ-6HQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="71" height="35"/>
                                                             <connections>
                                                                 <segue destination="nXB-4N-SfF" kind="show" id="8ni-9Q-0Wn"/>
                                                             </connections>
@@ -842,10 +842,10 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="Nv3-XQ-6HQ" secondAttribute="trailing" id="5J7-Wj-BFP"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Nv3-XQ-6HQ" secondAttribute="bottom" id="aKD-n9-i48"/>
-                                                        <constraint firstItem="Nv3-XQ-6HQ" firstAttribute="leading" secondItem="22o-O9-6Of" secondAttribute="leading" id="osG-Td-kBe"/>
-                                                        <constraint firstItem="Nv3-XQ-6HQ" firstAttribute="top" secondItem="22o-O9-6Of" secondAttribute="top" id="utU-4L-yEk"/>
+                                                        <constraint firstItem="Nv3-XQ-6HQ" firstAttribute="top" secondItem="22o-O9-6Of" secondAttribute="top" id="4BH-1O-YXP"/>
+                                                        <constraint firstItem="Nv3-XQ-6HQ" firstAttribute="leading" secondItem="22o-O9-6Of" secondAttribute="leading" id="JRH-Cg-QeG"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Nv3-XQ-6HQ" secondAttribute="trailing" constant="-36" id="LIu-ov-ggU"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Nv3-XQ-6HQ" secondAttribute="bottom" id="lao-oP-6Ny"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -966,7 +966,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="yellowPicker:" destination="nXB-4N-SfF" eventType="touchUpInside" id="14u-3r-TEh"/>
-                                                    <segue destination="nnR-KS-qXs" kind="unwind" unwindAction="colourPickedWithSender:" id="CjK-i5-7ya"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjN-Zo-crd">
@@ -977,7 +976,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="bluePicker:" destination="nXB-4N-SfF" eventType="touchUpInside" id="eVs-We-gGG"/>
-                                                    <segue destination="nnR-KS-qXs" kind="unwind" unwindAction="colourPickedWithSender:" id="b8Z-eb-CwC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7F-Te-HN8">
@@ -1094,12 +1092,21 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2j-EI-EiP">
+                                <rect key="frame" x="170" y="318" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <segue destination="nnR-KS-qXs" kind="unwind" unwindAction="colourPickedWithSender:" id="CfW-6B-tgo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="drt-OE-1zm" firstAttribute="centerX" secondItem="rWg-Nq-w84" secondAttribute="centerX" id="3EF-Ze-RB1"/>
+                            <constraint firstItem="w2j-EI-EiP" firstAttribute="centerX" secondItem="drt-OE-1zm" secondAttribute="centerX" id="9k4-u2-7AC"/>
                             <constraint firstItem="3NR-Jp-JqR" firstAttribute="leading" secondItem="rWg-Nq-w84" secondAttribute="leadingMargin" id="fEz-7a-CQj"/>
                             <constraint firstItem="drt-OE-1zm" firstAttribute="top" secondItem="2Ka-Be-7Iw" secondAttribute="bottom" constant="63" id="hmk-kP-iOo"/>
+                            <constraint firstItem="w2j-EI-EiP" firstAttribute="centerY" secondItem="rWg-Nq-w84" secondAttribute="centerY" id="o1e-lQ-Zam"/>
                             <constraint firstItem="3NR-Jp-JqR" firstAttribute="top" secondItem="2Ka-Be-7Iw" secondAttribute="bottom" id="rt4-H9-UQN"/>
                         </constraints>
                     </view>
