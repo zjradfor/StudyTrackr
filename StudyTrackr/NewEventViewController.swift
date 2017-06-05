@@ -114,10 +114,7 @@ class NewEventViewController: UIViewController {
         } else {
             addMonth = 0
         }
-        i = eventDayFromSegue + addMonth + add
-        //DateInfoArr[i].events.insert(Event.init(), at: 0)
-        //DateInfoArr[i].events[0].type = currentEventTitle.text!
-        //DateInfoArr[i].events[0].colour = eventColour
+        
     }
 
 }
