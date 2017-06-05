@@ -15,7 +15,8 @@ class dpTableViewCell: UITableViewCell {
     @IBAction func pickingDate(_ sender: Any) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h:mm a"
-        timeLabel.text = "Time: \(dateFormatter.string(from: dpShowDate.date))"
+        timeLabel.text = "\(dateFormatter.string(from: dpShowDate.date))"
+        NewEventViewController().setTime(time: timeLabel.text!)
     }
     
     
@@ -29,5 +30,9 @@ class dpTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    /*
+    func getDate()->String{
+        return self.timeLabel.text
+    }*/
 
 }

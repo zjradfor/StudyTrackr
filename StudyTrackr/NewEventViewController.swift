@@ -9,6 +9,7 @@
 import UIKit
 
 class NewEventViewController: UIViewController {
+    @IBOutlet weak var colourView: UIView!
     
     @IBOutlet weak var neweventtableView: UITableView!
     @IBOutlet weak var eventTitle: UILabel!
@@ -18,6 +19,7 @@ class NewEventViewController: UIViewController {
     var cellCounter = 0
     var eventColour = UIColor.blue
     var eventMonthFromSegue = 0
+    var eventTime = "12:00 AM"
     
     override func viewDidLoad() {
         print(eventMonthFromSegue)
@@ -67,7 +69,7 @@ class NewEventViewController: UIViewController {
         if let sourceViewController = sender.source as? EventColourPickerViewController {
             eventColour = sourceViewController.colour
             print("Set Colour to \(eventColour)")
-            colourCell().setViewColour(colour: eventColour)
+            colourView.backgroundColor = eventColour
         }
     }
     /*
@@ -77,7 +79,10 @@ class NewEventViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    func setTime(time: String){
+        eventTime = time
+        print(eventTime)
+    }
     
     @IBAction func addEvent(_ sender: Any) {
         
@@ -114,6 +119,7 @@ class NewEventViewController: UIViewController {
         } else {
             addMonth = 0
         }
+        /*
         i = eventDayFromSegue + addMonth + add
         
         //DateInfoArr[i].events.insert(Event.init(), at: 0)
@@ -130,7 +136,7 @@ class NewEventViewController: UIViewController {
         //Storing notes
         DateInfoArr[i].events[0].notes = NotesTableViewCell().notesTextField.text!
         
-        
+        */
         
         
         
@@ -177,6 +183,7 @@ extension NewEventViewController: UITableViewDataSource{
         }
 
     }
+
     //func tableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let row = indexPath.row
