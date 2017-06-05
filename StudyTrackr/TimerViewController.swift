@@ -21,11 +21,22 @@ import UIKit
         var isBreakTimeAdded:Bool = false
         var studyEvents = [StudyEvent]()
         var studyTime = 0
-        let date = String(describing: Date())
-        
-        @IBAction func segueToStudyEvents(_ sender: Any) {
+        func setDateValue() ->String{
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            return dateFormatter.string(from:Date())
             
         }
+
+        
+        
+        
+        
+        
+        
+    
+        
         
 
         @IBOutlet weak var TimerValue: UITextField!
@@ -110,6 +121,7 @@ import UIKit
             seconds = 0
             pauseButton.isEnabled = false
             startButton.isEnabled = true
+            let date = setDateValue()
             guard let newStudyEvent = StudyEvent(studyTime: studyTime, subject: "Math", date: date) else{
                 fatalError("cannot create study event")
             }
@@ -199,5 +211,6 @@ func updatebreakTimer(){
             }
           
         }
+        
 }
 
