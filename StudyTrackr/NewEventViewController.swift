@@ -67,7 +67,7 @@ class NewEventViewController: UIViewController {
         if let sourceViewController = sender.source as? EventColourPickerViewController {
             eventColour = sourceViewController.colour
             print("Set Colour to \(eventColour)")
-            
+            colourView.backgroundColor = eventColour
         }
     }
     /*
