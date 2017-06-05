@@ -67,7 +67,7 @@ class NewEventViewController: UIViewController {
         if let sourceViewController = sender.source as? EventColourPickerViewController {
             eventColour = sourceViewController.colour
             print("Set Colour to \(eventColour)")
-            colourCell().setViewColour(colour: eventColour)
+         //   colourCell().setViewColour(colour: eventColour)
         }
     }
     /*
@@ -120,6 +120,7 @@ class NewEventViewController: UIViewController {
         //DateInfoArr[i].events[0].type = currentEventTitle.text!
         //DateInfoArr[i].events[0].colour = eventColour
         i = eventDayFromSegue + addMonth
+        /*
         DateInfoArr[i].events.insert(Event.init(), at: 0)
         DateInfoArr[i].events[0].type = currentEventTitle.text!
         DateInfoArr[i].events[0].colour = eventColour
@@ -129,7 +130,7 @@ class NewEventViewController: UIViewController {
         DateInfoArr[i].events[0].location = LocationTableViewCell().locationTextField.text!
         //Storing notes
         DateInfoArr[i].events[0].notes = NotesTableViewCell().notesTextField.text!
-        
+        */
         
         
         
