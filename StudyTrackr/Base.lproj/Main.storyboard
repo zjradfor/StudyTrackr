@@ -1230,29 +1230,8 @@
             </objects>
             <point key="canvasLocation" x="-404" y="-107"/>
         </scene>
-        </scene>
   
-        <!--Main Tab Bar View Controller-->
-        <scene sceneID="yl2-sM-qoP">
-            <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="MainTabBarViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
-                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="cLe-px-V1W" kind="relationship" relationship="viewControllers" id="ChF-zf-h1f"/>
-                        <segue destination="2D6-TX-0Gu" kind="relationship" relationship="viewControllers" id="1oA-xm-fgC"/>
-                        <segue destination="7XN-zG-2mm" kind="relationship" relationship="viewControllers" id="HWa-SJ-nKd"/>
-                        <segue destination="Kbh-Gu-7al" kind="relationship" relationship="viewControllers" id="OZ8-vS-hnv"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-404" y="-107"/>
-        </scene>
+       
         <!--TimerViewController-->
         <scene sceneID="9bW-cg-6xT">
             <objects>
