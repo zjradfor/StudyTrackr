@@ -16,13 +16,14 @@ class NewEventViewController: UIViewController {
     @IBOutlet weak var currentEventTitle: UILabel!
     var eventFromSegue = 0
     var eventDayFromSegue = 0
+    var eventYearFromSegue = 0
     var cellCounter = 0
     var eventColour = UIColor.blue
     var eventMonthFromSegue = 0
     var eventTime = "12:00 AM"
     
     override func viewDidLoad() {
-        print(eventMonthFromSegue)
+        print(eventYearFromSegue)
         super.viewDidLoad()
         if eventFromSegue == 0{
             currentEventTitle.text = "Test"
