@@ -37,13 +37,13 @@ class FontsViewController: UIViewController {
 
     @IBAction func DefaultFont(_ sender: Any) {
         
-        FontStyle.font = UIFont(name: "ArialMT", size: 16.0)
+        FontChanger(FontNum: 1)
         selected = 1
     }
     
     @IBAction func TypewriterFont(_ sender: Any) {
         if (intPassed >= 250)&&(ownershipArray[0] == 0){          //not bought but enough money
-            FontStyle.font = UIFont(name: "AmericanTypewriter", size: 16.0 )
+            FontChanger(FontNum: 2)
             intPassed = intPassed - 250
             secondLabel.text = "Coins: " + "\(intPassed)"
             selected = 2
@@ -51,7 +51,7 @@ class FontsViewController: UIViewController {
         } //end of the if (not bought but has the money) statement
         
         if (ownershipArray[0] == 1) && (selected != 2){       //already bought, not selected
-            FontStyle.font = UIFont(name: "AmericanTypewriter", size: 16.0 )
+           FontChanger(FontNum: 2)
             selected = 2
             
         } //end of the if (bought but not selected) statment
@@ -59,7 +59,7 @@ class FontsViewController: UIViewController {
     
     @IBAction func NoteworthyFont(_ sender: Any) {
         if (intPassed >= 250)&&(ownershipArray[1] == 0){          //not bought but enough money
-            FontStyle.font = UIFont(name: "Noteworthy-Bold", size: 16.0 )
+            FontChanger(FontNum: 3)
             intPassed = intPassed - 250
             secondLabel.text = "Coins: " + "\(intPassed)"
             selected = 3
@@ -67,7 +67,7 @@ class FontsViewController: UIViewController {
         } //end of the if (not bought but has the money) statement
         
         if (ownershipArray[1] == 1) && (selected != 3){       //already bought, not selected
-            FontStyle.font = UIFont(name: "Noteworthy-Bold", size: 16.0 )
+           FontChanger(FontNum: 3)
             selected = 3
             
         } //end of the if (bought but not selected) statment
@@ -75,7 +75,7 @@ class FontsViewController: UIViewController {
     
     @IBAction func MarkerFont(_ sender: Any) {
         if (intPassed >= 250)&&(ownershipArray[2] == 0){          //not bought but enough money
-            FontStyle.font = UIFont(name: "MarkerFelt-Thin", size: 16.0 )
+            FontChanger(FontNum: 4)
             intPassed = intPassed - 250
             secondLabel.text = "Coins: " + "\(intPassed)"
             selected = 4
@@ -83,7 +83,7 @@ class FontsViewController: UIViewController {
         } //end of the if (not bought but has the money) statement
         
         if (ownershipArray[2] == 1) && (selected != 4){       //already bought, not selected
-            FontStyle.font = UIFont(name: "MarkerFelt-Thin", size: 16.0 )
+            FontChanger(FontNum: 4)
             selected = 4
             
         } //end of the if (bought but not selected) statment
@@ -91,7 +91,7 @@ class FontsViewController: UIViewController {
     
     @IBAction func RoundhandFont(_ sender: Any) {
         if (intPassed >= 250)&&(ownershipArray[3] == 0){          //not bought but enough money
-            FontStyle.font = UIFont(name: "SnellRoundhand-Bold", size: 16.0)
+            FontChanger(FontNum: 5)
             intPassed = intPassed - 250
             secondLabel.text = "Coins: " + "\(intPassed)"
             selected = 5
@@ -99,7 +99,7 @@ class FontsViewController: UIViewController {
         } //end of the if (not bought but has the money) statement
         
         if (ownershipArray[3] == 1) && (selected != 5){       //already bought, not selected
-            FontStyle.font = UIFont(name: "SnellRoundhand-Bold", size: 16.0)
+            FontChanger(FontNum: 5)
             selected = 5
             
         } //end of the if (bought but not selected) statment
