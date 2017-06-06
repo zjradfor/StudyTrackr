@@ -103,7 +103,9 @@ class NewEventViewController: UIViewController, SubjectCellDelegate {
         var addMonth = 0
         var i = 0
         
-        print()
+        if eventYearFromSegue == calendar.component(.year, from: date) + 1 {
+            j = 1
+        }
         
         if leapYear == true {
             add = 1
