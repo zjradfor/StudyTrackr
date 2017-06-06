@@ -831,7 +831,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nv3-XQ-6HQ">
-                                                    <rect key="frame" x="152" y="4" width="71" height="35"/>
+                                                    <rect key="frame" x="8" y="4" width="359" height="35"/>
                                                     <connections>
                                                         <segue destination="nXB-4N-SfF" kind="show" id="8ni-9Q-0Wn"/>
                                                     </connections>
@@ -839,7 +839,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="zXw-Wn-vOe" firstAttribute="leading" secondItem="l2F-eH-Dbm" secondAttribute="leadingMargin" id="5i6-3u-CMq"/>
-                                                <constraint firstItem="Nv3-XQ-6HQ" firstAttribute="leading" secondItem="zXw-Wn-vOe" secondAttribute="trailing" constant="83" id="CKF-2D-nKL"/>
+                                                <constraint firstItem="Nv3-XQ-6HQ" firstAttribute="leading" secondItem="zXw-Wn-vOe" secondAttribute="trailing" constant="-61" id="CKF-2D-nKL"/>
                                                 <constraint firstItem="Nv3-XQ-6HQ" firstAttribute="centerY" secondItem="zXw-Wn-vOe" secondAttribute="centerY" id="Fy5-Rg-ozx"/>
                                                 <constraint firstItem="zXw-Wn-vOe" firstAttribute="centerY" secondItem="l2F-eH-Dbm" secondAttribute="centerY" id="MFU-49-6I2"/>
                                                 <constraint firstItem="Nv3-XQ-6HQ" firstAttribute="top" secondItem="l2F-eH-Dbm" secondAttribute="topMargin" constant="-4" id="Tqj-XT-ItY"/>
@@ -893,21 +893,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ohf-9t-nYu" firstAttribute="leading" secondItem="mN7-Uc-MOM" secondAttribute="leadingMargin" constant="60" id="235-Gc-aVE"/>
+                            <constraint firstItem="ohf-9t-nYu" firstAttribute="top" secondItem="mN7-Uc-MOM" secondAttribute="top" constant="468" id="3Xg-P5-1hy"/>
                             <constraint firstItem="iHG-kR-krg" firstAttribute="top" secondItem="bsJ-s7-1Uc" secondAttribute="bottom" constant="47" id="5S6-vf-vzt"/>
-                            <constraint firstItem="x6g-ue-931" firstAttribute="top" secondItem="ohf-9t-nYu" secondAttribute="bottom" constant="164" id="6Ba-JR-ylE"/>
                             <constraint firstItem="iHG-kR-krg" firstAttribute="centerX" secondItem="6CJ-sO-PaH" secondAttribute="centerX" id="7Qp-Oj-Bes"/>
                             <constraint firstItem="bsJ-s7-1Uc" firstAttribute="leading" secondItem="6CJ-sO-PaH" secondAttribute="trailing" constant="-2" id="93d-ul-ucS"/>
                             <constraint firstItem="iHG-kR-krg" firstAttribute="leading" secondItem="mN7-Uc-MOM" secondAttribute="leading" id="A85-cn-EUI"/>
-                            <constraint firstItem="ohf-9t-nYu" firstAttribute="top" secondItem="mN7-Uc-MOM" secondAttribute="top" constant="468" id="DGm-fg-mrq"/>
                             <constraint firstItem="iHG-kR-krg" firstAttribute="bottom" secondItem="x6g-ue-931" secondAttribute="top" id="JTR-C1-m0x"/>
                             <constraint firstItem="tAE-8t-S1f" firstAttribute="centerX" secondItem="3nl-cw-Leu" secondAttribute="centerX" id="Jy8-wk-HRM"/>
                             <constraint firstItem="6CJ-sO-PaH" firstAttribute="top" secondItem="wEp-XW-QA2" secondAttribute="bottom" constant="8" symbolic="YES" id="QeW-AL-hO0"/>
+                            <constraint firstItem="x6g-ue-931" firstAttribute="top" secondItem="ohf-9t-nYu" secondAttribute="bottom" constant="115" id="T5s-e7-0AQ"/>
                             <constraint firstItem="bsJ-s7-1Uc" firstAttribute="baseline" secondItem="3nl-cw-Leu" secondAttribute="baseline" id="To9-cI-sT9"/>
-                            <constraint firstItem="ohf-9t-nYu" firstAttribute="leading" secondItem="6CJ-sO-PaH" secondAttribute="leading" constant="-7" id="VO1-il-3p3"/>
                             <constraint firstItem="tAE-8t-S1f" firstAttribute="top" secondItem="3nl-cw-Leu" secondAttribute="bottom" constant="8" symbolic="YES" id="c5Q-Jb-mrq"/>
+                            <constraint firstAttribute="trailing" secondItem="ohf-9t-nYu" secondAttribute="trailing" constant="231" id="c6O-MM-efn"/>
                             <constraint firstItem="3nl-cw-Leu" firstAttribute="centerX" secondItem="mN7-Uc-MOM" secondAttribute="centerX" constant="-136.5" id="dZf-WY-V2Q"/>
                             <constraint firstItem="6CJ-sO-PaH" firstAttribute="leading" secondItem="mN7-Uc-MOM" secondAttribute="leadingMargin" constant="67" id="esz-Lp-vps"/>
-                            <constraint firstAttribute="trailing" secondItem="ohf-9t-nYu" secondAttribute="trailing" constant="231" id="fbq-gl-NGO"/>
                             <constraint firstItem="bsJ-s7-1Uc" firstAttribute="centerY" secondItem="6CJ-sO-PaH" secondAttribute="centerY" id="g3W-KW-nE7"/>
                             <constraint firstItem="6CJ-sO-PaH" firstAttribute="centerX" secondItem="mN7-Uc-MOM" secondAttribute="centerX" constant="-0.5" id="m1g-W5-XyV"/>
                             <constraint firstItem="bsJ-s7-1Uc" firstAttribute="centerX" secondItem="mN7-Uc-MOM" secondAttribute="centerX" constant="136.5" id="p2c-h3-K4i"/>
@@ -1636,7 +1636,7 @@
         <image name="purple circle" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1oA-xm-fgC"/>
         <segue reference="6Or-vz-Wwl"/>
+        <segue reference="icE-UX-rtA"/>
     </inferredMetricsTieBreakers>
 </document>
