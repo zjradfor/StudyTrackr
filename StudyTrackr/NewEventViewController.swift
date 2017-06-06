@@ -89,40 +89,65 @@ class NewEventViewController: UIViewController {
         var add = 0
         var addMonth = 0
         var i = 0
+        var j = 0
+        
+        if eventYearFromSegue == calendar.component(.year, from: date) + 1 {
+            j = 1
+        }
         
         if leapYear == true {
-            add = 1
+            if eventYearFromSegue == calendar.component(.year, from: date) {
+                add = 1
+            } else if leapYear2 == true {
+                if eventYearFromSegue == calendar.component(.year, from: date) + 1 {
+                    add = 1
+                }
+            }
         }
-
+        
         if eventMonthFromSegue == 2 {
             addMonth = 31
         } else if eventMonthFromSegue == 3 {
-            addMonth = 59
+            addMonth = 59 + add
         } else if eventMonthFromSegue == 4 {
-            addMonth = 90
+            addMonth = 90 + add
         } else if eventMonthFromSegue == 5 {
-            addMonth = 120
+            addMonth = 120 + add
         } else if eventMonthFromSegue == 6 {
-            addMonth = 151
+            addMonth = 151 + add
         } else if eventMonthFromSegue == 7 {
-            addMonth = 181
+            addMonth = 181 + add
         } else if eventMonthFromSegue == 8 {
-            addMonth = 212
+            addMonth = 212 + add
         } else if eventMonthFromSegue == 9 {
-            addMonth = 243
+            addMonth = 243 + add
         } else if eventMonthFromSegue == 10 {
-            addMonth = 273
+            addMonth = 273 + add
         } else if eventMonthFromSegue == 11 {
-            addMonth = 304
+            addMonth = 304 + add
         } else if eventMonthFromSegue == 12 {
-            addMonth = 334
+            addMonth = 334 + add
         } else {
             addMonth = 0
         }
+        
         i = eventDayFromSegue + addMonth + add
-        //DateInfoArr[i].events.insert(Event.init(), at: 0)
-        //DateInfoArr[i].events[0].type = currentEventTitle.text!
-        //DateInfoArr[i].events[0].colour = eventColour
+        
+        
+        DateInfoArr[j][i].events.insert(Event.init(), at: 0)
+        DateInfoArr[j][i].events[0].type = currentEventTitle.text!
+        DateInfoArr[j][i].events[0].colour = eventColour
+        i = eventDayFromSegue + addMonth
+        
+        DateInfoArr[j][i].events.insert(Event.init(), at: 0)
+        DateInfoArr[j][i].events[0].type = currentEventTitle.text!
+        DateInfoArr[j][i].events[0].colour = eventColour
+        //Storing subject
+        DateInfoArr[j][i].events[0].subject = SubjectTableViewCell().subjectTextField.text!
+        //Storing location
+        DateInfoArr[j][i].events[0].location = LocationTableViewCell().locationTextField.text!
+        //Storing notes
+        DateInfoArr[j][i].events[0].notes = NotesTableViewCell().notesTextField.text!
     }
 
 }
