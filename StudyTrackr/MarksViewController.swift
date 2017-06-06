@@ -9,10 +9,13 @@
 import UIKit
 
 class MarksViewController: UIViewController {
-
+    
+    var nameFromSegue = ""
+    var markFromSegue = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = nameFromSegue
         // Do any additional setup after loading the view.
     }
 

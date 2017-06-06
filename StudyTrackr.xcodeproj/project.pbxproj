@@ -119,6 +119,7 @@
 				DE05881B1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld */,
 				DE0588201EDC891800D30E6F /* AddSubjectVC.swift */,
 				DE0588211EDC891800D30E6F /* MarkbookViewController.swift */,
+				07EAB5071EE5990A008E02DD /* MarksViewController.swift */,
 			);
 			name = Markbook;
 			sourceTree = "<group>";
@@ -144,7 +145,6 @@
 			children = (
 				F11ECEB81EC9EE3A00ECBBB1 /* Calendar */,
 				DEC18D4E1EB2375B00F9935C /* Main.storyboard */,
-				07EAB5071EE5990A008E02DD /* MarksViewController.swift */,
 				7350C8D61EC1FEA60054200B /* Rewards Code Files */,
 				DEC18D481EB2375B00F9935C /* AppDelegate.swift */,
 				C592F64A1EC9EC5E004961AD /* Timer */,
