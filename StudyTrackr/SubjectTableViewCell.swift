@@ -1,22 +1,24 @@
 //
-//  studyEventTableViewCell.swift
+//  SubjectTableViewCell.swift
 //  StudyTrackr
 //
-//  Created by Emily Klosa on 2017-05-18.
+//  Created by John Slomka on 2017-06-01.
 //  Copyright © 2017 John Slomka. All rights reserved.
 //
 
 import UIKit
 
-class studyEventTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var dateStudied: UILabel!
-   
-    @IBOutlet weak var timeStudied: UILabel!
-    
-    @IBOutlet weak var subjectStudied: UILabel!
-    
+class SubjectTableViewCell: UITableViewCell {
+    @IBOutlet weak var subjectTextField: UITextField!
 
+    
+    
+    
+    
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -16,6 +16,7 @@ class EventsViewController: UIViewController {
     var dayFromSegue = 0
     var monthFromSegue = 0
     var eventToSegue = 0
+    var yearFromSegue = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,6 +47,7 @@ class EventsViewController: UIViewController {
         vc.eventFromSegue = eventToSegue
         vc.eventDayFromSegue = dayFromSegue
         vc.eventMonthFromSegue = monthFromSegue
+        vc.eventYearFromSegue = yearFromSegue
         }
     }
     @IBAction func unwindToVC2(segue:UIStoryboardSegue) { }
@@ -81,7 +83,7 @@ extension EventsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         eventToSegue = indexPath.row
         self.performSegue(withIdentifier: "event", sender: self)
-        //print ("tappedE \(indexPath.row)")
+        //print ("tapped \(indexPath.row)")
     }
 }
 

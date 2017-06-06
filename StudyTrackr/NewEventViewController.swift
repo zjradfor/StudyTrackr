@@ -9,18 +9,21 @@
 import UIKit
 
 class NewEventViewController: UIViewController {
+    @IBOutlet weak var colourView: UIView!
     
     @IBOutlet weak var neweventtableView: UITableView!
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var currentEventTitle: UILabel!
     var eventFromSegue = 0
     var eventDayFromSegue = 0
+    var eventYearFromSegue = 0
     var cellCounter = 0
     var eventColour = UIColor.blue
     var eventMonthFromSegue = 0
+    var eventTime = "12:00 AM"
     
     override func viewDidLoad() {
-        print(eventMonthFromSegue)
+        print(eventYearFromSegue)
         super.viewDidLoad()
         if eventFromSegue == 0{
             currentEventTitle.text = "Test"
@@ -51,8 +54,7 @@ class NewEventViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         cellCounter = 0
-        //print("Event Colour: \(eventColour)")
-        colourCell().setViewColour(colour: eventColour)
+        //colourCell().setViewColour(colour: eventColour)
     }
     
     // MARK: - Navigation
@@ -64,14 +66,13 @@ class NewEventViewController: UIViewController {
     
     //@IBAction func colourPicked(segue:UIStoryboardSegue) { }
     
-    @IBAction func colourPicked(sender:UIStoryboardSegue) {
+    @IBAction func colourPicked(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? EventColourPickerViewController {
             eventColour = sourceViewController.colour
+            print("Set Colour to \(eventColour)")
+            colourView.backgroundColor = eventColour
         }
     }
-    
-    
-    
     /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -79,9 +80,9 @@ class NewEventViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    func getColour() -> UIColor{
-        //print("Setting colour to: \(eventColour)")
-        return eventColour
+    func setTime(time: String){
+        eventTime = time
+        print(eventTime)
     }
     
     @IBAction func addEvent(_ sender: Any) {
@@ -190,6 +191,7 @@ extension NewEventViewController: UITableViewDataSource{
         }
 
     }
+
     //func tableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let row = indexPath.row

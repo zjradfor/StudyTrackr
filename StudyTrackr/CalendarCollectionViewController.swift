@@ -36,6 +36,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     
     @IBOutlet var CalendarCollectionView: UICollectionView!
     var firstWeekDay = "Sunday"
+    var currentTag = "0"
     
     override func viewDidLoad() {
         // Uncomment the following line to preserve selection between presentations
@@ -300,6 +301,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             let vc = segue.destination as! EventsViewController
             vc.monthFromSegue = month
             vc.dayFromSegue = dayToSegue
+            vc.yearFromSegue = year
         }
     }
  
@@ -378,7 +380,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     override func collectionView(_ collectionView: UICollectionView,
                                  shouldSelectItemAt indexPath: IndexPath) -> Bool {
         //print("tapped \(indexPath)")
-        dayToSegue = indexPath.row - 7
+        dayToSegue = indexPath.row
         if (dayToSegue > 0){
         self.performSegue(withIdentifier: "day", sender: self)
         }

@@ -9,13 +9,23 @@
 import UIKit
 
 class colourCell: UITableViewCell {
-    var colourHere = UIColor.yellow
-    @IBOutlet weak var colourView: UIView!
+    var colourHere: UIColor?
     @IBOutlet weak var colourButton: UIButton!
+    
+ /*   init(colourHere: UIColor) {
+        self.colourHere = colourHere
+    }
+    
+    init(){
+        self.colourHere = UIColor.blue
+    }
+    
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+   */ 
     override func awakeFromNib() {
-        //colourView.backgroundColor = NewEventViewController().getColour()
-        //print("Colour Here: \(colourHere)")
-        colourView.backgroundColor = colourHere
         super.awakeFromNib()
         // Initialization code
     }
@@ -25,10 +35,12 @@ class colourCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
     
     func setViewColour(colour: UIColor){
         colourHere = colour
         print("Setting Colour to:\(colourHere)")
     }
+    
 
 }
