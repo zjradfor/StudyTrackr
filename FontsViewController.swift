@@ -45,7 +45,7 @@ class FontsViewController: UIViewController {
         } //end of the if (not bought but has the money) statement
         
             if (bought == 1) && (selected != 1){                    //already bought, not selected
-        FontStyle.font = UIFont(name: "ArialMT", size: 16.0)
+                FontChanger(FontNum: 1)
                 selected = 1
             
         } //end of the if (bought but not selected) statment
