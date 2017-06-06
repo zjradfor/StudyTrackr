@@ -9,11 +9,30 @@
 import UIKit
 
 class FontsViewController: UIViewController {
-
+    var FontNum = Int()
     var bought = 0
     var selected = 0
     
     @IBOutlet weak var FontStyle: UILabel!
+    
+    func FontChanger(FontNum: Int) {
+        
+        switch FontNum {
+        case 1:
+            FontStyle.font = UIFont(name: "ArialMT", size: 16.0)
+        case 2:
+            FontStyle.font = UIFont(name: "AmericanTypewriter", size: 16.0 )
+        case 3:
+            FontStyle.font = UIFont(name: "Noteworthy-Bold", size: 16.0 )
+        case 4:
+            FontStyle.font = UIFont(name: "MarkerFelt-Thin", size: 16.0 )
+        case 5:
+            FontStyle.font = UIFont(name: "SnellRoundhand-Bold", size: 16.0)
+        default:
+            break
+        }
+        
+    }
     
     @IBAction func DefaultFont(_ sender: Any) {
         
@@ -49,6 +68,8 @@ class FontsViewController: UIViewController {
         selected = 5
     }
 
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
     }
