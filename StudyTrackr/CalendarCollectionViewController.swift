@@ -43,7 +43,6 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                                     // Get January first
                                    //Get current calendar info
         var firstWeekday = calendar.firstWeekday
-        print(year)
                                         //Determine if leap year
         if (year % 4 == 0) {
             if (year % 100 == 0) {
@@ -238,6 +237,8 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         } else if month == 12 {
             headerLabel.dateHeader.text = "December"
         }
+            headerLabel.yearHeader.text = "\(year)"
+        
         return headerLabel
         default:
         //4
