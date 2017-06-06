@@ -121,24 +121,7 @@ class NewEventViewController: UIViewController {
         }
         
         i = eventDayFromSegue + addMonth + add
-        /*
-        //DateInfoArr[i].events.insert(Event.init(), at: 0)
-        //DateInfoArr[i].events[0].type = currentEventTitle.text!
-        //DateInfoArr[i].events[0].colour = eventColour
-        i = eventDayFromSegue + addMonth
-        
-        DateInfoArr[i].events.insert(Event.init(), at: 0)
-        DateInfoArr[i].events[0].type = currentEventTitle.text!
-        DateInfoArr[i].events[0].colour = eventColour
-        //Storing subject
-        DateInfoArr[i].events[0].subject = SubjectTableViewCell().subjectTextField.text!
-        //Storing location
-        DateInfoArr[i].events[0].location = LocationTableViewCell().locationTextField.text!
-        //Storing notes
-        DateInfoArr[i].events[0].notes = NotesTableViewCell().notesTextField.text!
-        
-        */
-        
+                
         
         
         
