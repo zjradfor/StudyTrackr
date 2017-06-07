@@ -102,15 +102,26 @@ class NewEventViewController: UIViewController, SubjectCellDelegate {
         var add = 0
         var addMonth = 0
         var i = 0
+        var j = 0
+        
+        if eventYearFromSegue == calendar.component(.year, from: date) + 1 {
+            j = 1
+        }
         
         if eventYearFromSegue == calendar.component(.year, from: date) + 1 {
             j = 1
         }
         
         if leapYear == true {
-            add = 1
+            if eventYearFromSegue == calendar.component(.year, from: date) {
+                add = 1
+            } else if leapYear2 == true {
+                if eventYearFromSegue == calendar.component(.year, from: date) + 1 {
+                    add = 1
+                }
+            }
         }
-
+        
         if eventMonthFromSegue == 2 {
             addMonth = 31
         } else if eventMonthFromSegue == 3 {
@@ -138,27 +149,22 @@ class NewEventViewController: UIViewController, SubjectCellDelegate {
         }
         
         i = eventDayFromSegue + addMonth + add
-        /*
-        //DateInfoArr[i].events.insert(Event.init(), at: 0)
-        //DateInfoArr[i].events[0].type = currentEventTitle.text!
-        //DateInfoArr[i].events[0].colour = eventColour
+        
+        
+        DateInfoArr[j][i].events.insert(Event.init(), at: 0)
+        DateInfoArr[j][i].events[0].type = currentEventTitle.text!
+        DateInfoArr[j][i].events[0].colour = eventColour
         i = eventDayFromSegue + addMonth
         
-        DateInfoArr[i].events.insert(Event.init(), at: 0)
-        DateInfoArr[i].events[0].type = currentEventTitle.text!
-        DateInfoArr[i].events[0].colour = eventColour
+        DateInfoArr[j][i].events.insert(Event.init(), at: 0)
+        DateInfoArr[j][i].events[0].type = currentEventTitle.text!
+        DateInfoArr[j][i].events[0].colour = eventColour
         //Storing subject
-        DateInfoArr[i].events[0].subject = SubjectTableViewCell().subjectTextField.text!
+        DateInfoArr[j][i].events[0].subject = SubjectTableViewCell().subjectTextField.text!
         //Storing location
-        DateInfoArr[i].events[0].location = LocationTableViewCell().locationTextField.text!
+        DateInfoArr[j][i].events[0].location = LocationTableViewCell().locationTextField.text!
         //Storing notes
-        DateInfoArr[i].events[0].notes = NotesTableViewCell().notesTextField.text!
-        
-        */
-        
-        
-        
-        
+        DateInfoArr[j][i].events[0].notes = NotesTableViewCell().notesTextField.text!
     }
 
 }

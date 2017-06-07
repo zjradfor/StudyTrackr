@@ -44,7 +44,6 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                                     // Get January first
                                    //Get current calendar info
         var firstWeekday = calendar.firstWeekday
-        print(year)
                                         //Determine if leap year
         if (year % 4 == 0) {
             if (year % 100 == 0) {
@@ -157,9 +156,10 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         }
             j += 1
             firstWeekday -= 1
+            year += 1
         }
         // Register cell classes
-        
+        year -= 2
         self.collectionView!.register(CalendarCell.self, forCellWithReuseIdentifier: "Cell")
         self.collectionView!.register(CalendarHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
         // Do any additional setup after loading the view.
@@ -239,6 +239,8 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         } else if month == 12 {
             headerLabel.dateHeader.text = "December"
         }
+            headerLabel.yearHeader.text = "\(year)"
+        
         return headerLabel
         default:
         //4
