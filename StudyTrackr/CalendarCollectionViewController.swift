@@ -382,8 +382,35 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     override func collectionView(_ collectionView: UICollectionView,
                                  shouldSelectItemAt indexPath: IndexPath) -> Bool {
         //print("tapped \(indexPath)")
-        dayToSegue = indexPath.row
-        if (dayToSegue > 0){
+        
+        let firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[yearToShow], month: month)
+        var subtract = 0
+        if firstWeekDay == "Sunday" {
+            subtract = 0
+        } else if firstWeekDay == "Monday" {
+            subtract = 1
+        } else if firstWeekDay == "Tuesday" {
+            subtract = 2
+        } else if firstWeekDay == "Wednesday" {
+           subtract = 3
+        } else if firstWeekDay == "Thursday" {
+            subtract = 4
+        } else if firstWeekDay == "Friday" {
+            subtract = 5
+        } else {
+            subtract = 6
+        }
+        
+        var yearToSend: Bool
+        if yearToShow == 0 {
+            yearToSend = leapYear
+        } else {
+            yearToSend = leapYear2
+        }
+        let numberOfDaysThisMonth = getNumberOfDaysInMonth(month: month, leapYear: yearToSend)
+        
+        dayToSegue = indexPath.row - 6 - subtract
+        if ((dayToSegue > 0) && dayToSegue <= numberOfDaysThisMonth){
         self.performSegue(withIdentifier: "day", sender: self)
         }
         return false

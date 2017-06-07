@@ -8,14 +8,9 @@
 
 import UIKit
 
-/*protocol colourCell{
-    
-}*/
-
 class colourCell: UITableViewCell{
     //var delegate: NewEventViewDelegate?
     @IBOutlet weak var colourButton: UIButton!
-    @IBOutlet weak var colourView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,12 +21,5 @@ class colourCell: UITableViewCell{
 
         // Configure the view for the selected state
     }
-
-    
-   /* func setViewColour(colour: UIColor){
-        colourView.backgroundColor = colour
-        print(colour)
-    }*/
-    
 
 }
