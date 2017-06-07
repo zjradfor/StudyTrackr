@@ -126,6 +126,8 @@ import UIKit
                 fatalError("cannot create study event")
             }
             studyEvents += [newStudyEvent]
+            self.resumeTapped = false
+            self.pauseButton.setTitle("Pause", for: .normal)
             
         }
         
