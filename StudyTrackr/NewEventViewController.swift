@@ -138,12 +138,6 @@ class NewEventViewController: UIViewController, SubjectCellDelegate {
             addMonth = 0
         }
         
-        i = eventDayFromSegue + addMonth + add
-        
-        
-        DateInfoArr[j][i].events.insert(Event.init(), at: 0)
-        DateInfoArr[j][i].events[0].type = currentEventTitle.text!
-        DateInfoArr[j][i].events[0].colour = eventColour
         i = eventDayFromSegue + addMonth
         
         DateInfoArr[j][i].events.insert(Event.init(), at: 0)
