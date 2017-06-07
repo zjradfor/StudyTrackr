@@ -434,6 +434,8 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     }
     */
     
+
+    
     func getFirstWeekDayOfMonth(leapYear: Bool, days: [DateInfo], month: Int) -> String {
                 var add = 0
         
