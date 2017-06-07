@@ -77,17 +77,14 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
     
     func getCellSubject(subject: String) {
         eventSubject = subject
-        print(eventSubject)
     }
     
     func getCellLocation(location: String) {
         eventLocation = location
-        print(eventLocation)
     }
     
     func getCellNotes(notes: String) {
         eventNotes = notes
-        print(eventNotes)
     }
     
     func getCellTime(time: String) {
