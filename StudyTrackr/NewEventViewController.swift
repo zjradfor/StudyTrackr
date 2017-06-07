@@ -7,8 +7,15 @@
 //
 
 import UIKit
-
-class NewEventViewController: UIViewController {
+/*
+protocol NewEventViewDelegate {
+    func setViewColour(colour: UIColor)
+}
+*/
+class NewEventViewController: UIViewController, SubjectCellDelegate {
+    
+    //var delegate: NewEventViewDelegate?
+    
     @IBOutlet weak var colourView: UIView!
     
     @IBOutlet weak var neweventtableView: UITableView!
@@ -71,6 +78,7 @@ class NewEventViewController: UIViewController {
             eventColour = sourceViewController.colour
             print("Set Colour to \(eventColour)")
             colourView.backgroundColor = eventColour
+            //delegate?.setViewColour(colour: eventColour)
         }
     }
     /*
@@ -85,12 +93,20 @@ class NewEventViewController: UIViewController {
         print(eventTime)
     }
     
+    func getCellSubject(subject: String) {
+        print(subject)
+    }
+    
     @IBAction func addEvent(_ sender: Any) {
         
         var add = 0
         var addMonth = 0
         var i = 0
         var j = 0
+        
+        if eventYearFromSegue == calendar.component(.year, from: date) + 1 {
+            j = 1
+        }
         
         if eventYearFromSegue == calendar.component(.year, from: date) + 1 {
             j = 1
@@ -154,7 +170,8 @@ extension NewEventViewController: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if cellCounter == 0{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath) as! SubjectTableViewCell
+            cell.delegate = self
             //print(cellCounter)
                     cellCounter += 1
             return cell

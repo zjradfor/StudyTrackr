@@ -8,23 +8,14 @@
 
 import UIKit
 
-class colourCell: UITableViewCell {
-    var colourHere: UIColor?
-    @IBOutlet weak var colourButton: UIButton!
+/*protocol colourCell{
     
- /*   init(colourHere: UIColor) {
-        self.colourHere = colourHere
-    }
-    
-    init(){
-        self.colourHere = UIColor.blue
-    }
-    
+}*/
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-   */ 
+class colourCell: UITableViewCell{
+    //var delegate: NewEventViewDelegate?
+    @IBOutlet weak var colourButton: UIButton!
+    @IBOutlet weak var colourView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -37,10 +28,10 @@ class colourCell: UITableViewCell {
     }
 
     
-    func setViewColour(colour: UIColor){
-        colourHere = colour
-        print("Setting Colour to:\(colourHere)")
-    }
+   /* func setViewColour(colour: UIColor){
+        colourView.backgroundColor = colour
+        print(colour)
+    }*/
     
 
 }
