@@ -383,7 +383,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                                  shouldSelectItemAt indexPath: IndexPath) -> Bool {
         //print("tapped \(indexPath)")
         
-        var firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[yearToShow], month: month)
+        let firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[yearToShow], month: month)
         var subtract = 0
         if firstWeekDay == "Sunday" {
             subtract = 0
@@ -401,8 +401,16 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             subtract = 6
         }
         
+        var yearToSend: Bool
+        if yearToShow == 0 {
+            yearToSend = leapYear
+        } else {
+            yearToSend = leapYear2
+        }
+        let numberOfDaysThisMonth = getNumberOfDaysInMonth(month: month, leapYear: yearToSend)
+        
         dayToSegue = indexPath.row - 6 - subtract
-        if (dayToSegue > 0){
+        if ((dayToSegue > 0) && dayToSegue <= numberOfDaysThisMonth){
         self.performSegue(withIdentifier: "day", sender: self)
         }
         return false
@@ -426,6 +434,38 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     }
     */
     
+    func getNumberOfDaysInMonth(month: Int, leapYear: Bool) -> Int {
+        
+        if month == 1 {
+            return 31
+        } else if month == 2 {
+            if leapYear == false {
+                return 28
+            } else {
+                return 29
+            }
+        } else if month == 3 {
+            return 31
+        } else if month == 4 {
+            return 30
+        } else if month == 5 {
+            return 31
+        } else if month == 6 {
+            return 30
+        } else if month == 7 {
+            return 31
+        } else if month == 8 {
+            return 31
+        } else if month == 9 {
+            return 30
+        } else if month == 10 {
+            return 31
+        } else if month == 11 {
+            return 30
+        } else {
+            return 31
+        }
+    }
     
     func getFirstWeekDayOfMonth(leapYear: Bool, days: [DateInfo], month: Int) -> String {
                 var add = 0
