@@ -21,7 +21,6 @@ class SubjectTableViewCell: UITableViewCell {
         delegate?.getCellSubject(subject: subjectTextField.text!)
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         

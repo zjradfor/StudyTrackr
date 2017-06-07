@@ -7,11 +7,7 @@
 //
 
 import UIKit
-/*
-protocol NewEventViewDelegate {
-    func setViewColour(colour: UIColor)
-}
-*/
+
 class NewEventViewController: UIViewController, SubjectCellDelegate {
     
     //var delegate: NewEventViewDelegate?
@@ -28,6 +24,7 @@ class NewEventViewController: UIViewController, SubjectCellDelegate {
     var eventColour = UIColor.blue
     var eventMonthFromSegue = 0
     var eventTime = "12:00 AM"
+    var eventSubject = "Math"
     
     override func viewDidLoad() {
         print(eventYearFromSegue)
@@ -76,25 +73,18 @@ class NewEventViewController: UIViewController, SubjectCellDelegate {
     @IBAction func colourPicked(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? EventColourPickerViewController {
             eventColour = sourceViewController.colour
-            print("Set Colour to \(eventColour)")
             colourView.backgroundColor = eventColour
             //delegate?.setViewColour(colour: eventColour)
         }
     }
-    /*
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
     func setTime(time: String){
         eventTime = time
         print(eventTime)
     }
     
     func getCellSubject(subject: String) {
-        print(subject)
+        eventSubject = subject
     }
     
     @IBAction func addEvent(_ sender: Any) {

@@ -12,12 +12,6 @@ class LocationTableViewCell: UITableViewCell {
 
     @IBOutlet weak var locationTextField: UITextField!
     
-    
-    
-    
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
