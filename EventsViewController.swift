@@ -23,7 +23,7 @@ class EventsViewController: UIViewController {
         automaticallyAdjustsScrollViewInsets = false
         
         //Getting current date
-        Header.text = "Day: \(dayFromSegue) Month: \(monthFromSegue)"
+        Header.text = "\(monthTranslator(intMonth: monthFromSegue)) \(dayFromSegue)"
 
         // Do any additional setup after loading the view.
     }

@@ -48,7 +48,7 @@ class NewEventViewController: UIViewController, SubjectCellDelegate {
             currentEventTitle.text = "Other"
         }
         
-        eventTitle.text = "Day: \(eventDayFromSegue)"
+        eventTitle.text = "\(monthTranslator(intMonth: eventMonthFromSegue)) \(eventDayFromSegue)"
         // Do any additional setup after loading the view.
         cellCounter = 0
         //colourButton.setTitle(eventColour, for: any)

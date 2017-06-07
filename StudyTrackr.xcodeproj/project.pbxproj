@@ -29,6 +29,7 @@
 		DE0AF5411EC5F62B0054F125 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */; };
 		DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */; };
 		DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D481EB2375B00F9935C /* AppDelegate.swift */; };
+		DE4EB5EA1EE83A7E0035E160 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4EB5E91EE83A7E0035E160 /* Functions.swift */; };
 		DEAF22421EE059C3008F79F6 /* SubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAF22411EE059C3008F79F6 /* SubjectTableViewCell.swift */; };
 		DEAF22441EE05AB8008F79F6 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAF22431EE05AB8008F79F6 /* LocationTableViewCell.swift */; };
 		DEAF22461EE05B1C008F79F6 /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAF22451EE05B1C008F79F6 /* NotesTableViewCell.swift */; };
@@ -67,6 +68,7 @@
 		DE0588211EDC891800D30E6F /* MarkbookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkbookViewController.swift; sourceTree = "<group>"; };
 		DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = ../EventsViewController.swift; sourceTree = "<group>"; };
 		DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		DE4EB5E91EE83A7E0035E160 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		DEAF22411EE059C3008F79F6 /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectTableViewCell.swift; sourceTree = "<group>"; };
 		DEAF22431EE05AB8008F79F6 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		DEAF22451EE05B1C008F79F6 /* NotesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			children = (
 				F117E0BA1ED873A70008D2BE /* Cells */,
 				F1850D3D1EB77B9F00D75B01 /* CalendarCollectionViewController.swift */,
+				DE4EB5E91EE83A7E0035E160 /* Functions.swift */,
 				DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */,
 				DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */,
 				F11C3B3B1ECDE4E6002DD1FD /* NewEventViewController.swift */,
@@ -284,6 +287,7 @@
 				DE05881F1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld in Sources */,
 				DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */,
 				F117F08E1ECF2B3B0073424B /* Event.swift in Sources */,
+				DE4EB5EA1EE83A7E0035E160 /* Functions.swift in Sources */,
 				DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */,
 				F117E0B91ED873A30008D2BE /* colourCell.swift in Sources */,
 				F117E0B71ED872D50008D2BE /* EventColourPickerViewController.swift in Sources */,
