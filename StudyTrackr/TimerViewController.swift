@@ -9,7 +9,7 @@
 import UIKit
     //Steph and Nadia worked on timer function (Timer and buttons)
 // Emily worked on break buttons and user input for the timer.
-    class TimerViewController: UIViewController {
+    class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
         @IBOutlet weak var timerLabel: UILabel!
         var seconds = 0
         var timer = Timer()
@@ -29,8 +29,9 @@ import UIKit
             
         }
 
+        @IBOutlet weak var subjectPicker: UIPickerView!
         
-        
+        var pickTheSubject = ["Math", "Language Arts", "Science"]
         
         
         
@@ -194,11 +195,24 @@ func updatebreakTimer(){
         @IBOutlet weak var startButton: UIButton!
 
         @IBOutlet weak var doneButton: UIButton!
+        
+        func numberOfComponents(in subjectPicker: UIPickerView) -> Int{
+            return 1
+        }
+        
+        func pickerView(_ subjectPicker: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
+            return pickTheSubject[row]
+        }
 
+        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+            return pickTheSubject.count
+        }
         
     override func viewDidLoad() {
         super.viewDidLoad()
         pauseButton.isEnabled = false
+        self.subjectPicker.dataSource = self
+        self.subjectPicker.delegate = self
             }
 
     override func didReceiveMemoryWarning() {
