@@ -28,15 +28,6 @@ import UIKit
             return dateFormatter.string(from:Date())
             
         }
-
-        
-        
-        
-        
-        
-        
-    
-        
         
 
         @IBOutlet weak var TimerValue: UITextField!
