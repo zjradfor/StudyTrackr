@@ -8,15 +8,21 @@
 
 import UIKit
 
+protocol TimeCellDelegate {
+    func getCellTime(time: String)
+}
+
 class dpTableViewCell: UITableViewCell {
     @IBOutlet var dpShowDate: UIDatePicker!
     @IBOutlet weak var timeLabel: UILabel!
+    
+    var delegate: TimeCellDelegate?
     
     @IBAction func pickingDate(_ sender: Any) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h:mm a"
         timeLabel.text = "\(dateFormatter.string(from: dpShowDate.date))"
-        NewEventViewController().setTime(time: timeLabel.text!)
+        delegate?.getCellTime(time: dateFormatter.string(from: dpShowDate.date))
     }
     
     

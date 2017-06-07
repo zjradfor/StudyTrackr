@@ -469,7 +469,7 @@
         <scene sceneID="Hbp-Y4-XYC">
             <objects>
                 <collectionViewController id="cLe-px-V1W" customClass="CalendarCollectionViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" minimumZoomScale="0.0" dataMode="prototypes" id="6AP-4V-DKl">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" dataMode="prototypes" id="6AP-4V-DKl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -827,6 +827,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="locationTextField:" destination="eWW-Wc-z7E" eventType="editingDidEnd" id="b5R-uh-juw"/>
+                                                        <action selector="locationTextField:" destination="eWW-Wc-z7E" eventType="valueChanged" id="pek-JQ-d30"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -954,7 +955,7 @@
             </objects>
             <point key="canvasLocation" x="2876" y="-340.47976011994007"/>
         </scene>
-
+        <!--Marks View Controller-->
         <scene sceneID="bW5-Hp-Qmz">
             <objects>
                 <viewController id="WO6-eG-aIP" customClass="MarksViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
@@ -1161,7 +1162,6 @@
             </objects>
             <point key="canvasLocation" x="3783" y="-340"/>
         </scene>
-
         <!--MarkbookViewController-->
         <scene sceneID="NuN-ah-dGB">
             <objects>
@@ -1217,7 +1217,6 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a new subject" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lQi-Ah-Z3e">
                                 <rect key="frame" x="16" y="259" width="343" height="30"/>
-
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1227,7 +1226,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="102" id="p7K-eS-3ba"/>
                                 </constraints>
-
                                 <state key="normal" title="Add subject"/>
                                 <connections>
                                     <action selector="ASButtonTapped:" destination="6k1-kB-ZDv" eventType="touchUpInside" id="wZg-w9-66x"/>
@@ -1241,7 +1239,6 @@
                             <constraint firstItem="lQi-Ah-Z3e" firstAttribute="trailing" secondItem="9ly-SS-sNE" secondAttribute="trailingMargin" id="OXz-Iz-sp9"/>
                             <constraint firstItem="lQi-Ah-Z3e" firstAttribute="centerX" secondItem="jmJ-lr-5RB" secondAttribute="centerX" id="ker-0i-r3Z"/>
                             <constraint firstItem="lQi-Ah-Z3e" firstAttribute="top" secondItem="EF1-Va-BLX" secondAttribute="bottom" constant="195" id="wHB-Uq-mxL"/>
-
                         </constraints>
                     </view>
                     <connections>

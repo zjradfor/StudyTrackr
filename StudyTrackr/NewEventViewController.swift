@@ -8,12 +8,9 @@
 
 import UIKit
 
-class NewEventViewController: UIViewController, SubjectCellDelegate, LocationCellDelegate, NotesCellDelegate {
-    
-    //var delegate: NewEventViewDelegate?
+class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDelegate, SubjectCellDelegate, NotesCellDelegate {
     
     @IBOutlet weak var colourView: UIView!
-    
     @IBOutlet weak var neweventtableView: UITableView!
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var currentEventTitle: UILabel!
@@ -23,10 +20,10 @@ class NewEventViewController: UIViewController, SubjectCellDelegate, LocationCel
     var cellCounter = 0
     var eventColour = UIColor.blue
     var eventMonthFromSegue = 0
-    var eventTime = "12:00 AM"
     var eventSubject = "none"
     var eventLocation = "none"
     var eventNotes = "none"
+    var eventTime = "none"
     
     override func viewDidLoad() {
         print(eventYearFromSegue)
@@ -60,7 +57,6 @@ class NewEventViewController: UIViewController, SubjectCellDelegate, LocationCel
     
     override func viewWillAppear(_ animated: Bool) {
         cellCounter = 0
-        //colourCell().setViewColour(colour: eventColour)
     }
     
     // MARK: - Navigation
@@ -70,21 +66,14 @@ class NewEventViewController: UIViewController, SubjectCellDelegate, LocationCel
      }
     @IBAction func unwindToVC3(segue:UIStoryboardSegue) { }
     
-    //@IBAction func colourPicked(segue:UIStoryboardSegue) { }
     
     @IBAction func colourPicked(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? EventColourPickerViewController {
             eventColour = sourceViewController.colour
             colourView.backgroundColor = eventColour
-            //delegate?.setViewColour(colour: eventColour)
         }
     }
     // Getters and setters for data storage
-    
-    func setTime(time: String){
-        eventTime = time
-        print(eventTime)
-    }
     
     func getCellSubject(subject: String) {
         eventSubject = subject
@@ -96,6 +85,10 @@ class NewEventViewController: UIViewController, SubjectCellDelegate, LocationCel
     
     func getCellNotes(notes: String) {
         eventNotes = notes
+    }
+    
+    func getCellTime(time: String) {
+        eventTime = time
     }
     
     // Data Storage
@@ -181,13 +174,15 @@ extension NewEventViewController: UITableViewDataSource{
             return cell
         }
         else if cellCounter == 1{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "dpCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "dpCell", for: indexPath) as! dpTableViewCell
+            cell.delegate = self
             //print(cellCounter)
                     cellCounter += 1
             return cell
         }
         else if cellCounter == 2{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath) as! LocationTableViewCell
+            cell.delegate = self
             //print(cellCounter)
                     cellCounter += 1
             return cell
@@ -199,7 +194,8 @@ extension NewEventViewController: UITableViewDataSource{
             return cell
         }
         else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "notesCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "notesCell", for: indexPath) as! NotesTableViewCell
+            cell.delegate = self
             //print(cellCounter)
                     cellCounter += 1
             return cell
