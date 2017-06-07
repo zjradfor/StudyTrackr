@@ -9,33 +9,86 @@
 import UIKit
 
 class FontsViewController: UIViewController {
-    var FontNum = Int(0)
+    var FontNum = 1
     var ownershipArray = [0, 0, 0, 0]
-    
-    @IBOutlet weak var FontStyle: UILabel!
     
     func FontChanger(FontNum: Int) {
         
         switch FontNum {
         case 1:
             FontStyle.font = UIFont(name: "ArialMT", size: 16.0)
+            if (ownershipArray[0] == 1){
+                AmericanPurchaseLabel.text = "Select"
+            }
+            if (ownershipArray[1] == 1){
+                NoteWorthyPurchaseLabel.text = "Select"
+            }
+            if (ownershipArray[2] == 1){
+                MarkerFeltPurchaseLabel.text = "Select"
+            }
+            if (ownershipArray[3] == 1){
+                RoundhandPurchaseLabel.text = "Select"
+            }
+            
         case 2:
-            FontStyle.font = UIFont(name: "AmericanTypewriter", size: 16.0 )
+            FontStyle.font = UIFont(name: "AmericanTypewriter", size: 16.0)
+            DefaultPurchaseLabel.text = "Select"
+            if (ownershipArray[1] == 1){
+                NoteWorthyPurchaseLabel.text = "Select"
+            }
+            if (ownershipArray[2] == 1){
+                MarkerFeltPurchaseLabel.text = "Select"
+            }
+            if (ownershipArray[3] == 1){
+                RoundhandPurchaseLabel.text = "Select"
+            }
+            
         case 3:
-            FontStyle.font = UIFont(name: "Noteworthy-Bold", size: 16.0 )
+            FontStyle.font = UIFont(name: "Noteworthy-Bold", size: 16.0)
+            DefaultPurchaseLabel.text = "Select"
+            if (ownershipArray[0] == 1){
+                AmericanPurchaseLabel.text = "Select"
+            }
+            if (ownershipArray[2] == 1){
+                MarkerFeltPurchaseLabel.text = "Select"
+            }
+            if (ownershipArray[3] == 1){
+                RoundhandPurchaseLabel.text = "Select"
+            }
         case 4:
-            FontStyle.font = UIFont(name: "MarkerFelt-Thin", size: 16.0 )
+            FontStyle.font = UIFont(name: "MarkerFelt-Thin", size: 16.0)
+            DefaultPurchaseLabel.text = "Select"
+            if (ownershipArray[0] == 1){
+                AmericanPurchaseLabel.text = "Select"
+            }
+            if (ownershipArray[1] == 1){
+                NoteWorthyPurchaseLabel.text = "Select"
+            }
+            if (ownershipArray[3] == 1){
+                RoundhandPurchaseLabel.text = "Select"
+            }
         case 5:
             FontStyle.font = UIFont(name: "SnellRoundhand-Bold", size: 16.0)
+            DefaultPurchaseLabel.text = "Select"
+            if (ownershipArray[0] == 1){
+                AmericanPurchaseLabel.text = "Select"
+            }
+            if (ownershipArray[1] == 1){
+                NoteWorthyPurchaseLabel.text = "Select"
+            }
+            if (ownershipArray[2] == 1){
+                MarkerFeltPurchaseLabel.text = "Select"
+            }
         default:
             break
         }
         
-    }
-
+    } //End of the Switch Statement
+    
     @IBAction func DefaultFont(_ sender: Any) {
         
         FontChanger(FontNum: 1)
+        DefaultPurchaseLabel.text = "Current Font"
     }
     
     @IBAction func TypewriterFont(_ sender: Any) {
@@ -48,6 +101,7 @@ class FontsViewController: UIViewController {
         
         if (ownershipArray[0] == 1) && (FontNum != 2){       //already bought, not selected
            FontChanger(FontNum: 2)
+           AmericanPurchaseLabel.text = "Current Font"
             
         } //end of the if (bought but not selected) statment
     }
@@ -62,6 +116,7 @@ class FontsViewController: UIViewController {
         
         if (ownershipArray[1] == 1) && (FontNum != 3){       //already bought, not selected
            FontChanger(FontNum: 3)
+           NoteWorthyPurchaseLabel.text = "Currrent Font"
             
         } //end of the if (bought but not selected) statment
     }
@@ -76,6 +131,7 @@ class FontsViewController: UIViewController {
         
         if (ownershipArray[2] == 1) && (FontNum != 4){       //already bought, not selected
             FontChanger(FontNum: 4)
+            MarkerFeltPurchaseLabel.text = "Current Font"
             
         } //end of the if (bought but not selected) statment
     }
@@ -90,7 +146,7 @@ class FontsViewController: UIViewController {
         
         if (ownershipArray[3] == 1) && (FontNum != 5){       //already bought, not selected
             FontChanger(FontNum: 5)
-            
+            RoundhandPurchaseLabel.text = "Current Font"
         } //end of the if (bought but not selected) statment
     }
     
@@ -105,22 +161,28 @@ class FontsViewController: UIViewController {
         var stringPassed = ""
         var intPassed = Int()
     
-     @IBOutlet weak var DefaultPurchaseLabel: UILabel!
-    
+    @IBOutlet weak var FontStyle: UILabel!
+    @IBOutlet weak var DefaultPurchaseLabel: UILabel!
+    @IBOutlet weak var AmericanPurchaseLabel: UILabel!
+    @IBOutlet weak var NoteWorthyPurchaseLabel: UILabel!
+    @IBOutlet weak var MarkerFeltPurchaseLabel: UILabel!
+    @IBOutlet weak var RoundhandPurchaseLabel: UILabel!
     
     ////////////////////Override divider from buttons
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             
             secondLabel.text = "Coins: " + "\(intPassed)"
             
-            if (FontNum == 1){
-                DefaultPurchaseLabel.text = "Current Font"
-            }
+            FontStyle.font = UIFont(name: "ArialMT", size: 16.0)
             
-            if (FontNum != 1){
-                DefaultPurchaseLabel.text = "Select"
-            }
+            DefaultPurchaseLabel.text = "Current Font"
+            AmericanPurchaseLabel.text = "Purchase"
+            NoteWorthyPurchaseLabel.text = "Purchase"
+            MarkerFeltPurchaseLabel.text = "Purchase"
+            RoundhandPurchaseLabel.text = "Purchase"
+            
     }
 ////////////////////////////////////////////////////////////////////////////////
     

@@ -14,7 +14,7 @@ class RewardsViewController: UIViewController {
     ///////////////////////////////////////////////////////////////////////////////////////////////
     @IBOutlet weak var myLabel: UILabel!
     
-    var myInt = 900
+    var myInt = 1000000000069
     
     //let myVC = storyboard?.instantiateViewControllerWithIdentifier("SecondVC") as! SecondVC
     //myVC.stringPassed = myLabel.text!
