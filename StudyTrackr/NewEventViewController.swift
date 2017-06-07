@@ -149,6 +149,7 @@ class NewEventViewController: UIViewController, SubjectCellDelegate {
         DateInfoArr[j][i].events[0].location = LocationTableViewCell().locationTextField.text!
         //Storing notes
         DateInfoArr[j][i].events[0].notes = NotesTableViewCell().notesTextField.text!
+        
     }
 
 }
