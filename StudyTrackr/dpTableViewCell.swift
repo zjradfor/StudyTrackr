@@ -30,9 +30,6 @@ class dpTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    /*
-    func getDate()->String{
-        return self.timeLabel.text
-    }*/
+
 
 }

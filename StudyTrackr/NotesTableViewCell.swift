@@ -11,11 +11,6 @@ import UIKit
 class NotesTableViewCell: UITableViewCell {
     @IBOutlet weak var notesTextField: UITextField!
     
-    
-    
-    
-    
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
