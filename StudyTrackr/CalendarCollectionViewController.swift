@@ -331,15 +331,15 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         let screenHeight2 = screenHeight - (screenHeight / 12) - 2
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
         if y == 0 {
-            cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight / 6)) + 65, width: (screenSize.width / 7) - 4, height: (screenHeight / 12) - 2)
-            cell.backgroundColor = UIColor.blue
+            cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight / 6)) + 65, width: (screenSize.width / 7) - 2, height: (screenHeight / 12) - 2)
+            cell.backgroundColor = UIColor.white
             cell.textLabel.text = "\(weekChar[weekTag])"
             weekTag += 1
             cell.textLabel.textAlignment = .center
             cell.textLabel.font = UIFont.systemFont(ofSize: 20)
         }
         else{
-        cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight2 / 6) - (screenHeight / 12) + 74), width: (screenSize.width / 7) - 4, height: (screenHeight2 / 6) - 2)
+        cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight2 / 6) - (screenHeight / 12) + 74), width: (screenSize.width / 7) - 2, height: (screenHeight2 / 6) - 2)
         
         //TAGS
         cell.textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
