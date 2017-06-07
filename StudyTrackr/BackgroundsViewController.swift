@@ -42,12 +42,10 @@ class BackgroundsViewController: UIViewController {
     
     @IBAction func DefaultBackground(_ sender: Any) {
             BackgroundCol(BackCol: "White")
-        
     }
 
     @IBAction func PurpleBackground(_ sender: Any) {
                BackgroundCol(BackCol: "Purple")
- 
     }
     
     @IBAction func PinkBackground(_ sender: Any) {
@@ -56,7 +54,6 @@ class BackgroundsViewController: UIViewController {
     
     @IBAction func YellowBackground(_ sender: Any) {
                BackgroundCol(BackCol: "Yellow")
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
