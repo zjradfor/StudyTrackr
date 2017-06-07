@@ -159,7 +159,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             year += 1
         }
         // Register cell classes
-        year -= 1
+        year -= 2
         self.collectionView!.register(CalendarCell.self, forCellWithReuseIdentifier: "Cell")
         self.collectionView!.register(CalendarHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
         // Do any additional setup after loading the view.
