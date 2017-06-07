@@ -88,14 +88,17 @@ class NewEventViewController: UIViewController, SubjectCellDelegate, LocationCel
     
     func getCellSubject(subject: String) {
         eventSubject = subject
+        print(eventSubject)
     }
     
     func getCellLocation(location: String) {
         eventLocation = location
+        print(eventLocation)
     }
     
     func getCellNotes(notes: String) {
         eventNotes = notes
+        print(eventNotes)
     }
     
     // Data Storage
@@ -157,11 +160,11 @@ class NewEventViewController: UIViewController, SubjectCellDelegate, LocationCel
         DateInfoArr[j][i].events[0].type = currentEventTitle.text!
         DateInfoArr[j][i].events[0].colour = eventColour
         //Storing subject
-        DateInfoArr[j][i].events[0].subject = SubjectTableViewCell().subjectTextField.text!
+        DateInfoArr[j][i].events[0].subject = eventSubject
         //Storing location
-        DateInfoArr[j][i].events[0].location = LocationTableViewCell().locationTextField.text!
+        DateInfoArr[j][i].events[0].location = eventLocation
         //Storing notes
-        DateInfoArr[j][i].events[0].notes = NotesTableViewCell().notesTextField.text!
+        DateInfoArr[j][i].events[0].notes = eventNotes
         
     }
 
