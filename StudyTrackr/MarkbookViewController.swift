@@ -70,7 +70,26 @@ class MarkbookViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         tableView.reloadData()
     }
- 
+    var markToSegue = 0
+    var nameToSegue = ""
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mark"{
+            let mrks = segue.destination as! MarksViewController
+            mrks.nameFromSegue = nameToSegue
+            mrks.markFromSegue = markToSegue
+    }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        markToSegue = indexPath.row
+        let spot = subjects[indexPath.row]
+        nameToSegue = spot.name!
+        self.performSegue(withIdentifier: "mark", sender: self)
+    }
+
+    
     
 //    override func didReceiveMemoryWarning() {
   //      super.didReceiveMemoryWarning()
