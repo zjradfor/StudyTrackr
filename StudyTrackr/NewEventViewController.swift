@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewEventViewController: UIViewController, SubjectCellDelegate {
+class NewEventViewController: UIViewController, SubjectCellDelegate, LocationCellDelegate, NotesCellDelegate {
     
     //var delegate: NewEventViewDelegate?
     
@@ -24,7 +24,9 @@ class NewEventViewController: UIViewController, SubjectCellDelegate {
     var eventColour = UIColor.blue
     var eventMonthFromSegue = 0
     var eventTime = "12:00 AM"
-    var eventSubject = "Math"
+    var eventSubject = "none"
+    var eventLocation = "none"
+    var eventNotes = "none"
     
     override func viewDidLoad() {
         print(eventYearFromSegue)
@@ -77,6 +79,7 @@ class NewEventViewController: UIViewController, SubjectCellDelegate {
             //delegate?.setViewColour(colour: eventColour)
         }
     }
+    // Getters and setters for data storage
     
     func setTime(time: String){
         eventTime = time
@@ -86,6 +89,16 @@ class NewEventViewController: UIViewController, SubjectCellDelegate {
     func getCellSubject(subject: String) {
         eventSubject = subject
     }
+    
+    func getCellLocation(location: String) {
+        eventLocation = location
+    }
+    
+    func getCellNotes(notes: String) {
+        eventNotes = notes
+    }
+    
+    // Data Storage
     
     @IBAction func addEvent(_ sender: Any) {
         
@@ -149,6 +162,7 @@ class NewEventViewController: UIViewController, SubjectCellDelegate {
         DateInfoArr[j][i].events[0].location = LocationTableViewCell().locationTextField.text!
         //Storing notes
         DateInfoArr[j][i].events[0].notes = NotesTableViewCell().notesTextField.text!
+        
     }
 
 }
@@ -200,7 +214,7 @@ extension NewEventViewController: UITableViewDataSource{
         case 0: return 44
         case 1: return 245
         case 2...3: return 44
-        case 4: return 112
+        case 4: return 165
         default: return 0
         }
     }

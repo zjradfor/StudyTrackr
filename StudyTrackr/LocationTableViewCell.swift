@@ -8,9 +8,18 @@
 
 import UIKit
 
-class LocationTableViewCell: UITableViewCell {
+protocol LocationCellDelegate {
+    func getCellLocation(location: String)
+}
 
+class LocationTableViewCell: UITableViewCell {
     @IBOutlet weak var locationTextField: UITextField!
+    
+    var delegate: LocationCellDelegate?
+
+    @IBAction func locationTextField(_ sender: Any) {
+        delegate?.getCellLocation(location: locationTextField.text!)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -345,10 +345,18 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         cell.textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         cell.textLabel.textAlignment = .natural
         cell.backgroundColor = UIColor.white
-            if tag != 0 && tag <= 31{
-                cell.textLabel.text = "\(tag)"
+            
+            var yearToSend: Bool
+            if yearToShow == 0 {
+                yearToSend = leapYear
+            } else {
+                yearToSend = leapYear2
             }
-            else if( tag == 0 || tag > 31){
+            let numberOfDaysThisMonth = getNumberOfDaysInMonth(intMonth: month, leapYear: yearToSend)
+            
+            if tag != 0 && tag <= numberOfDaysThisMonth {
+                cell.textLabel.text = "\(tag)"
+            } else {
                 cell.textLabel.text = ""
             }
         }
@@ -406,7 +414,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         } else {
             yearToSend = leapYear2
         }
-        let numberOfDaysThisMonth = getNumberOfDaysInMonth(month: month, leapYear: yearToSend)
+        let numberOfDaysThisMonth = getNumberOfDaysInMonth(intMonth: month, leapYear: yearToSend)
         
         dayToSegue = indexPath.row - 6 - subtract
         if ((dayToSegue > 0) && dayToSegue <= numberOfDaysThisMonth){
