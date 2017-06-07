@@ -11,6 +11,8 @@ import UIKit
 class EventsViewController: UIViewController {
     
     @IBOutlet weak var Header: UILabel!
+    @IBOutlet weak var showEventsField: UITextView!
+    
     var eventTextCounter = 0 // for cylcing through event labels
     let eventText = ["Test","Assignment","Homework","Event","Other"]
     var dayFromSegue = 0
@@ -21,6 +23,9 @@ class EventsViewController: UIViewController {
         super.viewDidLoad()
         
         automaticallyAdjustsScrollViewInsets = false
+        
+  //      showEventsField.text = "\(dayFromSegue)"
+        
         
         //Getting current date
         Header.text = "\(monthTranslator(intMonth: monthFromSegue)) \(dayFromSegue)"
@@ -52,7 +57,10 @@ class EventsViewController: UIViewController {
     }
     @IBAction func unwindToVC2(segue:UIStoryboardSegue) { }
 
+    @IBOutlet weak var ShowEventsTable: UITableView!
+    
 }
+
 extension EventsViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return 5
@@ -64,6 +72,9 @@ extension EventsViewController: UITableViewDataSource{
         eventTextCounter += 1
         return cell
     }
+    
+    
+    
     //Selected Cell
     //var eventToSegue:IndexPath = []
     
