@@ -6,9 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Unknown constraint types" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -899,13 +898,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="9Rf-b3-F7m" secondAttribute="trailing" constant="27" id="Hv7-lw-nRX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KCE-KO-FZC" secondAttribute="trailing" id="Ig3-Kw-aaG"/>
                             <constraint firstItem="Ldf-9I-ra8" firstAttribute="leading" secondItem="eS9-8Q-V3Q" secondAttribute="leadingMargin" constant="125" id="PlW-xf-t6c"/>
-                            <constraint firstItem="fdV-YE-gvr" firstAttribute="top" secondItem="uvz-40-4EP" secondAttribute="bottom" constant="136.5" id="TuC-8Y-Zx4"/>
+                            <constraint firstAttribute="top" secondItem="uvz-40-4EP" secondAttribute="bottom" constant="136.5" id="TuC-8Y-Zx4"/>
                             <constraint firstItem="mGI-yz-PaA" firstAttribute="top" secondItem="uvz-40-4EP" secondAttribute="bottom" constant="7.5" id="ZTd-uL-Prp"/>
                             <constraint firstItem="uvz-40-4EP" firstAttribute="top" secondItem="5kW-FZ-fX8" secondAttribute="bottom" constant="22" id="eOn-dz-6hZ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="kn0-Bl-fem" secondAttribute="leading" id="eZm-bE-o6k"/>
                             <constraint firstItem="KCE-KO-FZC" firstAttribute="top" secondItem="uvz-40-4EP" secondAttribute="bottom" constant="8.5" id="gGD-Gt-L5n"/>
                             <constraint firstItem="9Rf-b3-F7m" firstAttribute="top" secondItem="uvz-40-4EP" secondAttribute="bottom" constant="374" id="gPb-73-97h"/>
-                            <constraint firstItem="fdV-YE-gvr" firstAttribute="leading" secondItem="eS9-8Q-V3Q" secondAttribute="leadingMargin" constant="49" id="hbA-RA-M5k"/>
+                            <constraint firstAttribute="leading" secondItem="eS9-8Q-V3Q" secondAttribute="leadingMargin" constant="49" id="hbA-RA-M5k"/>
                             <constraint firstItem="kn0-Bl-fem" firstAttribute="top" secondItem="uvz-40-4EP" secondAttribute="bottom" constant="8.5" id="kuj-gg-onA"/>
                             <constraint firstItem="gXT-cC-8sZ" firstAttribute="leading" secondItem="eS9-8Q-V3Q" secondAttribute="leadingMargin" constant="63" id="oJK-fO-d6N"/>
                             <constraint firstItem="uvz-40-4EP" firstAttribute="leading" secondItem="eS9-8Q-V3Q" secondAttribute="leadingMargin" constant="124" id="qPR-n6-O1d"/>
@@ -930,7 +929,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="TimerValue" destination="bqG-sf-KIC" id="fha-Yb-3hB"/>
-                        <outlet property="breakOrStudy" destination="fdV-YE-gvr" id="f89-vX-572"/>
                         <outlet property="doneButton" destination="9Rf-b3-F7m" id="quc-Yd-fUi"/>
                         <outlet property="pauseButton" destination="RGy-FO-fic" id="bVD-At-U4H"/>
                         <outlet property="startButton" destination="jxy-iy-hYB" id="7Nt-zt-jYo"/>
