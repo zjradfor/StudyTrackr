@@ -215,31 +215,30 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         let headerLabel = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
             headerLabel.delegate = self as! CalendarHeaderDelegate
         if month == 1 {
-            headerLabel.dateHeader.text = "January"
+            headerLabel.dateHeader.text = "January \(year)"
         } else if month == 2 {
-            headerLabel.dateHeader.text = "February"
+            headerLabel.dateHeader.text = "February \(year)"
         } else if month == 3 {
-            headerLabel.dateHeader.text = "March"
+            headerLabel.dateHeader.text = "March \(year)"
         } else if month == 4 {
-            headerLabel.dateHeader.text = "April"
+            headerLabel.dateHeader.text = "April \(year)"
         } else if month == 5 {
-            headerLabel.dateHeader.text = "May"
+            headerLabel.dateHeader.text = "May \(year)"
         } else if month == 6 {
-            headerLabel.dateHeader.text = "June"
+            headerLabel.dateHeader.text = "June \(year)"
         } else if month == 7 {
-            headerLabel.dateHeader.text = "July"
+            headerLabel.dateHeader.text = "July \(year)"
         } else if month == 8 {
-            headerLabel.dateHeader.text = "August"
+            headerLabel.dateHeader.text = "August \(year)"
         } else if month == 9 {
-            headerLabel.dateHeader.text = "September"
+            headerLabel.dateHeader.text = "September \(year)"
         } else if month == 10 {
-            headerLabel.dateHeader.text = "October"
+            headerLabel.dateHeader.text = "October \(year)"
         } else if month == 11 {
-            headerLabel.dateHeader.text = "November"
+            headerLabel.dateHeader.text = "November \(year)"
         } else if month == 12 {
-            headerLabel.dateHeader.text = "December"
+            headerLabel.dateHeader.text = "December \(year)"
         }
-            headerLabel.yearHeader.text = "\(year)"
         
         return headerLabel
         default:
@@ -346,10 +345,18 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         cell.textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         cell.textLabel.textAlignment = .natural
         cell.backgroundColor = UIColor.white
-            if tag != 0 && tag <= 31{
-                cell.textLabel.text = "\(tag)"
+            
+            var yearToSend: Bool
+            if yearToShow == 0 {
+                yearToSend = leapYear
+            } else {
+                yearToSend = leapYear2
             }
-            else if( tag == 0 || tag > 31){
+            let numberOfDaysThisMonth = getNumberOfDaysInMonth(intMonth: month, leapYear: yearToSend)
+            
+            if tag != 0 && tag <= numberOfDaysThisMonth {
+                cell.textLabel.text = "\(tag)"
+            } else {
                 cell.textLabel.text = ""
             }
         }
@@ -407,7 +414,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         } else {
             yearToSend = leapYear2
         }
-        let numberOfDaysThisMonth = getNumberOfDaysInMonth(month: month, leapYear: yearToSend)
+        let numberOfDaysThisMonth = getNumberOfDaysInMonth(intMonth: month, leapYear: yearToSend)
         
         dayToSegue = indexPath.row - 6 - subtract
         if ((dayToSegue > 0) && dayToSegue <= numberOfDaysThisMonth){

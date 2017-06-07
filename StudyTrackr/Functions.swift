@@ -38,33 +38,33 @@ func monthTranslator(intMonth: Int) -> String {
     return "broken"
 }
 
-func getNumberOfDaysInMonth(month: Int, leapYear: Bool) -> Int {
+func getNumberOfDaysInMonth(intMonth: Int, leapYear: Bool) -> Int {
     
-    if month == 1 {
+    if intMonth == 1 {
         return 31
-    } else if month == 2 {
+    } else if intMonth == 2 {
         if leapYear == false {
             return 28
         } else {
             return 29
         }
-    } else if month == 3 {
+    } else if intMonth == 3 {
         return 31
-    } else if month == 4 {
+    } else if intMonth == 4 {
         return 30
-    } else if month == 5 {
+    } else if intMonth == 5 {
         return 31
-    } else if month == 6 {
+    } else if intMonth == 6 {
         return 30
-    } else if month == 7 {
+    } else if intMonth == 7 {
         return 31
-    } else if month == 8 {
+    } else if intMonth == 8 {
         return 31
-    } else if month == 9 {
+    } else if intMonth == 9 {
         return 30
-    } else if month == 10 {
+    } else if intMonth == 10 {
         return 31
-    } else if month == 11 {
+    } else if intMonth == 11 {
         return 30
     } else {
         return 31
