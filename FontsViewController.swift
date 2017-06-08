@@ -178,10 +178,10 @@ class FontsViewController: UIViewController {
             FontStyle.font = UIFont(name: "ArialMT", size: 16.0)
             
             DefaultPurchaseLabel.text = "Current Font"
-            AmericanPurchaseLabel.text = "Purchase"
-            NoteWorthyPurchaseLabel.text = "Purchase"
-            MarkerFeltPurchaseLabel.text = "Purchase"
-            RoundhandPurchaseLabel.text = "Purchase"
+            AmericanPurchaseLabel.text = "Cost: 250"
+            NoteWorthyPurchaseLabel.text = "Cost: 250"
+            MarkerFeltPurchaseLabel.text = "Cost: 250"
+            RoundhandPurchaseLabel.text = "Cost: 250"
             
     }
 ////////////////////////////////////////////////////////////////////////////////

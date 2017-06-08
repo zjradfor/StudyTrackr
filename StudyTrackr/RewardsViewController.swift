@@ -14,7 +14,7 @@ class RewardsViewController: UIViewController {
     ///////////////////////////////////////////////////////////////////////////////////////////////
     @IBOutlet weak var myLabel: UILabel!
     
-    var myInt = 1000000000069
+    var myInt = 1000069
     
     //let myVC = storyboard?.instantiateViewControllerWithIdentifier("SecondVC") as! SecondVC
     //myVC.stringPassed = myLabel.text!
@@ -25,8 +25,6 @@ class RewardsViewController: UIViewController {
     @IBOutlet var RewardsView: UIView!
    
      var RecievedCol = String()
-    
-    
     
     func BackgroundCol(BackCol: String) {
         
