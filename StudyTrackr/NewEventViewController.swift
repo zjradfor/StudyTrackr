@@ -104,10 +104,6 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
             j = 1
         }
         
-        if eventYearFromSegue == calendar.component(.year, from: date) + 1 {
-            j = 1
-        }
-        
         if leapYear == true {
             if eventYearFromSegue == calendar.component(.year, from: date) {
                 add = 1
