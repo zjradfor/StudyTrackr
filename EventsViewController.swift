@@ -66,7 +66,9 @@ class EventsViewController: UIViewController {
         automaticallyAdjustsScrollViewInsets = false
         
         if DateInfoArr[j][indexOfDay].atLeastOneEvent == true {
-        showEventsField.text = "\(DateInfoArr[j][indexOfDay].events[0].subject)"
+            for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1 {
+                showEventsField.text = "\(DateInfoArr[j][indexOfDay].events[0].subject)"
+            }
         }
         
         //Getting current date
