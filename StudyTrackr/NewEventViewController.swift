@@ -158,6 +158,7 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         
         print(DateInfoArr[j][i].day.weekDay)
         print(DateInfoArr[j][i].day.dayOfMonth)
+        DateInfoArr[j][i].atLeastOneEvent = true
     }
 
 }

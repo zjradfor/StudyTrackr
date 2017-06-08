@@ -18,7 +18,7 @@ private let reuseIdentifier = "Cell"
 struct DateInfo {
     var day = Day.init()
     var events = [Event]()
-    
+    var atLeastOneEvent = false
 }
 var yearToShow = 0
 var DateInfoArr = [[DateInfo]]()
