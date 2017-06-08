@@ -1,16 +1,19 @@
 //
-//  StudyEventTableViewCell.swift
+//  LocationTableViewCell.swift
 //  StudyTrackr
 //
-//  Created by Emily Klosa on 2017-05-16.
+//  Created by John Slomka on 2017-06-01.
 //  Copyright © 2017 John Slomka. All rights reserved.
 //
 
 import UIKit
 
-class StudyEventTableViewCell: UITableViewCell {
+class LocationTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var locationTextField: UITextField!
     
-    @IBOutlet weak var timeStudied: UILabel!
+    
+    
     
     
     

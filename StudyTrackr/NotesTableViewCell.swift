@@ -1,20 +1,21 @@
 //
-//  StudyEventTableViewCell.swift
+//  NotesTableViewCell.swift
 //  StudyTrackr
 //
-//  Created by Emily Klosa on 2017-05-16.
+//  Created by John Slomka on 2017-06-01.
 //  Copyright © 2017 John Slomka. All rights reserved.
 //
 
 import UIKit
 
-class StudyEventTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var timeStudied: UILabel!
-    
+class NotesTableViewCell: UITableViewCell {
+    @IBOutlet weak var notesTextField: UITextField!
     
     
     
+    
+    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
