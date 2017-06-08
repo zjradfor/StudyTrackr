@@ -21,11 +21,53 @@ class EventsViewController: UIViewController {
     var yearFromSegue = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        var indexOfDay = 0
+        var j = 0
+        var add = 0
+        if yearFromSegue == calendar.component(.year, from: date) + 1 {
+            j = 1
+        }
         
+        if leapYear == true {
+            if yearFromSegue == calendar.component(.year, from: date) {
+                add = 1
+            } else if leapYear2 == true {
+                if yearFromSegue == calendar.component(.year, from: date) + 1 {
+                    add = 1
+                }
+            }
+        }
+        
+        if monthFromSegue == 2 {
+            indexOfDay = 31 + dayFromSegue
+        } else if monthFromSegue == 3 {
+            indexOfDay = 59 + add + dayFromSegue
+        } else if monthFromSegue == 4 {
+            indexOfDay = 90 + add + dayFromSegue
+        } else if monthFromSegue == 5 {
+            indexOfDay = 120 + add + dayFromSegue
+        } else if monthFromSegue == 6 {
+            indexOfDay = 151 + add + dayFromSegue
+        } else if monthFromSegue == 7 {
+            indexOfDay = 181 + add + dayFromSegue
+        } else if monthFromSegue == 8 {
+            indexOfDay = 212 + add + dayFromSegue
+        } else if monthFromSegue == 9 {
+            indexOfDay = 243 + add + dayFromSegue
+        } else if monthFromSegue == 10 {
+            indexOfDay = 273 + add + dayFromSegue
+        } else if monthFromSegue == 11 {
+            indexOfDay = 304 + add + dayFromSegue
+        } else if monthFromSegue == 12 {
+            indexOfDay = 334 + add + dayFromSegue
+        } else {
+            indexOfDay = 0 + dayFromSegue
+        }
         automaticallyAdjustsScrollViewInsets = false
         
-  //      showEventsField.text = "\(dayFromSegue)"
-        
+        if DateInfoArr[j][indexOfDay].atLeastOneEvent == true {
+        showEventsField.text = "\(DateInfoArr[j][indexOfDay].events[0].subject)"
+        }
         
         //Getting current date
         Header.text = "\(monthTranslator(intMonth: monthFromSegue)) \(dayFromSegue)"
