@@ -17,10 +17,11 @@ class LocationTableViewCell: UITableViewCell {
     
     var delegate: LocationCellDelegate?
 
-    @IBAction func locationTextField(_ sender: Any) {
+    @IBAction func locationTextChange(_ sender: Any) {
         delegate?.getCellLocation(location: locationTextField.text!)
+        
     }
-    
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
