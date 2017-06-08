@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
     //Steph and Nadia worked on timer function (Timer and buttons)
 // Emily worked on break buttons and user input for the timer.
     class TimerViewController: UIViewController {
@@ -60,7 +61,7 @@ import UIKit
 
         }
     
-
+//User input for time entered
         @IBAction func userTime(_ sender: UITextField) {
             seconds = seconds + (Int(TimerValue.text!)!*60)
             whenIsBreak = (Int(TimerValue.text!)!*60) / 2
@@ -69,7 +70,7 @@ import UIKit
         }
         
        
-        
+//Start Button
         @IBAction func startButtonTapped(_ sender: UIButton) {
             if isTimerRunning == false{
                 runTimer()
@@ -79,6 +80,8 @@ import UIKit
 
         }
         
+        
+//Pause Button
         @IBAction func pauseButtonTapped(_ sender: UIButton) {
             if self.resumeTapped == false{
                 timer.invalidate()
@@ -91,14 +94,13 @@ import UIKit
             }
         }
         
+        
+//Done Button
         @IBAction func doneButtonTapped(_ sender: UIButton) {
             timer.invalidate()
             seconds = 0
-            
-        
             timerLabel.text = String(seconds)
             isTimerRunning = false
-            seconds = 0
             pauseButton.isEnabled = false
             startButton.isEnabled = true
             
@@ -108,42 +110,46 @@ import UIKit
             studyEvents += [newStudyEvent]
         }
         
+        
+//Runs the study timer
         func runTimer(){
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updateTimer)), userInfo: nil, repeats: true)
             isTimerRunning = true
             pauseButton.isEnabled = true
             
         }
+//Updates the study timer
+        func updateTimer() {
+            if seconds < 1{
+                timer.invalidate()
+                breakOrStudy.text = "Done!"
+            }else{
+                seconds -= 1
+                timerLabel.text = timeString(time: TimeInterval(seconds))
+                //Determines when to start the break timer and pause the study timer
+                if whenIsBreak == seconds{
+                    timer.invalidate()
+                    runbreakTimer()
+                    breakTimerNotification()
+                    timerLabel.text = timeString(time:TimeInterval(breakTime))
+                    updatebreakTimer()
+                    breakOrStudy.text = "Break Time!"
+                }else{
+                    breakTimer.invalidate()
+                    breakOrStudy.text = "Get Studying!"
+                }
+            }
+        }
+ 
         
-func updateTimer() {
-    if seconds < 1{
-        timer.invalidate()
-        //Send alert to indicate time's up
-    }
-    else{
-        seconds -= 1
-        timerLabel.text = timeString(time: TimeInterval(seconds))
-    if whenIsBreak == seconds{
-        timer.invalidate()
-        runbreakTimer()
-        timerLabel.text = timeString(time:TimeInterval(breakTime))
-        updatebreakTimer()
-        breakOrStudy.text = "Break Time!"
-        }
-    else{
-        breakTimer.invalidate()
-        breakOrStudy.text = "Get Studying!"
-        }
-    }
+//Runs the break timer
+        func runbreakTimer(){
+            breakTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updatebreakTimer)), userInfo: nil, repeats: true)
     
-}
-    func runbreakTimer(){
-        breakTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updatebreakTimer)), userInfo: nil, repeats: true)
-    
-    }
+        }
 
 
-
+//Displays the time in a hour, minute, second format
         func timeString(time:TimeInterval) -> String {
             let hours = Int(time) / 3600
             let minutes = Int(time) / 60 % 60
@@ -151,20 +157,35 @@ func updateTimer() {
             return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
         }
         
-        func runBreakTimer(){
-            breakTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updatebreakTimer)), userInfo: nil, repeats: true)
+//Updates the break timer when it is being run
+        func updatebreakTimer(){
+            if breakTime<1 {
+                breakTimer.invalidate()
+                runTimer()
+            }else{
+                breakTime -= 1
+                timerLabel.text = timeString(time:TimeInterval(breakTime))
+            }
+        }
+//Notifications 
+        func breakTimerNotification(){
+            
+            var content = UNMutableNotificationContent()
+            content.title = "Break Time"
+            content.body = "Take a minute to stretch your legs"
+            content.sound = UNNotificationSound.default()
+            
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,  repeats: false)
+            
+            let breakTimeIdentifier = "start.of.break"
+            let breakTimeStart = UNNotificationRequest(identifier: breakTimeIdentifier, content: content, trigger: trigger)
+        
+        // Schedule the notification.
+           /* let request = UNNotificationRequest(identifier: "FiveSecond", content: content, trigger: trigger)8*/
         }
         
-func updatebreakTimer(){
-    if breakTime<1 {
-        breakTimer.invalidate()
-        runTimer()
-    }
-    else{
-        breakTime -= 1
-        timerLabel.text = timeString(time:TimeInterval(breakTime))
-    }
-}
+ 
+        
     
         @IBOutlet weak var pauseButton: UIButton!
 
@@ -173,13 +194,13 @@ func updatebreakTimer(){
         @IBOutlet weak var doneButton: UIButton!
 
         
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        pauseButton.isEnabled = false
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            pauseButton.isEnabled = false
             }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        override func didReceiveMemoryWarning() {
+            super.didReceiveMemoryWarning()
         
-    }
+        }
 }
