@@ -67,7 +67,8 @@ class EventsViewController: UIViewController {
         
         if DateInfoArr[j][indexOfDay].atLeastOneEvent == true {
             for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1 {
-                showEventsField.text = "\(DateInfoArr[j][indexOfDay].events[0].subject)"
+                showEventsField.text! += "\n\(DateInfoArr[j][indexOfDay].events[i].subject) \(DateInfoArr[j][indexOfDay].events[i].type)"
+                i += 1
             }
         }
         
