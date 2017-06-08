@@ -17,9 +17,10 @@ class NotesTableViewCell: UITableViewCell {
     
     var delegate: NotesCellDelegate?
     
-    @IBAction func notesTextField(_ sender: Any) {
-        delegate?.getCellNotes(notes: notesTextField.text!)
+    @IBAction func notesTextChange(_ sender: Any) {
+         delegate?.getCellNotes(notes: notesTextField.text!)
     }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -17,10 +17,13 @@ class SubjectTableViewCell: UITableViewCell {
     
     var delegate: SubjectCellDelegate?
     
-    @IBAction func subjectTextFieldEdited(_ sender: Any) {
-        delegate?.getCellSubject(subject: subjectTextField.text!)
+    @IBAction func subjectTextChange(_ sender: Any) {
+    delegate?.getCellSubject(subject: subjectTextField.text!)
+        
     }
     
+    
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
