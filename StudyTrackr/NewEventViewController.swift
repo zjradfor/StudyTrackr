@@ -151,6 +151,8 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         DateInfoArr[j][i].events[0].location = eventLocation
         //Storing notes
         DateInfoArr[j][i].events[0].notes = eventNotes
+        //Counter
+        DateInfoArr[j][i].eventNumber += 1
         
         print(DateInfoArr[j][i].day.weekDay)
         print(DateInfoArr[j][i].day.dayOfMonth)
