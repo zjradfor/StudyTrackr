@@ -22,7 +22,6 @@ class EventsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         var indexOfDay = 0
-        var i = 0
         var j = 0
         var add = 0
         if yearFromSegue == calendar.component(.year, from: date) + 1 {
@@ -40,34 +39,34 @@ class EventsViewController: UIViewController {
         }
         
         if monthFromSegue == 2 {
-            indexOfDay = 31
+            indexOfDay = 31 + dayFromSegue
         } else if monthFromSegue == 3 {
-            indexOfDay = 59 + add
+            indexOfDay = 59 + add + dayFromSegue
         } else if monthFromSegue == 4 {
-            indexOfDay = 90 + add
+            indexOfDay = 90 + add + dayFromSegue
         } else if monthFromSegue == 5 {
-            indexOfDay = 120 + add
+            indexOfDay = 120 + add + dayFromSegue
         } else if monthFromSegue == 6 {
-            indexOfDay = 151 + add
+            indexOfDay = 151 + add + dayFromSegue
         } else if monthFromSegue == 7 {
-            indexOfDay = 181 + add
+            indexOfDay = 181 + add + dayFromSegue
         } else if monthFromSegue == 8 {
-            indexOfDay = 212 + add
+            indexOfDay = 212 + add + dayFromSegue
         } else if monthFromSegue == 9 {
-            indexOfDay = 243 + add
+            indexOfDay = 243 + add + dayFromSegue
         } else if monthFromSegue == 10 {
-            indexOfDay = 273 + add
+            indexOfDay = 273 + add + dayFromSegue
         } else if monthFromSegue == 11 {
-            indexOfDay = 304 + add
+            indexOfDay = 304 + add + dayFromSegue
         } else if monthFromSegue == 12 {
-            indexOfDay = 334 + add
+            indexOfDay = 334 + add + dayFromSegue
         } else {
-            indexOfDay = 0
+            indexOfDay = 0 + dayFromSegue
         }
         automaticallyAdjustsScrollViewInsets = false
         
-        if DateInfoArr[j][i].atLeastOneEvent == true {
-        showEventsField.text = "\(DateInfoArr[j][i].events[0].subject)"
+        if DateInfoArr[j][indexOfDay].atLeastOneEvent == true {
+        showEventsField.text = "\(DateInfoArr[j][indexOfDay].events[0].subject)"
         }
         
         //Getting current date
