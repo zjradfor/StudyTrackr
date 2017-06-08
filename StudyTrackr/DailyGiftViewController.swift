@@ -11,19 +11,26 @@ import UIKit
 class DailyGiftViewController: UIViewController {
    
 
-   
-    
+    var BackCol = String()
 
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }    
     
+    //////////////////////////////////////////////////////////////////////////////
+    @IBOutlet weak var secondLabel: UILabel!
     
-    
+    var stringPassed = ""
+    var intPassed = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        secondLabel.text = "Coins: " + "\(intPassed)"
+        
     }
+    ////////////////////////////////////////////////////////////////////////////////
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

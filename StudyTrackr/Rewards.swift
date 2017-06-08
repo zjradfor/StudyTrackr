@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 class Rewards {
     var coins : UInt32
@@ -18,6 +18,10 @@ class Rewards {
     func DailyReward () {
 let GiftCoins = arc4random_uniform(25) + 1
 
+        
+       
+    
+    
 coins = GiftCoins + coins  //The Coins recieved from the daily gift is added to the total amount of coins
         }
     
