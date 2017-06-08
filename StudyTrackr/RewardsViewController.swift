@@ -14,7 +14,7 @@ class RewardsViewController: UIViewController {
     ///////////////////////////////////////////////////////////////////////////////////////////////
     @IBOutlet weak var myLabel: UILabel!
     
-    var myInt = 1000069
+    var myInt = 500
     
     //let myVC = storyboard?.instantiateViewControllerWithIdentifier("SecondVC") as! SecondVC
     //myVC.stringPassed = myLabel.text!
@@ -48,7 +48,6 @@ class RewardsViewController: UIViewController {
         default: break
             
         }
-        
     }
     
     @IBAction func DailyRewardButton(_ sender: Any) {
