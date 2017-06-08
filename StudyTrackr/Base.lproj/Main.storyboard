@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -469,7 +469,7 @@
         <scene sceneID="Hbp-Y4-XYC">
             <objects>
                 <collectionViewController id="cLe-px-V1W" customClass="CalendarCollectionViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" dataMode="prototypes" id="6AP-4V-DKl">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" minimumZoomScale="0.0" dataMode="prototypes" id="6AP-4V-DKl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -566,7 +566,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="gHA-DH-AtV">
-                                <rect key="frame" x="0.0" y="272" width="375" height="338"/>
+                                <rect key="frame" x="0.0" y="321" width="375" height="338"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="338" id="dgK-Ru-DFC"/>
@@ -681,12 +681,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Events Text Field" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YY-kD-Iqp">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Hello" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YY-kD-Iqp">
                                 <rect key="frame" x="0.0" y="60" width="375" height="204"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -736,6 +737,7 @@
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addEvent:" destination="oLR-uQ-jjS" eventType="touchUpInside" id="9W9-Wl-m8L"/>
+                                    <segue destination="cLe-px-V1W" kind="show" id="mkV-zR-a7D"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CJ-sO-PaH">
@@ -993,11 +995,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3NR-Jp-JqR">
-                                <rect key="frame" x="16" y="20" width="46" height="30"/>
+                                <rect key="frame" x="16" y="20" width="62" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="X6a-gK-Qjv"/>
+                                    <constraint firstAttribute="width" constant="62" id="E8E-Ik-dcQ"/>
                                 </constraints>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Cancel"/>
                                 <connections>
                                     <segue destination="nnR-KS-qXs" kind="unwind" unwindAction="unwindToVC3WithSegue:" id="Gtq-v0-MDT"/>
                                 </connections>
@@ -1154,10 +1156,10 @@
                         <constraints>
                             <constraint firstItem="drt-OE-1zm" firstAttribute="centerX" secondItem="rWg-Nq-w84" secondAttribute="centerX" id="3EF-Ze-RB1"/>
                             <constraint firstItem="w2j-EI-EiP" firstAttribute="centerX" secondItem="drt-OE-1zm" secondAttribute="centerX" id="9k4-u2-7AC"/>
-                            <constraint firstItem="3NR-Jp-JqR" firstAttribute="leading" secondItem="rWg-Nq-w84" secondAttribute="leadingMargin" id="fEz-7a-CQj"/>
+                            <constraint firstItem="3NR-Jp-JqR" firstAttribute="top" secondItem="2Ka-Be-7Iw" secondAttribute="bottom" id="S4I-M4-OVM"/>
+                            <constraint firstItem="3NR-Jp-JqR" firstAttribute="leading" secondItem="rWg-Nq-w84" secondAttribute="leadingMargin" id="guK-nh-nWm"/>
                             <constraint firstItem="drt-OE-1zm" firstAttribute="top" secondItem="2Ka-Be-7Iw" secondAttribute="bottom" constant="63" id="hmk-kP-iOo"/>
                             <constraint firstItem="w2j-EI-EiP" firstAttribute="centerY" secondItem="rWg-Nq-w84" secondAttribute="centerY" id="o1e-lQ-Zam"/>
-                            <constraint firstItem="3NR-Jp-JqR" firstAttribute="top" secondItem="2Ka-Be-7Iw" secondAttribute="bottom" id="rt4-H9-UQN"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1167,7 +1169,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMo-YY-wlC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="nnR-KS-qXs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3783" y="-340"/>
+            <point key="canvasLocation" x="3781.5999999999999" y="-340.47976011994007"/>
         </scene>
         <!--MarkbookViewController-->
         <scene sceneID="NuN-ah-dGB">
@@ -1694,6 +1696,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="icE-UX-rtA"/>
-        <segue reference="688-pf-hHW"/>
+        <segue reference="6Or-vz-Wwl"/>
+        <segue reference="mkV-zR-a7D"/>
     </inferredMetricsTieBreakers>
 </document>
