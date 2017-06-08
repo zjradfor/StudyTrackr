@@ -12,9 +12,6 @@ class EventTableViewController: UITableViewController {
     var events = [StudyEvent]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hello")
-        loadSampleEvent()
-        print("hello")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -50,6 +47,7 @@ class EventTableViewController: UITableViewController {
             let Event = events[indexPath.row]
             cell.dateStudied.text = Event.date
             cell.timeStudied.text = String(Event.studyTime)
+        cell.subjectStudied.text = Event.subject
         return cell
     }
     
@@ -98,10 +96,4 @@ class EventTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    private func loadSampleEvent(){
-        guard let event = StudyEvent(studyTime:30, subject: "Math", date: "May 17")else{
-            fatalError("Unable to create study event")
-        }
-        events += [event]
     }
-}

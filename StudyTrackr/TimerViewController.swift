@@ -22,7 +22,13 @@ import UserNotifications
         var isBreakTimeAdded:Bool = false
         var studyEvents = [StudyEvent]()
         var studyTime = 0
-        let date = String(describing: Date())
+        func setDateValue() ->String{
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            return dateFormatter.string(from:Date())
+            
+        }
         
 
         @IBOutlet weak var TimerValue: UITextField!
@@ -63,12 +69,17 @@ import UserNotifications
     
 //User input for time entered
         @IBAction func userTime(_ sender: UITextField) {
-            seconds = seconds + (Int(TimerValue.text!)!*60)
-            whenIsBreak = (Int(TimerValue.text!)!*60) / 2
-            studyTime = (Int(TimerValue.text!)!*60)
-
+            
+                if let unWrappedInt = Int(TimerValue.text!){
+                    seconds = unWrappedInt * 60
+                    whenIsBreak = (Int(TimerValue.text!)!*60) / 2
+                    studyTime = (Int(TimerValue.text!)!)
+                }
+                else{
+                    TimerValue.text = ""
+                    seconds = 0
+                }
         }
-        
        
 //Start Button
         @IBAction func startButtonTapped(_ sender: UIButton) {
@@ -103,11 +114,14 @@ import UserNotifications
             isTimerRunning = false
             pauseButton.isEnabled = false
             startButton.isEnabled = true
-            
+            let date = setDateValue()
             guard let newStudyEvent = StudyEvent(studyTime: studyTime, subject: "Math", date: date) else{
                 fatalError("cannot create study event")
             }
             studyEvents += [newStudyEvent]
+            self.resumeTapped = false
+            self.pauseButton.setTitle("Pause", for: .normal)
+            
         }
         
         
@@ -204,3 +218,4 @@ import UserNotifications
         
         }
 }
+
