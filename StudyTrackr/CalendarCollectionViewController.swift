@@ -356,6 +356,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             
             if tag != 0 && tag <= numberOfDaysThisMonth {
                 cell.textLabel.text = "\(tag)"
+                
             } else {
                 cell.textLabel.text = ""
             }
