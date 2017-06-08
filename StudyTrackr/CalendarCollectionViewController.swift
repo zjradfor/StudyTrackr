@@ -19,6 +19,7 @@ struct DateInfo {
     var day = Day.init()
     var events = [Event]()
     var atLeastOneEvent = false
+    var eventNumber = 0
 }
 var yearToShow = 0
 var DateInfoArr = [[DateInfo]]()
@@ -353,10 +354,60 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                 yearToSend = leapYear2
             }
             let numberOfDaysThisMonth = getNumberOfDaysInMonth(intMonth: month, leapYear: yearToSend)
+            var indexOfDay = 0
+            var j = 0
+            var add = 0
+            if year == calendar.component(.year, from: date) + 1 {
+                j = 1
+            }
+            
+            if leapYear == true {
+                if year == calendar.component(.year, from: date) {
+                    add = 1
+                } else if leapYear2 == true {
+                    if year == calendar.component(.year, from: date) + 1 {
+                        add = 1
+                    }
+                }
+            }
+            
+            if month == 2 {
+                indexOfDay = 31 + tag
+            } else if month == 3 {
+                indexOfDay = 59 + add + tag
+            } else if month == 4 {
+                indexOfDay = 90 + add + tag
+            } else if month == 5 {
+                indexOfDay = 120 + add + tag
+            } else if month == 6 {
+                indexOfDay = 151 + add + tag
+            } else if month == 7 {
+                indexOfDay = 181 + add + tag
+            } else if month == 8 {
+                indexOfDay = 212 + add + tag
+            } else if month == 9 {
+                indexOfDay = 243 + add + tag
+            } else if month == 10 {
+                indexOfDay = 273 + add + tag
+            } else if month == 11 {
+                indexOfDay = 304 + add + tag
+            } else if month == 12 {
+                indexOfDay = 334 + add + tag
+            } else {
+                indexOfDay = 0 + tag
+            }
+
             
             if tag != 0 && tag <= numberOfDaysThisMonth {
                 cell.textLabel.text = "\(tag)"
-                
+                if DateInfoArr[j][indexOfDay].atLeastOneEvent == true{
+                    for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1{
+                        cell.textLabel.textColor = DateInfoArr[j][indexOfDay].events[i].colour
+                        cell.textLabel.text = "\(tag) o"
+                        i += 1
+                    }
+                    //cell.textLabel.textColor = UIColor.darkText
+                }
             } else {
                 cell.textLabel.text = ""
             }
