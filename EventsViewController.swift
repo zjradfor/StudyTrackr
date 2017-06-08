@@ -11,6 +11,8 @@ import UIKit
 class EventsViewController: UIViewController {
     
     @IBOutlet weak var Header: UILabel!
+    @IBOutlet weak var showEventsField: UITextView!
+    
     var eventTextCounter = 0 // for cylcing through event labels
     let eventText = ["Test","Assignment","Homework","Event","Other"]
     var dayFromSegue = 0
@@ -19,8 +21,54 @@ class EventsViewController: UIViewController {
     var yearFromSegue = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        var indexOfDay = 0
+        var i = 0
+        var j = 0
+        var add = 0
+        if yearFromSegue == calendar.component(.year, from: date) + 1 {
+            j = 1
+        }
         
+        if leapYear == true {
+            if yearFromSegue == calendar.component(.year, from: date) {
+                add = 1
+            } else if leapYear2 == true {
+                if yearFromSegue == calendar.component(.year, from: date) + 1 {
+                    add = 1
+                }
+            }
+        }
+        
+        if monthFromSegue == 2 {
+            indexOfDay = 31
+        } else if monthFromSegue == 3 {
+            indexOfDay = 59 + add
+        } else if monthFromSegue == 4 {
+            indexOfDay = 90 + add
+        } else if monthFromSegue == 5 {
+            indexOfDay = 120 + add
+        } else if monthFromSegue == 6 {
+            indexOfDay = 151 + add
+        } else if monthFromSegue == 7 {
+            indexOfDay = 181 + add
+        } else if monthFromSegue == 8 {
+            indexOfDay = 212 + add
+        } else if monthFromSegue == 9 {
+            indexOfDay = 243 + add
+        } else if monthFromSegue == 10 {
+            indexOfDay = 273 + add
+        } else if monthFromSegue == 11 {
+            indexOfDay = 304 + add
+        } else if monthFromSegue == 12 {
+            indexOfDay = 334 + add
+        } else {
+            indexOfDay = 0
+        }
         automaticallyAdjustsScrollViewInsets = false
+        
+        if DateInfoArr[j][i].atLeastOneEvent == true {
+        showEventsField.text = "\(DateInfoArr[j][i].events[0].subject)"
+        }
         
         //Getting current date
         Header.text = "\(monthTranslator(intMonth: monthFromSegue)) \(dayFromSegue)"
@@ -52,7 +100,10 @@ class EventsViewController: UIViewController {
     }
     @IBAction func unwindToVC2(segue:UIStoryboardSegue) { }
 
+    @IBOutlet weak var ShowEventsTable: UITableView!
+    
 }
+
 extension EventsViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return 5
@@ -64,6 +115,9 @@ extension EventsViewController: UITableViewDataSource{
         eventTextCounter += 1
         return cell
     }
+    
+    
+    
     //Selected Cell
     //var eventToSegue:IndexPath = []
     
