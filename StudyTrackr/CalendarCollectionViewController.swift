@@ -237,7 +237,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         } else if month == 12 {
             headerLabel.dateHeader.text = "December"
         }
-            headerLabel.yearHeader.text = "\(year)"
+           
         
         return headerLabel
         default:
