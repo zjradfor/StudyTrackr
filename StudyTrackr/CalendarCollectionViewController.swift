@@ -244,6 +244,8 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         //4
             assert(false, "Unexpected element kind")
         }
+        
+        
     }
     
     
@@ -345,8 +347,19 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         cell.backgroundColor = UIColor.white
             if tag != 0 && tag <= 31{
                 cell.textLabel.text = "\(tag)"
-            }
-            else if( tag == 0 || tag > 31){
+
+                if DateInfoArr[j][indexOfDay].atLeastOneEvent == true{
+                    for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1{
+                        cell.textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+                        cell.textLabel.numberOfLines += 1
+                        let newLabel = NSMutableAttributedString(string: cell.textLabel.text!, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 18.0)!])
+                        newLabel.addAttribute(NSForegroundColorAttributeName, value: DateInfoArr[j][indexOfDay].events[i].colour, range: NSRange(location:1,length:1))
+                        cell.textLabel.attributedText! = newLabel
+                        i += 1
+                    }
+                    //cell.textLabel.textColor = UIColor.darkText
+                }
+            } else {
                 cell.textLabel.text = ""
             }
         }

@@ -135,12 +135,14 @@ class NewEventViewController: UIViewController {
         //Storing location
         DateInfoArr[i].events[0].location = LocationTableViewCell().locationTextField.text!
         //Storing notes
-        DateInfoArr[i].events[0].notes = NotesTableViewCell().notesTextField.text!
-        
+
+        DateInfoArr[j][i].events[0].notes = eventNotes
+        //Store time
+        DateInfoArr[j][i].events[0].time = eventTime
+        //Counter
+        DateInfoArr[j][i].eventNumber += 1
         */
-        
-        
-        
+
         
     }
 
@@ -149,7 +151,7 @@ class NewEventViewController: UIViewController {
 extension NewEventViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if cellCounter == 0{
