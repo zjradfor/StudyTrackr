@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import UserNotifications
+import CoreData
     //Steph and Nadia worked on timer function (Timer and buttons)
 // Emily worked on break buttons and user input for the timer.
     class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
@@ -128,14 +128,13 @@ import UserNotifications
             guard let newStudyEvent = StudyEvent(studyTime: studyTime, subject: "Math", date: date) else{
                 fatalError("cannot create study event")
             }
-            studyEvents += [newStudyEvent]
+            studyEvents.insert(newStudyEvent, at: 0)
             self.resumeTapped = false
             self.pauseButton.setTitle("Pause", for: .normal)
             
-        }
-        
-        
-//Runs the study timer
+            
+                    }
+
         func runTimer(){
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updateTimer)), userInfo: nil, repeats: true)
             isTimerRunning = true
