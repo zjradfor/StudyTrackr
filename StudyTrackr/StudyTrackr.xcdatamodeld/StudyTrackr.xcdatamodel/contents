@@ -9,7 +9,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="TimerThings" representedClassName="StudyEventMO" syncable="YES" codeGenerationType="class">
-        <attribute name="studiedSubject" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studiedSubject" optional="YES" attributeType="String" defaultValueString="Unknown Subject" syncable="YES"/>
         <attribute name="timeStudied" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
