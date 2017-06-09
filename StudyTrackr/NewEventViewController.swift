@@ -8,21 +8,25 @@
 
 import UIKit
 
-class NewEventViewController: UIViewController {
-    @IBOutlet weak var colourView: UIView!
+class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDelegate, SubjectCellDelegate, NotesCellDelegate {
     
+    @IBOutlet weak var colourView: UIView!
     @IBOutlet weak var neweventtableView: UITableView!
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var currentEventTitle: UILabel!
     var eventFromSegue = 0
     var eventDayFromSegue = 0
+    var eventYearFromSegue = 0
     var cellCounter = 0
     var eventColour = UIColor.blue
     var eventMonthFromSegue = 0
-    var eventTime = "12:00 AM"
+    var eventSubject = "none"
+    var eventLocation = "none"
+    var eventNotes = "none"
+    var eventTime = "none"
     
     override func viewDidLoad() {
-        print(eventMonthFromSegue)
+        print(eventYearFromSegue)
         super.viewDidLoad()
         if eventFromSegue == 0{
             currentEventTitle.text = "Test"
@@ -40,7 +44,7 @@ class NewEventViewController: UIViewController {
             currentEventTitle.text = "Other"
         }
         
-        eventTitle.text = "Day: \(eventDayFromSegue)"
+        eventTitle.text = "\(monthTranslator(intMonth: eventMonthFromSegue)) \(eventDayFromSegue)"
         // Do any additional setup after loading the view.
         cellCounter = 0
         //colourButton.setTitle(eventColour, for: any)
@@ -53,7 +57,6 @@ class NewEventViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         cellCounter = 0
-        //colourCell().setViewColour(colour: eventColour)
     }
     
     // MARK: - Navigation
@@ -63,37 +66,54 @@ class NewEventViewController: UIViewController {
      }
     @IBAction func unwindToVC3(segue:UIStoryboardSegue) { }
     
-    //@IBAction func colourPicked(segue:UIStoryboardSegue) { }
     
     @IBAction func colourPicked(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? EventColourPickerViewController {
             eventColour = sourceViewController.colour
-            print("Set Colour to \(eventColour)")
             colourView.backgroundColor = eventColour
         }
     }
-    /*
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Getters and setters for data storage
+    
+    func getCellSubject(subject: String) {
+        eventSubject = subject
     }
-    */
-    func setTime(time: String){
+    
+    func getCellLocation(location: String) {
+        eventLocation = location
+    }
+    
+    func getCellNotes(notes: String) {
+        eventNotes = notes
+    }
+    
+    func getCellTime(time: String) {
         eventTime = time
-        print(eventTime)
     }
+    
+    // Data Storage
     
     @IBAction func addEvent(_ sender: Any) {
         
         var add = 0
         var addMonth = 0
         var i = 0
+        var j = 0
+        
+        if eventYearFromSegue == calendar.component(.year, from: date) + 1 {
+            j = 1
+        }
         
         if leapYear == true {
-            add = 1
+            if eventYearFromSegue == calendar.component(.year, from: date) {
+                add = 1
+            } else if leapYear2 == true {
+                if eventYearFromSegue == calendar.component(.year, from: date) + 1 {
+                    add = 1
+                }
+            }
         }
-
+        
         if eventMonthFromSegue == 2 {
             addMonth = 31
         } else if eventMonthFromSegue == 3 {
@@ -120,28 +140,23 @@ class NewEventViewController: UIViewController {
             addMonth = 0
         }
         
-        i = eventDayFromSegue + addMonth + add
-        /*
-        //DateInfoArr[i].events.insert(Event.init(), at: 0)
-        //DateInfoArr[i].events[0].type = currentEventTitle.text!
-        //DateInfoArr[i].events[0].colour = eventColour
         i = eventDayFromSegue + addMonth
         
-        DateInfoArr[i].events.insert(Event.init(), at: 0)
-        DateInfoArr[i].events[0].type = currentEventTitle.text!
-        DateInfoArr[i].events[0].colour = eventColour
+        DateInfoArr[j][i].events.insert(Event.init(), at: 0)
+        DateInfoArr[j][i].events[0].type = currentEventTitle.text!
+        DateInfoArr[j][i].events[0].colour = eventColour
         //Storing subject
-        DateInfoArr[i].events[0].subject = SubjectTableViewCell().subjectTextField.text!
+        DateInfoArr[j][i].events[0].subject = eventSubject
         //Storing location
-        DateInfoArr[i].events[0].location = LocationTableViewCell().locationTextField.text!
+        DateInfoArr[j][i].events[0].location = eventLocation
         //Storing notes
-        DateInfoArr[i].events[0].notes = NotesTableViewCell().notesTextField.text!
+        DateInfoArr[j][i].events[0].notes = eventNotes
+        //Counter
+        DateInfoArr[j][i].eventNumber += 1
         
-        */
-        
-        
-        
-        
+        print(DateInfoArr[j][i].day.weekDay)
+        print(DateInfoArr[j][i].day.dayOfMonth)
+        DateInfoArr[j][i].atLeastOneEvent = true
     }
 
 }
@@ -153,19 +168,22 @@ extension NewEventViewController: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if cellCounter == 0{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath) as! SubjectTableViewCell
+            cell.delegate = self
             //print(cellCounter)
                     cellCounter += 1
             return cell
         }
         else if cellCounter == 1{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "dpCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "dpCell", for: indexPath) as! dpTableViewCell
+            cell.delegate = self
             //print(cellCounter)
                     cellCounter += 1
             return cell
         }
         else if cellCounter == 2{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath) as! LocationTableViewCell
+            cell.delegate = self
             //print(cellCounter)
                     cellCounter += 1
             return cell
@@ -177,7 +195,8 @@ extension NewEventViewController: UITableViewDataSource{
             return cell
         }
         else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "notesCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "notesCell", for: indexPath) as! NotesTableViewCell
+            cell.delegate = self
             //print(cellCounter)
                     cellCounter += 1
             return cell
@@ -192,7 +211,7 @@ extension NewEventViewController: UITableViewDataSource{
         case 0: return 44
         case 1: return 245
         case 2...3: return 44
-        case 4: return 112
+        case 4: return 165
         default: return 0
         }
     }

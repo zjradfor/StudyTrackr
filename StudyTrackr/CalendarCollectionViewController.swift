@@ -18,7 +18,8 @@ private let reuseIdentifier = "Cell"
 struct DateInfo {
     var day = Day.init()
     var events = [Event]()
-    
+    var atLeastOneEvent = false
+    var eventNumber = 0
 }
 var yearToShow = 0
 var DateInfoArr = [[DateInfo]]()
@@ -36,6 +37,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     
     @IBOutlet var CalendarCollectionView: UICollectionView!
     var firstWeekDay = "Sunday"
+    var currentTag = "0"
     
     override func viewDidLoad() {
         // Uncomment the following line to preserve selection between presentations
@@ -91,19 +93,19 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             //Fill Weekday
             DateInfoArr[j].append(DateInfo())
             if (firstWeekday == 1) {
-                DateInfoArr[j][i].day.weekDay = "Sunday"
-            } else if (firstWeekday == 2) {
-                DateInfoArr[j][i].day.weekDay = "Monday"
-            } else if (firstWeekday == 3) {
-                DateInfoArr[j][i].day.weekDay = "Tuesday"
-            } else if (firstWeekday == 4) {
-                DateInfoArr[j][i].day.weekDay = "Wednesday"
-            } else if (firstWeekday == 5) {
-                DateInfoArr[j][i].day.weekDay = "Thursday"
-            } else if (firstWeekday == 6) {
-                DateInfoArr[j][i].day.weekDay = "Friday"
-            } else if (firstWeekday == 7) {
                 DateInfoArr[j][i].day.weekDay = "Saturday"
+            } else if (firstWeekday == 2) {
+                DateInfoArr[j][i].day.weekDay = "Sunday"
+            } else if (firstWeekday == 3) {
+                DateInfoArr[j][i].day.weekDay = "Monday"
+            } else if (firstWeekday == 4) {
+                DateInfoArr[j][i].day.weekDay = "Tuesday"
+            } else if (firstWeekday == 5) {
+                DateInfoArr[j][i].day.weekDay = "Wednesday"
+            } else if (firstWeekday == 6) {
+                DateInfoArr[j][i].day.weekDay = "Thursday"
+            } else if (firstWeekday == 7) {
+                DateInfoArr[j][i].day.weekDay = "Friday"
             }
             if (firstWeekday < 7) {
                 firstWeekday += 1
@@ -155,9 +157,10 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         }
             j += 1
             firstWeekday -= 1
+            year += 1
         }
         // Register cell classes
-        
+        year -= 2
         self.collectionView!.register(CalendarCell.self, forCellWithReuseIdentifier: "Cell")
         self.collectionView!.register(CalendarHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
         // Do any additional setup after loading the view.
@@ -182,19 +185,19 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[yearToShow], month: month)
         
         if firstWeekDay == "Sunday" {
-            tileBuffer = -5
-        } else if firstWeekDay == "Monday" {
             tileBuffer = -6
-        } else if firstWeekDay == "Tuesday" {
+        } else if firstWeekDay == "Monday" {
             tileBuffer = -7
-        } else if firstWeekDay == "Wednesday" {
+        } else if firstWeekDay == "Tuesday" {
             tileBuffer = -8
-        } else if firstWeekDay == "Thursday" {
+        } else if firstWeekDay == "Wednesday" {
             tileBuffer = -9
-        } else if firstWeekDay == "Friday" {
+        } else if firstWeekDay == "Thursday" {
             tileBuffer = -10
-        } else {
+        } else if firstWeekDay == "Friday" {
             tileBuffer = -11
+        } else {
+            tileBuffer = -12
         }
     }
  
@@ -213,31 +216,30 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         let headerLabel = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
             headerLabel.delegate = self as! CalendarHeaderDelegate
         if month == 1 {
-            headerLabel.dateHeader.text = "January"
+            headerLabel.dateHeader.text = "January \(year)"
         } else if month == 2 {
-            headerLabel.dateHeader.text = "February"
+            headerLabel.dateHeader.text = "February \(year)"
         } else if month == 3 {
-            headerLabel.dateHeader.text = "March"
+            headerLabel.dateHeader.text = "March \(year)"
         } else if month == 4 {
-            headerLabel.dateHeader.text = "April"
+            headerLabel.dateHeader.text = "April \(year)"
         } else if month == 5 {
-            headerLabel.dateHeader.text = "May"
+            headerLabel.dateHeader.text = "May \(year)"
         } else if month == 6 {
-            headerLabel.dateHeader.text = "June"
+            headerLabel.dateHeader.text = "June \(year)"
         } else if month == 7 {
-            headerLabel.dateHeader.text = "July"
+            headerLabel.dateHeader.text = "July \(year)"
         } else if month == 8 {
-            headerLabel.dateHeader.text = "August"
+            headerLabel.dateHeader.text = "August \(year)"
         } else if month == 9 {
-            headerLabel.dateHeader.text = "September"
+            headerLabel.dateHeader.text = "September \(year)"
         } else if month == 10 {
-            headerLabel.dateHeader.text = "October"
+            headerLabel.dateHeader.text = "October \(year)"
         } else if month == 11 {
-            headerLabel.dateHeader.text = "November"
+            headerLabel.dateHeader.text = "November \(year)"
         } else if month == 12 {
-            headerLabel.dateHeader.text = "December"
+            headerLabel.dateHeader.text = "December \(year)"
         }
-            headerLabel.yearHeader.text = "\(year)"
         
         return headerLabel
         default:
@@ -265,19 +267,19 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[yearToShow], month: month)
         
         if firstWeekDay == "Sunday" {
-            tileBuffer = -5
-        } else if firstWeekDay == "Monday" {
             tileBuffer = -6
-        } else if firstWeekDay == "Tuesday" {
+        } else if firstWeekDay == "Monday" {
             tileBuffer = -7
-        } else if firstWeekDay == "Wednesday" {
+        } else if firstWeekDay == "Tuesday" {
             tileBuffer = -8
-        } else if firstWeekDay == "Thursday" {
+        } else if firstWeekDay == "Wednesday" {
             tileBuffer = -9
-        } else if firstWeekDay == "Friday" {
+        } else if firstWeekDay == "Thursday" {
             tileBuffer = -10
-        } else {
+        } else if firstWeekDay == "Friday" {
             tileBuffer = -11
+        } else {
+            tileBuffer = -12
         }
         
         
@@ -301,6 +303,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             let vc = segue.destination as! EventsViewController
             vc.monthFromSegue = month
             vc.dayFromSegue = dayToSegue
+            vc.yearFromSegue = year
         }
     }
  
@@ -329,24 +332,83 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         let screenHeight2 = screenHeight - (screenHeight / 12) - 2
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
         if y == 0 {
-            cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight / 6)) + 65, width: (screenSize.width / 7) - 4, height: (screenHeight / 12) - 2)
-            cell.backgroundColor = UIColor.blue
+            cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight / 6)) + 65, width: (screenSize.width / 7) - 2, height: (screenHeight / 12) - 2)
+            cell.backgroundColor = UIColor.white
             cell.textLabel.text = "\(weekChar[weekTag])"
             weekTag += 1
             cell.textLabel.textAlignment = .center
             cell.textLabel.font = UIFont.systemFont(ofSize: 20)
         }
         else{
-        cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight2 / 6) - (screenHeight / 12) + 74), width: (screenSize.width / 7) - 4, height: (screenHeight2 / 6) - 2)
+        cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight2 / 6) - (screenHeight / 12) + 74), width: (screenSize.width / 7) - 2, height: (screenHeight2 / 6) - 2)
         
         //TAGS
         cell.textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         cell.textLabel.textAlignment = .natural
         cell.backgroundColor = UIColor.white
-            if tag != 0 && tag <= 31{
-                cell.textLabel.text = "\(tag)"
+            
+            var yearToSend: Bool
+            if yearToShow == 0 {
+                yearToSend = leapYear
+            } else {
+                yearToSend = leapYear2
             }
-            else if( tag == 0 || tag > 31){
+            let numberOfDaysThisMonth = getNumberOfDaysInMonth(intMonth: month, leapYear: yearToSend)
+            var indexOfDay = 0
+            var j = 0
+            var add = 0
+            if year == calendar.component(.year, from: date) + 1 {
+                j = 1
+            }
+            
+            if leapYear == true {
+                if year == calendar.component(.year, from: date) {
+                    add = 1
+                } else if leapYear2 == true {
+                    if year == calendar.component(.year, from: date) + 1 {
+                        add = 1
+                    }
+                }
+            }
+            
+            if month == 2 {
+                indexOfDay = 31 + tag
+            } else if month == 3 {
+                indexOfDay = 59 + add + tag
+            } else if month == 4 {
+                indexOfDay = 90 + add + tag
+            } else if month == 5 {
+                indexOfDay = 120 + add + tag
+            } else if month == 6 {
+                indexOfDay = 151 + add + tag
+            } else if month == 7 {
+                indexOfDay = 181 + add + tag
+            } else if month == 8 {
+                indexOfDay = 212 + add + tag
+            } else if month == 9 {
+                indexOfDay = 243 + add + tag
+            } else if month == 10 {
+                indexOfDay = 273 + add + tag
+            } else if month == 11 {
+                indexOfDay = 304 + add + tag
+            } else if month == 12 {
+                indexOfDay = 334 + add + tag
+            } else {
+                indexOfDay = 0 + tag
+            }
+
+            
+            if tag != 0 && tag <= numberOfDaysThisMonth {
+                cell.textLabel.text = "\(tag)"
+                if DateInfoArr[j][indexOfDay].atLeastOneEvent == true{
+                    for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1{
+                        cell.textLabel.textColor = DateInfoArr[j][indexOfDay].events[i].colour
+                        cell.textLabel.text = "\(tag) o"
+                        i += 1
+                    }
+                    //cell.textLabel.textColor = UIColor.darkText
+                }
+            } else {
                 cell.textLabel.text = ""
             }
         }
@@ -379,8 +441,35 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     override func collectionView(_ collectionView: UICollectionView,
                                  shouldSelectItemAt indexPath: IndexPath) -> Bool {
         //print("tapped \(indexPath)")
-        dayToSegue = indexPath.row - 7
-        if (dayToSegue > 0){
+        
+        let firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[yearToShow], month: month)
+        var subtract = 0
+        if firstWeekDay == "Sunday" {
+            subtract = 0
+        } else if firstWeekDay == "Monday" {
+            subtract = 1
+        } else if firstWeekDay == "Tuesday" {
+            subtract = 2
+        } else if firstWeekDay == "Wednesday" {
+           subtract = 3
+        } else if firstWeekDay == "Thursday" {
+            subtract = 4
+        } else if firstWeekDay == "Friday" {
+            subtract = 5
+        } else {
+            subtract = 6
+        }
+        
+        var yearToSend: Bool
+        if yearToShow == 0 {
+            yearToSend = leapYear
+        } else {
+            yearToSend = leapYear2
+        }
+        let numberOfDaysThisMonth = getNumberOfDaysInMonth(intMonth: month, leapYear: yearToSend)
+        
+        dayToSegue = indexPath.row - 7 - subtract
+        if ((dayToSegue > 0) && dayToSegue <= numberOfDaysThisMonth){
         self.performSegue(withIdentifier: "day", sender: self)
         }
         return false
@@ -404,6 +493,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     }
     */
     
+
     
     func getFirstWeekDayOfMonth(leapYear: Bool, days: [DateInfo], month: Int) -> String {
                 var add = 0

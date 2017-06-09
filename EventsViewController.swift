@@ -11,18 +11,69 @@ import UIKit
 class EventsViewController: UIViewController {
     
     @IBOutlet weak var Header: UILabel!
+    @IBOutlet weak var showEventsField: UITextView!
+    
     var eventTextCounter = 0 // for cylcing through event labels
     let eventText = ["Test","Assignment","Homework","Event","Other"]
     var dayFromSegue = 0
     var monthFromSegue = 0
     var eventToSegue = 0
+    var yearFromSegue = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        var indexOfDay = 0
+        var j = 0
+        var add = 0
+        if yearFromSegue == calendar.component(.year, from: date) + 1 {
+            j = 1
+        }
         
+        if leapYear == true {
+            if yearFromSegue == calendar.component(.year, from: date) {
+                add = 1
+            } else if leapYear2 == true {
+                if yearFromSegue == calendar.component(.year, from: date) + 1 {
+                    add = 1
+                }
+            }
+        }
+        
+        if monthFromSegue == 2 {
+            indexOfDay = 31 + dayFromSegue
+        } else if monthFromSegue == 3 {
+            indexOfDay = 59 + add + dayFromSegue
+        } else if monthFromSegue == 4 {
+            indexOfDay = 90 + add + dayFromSegue
+        } else if monthFromSegue == 5 {
+            indexOfDay = 120 + add + dayFromSegue
+        } else if monthFromSegue == 6 {
+            indexOfDay = 151 + add + dayFromSegue
+        } else if monthFromSegue == 7 {
+            indexOfDay = 181 + add + dayFromSegue
+        } else if monthFromSegue == 8 {
+            indexOfDay = 212 + add + dayFromSegue
+        } else if monthFromSegue == 9 {
+            indexOfDay = 243 + add + dayFromSegue
+        } else if monthFromSegue == 10 {
+            indexOfDay = 273 + add + dayFromSegue
+        } else if monthFromSegue == 11 {
+            indexOfDay = 304 + add + dayFromSegue
+        } else if monthFromSegue == 12 {
+            indexOfDay = 334 + add + dayFromSegue
+        } else {
+            indexOfDay = 0 + dayFromSegue
+        }
         automaticallyAdjustsScrollViewInsets = false
         
+        if DateInfoArr[j][indexOfDay].atLeastOneEvent == true {
+            for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1 {
+                showEventsField.text! += "\n\(DateInfoArr[j][indexOfDay].events[i].subject) \(DateInfoArr[j][indexOfDay].events[i].type)"
+                i += 1
+            }
+        }
+        
         //Getting current date
-        Header.text = "Day: \(dayFromSegue) Month: \(monthFromSegue)"
+        Header.text = "\(monthTranslator(intMonth: monthFromSegue)) \(dayFromSegue)"
 
         // Do any additional setup after loading the view.
     }
@@ -46,11 +97,15 @@ class EventsViewController: UIViewController {
         vc.eventFromSegue = eventToSegue
         vc.eventDayFromSegue = dayFromSegue
         vc.eventMonthFromSegue = monthFromSegue
+        vc.eventYearFromSegue = yearFromSegue
         }
     }
     @IBAction func unwindToVC2(segue:UIStoryboardSegue) { }
 
+    @IBOutlet weak var ShowEventsTable: UITableView!
+    
 }
+
 extension EventsViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return 5
@@ -62,6 +117,9 @@ extension EventsViewController: UITableViewDataSource{
         eventTextCounter += 1
         return cell
     }
+    
+    
+    
     //Selected Cell
     //var eventToSegue:IndexPath = []
     

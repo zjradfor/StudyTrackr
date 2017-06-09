@@ -8,17 +8,22 @@
 
 import UIKit
 
+protocol SubjectCellDelegate {
+    func getCellSubject(subject: String)
+}
+
 class SubjectTableViewCell: UITableViewCell {
     @IBOutlet weak var subjectTextField: UITextField!
-
+    
+    var delegate: SubjectCellDelegate?
+    
+    @IBAction func subjectTextChange(_ sender: Any) {
+    delegate?.getCellSubject(subject: subjectTextField.text!)
+        
+    }
     
     
-    
-    
-    
-    
-    
-    
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,5 +34,5 @@ class SubjectTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
