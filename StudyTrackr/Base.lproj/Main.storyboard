@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -880,9 +876,7 @@
                                         <rect key="frame" x="0.0" y="408" width="375" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5sD-UQ-JDH" id="jRP-CA-25z">
-
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
-
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notes:" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="p11-4P-FKm">
@@ -954,7 +948,7 @@
             </objects>
             <point key="canvasLocation" x="2876" y="-340.47976011994007"/>
         </scene>
-
+        <!--Marks View Controller-->
         <scene sceneID="bW5-Hp-Qmz">
             <objects>
                 <viewController id="WO6-eG-aIP" customClass="MarksViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
@@ -965,8 +959,28 @@
                     <view key="view" contentMode="scaleToFill" id="ira-gq-8TJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ds1-hT-FAW">
+                                <rect key="frame" x="240" y="110" width="77" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="AddMarkPressed:" destination="WO6-eG-aIP" eventType="touchUpInside" id="eyv-sk-Ld5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqk-m2-J7Q">
+                                <rect key="frame" x="113" y="274" width="126" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="markLabel" destination="Rqk-m2-J7Q" id="hji-K6-o1S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VdS-6l-te0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1161,7 +1175,6 @@
             </objects>
             <point key="canvasLocation" x="3783" y="-340"/>
         </scene>
-
         <!--MarkbookViewController-->
         <scene sceneID="NuN-ah-dGB">
             <objects>
@@ -1217,7 +1230,6 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a new subject" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lQi-Ah-Z3e">
                                 <rect key="frame" x="16" y="259" width="343" height="30"/>
-
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1227,7 +1239,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="102" id="p7K-eS-3ba"/>
                                 </constraints>
-
                                 <state key="normal" title="Add subject"/>
                                 <connections>
                                     <action selector="ASButtonTapped:" destination="6k1-kB-ZDv" eventType="touchUpInside" id="wZg-w9-66x"/>
@@ -1241,7 +1252,6 @@
                             <constraint firstItem="lQi-Ah-Z3e" firstAttribute="trailing" secondItem="9ly-SS-sNE" secondAttribute="trailingMargin" id="OXz-Iz-sp9"/>
                             <constraint firstItem="lQi-Ah-Z3e" firstAttribute="centerX" secondItem="jmJ-lr-5RB" secondAttribute="centerX" id="ker-0i-r3Z"/>
                             <constraint firstItem="lQi-Ah-Z3e" firstAttribute="top" secondItem="EF1-Va-BLX" secondAttribute="bottom" constant="195" id="wHB-Uq-mxL"/>
-
                         </constraints>
                     </view>
                     <connections>
