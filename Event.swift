@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class Event {
+    var description: String
     var type: String
     var subject: String
     var location: String
@@ -20,6 +21,7 @@ class Event {
     var mark: Double
     var colour: UIColor
     init () {
+        description = "Void"
         type = "Void"
         subject = "Void"
         location = "Void"
