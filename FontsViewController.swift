@@ -11,6 +11,33 @@ import UIKit
 class FontsViewController: UIViewController {
     var FontNum = 1
     var ownershipArray = [0, 0, 0, 0]
+   
+    @IBOutlet var FontsView: UIView!
+    
+    
+    func BackgroundCol() {
+        
+        
+        let BackCol = GlobalBackCol
+        
+        switch BackCol {
+            
+        case "White":
+            FontsView.backgroundColor = UIColor.white
+            
+        case "Purple":
+            FontsView.backgroundColor = UIColor.purple
+            
+        case "Pink":
+            FontsView.backgroundColor = UIColor(red:1.00, green:0.76, blue:0.95, alpha:1.0)
+            
+        case "Yellow":
+            FontsView.backgroundColor = UIColor.yellow
+            
+        default: break
+            
+        }
+    }
     
     func FontChanger(FontNum: Int) {
         
@@ -172,7 +199,7 @@ class FontsViewController: UIViewController {
     
         override func viewDidLoad() {
             super.viewDidLoad()
-            
+            BackgroundCol()
             secondLabel.text = "Coins: " + "\(intPassed)"
             
             FontStyle.font = UIFont(name: "ArialMT", size: 16.0)

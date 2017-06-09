@@ -91,6 +91,7 @@ class BackgroundsViewController: UIViewController {
     @IBAction func PurpleBackground(_ sender: Any) {
         GlobalBackCol = "Purple"
         if (intPassed >= 200)&&(ownershipArray[0] == 0){          //not bought but enough money
+            
             BackgroundCol ()
             intPassed = intPassed - 200
             secondLabel.text = "Coins: " + "\(intPassed)"
@@ -153,7 +154,7 @@ class BackgroundsViewController: UIViewController {
     ///////////////////////////viewDidLoad seperator
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        BackgroundCol()
         secondLabel.text = "Coins: " + "\(intPassed)"
         
         YellowPurchaseButton.text = "Cost: 200"

@@ -25,7 +25,6 @@ class RewardsViewController: UIViewController {
 
     @IBOutlet var RewardsView: UIView!
    
-     var RecievedCol = String()
     
     func BackgroundCol() {
         
@@ -50,6 +49,7 @@ class RewardsViewController: UIViewController {
             
         }
     }
+    
     
     @IBAction func DailyRewardButton(_ sender: Any) {
         let RewardsViewController = storyboard?.instantiateViewController(withIdentifier: "DailyGiftViewController") as! DailyGiftViewController
@@ -86,7 +86,7 @@ class RewardsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        BackgroundCol()
         myLabel.text = "Coins: " + "\(myInt)"
         
         
@@ -95,6 +95,7 @@ class RewardsViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
         // Dispose of any resources that can be recreated.
     }
     
