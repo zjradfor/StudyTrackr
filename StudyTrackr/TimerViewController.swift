@@ -31,6 +31,7 @@ import UserNotifications
             
         }
 
+        @IBOutlet weak var breakOrStudy: UILabel!
         @IBOutlet weak var subjectPicker: UIPickerView!
         
         var pickTheSubject = ["Math", "Language Arts", "Science"]
@@ -43,8 +44,7 @@ import UserNotifications
         
 
         @IBOutlet weak var TimerValue: UITextField!
-        @IBOutlet weak var breakOrStudy: UILabel!
-
+        
       
         
         @IBAction func breakTime10(_ sender: UIButton) {
@@ -152,6 +152,7 @@ import UserNotifications
                 timerLabel.text = timeString(time: TimeInterval(seconds))
                 //Determines when to start the break timer and pause the study timer
                 if whenIsBreak == seconds{
+                    self.pauseButton.isEnabled = false
                     timer.invalidate()
                     runbreakTimer()
                     breakTimerNotification()
@@ -160,6 +161,7 @@ import UserNotifications
                     breakOrStudy.text = "Break Time!"
                 }else{
                     breakTimer.invalidate()
+                    self.pauseButton.isEnabled = true
                     breakOrStudy.text = "Get Studying!"
                 }
             }
@@ -194,7 +196,7 @@ import UserNotifications
 //Notifications 
         func breakTimerNotification(){
             
-            var content = UNMutableNotificationContent()
+            let content = UNMutableNotificationContent()
             content.title = "Break Time"
             content.body = "Take a minute to stretch your legs"
             content.sound = UNNotificationSound.default()
