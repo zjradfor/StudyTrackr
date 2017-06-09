@@ -30,6 +30,7 @@ import UserNotifications
             
         }
 
+        @IBOutlet weak var breakOrStudy: UILabel!
         @IBOutlet weak var subjectPicker: UIPickerView!
         
         var pickTheSubject = ["Math", "Language Arts", "Science"]
@@ -42,8 +43,7 @@ import UserNotifications
         
 
         @IBOutlet weak var TimerValue: UITextField!
-        @IBOutlet weak var breakOrStudy: UILabel!
-
+        
       
         
         @IBAction func breakTime10(_ sender: UIButton) {
