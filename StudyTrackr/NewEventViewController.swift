@@ -151,6 +151,8 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         DateInfoArr[j][i].events[0].location = eventLocation
         //Storing notes
         DateInfoArr[j][i].events[0].notes = eventNotes
+        //Store time
+        DateInfoArr[j][i].events[0].time = eventTime
         //Counter
         DateInfoArr[j][i].eventNumber += 1
         
@@ -164,7 +166,7 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
 extension NewEventViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if cellCounter == 0{
