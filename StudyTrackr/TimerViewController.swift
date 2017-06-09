@@ -10,7 +10,7 @@ import UIKit
 import CoreData
     //Steph and Nadia worked on timer function (Timer and buttons)
 // Emily worked on break buttons and user input for the timer.
-    class TimerViewController: UIViewController {
+    class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
         @IBOutlet weak var timerLabel: UILabel!
         var seconds = 0
         var timer = Timer()
@@ -29,6 +29,16 @@ import CoreData
             return dateFormatter.string(from:Date())
             
         }
+
+        @IBOutlet weak var subjectPicker: UIPickerView!
+        
+        var pickTheSubject = ["Math", "Language Arts", "Science"]
+        
+        
+        
+        
+    
+        
         
 
         @IBOutlet weak var TimerValue: UITextField!
@@ -67,7 +77,7 @@ import CoreData
 
         }
     
-
+//User input for time entered
         @IBAction func userTime(_ sender: UITextField) {
             
                 if let unWrappedInt = Int(TimerValue.text!){
@@ -81,7 +91,7 @@ import CoreData
                 }
         }
        
-        
+//Start Button
         @IBAction func startButtonTapped(_ sender: UIButton) {
             if isTimerRunning == false{
                 runTimer()
@@ -91,6 +101,8 @@ import CoreData
 
         }
         
+        
+//Pause Button
         @IBAction func pauseButtonTapped(_ sender: UIButton) {
             if self.resumeTapped == false{
                 timer.invalidate()
@@ -103,14 +115,13 @@ import CoreData
             }
         }
         
+        
+//Done Button
         @IBAction func doneButtonTapped(_ sender: UIButton) {
             timer.invalidate()
             seconds = 0
-            
-        
             timerLabel.text = String(seconds)
             isTimerRunning = false
-            seconds = 0
             pauseButton.isEnabled = false
             startButton.isEnabled = true
             let date = setDateValue()
@@ -130,36 +141,38 @@ import CoreData
             pauseButton.isEnabled = true
             
         }
+//Updates the study timer
+        func updateTimer() {
+            if seconds < 1{
+                timer.invalidate()
+                breakOrStudy.text = "Done!"
+            }else{
+                seconds -= 1
+                timerLabel.text = timeString(time: TimeInterval(seconds))
+                //Determines when to start the break timer and pause the study timer
+                if whenIsBreak == seconds{
+                    timer.invalidate()
+                    runbreakTimer()
+                    breakTimerNotification()
+                    timerLabel.text = timeString(time:TimeInterval(breakTime))
+                    updatebreakTimer()
+                    breakOrStudy.text = "Break Time!"
+                }else{
+                    breakTimer.invalidate()
+                    breakOrStudy.text = "Get Studying!"
+                }
+            }
+        }
+ 
         
-func updateTimer() {
-    if seconds < 1{
-        timer.invalidate()
-        //Send alert to indicate time's up
-    }
-    else{
-        seconds -= 1
-        timerLabel.text = timeString(time: TimeInterval(seconds))
-    if whenIsBreak == seconds{
-        timer.invalidate()
-        runbreakTimer()
-        timerLabel.text = timeString(time:TimeInterval(breakTime))
-        updatebreakTimer()
-        breakOrStudy.text = "Break Time!"
-        }
-    else{
-        breakTimer.invalidate()
-        breakOrStudy.text = "Get Studying!"
-        }
-    }
+//Runs the break timer
+        func runbreakTimer(){
+            breakTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updatebreakTimer)), userInfo: nil, repeats: true)
     
-}
-    func runbreakTimer(){
-        breakTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updatebreakTimer)), userInfo: nil, repeats: true)
-    
-    }
+        }
 
 
-
+//Displays the time in a hour, minute, second format
         func timeString(time:TimeInterval) -> String {
             let hours = Int(time) / 3600
             let minutes = Int(time) / 60 % 60
@@ -167,45 +180,64 @@ func updateTimer() {
             return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
         }
         
-        func runBreakTimer(){
-            breakTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updatebreakTimer)), userInfo: nil, repeats: true)
+//Updates the break timer when it is being run
+        func updatebreakTimer(){
+            if breakTime<1 {
+                breakTimer.invalidate()
+                runTimer()
+            }else{
+                breakTime -= 1
+                timerLabel.text = timeString(time:TimeInterval(breakTime))
+            }
+        }
+//Notifications 
+        func breakTimerNotification(){
+            
+            var content = UNMutableNotificationContent()
+            content.title = "Break Time"
+            content.body = "Take a minute to stretch your legs"
+            content.sound = UNNotificationSound.default()
+            
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,  repeats: false)
+            
+            let breakTimeIdentifier = "start.of.break"
+            let breakTimeStart = UNNotificationRequest(identifier: breakTimeIdentifier, content: content, trigger: trigger)
+        
+        // Schedule the notification.
+           /* let request = UNNotificationRequest(identifier: "FiveSecond", content: content, trigger: trigger)8*/
         }
         
-func updatebreakTimer(){
-    if breakTime<1 {
-        breakTimer.invalidate()
-        runTimer()
-    }
-    else{
-        breakTime -= 1
-        timerLabel.text = timeString(time:TimeInterval(breakTime))
-    }
-}
+ 
+        
     
         @IBOutlet weak var pauseButton: UIButton!
 
         @IBOutlet weak var startButton: UIButton!
 
         @IBOutlet weak var doneButton: UIButton!
+        
+        func numberOfComponents(in subjectPicker: UIPickerView) -> Int{
+            return 1
+        }
+        
+        func pickerView(_ subjectPicker: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
+            return pickTheSubject[row]
+        }
 
+        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+            return pickTheSubject.count
+        }
         
     override func viewDidLoad() {
         super.viewDidLoad()
         pauseButton.isEnabled = false
+        self.subjectPicker.dataSource = self
+        self.subjectPicker.delegate = self
             }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        override func didReceiveMemoryWarning() {
+            super.didReceiveMemoryWarning()
         
-    }
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "studyEventSegue"{
-                if let SecondViewController = segue.destination as? EventTableViewController{
-                   SecondViewController.events = studyEvents
-                }
-            }
-          
         }
-        
 }
 
