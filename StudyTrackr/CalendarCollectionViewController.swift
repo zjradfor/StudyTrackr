@@ -5,6 +5,7 @@
 //  Created by Tristan Devos on 2017-05-01.
 //  Copyright © 2017 John Slomka. All rights reserved.
 //
+
 import UIKit
 
 //Temp variables
@@ -433,6 +434,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     }
     
     // MARK: UICollectionViewDelegate
+
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
@@ -487,9 +489,11 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
         return false
     }
+
     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
         return false
     }
+
     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
     }
