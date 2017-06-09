@@ -9,36 +9,76 @@
 import UIKit
 
 class BackgroundsViewController: UIViewController {
+     var BackCol = String()
+    
+    func BackgroundCol(BackCol: String) {
+    
+        switch BackCol {
+            
+        case "White":
+            BackgroundView.backgroundColor = UIColor.white
+            
+        case "Purple":
+            BackgroundView.backgroundColor = UIColor.purple
+            
+        case "Pink":
+            BackgroundView.backgroundColor = UIColor(red:1.00, green:0.76, blue:0.95, alpha:1.0)
+            
+        case "Yellow":
+            BackgroundView.backgroundColor = UIColor.yellow
+            
+        default: break
+        
+            
+        }
 
+    }
+    
+    
+   
 
     
     @IBOutlet var BackgroundView: UIView!
     
     @IBAction func DefaultBackground(_ sender: Any) {
-
-        BackgroundView.backgroundColor = UIColor.white
-
+            BackgroundCol(BackCol: "White")
     }
 
     @IBAction func PurpleBackground(_ sender: Any) {
-        BackgroundView.backgroundColor = UIColor.purple
+               BackgroundCol(BackCol: "Purple")
     }
     
     @IBAction func PinkBackground(_ sender: Any) {
-        BackgroundView.backgroundColor = UIColor(red:1.00, green:0.76, blue:0.95, alpha:1.0)
-        
-        
+               BackgroundCol(BackCol: "Pink")
     }
     
     @IBAction func YellowBackground(_ sender: Any) {
-        BackgroundView.backgroundColor = UIColor.yellow
+               BackgroundCol(BackCol: "Yellow")
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    
+    //////////////////////////////////////////////////////////////////////////////
+    @IBOutlet weak var secondLabel: UILabel!
+    
+    var stringPassed = ""
+    var intPassed = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        secondLabel.text = "Coins: " + "\(intPassed)"
+        
     }
+    ////////////////////////////////////////////////////////////////////////////////
+
+    
+    
+        // Do any additional setup after loading the view.
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -56,4 +96,7 @@ class BackgroundsViewController: UIViewController {
     }
     */
 
+    
+  
+    
 }
