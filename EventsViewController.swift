@@ -66,8 +66,9 @@ class EventsViewController: UIViewController {
         automaticallyAdjustsScrollViewInsets = false
         
         if DateInfoArr[j][indexOfDay].atLeastOneEvent == true {
+            showEventsField.text! += "\n"
             for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1 {
-                showEventsField.text! += "\n\(DateInfoArr[j][indexOfDay].events[i].subject) \(DateInfoArr[j][indexOfDay].events[i].type)"
+                showEventsField.text! += "\n\(DateInfoArr[j][indexOfDay].events[i].subject) \(DateInfoArr[j][indexOfDay].events[i].type)\n\t- \(DateInfoArr[j][indexOfDay].events[i].location)\n\t- \(DateInfoArr[j][indexOfDay].events[i].time)\n\(DateInfoArr[j][indexOfDay].events[i].notes)\n"
                 i += 1
             }
         }
