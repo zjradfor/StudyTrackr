@@ -14,9 +14,9 @@ class BackgroundsViewController: UIViewController {
     
 
     
-    func BackgroundCol() {
-        let BackCol = GlobalBackCol
-        switch BackCol {
+    func BackgroundCol(GlobalBackCol: String) {
+    
+        switch GlobalBackCol {
             
         case "White":
             BackgroundView.backgroundColor = UIColor.white
@@ -83,54 +83,47 @@ class BackgroundsViewController: UIViewController {
     @IBOutlet var BackgroundView: UIView!
     
     @IBAction func DefaultBackground(_ sender: Any) {
-        GlobalBackCol = "White"
-        BackgroundCol()
+        BackgroundCol(GlobalBackCol: "White")
         
     }
 
     @IBAction func PurpleBackground(_ sender: Any) {
-        GlobalBackCol = "Purple"
         if (intPassed >= 200)&&(ownershipArray[0] == 0){          //not bought but enough money
-            BackgroundCol ()
+            BackgroundCol (GlobalBackCol: "Purple")
             intPassed = intPassed - 200
             secondLabel.text = "Coins: " + "\(intPassed)"
             ownershipArray.insert (1, at: 0)
         } //end of the if (not bought but has the money) statement
         
         if (ownershipArray[0] == 1) && (GlobalBackCol != "Purple"){       //already bought, not selected
-            BackgroundCol()
-            // AmericanPurchaseLabel.text = "Current Font"
+            BackgroundCol(GlobalBackCol: "Purple")
         } //end of the if (bought but not selected) statment
     }
     
     @IBAction func PinkBackground(_ sender: Any) {
-        GlobalBackCol = "Pink"
         if (intPassed >= 200)&&(ownershipArray[1] == 0){          //not bought but enough money
-            BackgroundCol ()
+            BackgroundCol (GlobalBackCol: "Pink")
             intPassed = intPassed - 200
             secondLabel.text = "Coins: " + "\(intPassed)"
             ownershipArray.insert (1, at: 1)
         } //end of the if (not bought but has the money) statement
         
         if (ownershipArray[1] == 1) && (GlobalBackCol != "Pink"){       //already bought, not selected
-            BackgroundCol()
-            // AmericanPurchaseLabel.text = "Current Font"
+            BackgroundCol(GlobalBackCol: "Pink")
         } //end of the if (bought but not selected) statment
     }
     
     
     @IBAction func YellowBackground(_ sender: Any) {
-        GlobalBackCol = "Yellow"
         if (intPassed >= 200)&&(ownershipArray[2] == 0){          //not bought but enough money
-            BackgroundCol ()
+            BackgroundCol (GlobalBackCol: "Yellow")
             intPassed = intPassed - 200
             secondLabel.text = "Coins: " + "\(intPassed)"
             ownershipArray.insert (1, at: 2)
         } //end of the if (not bought but has the money) statement
         
         if (ownershipArray[2] == 1) && (GlobalBackCol != "Yellow"){       //already bought, not selected
-            BackgroundCol()
-            // AmericanPurchaseLabel.text = "Current Font"
+            BackgroundCol(GlobalBackCol: "Yellow")
         } //end of the if (bought but not selected) statment
     }
 
