@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
     //Steph and Nadia worked on timer function (Timer and buttons)
 // Emily worked on break buttons and user input for the timer.
     class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
@@ -151,6 +152,7 @@ import CoreData
                 timerLabel.text = timeString(time: TimeInterval(seconds))
                 //Determines when to start the break timer and pause the study timer
                 if whenIsBreak == seconds{
+                    self.pauseButton.isEnabled = false
                     timer.invalidate()
                     runbreakTimer()
                     breakTimerNotification()
@@ -159,6 +161,7 @@ import CoreData
                     breakOrStudy.text = "Break Time!"
                 }else{
                     breakTimer.invalidate()
+                    self.pauseButton.isEnabled = true
                     breakOrStudy.text = "Get Studying!"
                 }
             }
@@ -193,7 +196,7 @@ import CoreData
 //Notifications 
         func breakTimerNotification(){
             
-            var content = UNMutableNotificationContent()
+            let content = UNMutableNotificationContent()
             content.title = "Break Time"
             content.body = "Take a minute to stretch your legs"
             content.sound = UNNotificationSound.default()
