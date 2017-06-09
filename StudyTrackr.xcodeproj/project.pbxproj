@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
 		07EAB5081EE5990A008E02DD /* MarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EAB5071EE5990A008E02DD /* MarksViewController.swift */; };
-
 		67F8F1591EDF09AC009B3F8A /* HelpButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F8F1581EDF09AC009B3F8A /* HelpButtonViewController.swift */; };
-
+		731E46C61EDC66F8001A12EA /* BackgroundColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731E46C51EDC66F8001A12EA /* BackgroundColour.swift */; };
 		7350C8D41EC1FE6D0054200B /* AvatarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */; };
 		7350C8D51EC1FE6D0054200B /* AvatarsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */; };
 		7350C8D91EC1FECE0054200B /* FontsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C8D71EC1FECE0054200B /* FontsViewController.swift */; };
@@ -33,7 +31,6 @@
 		DE0AF5411EC5F62B0054F125 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */; };
 		DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */; };
 		DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D481EB2375B00F9935C /* AppDelegate.swift */; };
-		DE4EB5EA1EE83A7E0035E160 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4EB5E91EE83A7E0035E160 /* Functions.swift */; };
 		DEAF22421EE059C3008F79F6 /* SubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAF22411EE059C3008F79F6 /* SubjectTableViewCell.swift */; };
 		DEAF22441EE05AB8008F79F6 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAF22431EE05AB8008F79F6 /* LocationTableViewCell.swift */; };
 		DEAF22461EE05B1C008F79F6 /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAF22451EE05B1C008F79F6 /* NotesTableViewCell.swift */; };
@@ -51,11 +48,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-
 		07EAB5071EE5990A008E02DD /* MarksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarksViewController.swift; sourceTree = "<group>"; };
-
 		67F8F1581EDF09AC009B3F8A /* HelpButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpButtonViewController.swift; sourceTree = "<group>"; };
-
+		731E46C51EDC66F8001A12EA /* BackgroundColour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColour.swift; sourceTree = "<group>"; };
 		7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarsViewController.swift; sourceTree = "<group>"; };
 		7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarsViewController.xib; sourceTree = "<group>"; };
 		7350C8D71EC1FECE0054200B /* FontsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontsViewController.swift; path = ../FontsViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +71,6 @@
 		DE0588211EDC891800D30E6F /* MarkbookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkbookViewController.swift; sourceTree = "<group>"; };
 		DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = ../EventsViewController.swift; sourceTree = "<group>"; };
 		DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
-		DE4EB5E91EE83A7E0035E160 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		DEAF22411EE059C3008F79F6 /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectTableViewCell.swift; sourceTree = "<group>"; };
 		DEAF22431EE05AB8008F79F6 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		DEAF22451EE05B1C008F79F6 /* NotesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
@@ -111,16 +105,17 @@
 		7350C8D61EC1FEA60054200B /* Rewards Code Files */ = {
 			isa = PBXGroup;
 			children = (
+				73D108AC1EBB750E00F2765F /* RewardsViewController.swift */,
+				73D108AD1EBB750E00F2765F /* RewardsViewController.xib */,
 				7350C8D71EC1FECE0054200B /* FontsViewController.swift */,
 				7350C8D81EC1FECE0054200B /* FontsViewController.xib */,
 				7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */,
 				7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */,
 				73D108B51EC0BB4A00F2765F /* DailyGiftViewController.swift */,
 				73D108B61EC0BB4A00F2765F /* DailyGiftViewController.xib */,
-				73D108AC1EBB750E00F2765F /* RewardsViewController.swift */,
-				73D108AD1EBB750E00F2765F /* RewardsViewController.xib */,
 				7350C8DD1EC1FF1A0054200B /* BackgroundsViewController.swift */,
 				7350C8DE1EC1FF1A0054200B /* BackgroundsViewController.xib */,
+				731E46C51EDC66F8001A12EA /* BackgroundColour.swift */,
 				739C48321EC20D7E00BFCC21 /* Rewards.swift */,
 			);
 			name = "Rewards Code Files";
@@ -200,7 +195,6 @@
 			children = (
 				F117E0BA1ED873A70008D2BE /* Cells */,
 				F1850D3D1EB77B9F00D75B01 /* CalendarCollectionViewController.swift */,
-				DE4EB5E91EE83A7E0035E160 /* Functions.swift */,
 				DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */,
 				DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */,
 				F11C3B3B1ECDE4E6002DD1FD /* NewEventViewController.swift */,
@@ -243,7 +237,7 @@
 				TargetAttributes = {
 					DEC18D441EB2375B00F9935C = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 48V3J7K575;
+						DevelopmentTeam = YNY7BM4MUV;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -296,7 +290,6 @@
 				DE05881F1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld in Sources */,
 				DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */,
 				F117F08E1ECF2B3B0073424B /* Event.swift in Sources */,
-				DE4EB5EA1EE83A7E0035E160 /* Functions.swift in Sources */,
 				DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */,
 				F117E0B91ED873A30008D2BE /* colourCell.swift in Sources */,
 				F117E0B71ED872D50008D2BE /* EventColourPickerViewController.swift in Sources */,
@@ -312,12 +305,10 @@
 				739C48331EC20D7E00BFCC21 /* Rewards.swift in Sources */,
 				DE0588221EDC891800D30E6F /* AddSubjectVC.swift in Sources */,
 				7350C8D41EC1FE6D0054200B /* AvatarsViewController.swift in Sources */,
-
 				07EAB5081EE5990A008E02DD /* MarksViewController.swift in Sources */,
-
 				F117E0B51ED86BB70008D2BE /* dpTableViewCell.swift in Sources */,
-
 				73D108AE1EBB750E00F2765F /* RewardsViewController.swift in Sources */,
+				731E46C61EDC66F8001A12EA /* BackgroundColour.swift in Sources */,
 				7350C8DF1EC1FF1A0054200B /* BackgroundsViewController.swift in Sources */,
 				DE0588231EDC891800D30E6F /* MarkbookViewController.swift in Sources */,
 				73D108B71EC0BB4A00F2765F /* DailyGiftViewController.swift in Sources */,
@@ -445,7 +436,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 48V3J7K575;
+				DEVELOPMENT_TEAM = YNY7BM4MUV;
 				INFOPLIST_FILE = StudyTrackr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -460,7 +451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 48V3J7K575;
+				DEVELOPMENT_TEAM = YNY7BM4MUV;
 				INFOPLIST_FILE = StudyTrackr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -19,7 +19,6 @@ class Event {
     var studyTime: Int
     var mark: Double
     var colour: UIColor
-    var time: String
     init () {
         type = "Void"
         subject = "Void"
@@ -30,6 +29,5 @@ class Event {
         studyTime = 0
         mark = 0.0
         colour = UIColor.white
-        time = "Void"
     }
 }
