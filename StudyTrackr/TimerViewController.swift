@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
     //Steph and Nadia worked on timer function (Timer and buttons)
 // Emily worked on break buttons and user input for the timer.
     class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
@@ -239,5 +240,13 @@ import CoreData
             super.didReceiveMemoryWarning()
         
         }
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "studyEventSegue"{
+                if let SecondViewController = segue.destination as? EventTableViewController{
+                    SecondViewController.events = studyEvents
+                }
+            }
+        }
+
 }
 
