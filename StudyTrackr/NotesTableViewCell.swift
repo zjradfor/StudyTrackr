@@ -8,20 +8,14 @@
 
 import UIKit
 
-protocol NotesCellDelegate {
-    func getCellNotes(notes: String)
-}
-
 class NotesTableViewCell: UITableViewCell {
     @IBOutlet weak var notesTextField: UITextField!
     
-    var delegate: NotesCellDelegate?
-    
-    @IBAction func notesTextChange(_ sender: Any) {
-         delegate?.getCellNotes(notes: notesTextField.text!)
-    }
     
     
+    
+    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
