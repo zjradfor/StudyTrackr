@@ -8,6 +8,7 @@
 
 import UIKit
 
+var GlobalBackCol = ""
 
 class RewardsViewController: UIViewController {
 
@@ -26,10 +27,10 @@ class RewardsViewController: UIViewController {
    
      var RecievedCol = String()
     
-    func BackgroundCol(BackCol: String) {
+    func BackgroundCol() {
         
         
-         let BackCol = RecievedCol
+         let BackCol = GlobalBackCol
         
         switch BackCol {
             
