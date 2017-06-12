@@ -26,6 +26,9 @@
 		DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */; };
 		DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D481EB2375B00F9935C /* AppDelegate.swift */; };
 		DE7A4A1B1EEED87700C5AF52 /* StudyTrackr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE7A4A191EEED87700C5AF52 /* StudyTrackr.xcdatamodeld */; };
+		DE7A4A1F1EEED96100C5AF52 /* AddSubjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7A4A1C1EEED96100C5AF52 /* AddSubjectVC.swift */; };
+		DE7A4A201EEED96100C5AF52 /* MarkbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7A4A1D1EEED96100C5AF52 /* MarkbookViewController.swift */; };
+		DE7A4A211EEED96100C5AF52 /* MarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7A4A1E1EEED96100C5AF52 /* MarksViewController.swift */; };
 		DEC18D4B1EB2375B00F9935C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		DEC18D4D1EB2375B00F9935C /* MarkBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D4C1EB2375B00F9935C /* MarkBook.swift */; };
 		DEC18D501EB2375B00F9935C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D4E1EB2375B00F9935C /* Main.storyboard */; };
@@ -60,6 +63,9 @@
 		DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = ../EventsViewController.swift; sourceTree = "<group>"; };
 		DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		DE7A4A1A1EEED87700C5AF52 /* StudyTrackr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudyTrackr.xcdatamodel; sourceTree = "<group>"; };
+		DE7A4A1C1EEED96100C5AF52 /* AddSubjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddSubjectVC.swift; path = ../../../Downloads/AddSubjectVC.swift; sourceTree = "<group>"; };
+		DE7A4A1D1EEED96100C5AF52 /* MarkbookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MarkbookViewController.swift; path = ../../../Downloads/MarkbookViewController.swift; sourceTree = "<group>"; };
+		DE7A4A1E1EEED96100C5AF52 /* MarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MarksViewController.swift; path = ../../../Downloads/MarksViewController.swift; sourceTree = "<group>"; };
 		DEC18D451EB2375B00F9935C /* StudyTrackr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyTrackr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC18D481EB2375B00F9935C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC18D4C1EB2375B00F9935C /* MarkBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkBook.swift; sourceTree = "<group>"; };
@@ -117,6 +123,18 @@
 			name = Timer;
 			sourceTree = "<group>";
 		};
+		DE7A4A221EEED97000C5AF52 /* Markbook */ = {
+			isa = PBXGroup;
+			children = (
+				DEC18D4C1EB2375B00F9935C /* MarkBook.swift */,
+				DE7A4A191EEED87700C5AF52 /* StudyTrackr.xcdatamodeld */,
+				DE7A4A1C1EEED96100C5AF52 /* AddSubjectVC.swift */,
+				DE7A4A1D1EEED96100C5AF52 /* MarkbookViewController.swift */,
+				DE7A4A1E1EEED96100C5AF52 /* MarksViewController.swift */,
+			);
+			name = Markbook;
+			sourceTree = "<group>";
+		};
 		DEC18D3C1EB2375B00F9935C = {
 			isa = PBXGroup;
 			children = (
@@ -140,8 +158,7 @@
 				7350C8D61EC1FEA60054200B /* Rewards Code Files */,
 				DEC18D481EB2375B00F9935C /* AppDelegate.swift */,
 				C592F64A1EC9EC5E004961AD /* Timer */,
-				DEC18D4C1EB2375B00F9935C /* MarkBook.swift */,
-				DE7A4A191EEED87700C5AF52 /* StudyTrackr.xcdatamodeld */,
+				DE7A4A221EEED97000C5AF52 /* Markbook */,
 				DEC18D4E1EB2375B00F9935C /* Main.storyboard */,
 				DEC18D511EB2375B00F9935C /* Assets.xcassets */,
 				DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */,
@@ -253,6 +270,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE7A4A1F1EEED96100C5AF52 /* AddSubjectVC.swift in Sources */,
+				DE7A4A201EEED96100C5AF52 /* MarkbookViewController.swift in Sources */,
+				DE7A4A211EEED96100C5AF52 /* MarksViewController.swift in Sources */,
 				DE7A4A1B1EEED87700C5AF52 /* StudyTrackr.xcdatamodeld in Sources */,
 				C5EE25C11ECB3DAF003A6904 /* StudyEvent.swift in Sources */,
 				90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */,
