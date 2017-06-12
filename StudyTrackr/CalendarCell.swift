@@ -20,7 +20,7 @@ class CalendarCell: UICollectionViewCell {
         //Text
         textLabel = UILabel(frame: CGRect(x: 2, y: 0, width: frame.size.width, height: frame.size.height))
         textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
-        textLabel.textAlignment = .center
+        textLabel.textAlignment = .natural
         textLabel.textColor = UIColor.darkText
         contentView.addSubview(textLabel)
     }

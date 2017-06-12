@@ -127,6 +127,7 @@
 		C592F64A1EC9EC5E004961AD /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				DEA9CE6E1EEB018600D37250 /* EventTableViewController.swift */,
 				90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */,
 				C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */,
 				C57F79CC1ECC8CD400E69B2A /* EventTableViewController.swift */,
@@ -185,6 +186,7 @@
 			children = (
 				DEA9CE861EEB045300D37250 /* SubjectTableViewCell.swift */,
 				DEA9CE651EEB018600D37250 /* CalendarCell.swift */,
+				DEA9CE6A1EEB018600D37250 /* dpTableViewCell.swift */,
 				DEA9CE681EEB018600D37250 /* colourCell.swift */,
 				DEA9CE701EEB018600D37250 /* LocationTableViewCell.swift */,
 				DEA9CE721EEB018600D37250 /* NotesTableViewCell.swift */,
@@ -195,17 +197,15 @@
 		F11ECEB81EC9EE3A00ECBBB1 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				DEA9CE8A1EEB06F400D37250 /* EventsViewController.swift */,
-				DEA9CE881EEB04D900D37250 /* Event.swift */,
+				F117E0BA1ED873A70008D2BE /* Cells */,
 				DEA9CE661EEB018600D37250 /* CalendarCollectionViewController.swift */,
 				DEA9CE671EEB018600D37250 /* CalendarHeaderCollectionReusableView.swift */,
-				DEA9CE691EEB018600D37250 /* Day.swift */,
-				DEA9CE6A1EEB018600D37250 /* dpTableViewCell.swift */,
-				DEA9CE6D1EEB018600D37250 /* EventColourPickerViewController.swift */,
-				DEA9CE6E1EEB018600D37250 /* EventTableViewController.swift */,
-				DEA9CE6F1EEB018600D37250 /* Functions.swift */,
+				DEA9CE8A1EEB06F400D37250 /* EventsViewController.swift */,
 				DEA9CE711EEB018600D37250 /* NewEventViewController.swift */,
-				F117E0BA1ED873A70008D2BE /* Cells */,
+				DEA9CE6D1EEB018600D37250 /* EventColourPickerViewController.swift */,
+				DEA9CE6F1EEB018600D37250 /* Functions.swift */,
+				DEA9CE881EEB04D900D37250 /* Event.swift */,
+				DEA9CE691EEB018600D37250 /* Day.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";

@@ -18,7 +18,7 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
     var eventDayFromSegue = 0
     var eventYearFromSegue = 0
     var cellCounter = 0
-    var eventColour = UIColor.blue
+    var eventColour = UIColor.green
     var eventMonthFromSegue = 0
     var eventSubject = "none"
     var eventLocation = "none"

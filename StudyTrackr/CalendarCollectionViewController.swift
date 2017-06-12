@@ -327,6 +327,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     
     var selectedLabels = String()
     
+    // Generating the Cells
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let screenSize = UIScreen.main.bounds
@@ -401,15 +402,24 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
 
             
             if tag != 0 && tag <= numberOfDaysThisMonth {
+                cell.textLabel.textAlignment = .natural
                 cell.textLabel.text = "\(tag)"
                 if DateInfoArr[j][indexOfDay].atLeastOneEvent == true{
                     cell.textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
                     cell.textLabel.numberOfLines += 1
                     cell.textLabel.text! += "\n"
                     for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1{
-                        cell.textLabel.text! += "o"
+                        if i == 4 || i == 8{
+                            cell.textLabel.numberOfLines += 1
+                            cell.textLabel.text! += "\n"
+                        }
+                        cell.textLabel.text! += "●"
                         let newLabel = NSMutableAttributedString(string: cell.textLabel.text!)
-                        newLabel.addAttribute(NSForegroundColorAttributeName, value: DateInfoArr[j][indexOfDay].events[i].colour, range: NSRange(location:i+2,length:1))
+                        for var k in 0...i{
+                        newLabel.addAttribute(NSForegroundColorAttributeName, value: DateInfoArr[j][indexOfDay].events[k].colour, range: NSRange(location:k+2,length:1))
+                            k += 1
+                        }
+                        print(DateInfoArr[j][indexOfDay].events[i].colour)
                         cell.textLabel.attributedText! = newLabel
                         i += 1
                     }
