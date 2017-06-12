@@ -408,18 +408,21 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                     cell.textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
                     cell.textLabel.numberOfLines += 1
                     cell.textLabel.text! += "\n"
+                    var r = 0
                     for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1{
-                        if i == 4 || i == 8{
+                        if (i % 4 == 0) && (i != 0){
                             cell.textLabel.numberOfLines += 1
                             cell.textLabel.text! += "\n"
+                            r += 1
                         }
                         cell.textLabel.text! += "●"
                         let newLabel = NSMutableAttributedString(string: cell.textLabel.text!)
-                        for var k in 0...i{
-                        newLabel.addAttribute(NSForegroundColorAttributeName, value: DateInfoArr[j][indexOfDay].events[k].colour, range: NSRange(location:k+2,length:1))
+                        for var k in 0...i + r {
+                            var z = 0
+                            z = k - (1 * r)
+                            newLabel.addAttribute(NSForegroundColorAttributeName, value: DateInfoArr[j][indexOfDay].events[z].colour, range: NSRange(location:k+2,length:1))
                             k += 1
                         }
-                        print(DateInfoArr[j][indexOfDay].events[i].colour)
                         cell.textLabel.attributedText! = newLabel
                         i += 1
                     }
