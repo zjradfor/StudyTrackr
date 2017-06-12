@@ -19,6 +19,9 @@
 		73D108B71EC0BB4A00F2765F /* DailyGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D108B51EC0BB4A00F2765F /* DailyGiftViewController.swift */; };
 		73D108B81EC0BB4A00F2765F /* DailyGiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D108B61EC0BB4A00F2765F /* DailyGiftViewController.xib */; };
 		90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */; };
+		C55310CD1EEEDB4E00BCFC91 /* MarkbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55310C81EEEDB4E00BCFC91 /* MarkbookViewController.swift */; };
+		C55310CE1EEEDB4E00BCFC91 /* MarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55310C91EEEDB4E00BCFC91 /* MarksViewController.swift */; };
+		C55310CF1EEEDB4E00BCFC91 /* StudyTrackr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C55310CB1EEEDB4E00BCFC91 /* StudyTrackr.xcdatamodeld */; };
 		C57F79CD1ECC8CD400E69B2A /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57F79CC1ECC8CD400E69B2A /* EventTableViewController.swift */; };
 		C596BB321ECDDEC000D1018F /* studyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */; };
 		C5EE25C11ECB3DAF003A6904 /* StudyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */; };
@@ -53,6 +56,10 @@
 		73D108B51EC0BB4A00F2765F /* DailyGiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyGiftViewController.swift; sourceTree = "<group>"; };
 		73D108B61EC0BB4A00F2765F /* DailyGiftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyGiftViewController.xib; sourceTree = "<group>"; };
 		90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; tabWidth = 5; };
+		C55310C81EEEDB4E00BCFC91 /* MarkbookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MarkbookViewController.swift; path = ../MarkbookViewController.swift; sourceTree = "<group>"; };
+		C55310C91EEEDB4E00BCFC91 /* MarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MarksViewController.swift; path = ../MarksViewController.swift; sourceTree = "<group>"; };
+		C55310CA1EEEDB4E00BCFC91 /* studyEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = studyEventTableViewCell.swift; path = ../studyEventTableViewCell.swift; sourceTree = "<group>"; };
+		C55310CC1EEEDB4E00BCFC91 /* StudyTrackr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudyTrackr.xcdatamodel; sourceTree = "<group>"; };
 		C57F79CC1ECC8CD400E69B2A /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = studyEventTableViewCell.swift; path = ../studyEventTableViewCell.swift; sourceTree = "<group>"; };
 		C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyEvent.swift; sourceTree = "<group>"; };
@@ -104,6 +111,18 @@
 			name = "Rewards Code Files";
 			sourceTree = "<group>";
 		};
+		C55310D01EEEDB6100BCFC91 /* Markbook */ = {
+			isa = PBXGroup;
+			children = (
+				DEC18D4C1EB2375B00F9935C /* MarkBook.swift */,
+				C55310C81EEEDB4E00BCFC91 /* MarkbookViewController.swift */,
+				C55310C91EEEDB4E00BCFC91 /* MarksViewController.swift */,
+				C55310CA1EEEDB4E00BCFC91 /* studyEventTableViewCell.swift */,
+				C55310CB1EEEDB4E00BCFC91 /* StudyTrackr.xcdatamodeld */,
+			);
+			name = Markbook;
+			sourceTree = "<group>";
+		};
 		C592F64A1EC9EC5E004961AD /* Timer */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,7 +157,7 @@
 				7350C8D61EC1FEA60054200B /* Rewards Code Files */,
 				DEC18D481EB2375B00F9935C /* AppDelegate.swift */,
 				C592F64A1EC9EC5E004961AD /* Timer */,
-				DEC18D4C1EB2375B00F9935C /* MarkBook.swift */,
+				C55310D01EEEDB6100BCFC91 /* Markbook */,
 				DEC18D4E1EB2375B00F9935C /* Main.storyboard */,
 				DEC18D511EB2375B00F9935C /* Assets.xcassets */,
 				DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */,
@@ -250,11 +269,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C55310CD1EEEDB4E00BCFC91 /* MarkbookViewController.swift in Sources */,
+				C55310CE1EEEDB4E00BCFC91 /* MarksViewController.swift in Sources */,
+				C596BB321ECDDEC000D1018F /* studyEventTableViewCell.swift in Sources */,
+				C55310CF1EEEDB4E00BCFC91 /* StudyTrackr.xcdatamodeld in Sources */,
 				C5EE25C11ECB3DAF003A6904 /* StudyEvent.swift in Sources */,
 				90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */,
 				C57F79CD1ECC8CD400E69B2A /* EventTableViewController.swift in Sources */,
 				DEC18D4D1EB2375B00F9935C /* MarkBook.swift in Sources */,
-				C596BB321ECDDEC000D1018F /* studyEventTableViewCell.swift in Sources */,
 				DEC18D4B1EB2375B00F9935C /* (null) in Sources */,
 				DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */,
 				F117F08E1ECF2B3B0073424B /* Event.swift in Sources */,
@@ -443,6 +465,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C55310CB1EEEDB4E00BCFC91 /* StudyTrackr.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C55310CC1EEEDB4E00BCFC91 /* StudyTrackr.xcdatamodel */,
+			);
+			currentVersion = C55310CC1EEEDB4E00BCFC91 /* StudyTrackr.xcdatamodel */;
+			path = StudyTrackr.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DEC18D3D1EB2375B00F9935C /* Project object */;
 }
