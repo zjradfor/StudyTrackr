@@ -36,9 +36,53 @@ class DeleteEventTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        var j =
-        if
-        return DateInfoArr
+        
+        var j = calendar.component(.year, from: date)
+        var indexOfDay = 0
+        var add = 0
+        
+        if j == calendar.component(.year, from: date) {
+            j = 0
+        } else {
+            j = 1
+        }
+        if leapYear == true {
+            if eventYearFromSegue == calendar.component(.year, from: date) {
+                add = 1
+            } else if leapYear2 == true {
+                if eventYearFromSegue == calendar.component(.year, from: date) + 1 {
+                    add = 1
+                }
+            }
+        }
+        
+        if eventMonthFromSegue == 2 {
+            indexOfDay = 31 + eventDayFromSegue
+        } else if eventMonthFromSegue == 3 {
+            indexOfDay = 59 + add + eventDayFromSegue
+        } else if eventMonthFromSegue == 4 {
+            indexOfDay = 90 + add + eventDayFromSegue
+        } else if eventMonthFromSegue == 5 {
+            indexOfDay = 120 + add + eventDayFromSegue
+        } else if eventMonthFromSegue == 6 {
+            indexOfDay = 151 + add + eventDayFromSegue
+        } else if eventMonthFromSegue == 7 {
+            indexOfDay = 181 + add + eventDayFromSegue
+        } else if eventMonthFromSegue == 8 {
+            indexOfDay = 212 + add + eventDayFromSegue
+        } else if eventMonthFromSegue == 9 {
+            indexOfDay = 243 + add + eventDayFromSegue
+        } else if eventMonthFromSegue == 10 {
+            indexOfDay = 273 + add + eventDayFromSegue
+        } else if eventMonthFromSegue == 11 {
+            indexOfDay = 304 + add + eventDayFromSegue
+        } else if eventMonthFromSegue == 12 {
+            indexOfDay = 334 + add + eventDayFromSegue
+        } else {
+            indexOfDay = 0 + eventDayFromSegue
+        }
+        
+        return DateInfoArr[j][indexOfDay].eventNumber
     }
 
     
