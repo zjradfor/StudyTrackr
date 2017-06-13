@@ -196,7 +196,16 @@ import UserNotifications
             }
         }
 //Notifications 
-        func breakTimerNotification(){
+        
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                    willPresent notification: UNNotification,
+                                    withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void){
+            completionHandler(UNNotificationPresentationOptions.sound)
+            completionHandler(UNNotificationPresentationOptions.alert)
+            
+    }
+
+    func breakTimerNotification(){
             
             let content = UNMutableNotificationContent()
             content.title = "Break Time"
@@ -207,6 +216,7 @@ import UserNotifications
             
             let breakTimeIdentifier = "start.of.break"
             let breakTimeStart = UNNotificationRequest(identifier: breakTimeIdentifier, content: content, trigger: trigger)
+            
         
         // Schedule the notification.
             let center = UNUserNotificationCenter.current()
@@ -215,7 +225,8 @@ import UserNotifications
                     print(theError.localizedDescription)
                 }
             }
-        }
+        
+    }
         
  
         
