@@ -66,6 +66,8 @@ class MarkbookViewController: UIViewController, UITableViewDataSource, UITableVi
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let spot = Subject(context: context)
         spot.name = name
+        spot.mark = 0
+        spot.assignments = 0
         // save to coredata
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
@@ -113,17 +115,20 @@ class MarkbookViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     var nameToSegue = ""
+    var markToSegue: Subject?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mark"{
             let mrks = segue.destination as! MarksViewController
             mrks.nameFromSegue = nameToSegue
+            mrks.markFromSegue = markToSegue
     }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let spot = subjects[indexPath.row]
         nameToSegue = spot.name!
+        markToSegue = spot
         self.performSegue(withIdentifier: "mark", sender: self)
     }
 
