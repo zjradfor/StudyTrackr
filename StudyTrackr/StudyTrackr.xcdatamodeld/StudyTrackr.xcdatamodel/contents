@@ -8,10 +8,12 @@
         <attribute name="mark" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+
     <entity name="TimerThings" representedClassName="StudyEventMO" syncable="YES" codeGenerationType="class">
         <attribute name="studiedSubject" optional="YES" attributeType="String" defaultValueString="Unknown Subject" syncable="YES"/>
         <attribute name="timeStudied" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
+
     <elements>
         <element name="Calendar1" positionX="-63" positionY="0" width="128" height="45"/>
         <element name="Calendar2" positionX="-54" positionY="9" width="128" height="45"/>
@@ -19,5 +21,6 @@
         <element name="RewardsThings" positionX="-18" positionY="27" width="128" height="45"/>
         <element name="Subject" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="TimerThings" positionX="-36" positionY="18" width="128" height="75"/>
+
     </elements>
 </model>

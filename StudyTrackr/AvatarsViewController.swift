@@ -10,6 +10,9 @@ import UIKit
 
 class AvatarsViewController: UIViewController {
 
+    @IBAction func AvatarSmile(_ sender: Any) {
+    }
+    
     @IBAction func AvatarSpike(_ sender: Any) {
     }
     
@@ -18,12 +21,29 @@ class AvatarsViewController: UIViewController {
     
     @IBAction func AvatarFlub(_ sender: Any) {
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+        
     }
+  
+
+        //////////////////////////////////////////////////////////////////////////////
+        @IBOutlet weak var secondLabel: UILabel!
+    
+        var stringPassed = ""
+        var intPassed = Int()
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            secondLabel.text = "Coins: " + "\(intPassed)"
+            
+        }
+        ////////////////////////////////////////////////////////////////////////////////
+        
+        // Do any additional setup after loading the view.
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
