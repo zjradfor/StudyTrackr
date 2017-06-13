@@ -11,6 +11,7 @@ import UIKit
 class DeleteEventTableViewController: UITableViewController {
     var eventDayFromSegue = 0
     var eventMonthFromSegue = 0
+    var eventYearFromSegue = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 

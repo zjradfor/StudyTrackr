@@ -105,6 +105,7 @@ class EventsViewController: UIViewController {
             let vc = segue.destination as! DeleteEventTableViewController
             vc.eventDayFromSegue = dayFromSegue
             vc.eventMonthFromSegue = monthFromSegue
+            vc.eventYearFromSegue = yearFromSegue
         }
     }
     @IBAction func unwindToVC2(segue:UIStoryboardSegue) { }
