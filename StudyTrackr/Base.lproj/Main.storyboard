@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -191,6 +191,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd2-0q-Xox" userLabel="Smile Button">
+                                <rect key="frame" x="0.0" y="64" width="375" height="144"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="4fp-dW-eAF"/>
+                                    <constraint firstAttribute="width" constant="375" id="JIc-a6-dOm"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="AvatarSmile:" destination="pL3-Ks-nn6" eventType="touchUpInside" id="Vtj-z8-slv"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDa-5D-QHV" userLabel="Spike Button">
                                 <rect key="frame" x="0.0" y="216" width="375" height="145"/>
                                 <constraints>
@@ -203,6 +213,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWg-pS-ZHu" userLabel="Lola Button">
                                 <rect key="frame" x="0.0" y="369" width="375" height="144"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="6Ru-Tf-0mZ"/>
+                                    <constraint firstAttribute="height" constant="144" id="rcu-0u-5dK"/>
+                                </constraints>
                                 <connections>
                                     <action selector="AvatarLola:" destination="pL3-Ks-nn6" eventType="touchUpInside" id="rzs-nl-PFh"/>
                                 </connections>
@@ -217,21 +231,21 @@
                                     <action selector="AvatarFlub:" destination="pL3-Ks-nn6" eventType="touchUpInside" id="s8Y-kx-5OP"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ECAD edited images.014" translatesAutoresizingMaskIntoConstraints="NO" id="SG9-TS-ex2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar1" translatesAutoresizingMaskIntoConstraints="NO" id="SG9-TS-ex2">
                                 <rect key="frame" x="22" y="395" width="90" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="6Ms-eP-m1Q"/>
                                     <constraint firstAttribute="height" constant="92" id="Wh0-jr-sF9"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ECAD edited images.016" translatesAutoresizingMaskIntoConstraints="NO" id="aUb-yd-I6P">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar3" translatesAutoresizingMaskIntoConstraints="NO" id="aUb-yd-I6P">
                                 <rect key="frame" x="22" y="242" width="90" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="Sq4-4L-ZfH"/>
                                     <constraint firstAttribute="height" constant="92" id="bOd-yv-qOA"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ECAD edited images.015" translatesAutoresizingMaskIntoConstraints="NO" id="YvS-4R-GHI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar2" translatesAutoresizingMaskIntoConstraints="NO" id="YvS-4R-GHI">
                                 <rect key="frame" x="22" y="548" width="90" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="92" id="U3j-JO-3Ke"/>
@@ -240,17 +254,7 @@
                                     <constraint firstAttribute="width" constant="90" id="b8j-Kz-K5M"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd2-0q-Xox" userLabel="Smile Button">
-                                <rect key="frame" x="0.0" y="64" width="375" height="144"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="144" id="4fp-dW-eAF"/>
-                                    <constraint firstAttribute="width" constant="375" id="JIc-a6-dOm"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="AvatarSmile:" destination="pL3-Ks-nn6" eventType="touchUpInside" id="Vtj-z8-slv"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ECAD edited images.019" translatesAutoresizingMaskIntoConstraints="NO" id="qvb-nc-IZ6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatarthatlookslikeapenis" translatesAutoresizingMaskIntoConstraints="NO" id="qvb-nc-IZ6" userLabel="Avatar4">
                                 <rect key="frame" x="22" y="90" width="90" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="92" id="S5R-rE-KeC"/>
@@ -1314,11 +1318,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Avatar1" width="300" height="300"/>
+        <image name="Avatar2" width="300" height="300"/>
+        <image name="Avatar3" width="300" height="300"/>
+        <image name="Avatarthatlookslikeapenis" width="300" height="300"/>
         <image name="ECAD edited images.009" width="1024" height="768"/>
-        <image name="ECAD edited images.014" width="1024" height="768"/>
-        <image name="ECAD edited images.015" width="1024" height="768"/>
-        <image name="ECAD edited images.016" width="1024" height="768"/>
-        <image name="ECAD edited images.019" width="1024" height="768"/>
         <image name="FFC2F3" width="628" height="280"/>
         <image name="Yellow_icon.svg" width="1024" height="1024"/>
         <image name="circle-clip-art-yToeE5KLc" width="297" height="298"/>
