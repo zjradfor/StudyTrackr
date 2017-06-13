@@ -39,9 +39,6 @@ class DeleteEventTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
-        var j = calendar.component(.year, from: date)
-        var indexOfDay = 0
-        var add = 0
         
         if j == calendar.component(.year, from: date) {
             j = 0
