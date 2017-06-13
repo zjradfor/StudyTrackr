@@ -254,7 +254,7 @@
                                     <constraint firstAttribute="width" constant="90" id="b8j-Kz-K5M"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatarthatlookslikeapenis" translatesAutoresizingMaskIntoConstraints="NO" id="qvb-nc-IZ6" userLabel="Avatar4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar0" translatesAutoresizingMaskIntoConstraints="NO" id="qvb-nc-IZ6" userLabel="Avatar4">
                                 <rect key="frame" x="22" y="90" width="90" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="92" id="S5R-rE-KeC"/>
@@ -1318,10 +1318,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Avatar0" width="300" height="300"/>
         <image name="Avatar1" width="300" height="300"/>
         <image name="Avatar2" width="300" height="300"/>
         <image name="Avatar3" width="300" height="300"/>
-        <image name="Avatarthatlookslikeapenis" width="300" height="300"/>
         <image name="ECAD edited images.009" width="1024" height="768"/>
         <image name="FFC2F3" width="628" height="280"/>
         <image name="Yellow_icon.svg" width="1024" height="1024"/>
