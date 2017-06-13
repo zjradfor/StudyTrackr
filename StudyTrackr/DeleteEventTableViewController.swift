@@ -9,7 +9,8 @@
 import UIKit
 
 class DeleteEventTableViewController: UITableViewController {
-
+    var eventDayFromSegue = 0
+    var eventMonthFromSegue = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,20 +35,19 @@ class DeleteEventTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        var j = 
+        var j =
         if
         return DateInfoArr
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
