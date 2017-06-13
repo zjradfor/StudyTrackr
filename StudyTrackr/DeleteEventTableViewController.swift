@@ -40,10 +40,9 @@ class DeleteEventTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         
         indexOfDay = 0
-        j = 0
+        j = calendar.component(.year, from: date)
         add = 0
         
         if j == calendar.component(.year, from: date) {
@@ -86,7 +85,8 @@ class DeleteEventTableViewController: UITableViewController {
         } else {
             indexOfDay = 0 + eventDayFromSegue
         }
-        print("Number of cells: \(DateInfoArr[j][indexOfDay].eventNumber)")
+
+        
         return DateInfoArr[j][indexOfDay].eventNumber
     }
 
@@ -94,7 +94,8 @@ class DeleteEventTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print()
         let cell = UITableViewCell()
-        cell.textLabel?.text = DateInfoArr[j][indexOfDay].events[cellCounter].subject
+        print("cell text: \(DateInfoArr[j][indexOfDay].events[cellCounter].subject)")
+        cell.textLabel!.text = DateInfoArr[j][indexOfDay].events[cellCounter].subject
         cellCounter += 1
         return cell
     }
