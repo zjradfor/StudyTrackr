@@ -563,7 +563,11 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                         let newLabel = NSMutableAttributedString(string: cell.textLabel.text!)
                         for var k in 0...i + r {
                             var z = 0
-                            z = k - (1 * r)
+                            if k >= 4 {
+                                z = k - r
+                            } else {
+                                z = k
+                            }
                             newLabel.addAttribute(NSForegroundColorAttributeName, value: DateInfoArr[j][indexOfDay].events[z].colour, range: NSRange(location:k+2,length:1))
                             k += 1
                         }
