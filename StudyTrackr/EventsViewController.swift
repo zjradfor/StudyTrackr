@@ -102,14 +102,15 @@ class EventsViewController: UIViewController {
             vc.eventYearFromSegue = yearFromSegue
         }
         if (segue.identifier == "deleteEvent"){
-            let vc = segue.destination as! DeleteEventTableViewController
-            vc.eventDayFromSegue = dayFromSegue
-            vc.eventMonthFromSegue = monthFromSegue
-            vc.eventYearFromSegue = yearFromSegue
+            let navVC = segue.destination as? UINavigationController
+            let tableVC = navVC?.viewControllers.first as! DeleteEventTableViewController
+            tableVC.eventDayFromSegue = dayFromSegue
+            tableVC.eventMonthFromSegue = monthFromSegue
+            tableVC.eventYearFromSegue = yearFromSegue
         }
     }
     @IBAction func unwindToVC2(segue:UIStoryboardSegue) { }
-
+    @IBAction func unwindToEvents(segue:UIStoryboardSegue) { }
     @IBOutlet weak var ShowEventsTable: UITableView!
     
 }

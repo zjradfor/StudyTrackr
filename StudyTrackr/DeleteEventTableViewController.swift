@@ -12,6 +12,9 @@ class DeleteEventTableViewController: UITableViewController {
     var eventDayFromSegue = 0
     var eventMonthFromSegue = 0
     var eventYearFromSegue = 0
+    var j = calendar.component(.year, from: date)
+    var indexOfDay = 0
+    var add = 0
     var cellCounter = 0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,8 +91,7 @@ class DeleteEventTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell()
-        cell.textLabel.text =
-            
+        cell.textLabel!.text = DateInfoArr[j][indexOfDay].events[cellCounter].subject
         cellCounter += 1
         return cell
     }
@@ -139,5 +141,8 @@ class DeleteEventTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func goBackToEvents(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToEvents", sender: self)
+    }
 
 }
