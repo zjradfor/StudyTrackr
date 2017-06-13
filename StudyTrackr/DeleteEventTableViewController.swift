@@ -112,6 +112,10 @@ class DeleteEventTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             DateInfoArr[j][indexOfDay].events.remove(at: indexPath.row)
+            DateInfoArr[j][indexOfDay].eventNumber -= 1
+            if DateInfoArr[j][indexOfDay].eventNumber == 0 {
+                DateInfoArr[j][indexOfDay].atLeastOneEvent = false
+            }
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
             // ADD ARRAY DELETE-ING HERE
