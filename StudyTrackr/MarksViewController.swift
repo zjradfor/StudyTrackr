@@ -35,7 +35,13 @@ class MarksViewController: UIViewController {
         }
         current = subjects[spot!]
         
+        
+        if current!.assignments == 0{
         markLabel.text = String(current!.mark)
+        }
+        else{
+            markLabel.text = String(current!.mark / current!.assignments)
+        }
         //divide this by assignments, watch for 0
     }
     
