@@ -46,6 +46,7 @@
 		DEC18D501EB2375B00F9935C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D4E1EB2375B00F9935C /* Main.storyboard */; };
 		DEC18D521EB2375B00F9935C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D511EB2375B00F9935C /* Assets.xcassets */; };
 		DEC18D551EB2375B00F9935C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */; };
+		F11CA0181EF0249300620383 /* DeleteEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11CA0171EF0249300620383 /* DeleteEventTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		DEC18D511EB2375B00F9935C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEC18D541EB2375B00F9935C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEC18D561EB2375B00F9935C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F11CA0171EF0249300620383 /* DeleteEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteEventTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 				DEA9CE661EEB018600D37250 /* CalendarCollectionViewController.swift */,
 				DEA9CE671EEB018600D37250 /* CalendarHeaderCollectionReusableView.swift */,
 				DEA9CE8A1EEB06F400D37250 /* EventsViewController.swift */,
+				F11CA0171EF0249300620383 /* DeleteEventTableViewController.swift */,
 				DEA9CE711EEB018600D37250 /* NewEventViewController.swift */,
 				DEA9CE6D1EEB018600D37250 /* EventColourPickerViewController.swift */,
 				DEA9CE6F1EEB018600D37250 /* Functions.swift */,
@@ -299,6 +302,7 @@
 				DEA9CE7A1EEB018600D37250 /* dpTableViewCell.swift in Sources */,
 				DEA9CE7D1EEB018600D37250 /* EventColourPickerViewController.swift in Sources */,
 				C57F79CD1ECC8CD400E69B2A /* EventTableViewController.swift in Sources */,
+				F11CA0181EF0249300620383 /* DeleteEventTableViewController.swift in Sources */,
 				DEA9CE7E1EEB018600D37250 /* Functions.swift in Sources */,
 				DEA9CE7F1EEB018600D37250 /* LocationTableViewCell.swift in Sources */,
 				DEA9CE801EEB018600D37250 /* NewEventViewController.swift in Sources */,
