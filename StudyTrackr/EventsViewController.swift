@@ -21,6 +21,73 @@ class EventsViewController: UIViewController {
     var yearFromSegue = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*eventTextCounter = 0
+        var indexOfDay = 0
+        var j = 0
+        var add = 0
+        if yearFromSegue == calendar.component(.year, from: date) + 1 {
+            j = 1
+        }
+        
+        if leapYear == true {
+            if yearFromSegue == calendar.component(.year, from: date) {
+                add = 1
+            } else if leapYear2 == true {
+                if yearFromSegue == calendar.component(.year, from: date) + 1 {
+                    add = 1
+                }
+            }
+        }
+        
+        if monthFromSegue == 2 {
+            indexOfDay = 31 + dayFromSegue
+        } else if monthFromSegue == 3 {
+            indexOfDay = 59 + add + dayFromSegue
+        } else if monthFromSegue == 4 {
+            indexOfDay = 90 + add + dayFromSegue
+        } else if monthFromSegue == 5 {
+            indexOfDay = 120 + add + dayFromSegue
+        } else if monthFromSegue == 6 {
+            indexOfDay = 151 + add + dayFromSegue
+        } else if monthFromSegue == 7 {
+            indexOfDay = 181 + add + dayFromSegue
+        } else if monthFromSegue == 8 {
+            indexOfDay = 212 + add + dayFromSegue
+        } else if monthFromSegue == 9 {
+            indexOfDay = 243 + add + dayFromSegue
+        } else if monthFromSegue == 10 {
+            indexOfDay = 273 + add + dayFromSegue
+        } else if monthFromSegue == 11 {
+            indexOfDay = 304 + add + dayFromSegue
+        } else if monthFromSegue == 12 {
+            indexOfDay = 334 + add + dayFromSegue
+        } else {
+            indexOfDay = 0 + dayFromSegue
+        }
+        automaticallyAdjustsScrollViewInsets = false
+        
+        if DateInfoArr[j][indexOfDay].atLeastOneEvent == true {
+            showEventsField.text! += "\n"
+            for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1 {
+                showEventsField.text! += "\n\(DateInfoArr[j][indexOfDay].events[i].subject)\(DateInfoArr[j][indexOfDay].events[i].type)\n\tLocation: \(DateInfoArr[j][indexOfDay].events[i].location)\n\tTime: \(DateInfoArr[j][indexOfDay].events[i].time)\nNotes: \(DateInfoArr[j][indexOfDay].events[i].notes)\n"
+                i += 1
+            }
+        }*/
+        
+        //Getting current date
+        Header.text = "\(monthTranslator(intMonth: monthFromSegue)) \(dayFromSegue)"
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+       // self.TableView!.register(TableCell.self, forCellWithReuseIdentifier: "tableCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        showEventsField.text = "Events:"
         eventTextCounter = 0
         var indexOfDay = 0
         var j = 0
@@ -73,17 +140,6 @@ class EventsViewController: UIViewController {
                 i += 1
             }
         }
-        
-        //Getting current date
-        Header.text = "\(monthTranslator(intMonth: monthFromSegue)) \(dayFromSegue)"
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-       // self.TableView!.register(TableCell.self, forCellWithReuseIdentifier: "tableCell")
     }
     
     // MARK: - Navigation
