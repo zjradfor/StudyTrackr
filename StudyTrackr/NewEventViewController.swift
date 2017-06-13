@@ -20,10 +20,10 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
     var cellCounter = 0
     var eventColour = UIColor.green
     var eventMonthFromSegue = 0
-    var eventSubject = "none"
-    var eventLocation = "none"
-    var eventNotes = "none"
-    var eventTime = "none"
+    var eventSubject = ""
+    var eventLocation = "School"
+    var eventNotes = "None"
+    var eventTime = "All Day"
     
     override func viewDidLoad() {
         print(eventYearFromSegue)
@@ -64,6 +64,10 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
      @IBAction func goBackToOneButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "unwindSegueToVC2", sender: self)
      }
+    @IBAction func goBackToCalendar(_ sender: Any) {
+        performSegue(withIdentifier: "unwindSegueToCalendar", sender: self)
+    }
+    
     @IBAction func unwindToVC3(segue:UIStoryboardSegue) { }
     
     
@@ -76,7 +80,7 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
     // Getters and setters for data storage
     
     func getCellSubject(subject: String) {
-        eventSubject = subject
+        eventSubject = subject + " "
     }
     
     func getCellLocation(location: String) {

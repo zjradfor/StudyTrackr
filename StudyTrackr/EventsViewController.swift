@@ -21,6 +21,7 @@ class EventsViewController: UIViewController {
     var yearFromSegue = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        eventTextCounter = 0
         var indexOfDay = 0
         var j = 0
         var add = 0
@@ -68,7 +69,7 @@ class EventsViewController: UIViewController {
         if DateInfoArr[j][indexOfDay].atLeastOneEvent == true {
             showEventsField.text! += "\n"
             for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1 {
-                showEventsField.text! += "\n\(DateInfoArr[j][indexOfDay].events[i].subject) \(DateInfoArr[j][indexOfDay].events[i].type)\n\t- \(DateInfoArr[j][indexOfDay].events[i].location)\n\t- \(DateInfoArr[j][indexOfDay].events[i].time)\n\(DateInfoArr[j][indexOfDay].events[i].notes)\n"
+                showEventsField.text! += "\n\(DateInfoArr[j][indexOfDay].events[i].subject)\(DateInfoArr[j][indexOfDay].events[i].type)\n\tLocation: \(DateInfoArr[j][indexOfDay].events[i].location)\n\tTime: \(DateInfoArr[j][indexOfDay].events[i].time)\nNotes: \(DateInfoArr[j][indexOfDay].events[i].notes)\n"
                 i += 1
             }
         }
@@ -113,8 +114,24 @@ extension EventsViewController: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventsCell", for: indexPath)
-        
-        cell.textLabel?.text = eventText[eventTextCounter]
+        if eventTextCounter == 0{
+            cell.textLabel?.text = "Test"
+        }
+        else if eventTextCounter == 1{
+            cell.textLabel?.text = "Assignment"
+        }
+        else if eventTextCounter == 2{
+            cell.textLabel?.text = "Homework"
+        }
+        else if eventTextCounter == 3{
+            cell.textLabel?.text = "Event"
+        }
+        else if eventTextCounter == 4{
+            cell.textLabel?.text = "Other"
+        }
+        else{
+            cell.textLabel?.text = ""
+        }
         eventTextCounter += 1
         return cell
     }

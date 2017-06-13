@@ -310,6 +310,8 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     }
  
         @IBAction func unwindToVC1(segue:UIStoryboardSegue) { }
+        @IBAction func unwindToCalendar(segue:UIStoryboardSegue) { }
+
 
     // MARK: UICollectionViewDataSource
     
@@ -419,7 +421,6 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                         newLabel.addAttribute(NSForegroundColorAttributeName, value: DateInfoArr[j][indexOfDay].events[k].colour, range: NSRange(location:k+2,length:1))
                             k += 1
                         }
-                        print(DateInfoArr[j][indexOfDay].events[i].colour)
                         cell.textLabel.attributedText! = newLabel
                         i += 1
                     }
