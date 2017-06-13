@@ -368,6 +368,8 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     }
  
         @IBAction func unwindToVC1(segue:UIStoryboardSegue) { }
+        @IBAction func unwindToCalendar(segue:UIStoryboardSegue) { }
+
 
     // MARK: UICollectionViewDataSource
     
@@ -385,6 +387,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     
     var selectedLabels = String()
     
+    // Generating the Cells
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let screenSize = UIScreen.main.bounds
@@ -459,15 +462,28 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
 
             
             if tag != 0 && tag <= numberOfDaysThisMonth {
+                cell.textLabel.textAlignment = .natural
                 cell.textLabel.text = "\(tag)"
                 if DateInfoArr[j][indexOfDay].atLeastOneEvent == true{
                     cell.textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
                     cell.textLabel.numberOfLines += 1
                     cell.textLabel.text! += "\n"
+                    var r = 0
                     for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1{
-                        cell.textLabel.text! += "o"
+                        if (i % 4 == 0) && (i != 0){
+                            cell.textLabel.numberOfLines += 1
+                            cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height))
+                            cell.textLabel.text! += "\n"
+                            r += 1
+                        }
+                        cell.textLabel.text! += "●"
                         let newLabel = NSMutableAttributedString(string: cell.textLabel.text!)
-                        newLabel.addAttribute(NSForegroundColorAttributeName, value: DateInfoArr[j][indexOfDay].events[i].colour, range: NSRange(location:i+2,length:1))
+                        for var k in 0...i + r {
+                            var z = 0
+                            z = k - (1 * r)
+                            newLabel.addAttribute(NSForegroundColorAttributeName, value: DateInfoArr[j][indexOfDay].events[z].colour, range: NSRange(location:k+2,length:1))
+                            k += 1
+                        }
                         cell.textLabel.attributedText! = newLabel
                         i += 1
                     }
@@ -504,7 +520,6 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     var dayToSegue = 0
     override func collectionView(_ collectionView: UICollectionView,
                                  shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        //print("tapped \(indexPath)")
         
         let firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[yearToShow], month: month)
         var subtract = 0

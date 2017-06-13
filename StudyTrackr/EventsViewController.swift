@@ -19,8 +19,25 @@ class EventsViewController: UIViewController {
     var monthFromSegue = 0
     var eventToSegue = 0
     var yearFromSegue = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Getting current date
+        Header.text = "\(monthTranslator(intMonth: monthFromSegue)) \(dayFromSegue)"
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+       // self.TableView!.register(TableCell.self, forCellWithReuseIdentifier: "tableCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        showEventsField.text = "Events:"
+        eventTextCounter = 0
         var indexOfDay = 0
         var j = 0
         var add = 0
@@ -68,21 +85,10 @@ class EventsViewController: UIViewController {
         if DateInfoArr[j][indexOfDay].atLeastOneEvent == true {
             showEventsField.text! += "\n"
             for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1 {
-                showEventsField.text! += "\n\(DateInfoArr[j][indexOfDay].events[i].subject) \(DateInfoArr[j][indexOfDay].events[i].type)\n\t- \(DateInfoArr[j][indexOfDay].events[i].location)\n\t- \(DateInfoArr[j][indexOfDay].events[i].time)\n\(DateInfoArr[j][indexOfDay].events[i].notes)\n"
+                showEventsField.text! += "\n\(DateInfoArr[j][indexOfDay].events[i].subject)\(DateInfoArr[j][indexOfDay].events[i].type)\n\tLocation: \(DateInfoArr[j][indexOfDay].events[i].location)\n\tTime: \(DateInfoArr[j][indexOfDay].events[i].time)\nNotes: \(DateInfoArr[j][indexOfDay].events[i].notes)\n"
                 i += 1
             }
         }
-        
-        //Getting current date
-        Header.text = "\(monthTranslator(intMonth: monthFromSegue)) \(dayFromSegue)"
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-       // self.TableView!.register(TableCell.self, forCellWithReuseIdentifier: "tableCell")
     }
     
     // MARK: - Navigation
@@ -91,18 +97,25 @@ class EventsViewController: UIViewController {
         performSegue(withIdentifier: "unwindSegueToVC2", sender: self)
      }
     
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if (segue.identifier == "event"){
-        let vc = segue.destination as! NewEventViewController
-        vc.eventFromSegue = eventToSegue
-        vc.eventDayFromSegue = dayFromSegue
-        vc.eventMonthFromSegue = monthFromSegue
-        vc.eventYearFromSegue = yearFromSegue
+        if (segue.identifier == "event"){
+            let vc = segue.destination as! NewEventViewController
+            vc.eventFromSegue = eventToSegue
+            vc.eventDayFromSegue = dayFromSegue
+            vc.eventMonthFromSegue = monthFromSegue
+            vc.eventYearFromSegue = yearFromSegue
+        }
+        if (segue.identifier == "deleteEvent"){
+            let navVC = segue.destination as? UINavigationController
+            let tableVC = navVC?.viewControllers.first as! DeleteEventTableViewController
+            tableVC.eventDayFromSegue = dayFromSegue
+            tableVC.eventMonthFromSegue = monthFromSegue
+            tableVC.eventYearFromSegue = yearFromSegue
         }
     }
     @IBAction func unwindToVC2(segue:UIStoryboardSegue) { }
-
+    @IBAction func unwindToEvents(segue:UIStoryboardSegue) { }
     @IBOutlet weak var ShowEventsTable: UITableView!
     
 }
@@ -113,8 +126,24 @@ extension EventsViewController: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventsCell", for: indexPath)
-        
-        cell.textLabel?.text = eventText[eventTextCounter]
+        if eventTextCounter == 0{
+            cell.textLabel?.text = "Test"
+        }
+        else if eventTextCounter == 1{
+            cell.textLabel?.text = "Assignment"
+        }
+        else if eventTextCounter == 2{
+            cell.textLabel?.text = "Homework"
+        }
+        else if eventTextCounter == 3{
+            cell.textLabel?.text = "Event"
+        }
+        else if eventTextCounter == 4{
+            cell.textLabel?.text = "Other"
+        }
+        else{
+            cell.textLabel?.text = ""
+        }
         eventTextCounter += 1
         return cell
     }
@@ -128,7 +157,6 @@ extension EventsViewController: UITableViewDataSource{
     tableview
     override func tableView(_ tableView: UITableView,
                                  shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        print("tapped \(indexPath)")
         dayToSegue = indexPath
         self.performSegue(withIdentifier: "day", sender: self)
         return false
@@ -140,7 +168,6 @@ extension EventsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         eventToSegue = indexPath.row
         self.performSegue(withIdentifier: "event", sender: self)
-        //print ("tapped \(indexPath.row)")
     }
 }
 

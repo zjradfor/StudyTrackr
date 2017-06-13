@@ -19,15 +19,14 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
     var eventDayFromSegue = 0
     var eventYearFromSegue = 0
     var cellCounter = 0
-    var eventColour = UIColor.blue
+    var eventColour = UIColor.green
     var eventMonthFromSegue = 0
-    var eventSubject = "none"
-    var eventLocation = "none"
-    var eventNotes = "none"
-    var eventTime = "none"
+    var eventSubject = ""
+    var eventLocation = "School"
+    var eventNotes = "None"
+    var eventTime = "All Day"
     
     override func viewDidLoad() {
-        print(eventYearFromSegue)
         super.viewDidLoad()
         
         //Storing core data variables
@@ -151,6 +150,10 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
      @IBAction func goBackToOneButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "unwindSegueToVC2", sender: self)
      }
+    @IBAction func goBackToCalendar(_ sender: Any) {
+        performSegue(withIdentifier: "unwindSegueToCalendar", sender: self)
+    }
+    
     @IBAction func unwindToVC3(segue:UIStoryboardSegue) { }
     
     
@@ -163,7 +166,7 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
     // Getters and setters for data storage
     
     func getCellSubject(subject: String) {
-        eventSubject = subject
+        eventSubject = subject + " "
     }
     
     func getCellLocation(location: String) {
@@ -248,8 +251,6 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         //Counter
         DateInfoArr[j][i].eventNumber += 1
         
-        print(DateInfoArr[j][i].day.weekDay)
-        print(DateInfoArr[j][i].day.dayOfMonth)
         DateInfoArr[j][i].atLeastOneEvent = true
     }
 
@@ -264,34 +265,29 @@ extension NewEventViewController: UITableViewDataSource{
         if cellCounter == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "subjectCell", for: indexPath) as! SubjectTableViewCell
             cell.delegate = self
-            //print(cellCounter)
                     cellCounter += 1
             return cell
         }
         else if cellCounter == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "dpCell", for: indexPath) as! dpTableViewCell
             cell.delegate = self
-            //print(cellCounter)
                     cellCounter += 1
             return cell
         }
         else if cellCounter == 2{
             let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath) as! LocationTableViewCell
             cell.delegate = self
-            //print(cellCounter)
                     cellCounter += 1
             return cell
         }
         else if cellCounter == 3{
             let cell = tableView.dequeueReusableCell(withIdentifier: "colourCell", for: indexPath)
-            //print(cellCounter)
                     cellCounter += 1
             return cell
         }
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "notesCell", for: indexPath) as! NotesTableViewCell
             cell.delegate = self
-            //print(cellCounter)
                     cellCounter += 1
             return cell
         }
