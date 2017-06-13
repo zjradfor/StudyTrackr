@@ -177,6 +177,7 @@ import UserNotifications
                 //Determines when to start the break timer and pause the study timer
                 if whenIsBreak == seconds{
                     self.pauseButton.isEnabled = false
+                    self.doneButton.isEnabled = false
                     timer.invalidate()
                     runbreakTimer()
                     breakTimerNotification()
@@ -186,6 +187,7 @@ import UserNotifications
                 }else{
                     breakTimer.invalidate()
                     self.pauseButton.isEnabled = true
+                    self.doneButton.isEnabled = true
                     breakOrStudy.text = "Get Studying!"
                 }
             }
@@ -225,13 +227,18 @@ import UserNotifications
             content.body = "Take a minute to stretch your legs"
             content.sound = UNNotificationSound.default()
             
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,  repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1,  repeats: false)
             
             let breakTimeIdentifier = "start.of.break"
             let breakTimeStart = UNNotificationRequest(identifier: breakTimeIdentifier, content: content, trigger: trigger)
         
         // Schedule the notification.
-           /* let request = UNNotificationRequest(identifier: "FiveSecond", content: content, trigger: trigger)8*/
+            let center = UNUserNotificationCenter.current()
+            center.add(breakTimeStart) { (error : Error?) in
+                if let theError = error {
+                    print(theError.localizedDescription)
+                }
+            }
         }
         
  
