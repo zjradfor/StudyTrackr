@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 //Temp variables
 let weekChar = ["S","M","T","W","T","F","S"]
 var tag = 0
@@ -42,6 +42,33 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     override func viewDidLoad() {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        
+        //VIEW DID LOAD
+        
+        //Storing core data
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext //Key that allows access to coreData
+        
+        let
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
                                     // Get January first
                                    //Get current calendar info
         var firstWeekday = calendar.firstWeekday
