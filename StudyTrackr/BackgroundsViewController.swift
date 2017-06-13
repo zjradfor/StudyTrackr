@@ -20,25 +20,19 @@ class BackgroundsViewController: UIViewController {
             
         case "White":
             BackgroundView.backgroundColor = UIColor.white
-                WhitePurchaseButton.text = "Current Font"
-            if (ownershipArray[0] == 1){
-                PurplePurchaseButton.text = "Select"
-            }
-            if (ownershipArray[1] == 1){
-                PinkPurchaseButton.text = "Select"
-            }
-            if (ownershipArray[2] == 1){
-                YellowPurchaseButton.text = "Select"
-            }
+                WhitePurchaseButton.text = "Current Background"
+                PurplePurchaseButton.text = "Cost: 200"
+                PinkPurchaseButton.text = "Cost: 200"
+                YellowPurchaseButton.text = "Cost: 200"
     
         case "Purple":
             BackgroundView.backgroundColor = UIColor.purple
             WhitePurchaseButton.text = "Select"
             
-            PurplePurchaseButton.text = "Current Font"
+            PurplePurchaseButton.text = "Current Background"
         
             if (ownershipArray[1] == 1){
-                PinkPurchaseButton.text = "Select"
+                PinkPurchaseButton.text = "Cost: 200"
             }
             if (ownershipArray[2] == 1){
                 YellowPurchaseButton.text = "Select"

@@ -9,7 +9,7 @@
 import UIKit
 
 var GlobalBackCol = ""
-var GlobalCoins = 500
+var GlobalCoins = 5000
 var GlobalFonts = 0
 class RewardsViewController: UIViewController {
 
