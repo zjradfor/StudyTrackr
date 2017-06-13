@@ -34,74 +34,6 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         let context = appDelegate.persistentContainer.viewContext //Key that allows access to coreData
         
         
-        //Requesting data
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
-        request.returnsObjectsAsFaults = false //Translates returned objects into a string
-        
-        var add = 0
-        var addMonth = 0
-        var i = 0
-        var j = 0
-        if eventYearFromSegue == calendar.component(.year, from: date) + 1 {
-            j = 1
-        }
-        
-        if leapYear == true {
-            if eventYearFromSegue == calendar.component(.year, from: date) {
-                add = 1
-            } else if leapYear2 == true {
-                if eventYearFromSegue == calendar.component(.year, from: date) + 1 {
-                    add = 1
-                }
-            }
-        }
-        
-        if eventMonthFromSegue == 2 {
-            addMonth = 31
-        } else if eventMonthFromSegue == 3 {
-            addMonth = 59 + add
-        } else if eventMonthFromSegue == 4 {
-            addMonth = 90 + add
-        } else if eventMonthFromSegue == 5 {
-            addMonth = 120 + add
-        } else if eventMonthFromSegue == 6 {
-            addMonth = 151 + add
-        } else if eventMonthFromSegue == 7 {
-            addMonth = 181 + add
-        } else if eventMonthFromSegue == 8 {
-            addMonth = 212 + add
-        } else if eventMonthFromSegue == 9 {
-            addMonth = 243 + add
-        } else if eventMonthFromSegue == 10 {
-            addMonth = 273 + add
-        } else if eventMonthFromSegue == 11 {
-            addMonth = 304 + add
-        } else if eventMonthFromSegue == 12 {
-            addMonth = 334 + add
-        } else {
-            addMonth = 0
-        }
-        
-        i = eventDayFromSegue + addMonth
-        
-        
-        do {
-            let results = try context.fetch(request)
-            
-            if results.count > 0 {
-                for result in results as! [NSManagedObject] {
-                    //RETRIEVING SUBJECT
-                    if  DateInfoArr[j][i].events[0].subject == result.value(forKey: "subject") as! String {
-                    }
-                }
-            }
-        } catch {
-            //Proccess Error
-        }
-        
-        
-        
-        
         
         
         
@@ -233,6 +165,14 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         let context = appDelegate.persistentContainer.viewContext //Key that allows access to coreData
         let event = NSEntityDescription.insertNewObject(forEntityName: "Events", into: context)
         event.setValue(eventSubject, forKey: "subject")
+        do {
+            try context.save()
+            print("It should have saved")
+        } catch { //If do doesn't work then catch this...
+            //PROCESS ERROR
+            print("Failed to save")
+        }
+       
         
         i = eventDayFromSegue + addMonth
         
@@ -241,7 +181,7 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         DateInfoArr[j][i].events[0].colour = eventColour
         //Storing subject
         
-       // DateInfoArr[j][i].events[0].subject = eventSubject
+        //
         //Storing location
         DateInfoArr[j][i].events[0].location = eventLocation
         //Storing notes
@@ -252,6 +192,25 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         DateInfoArr[j][i].eventNumber += 1
         
         DateInfoArr[j][i].atLeastOneEvent = true
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
+        request.returnsObjectsAsFaults = false //Translates returned objects into a string
+        
+        do {
+            let results = try context.fetch(request)
+            
+            if results.count > 0 {
+                for result in results as! [NSManagedObject] {
+                    //RETRIEVING SUBJECT
+                    if let subject = result.value(forKey: "subject") as? String {
+                        DateInfoArr[j][i].events[0].subject = subject
+                    }
+                    
+                }
+            }
+        } catch {
+            //Proccess Error
+        }
     }
 
 }
