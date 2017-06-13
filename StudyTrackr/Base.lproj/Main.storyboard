@@ -191,6 +191,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd2-0q-Xox" userLabel="Smile Button">
+                                <rect key="frame" x="0.0" y="64" width="375" height="144"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="4fp-dW-eAF"/>
+                                    <constraint firstAttribute="width" constant="375" id="JIc-a6-dOm"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="AvatarSmile:" destination="pL3-Ks-nn6" eventType="touchUpInside" id="Vtj-z8-slv"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDa-5D-QHV" userLabel="Spike Button">
                                 <rect key="frame" x="0.0" y="216" width="375" height="145"/>
                                 <constraints>
@@ -203,6 +213,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWg-pS-ZHu" userLabel="Lola Button">
                                 <rect key="frame" x="0.0" y="369" width="375" height="144"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="6Ru-Tf-0mZ"/>
+                                    <constraint firstAttribute="height" constant="144" id="rcu-0u-5dK"/>
+                                </constraints>
                                 <connections>
                                     <action selector="AvatarLola:" destination="pL3-Ks-nn6" eventType="touchUpInside" id="rzs-nl-PFh"/>
                                 </connections>
@@ -240,16 +254,6 @@
                                     <constraint firstAttribute="width" constant="90" id="b8j-Kz-K5M"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd2-0q-Xox" userLabel="Smile Button">
-                                <rect key="frame" x="0.0" y="64" width="375" height="144"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="144" id="4fp-dW-eAF"/>
-                                    <constraint firstAttribute="width" constant="375" id="JIc-a6-dOm"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="AvatarSmile:" destination="pL3-Ks-nn6" eventType="touchUpInside" id="Vtj-z8-slv"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatarthatlookslikeapenis" translatesAutoresizingMaskIntoConstraints="NO" id="qvb-nc-IZ6" userLabel="Avatar4">
                                 <rect key="frame" x="22" y="90" width="90" height="92"/>
                                 <constraints>
