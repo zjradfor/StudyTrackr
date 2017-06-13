@@ -152,7 +152,6 @@ extension EventsViewController: UITableViewDataSource{
     tableview
     override func tableView(_ tableView: UITableView,
                                  shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        print("tapped \(indexPath)")
         dayToSegue = indexPath
         self.performSegue(withIdentifier: "day", sender: self)
         return false
@@ -164,7 +163,6 @@ extension EventsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         eventToSegue = indexPath.row
         self.performSegue(withIdentifier: "event", sender: self)
-        //print ("tapped \(indexPath.row)")
     }
 }
 

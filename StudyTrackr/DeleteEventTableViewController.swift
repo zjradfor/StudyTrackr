@@ -86,13 +86,13 @@ class DeleteEventTableViewController: UITableViewController {
         } else {
             indexOfDay = 0 + eventDayFromSegue
         }
-        
+        print("Number of cells: \(DateInfoArr[j][indexOfDay].eventNumber)")
         return DateInfoArr[j][indexOfDay].eventNumber
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        print()
         let cell = UITableViewCell()
         cell.textLabel?.text = DateInfoArr[j][indexOfDay].events[cellCounter].subject
         cellCounter += 1

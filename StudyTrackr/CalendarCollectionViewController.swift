@@ -461,7 +461,6 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     var dayToSegue = 0
     override func collectionView(_ collectionView: UICollectionView,
                                  shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        //print("tapped \(indexPath)")
         
         let firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[yearToShow], month: month)
         var subtract = 0
