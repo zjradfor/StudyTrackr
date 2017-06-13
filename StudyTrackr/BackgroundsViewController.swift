@@ -10,8 +10,6 @@ import UIKit
 
 class BackgroundsViewController: UIViewController {
     
-    var ownershipArray = [0,0,0]
-    
 
     
     func BackgroundCol() {
@@ -28,105 +26,66 @@ class BackgroundsViewController: UIViewController {
         case "Purple":
             BackgroundView.backgroundColor = UIColor.purple
             WhitePurchaseButton.text = "Select"
-            
             PurplePurchaseButton.text = "Current Background"
-        
-            if (ownershipArray[1] == 1){
-                PinkPurchaseButton.text = "Cost: 200"
-            }
-            if (ownershipArray[2] == 1){
-                YellowPurchaseButton.text = "Select"
-            }
+            PinkPurchaseButton.text = "Cost: 200"
+            YellowPurchaseButton.text = "Cost: 200"
             
         case "Pink":
             BackgroundView.backgroundColor = UIColor(red:1.00, green:0.76, blue:0.95, alpha:1.0)
             WhitePurchaseButton.text = "Select"
-            
-            if (ownershipArray[0] == 1){
-                PurplePurchaseButton.text = "Select"
-            }
-                PinkPurchaseButton.text = "Current Font"
-            
-            if (ownershipArray[2] == 1){
-                YellowPurchaseButton.text = "Select"
-            }
+                PurplePurchaseButton.text = "Cost: 200"
+                PinkPurchaseButton.text = "Current Background"
+                YellowPurchaseButton.text = "Cost: 200"
             
         case "Yellow":
             BackgroundView.backgroundColor = UIColor.yellow
             WhitePurchaseButton.text = "Select"
-            
-            if (ownershipArray[0] == 1){
-                PurplePurchaseButton.text = "Select"
-            }
-            if (ownershipArray[1] == 1){
-                PinkPurchaseButton.text = "Select"
-            }
-                YellowPurchaseButton.text = "Current Font"
+                PurplePurchaseButton.text = "Cost: 200"
+                PinkPurchaseButton.text = "Cost:200"
+                YellowPurchaseButton.text = "Current Background"
             
             
         default: break
         
-            
         }
     }
-    
-    
-   
-
     
     @IBOutlet var BackgroundView: UIView!
     
     @IBAction func DefaultBackground(_ sender: Any) {
         GlobalBackCol = "White"
         BackgroundCol()
-        
     }
 
     @IBAction func PurpleBackground(_ sender: Any) {
-        GlobalBackCol = "Purple"
-        if (GlobalCoins >= 200)&&(ownershipArray[0] == 0){          //not bought but enough money
-            
+        
+        if (GlobalCoins >= 200)&&(BackgroundView.backgroundColor != UIColor.purple){
+            GlobalBackCol = "Purple"
             BackgroundCol ()
             GlobalCoins = GlobalCoins - 200
             secondLabel.text = "Coins: " + "\(GlobalCoins)"
-            ownershipArray.insert (1, at: 0)
         } //end of the if (not bought but has the money) statement
-        
-        if (ownershipArray[0] == 1) && (GlobalBackCol != "Purple"){       //already bought, not selected
-            BackgroundCol()
-            // AmericanPurchaseLabel.text = "Current Font"
-        } //end of the if (bought but not selected) statment
     }
     
     @IBAction func PinkBackground(_ sender: Any) {
-        GlobalBackCol = "Pink"
-        if (GlobalCoins >= 200)&&(ownershipArray[1] == 0){          //not bought but enough money
+        
+        if (GlobalCoins >= 200)&&(BackgroundView.backgroundColor != UIColor(red:1.00, green:0.76, blue:0.95, alpha:1.0)){
+            GlobalBackCol = "Pink"
             BackgroundCol ()
             GlobalCoins = GlobalCoins - 200
             secondLabel.text = "Coins: " + "\(GlobalCoins)"
-            ownershipArray.insert (1, at: 1)
         } //end of the if (not bought but has the money) statement
-        
-        if (ownershipArray[1] == 1) && (GlobalBackCol != "Pink"){       //already bought, not selected
-            BackgroundCol()
-            // AmericanPurchaseLabel.text = "Current Font"
-        } //end of the if (bought but not selected) statment
     }
     
     
     @IBAction func YellowBackground(_ sender: Any) {
-        GlobalBackCol = "Yellow"
-        if (GlobalCoins >= 200)&&(ownershipArray[2] == 0){          //not bought but enough money
+        
+        if (GlobalCoins >= 200)&&(BackgroundView.backgroundColor != UIColor.yellow){
+            GlobalBackCol = "Yellow"
             BackgroundCol ()
             GlobalCoins = GlobalCoins - 200
             secondLabel.text = "Coins: " + "\(GlobalCoins)"
-            ownershipArray.insert (1, at: 2)
         } //end of the if (not bought but has the money) statement
-        
-        if (ownershipArray[2] == 1) && (GlobalBackCol != "Yellow"){       //already bought, not selected
-            BackgroundCol()
-            // AmericanPurchaseLabel.text = "Current Font"
-        } //end of the if (bought but not selected) statment
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -149,14 +108,22 @@ class BackgroundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         BackgroundCol()
+        
         secondLabel.text = "Coins: " + "\(GlobalCoins)"
         
-        YellowPurchaseButton.text = "Cost: 200"
-        PinkPurchaseButton.text = "Cost: 200"
-        WhitePurchaseButton.text = "Current Font"
-        PurplePurchaseButton.text = "Cost: 200"
-        
-        
+        if (BackgroundView.backgroundColor == UIColor.white){
+            GlobalBackCol = "White"
+        }
+        if (BackgroundView.backgroundColor == UIColor.purple){
+            GlobalBackCol = "Purple"
+        }
+        if (BackgroundView.backgroundColor == UIColor(red:1.00, green:0.76, blue:0.95, alpha:1.0)){
+            GlobalBackCol = "Pink"
+        }
+        if (BackgroundView.backgroundColor == UIColor.yellow){
+            GlobalBackCol = "Yellow"
+        }
+        BackgroundCol()
     }
     ////////////////////////////////////////////////////////////////////////////////
 
