@@ -90,11 +90,11 @@ class BackgroundsViewController: UIViewController {
 
     @IBAction func PurpleBackground(_ sender: Any) {
         GlobalBackCol = "Purple"
-        if (intPassed >= 200)&&(ownershipArray[0] == 0){          //not bought but enough money
+        if (GlobalCoins >= 200)&&(ownershipArray[0] == 0){          //not bought but enough money
             
             BackgroundCol ()
-            intPassed = intPassed - 200
-            secondLabel.text = "Coins: " + "\(intPassed)"
+            GlobalCoins = GlobalCoins - 200
+            secondLabel.text = "Coins: " + "\(GlobalCoins)"
             ownershipArray.insert (1, at: 0)
         } //end of the if (not bought but has the money) statement
         
@@ -106,10 +106,10 @@ class BackgroundsViewController: UIViewController {
     
     @IBAction func PinkBackground(_ sender: Any) {
         GlobalBackCol = "Pink"
-        if (intPassed >= 200)&&(ownershipArray[1] == 0){          //not bought but enough money
+        if (GlobalCoins >= 200)&&(ownershipArray[1] == 0){          //not bought but enough money
             BackgroundCol ()
-            intPassed = intPassed - 200
-            secondLabel.text = "Coins: " + "\(intPassed)"
+            GlobalCoins = GlobalCoins - 200
+            secondLabel.text = "Coins: " + "\(GlobalCoins)"
             ownershipArray.insert (1, at: 1)
         } //end of the if (not bought but has the money) statement
         
@@ -122,10 +122,10 @@ class BackgroundsViewController: UIViewController {
     
     @IBAction func YellowBackground(_ sender: Any) {
         GlobalBackCol = "Yellow"
-        if (intPassed >= 200)&&(ownershipArray[2] == 0){          //not bought but enough money
+        if (GlobalCoins >= 200)&&(ownershipArray[2] == 0){          //not bought but enough money
             BackgroundCol ()
-            intPassed = intPassed - 200
-            secondLabel.text = "Coins: " + "\(intPassed)"
+            GlobalCoins = GlobalCoins - 200
+            secondLabel.text = "Coins: " + "\(GlobalCoins)"
             ownershipArray.insert (1, at: 2)
         } //end of the if (not bought but has the money) statement
         
@@ -144,7 +144,7 @@ class BackgroundsViewController: UIViewController {
     @IBOutlet weak var secondLabel: UILabel!
     
     var stringPassed = ""
-    var intPassed = Int()
+    
     
     @IBOutlet weak var YellowPurchaseButton: UILabel!
     @IBOutlet weak var PinkPurchaseButton: UILabel!
@@ -155,7 +155,7 @@ class BackgroundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         BackgroundCol()
-        secondLabel.text = "Coins: " + "\(intPassed)"
+        secondLabel.text = "Coins: " + "\(GlobalCoins)"
         
         YellowPurchaseButton.text = "Cost: 200"
         PinkPurchaseButton.text = "Cost: 200"

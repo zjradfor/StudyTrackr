@@ -9,13 +9,15 @@
 import UIKit
 
 var GlobalBackCol = ""
-
+var GlobalCoins = 500
+var GlobalFonts = 0
+var GlobalAvatars = 0
 class RewardsViewController: UIViewController {
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
     @IBOutlet weak var myLabel: UILabel!
     
-    var myInt = 500
+   
     
     //let myVC = storyboard?.instantiateViewControllerWithIdentifier("SecondVC") as! SecondVC
     //myVC.stringPassed = myLabel.text!
@@ -53,41 +55,43 @@ class RewardsViewController: UIViewController {
     
     @IBAction func DailyRewardButton(_ sender: Any) {
         let RewardsViewController = storyboard?.instantiateViewController(withIdentifier: "DailyGiftViewController") as! DailyGiftViewController
-        RewardsViewController.stringPassed = myLabel.text!
-        RewardsViewController.intPassed = myInt
+       // RewardsViewController.stringPassed = myLabel.text!
+        // RewardsViewController.intPassed = myInt
         navigationController?.pushViewController(RewardsViewController, animated: true)
 
 
     }
     @IBAction func AvatarsButton(_ sender: Any) {
         let RewardsViewController = storyboard?.instantiateViewController(withIdentifier: "AvatarsViewController") as! AvatarsViewController
-        RewardsViewController.stringPassed = myLabel.text!
-        RewardsViewController.intPassed = myInt
+       // RewardsViewController.stringPassed = myLabel.text!
+        //RewardsViewController.intPassed = myInt
         navigationController?.pushViewController(RewardsViewController, animated: true)
     }
 
     @IBAction func FontsButton(_ sender: Any) {
         let RewardsViewController = storyboard?.instantiateViewController(withIdentifier: "FontsViewController") as! FontsViewController
-        RewardsViewController.stringPassed = myLabel.text!
-        RewardsViewController.intPassed = myInt
+       // RewardsViewController.stringPassed = myLabel.text!
+       // RewardsViewController.intPassed = myInt
         navigationController?.pushViewController(RewardsViewController, animated: true)
     }
     
     @IBAction func BackgroundsButton(_ sender: Any) {
         let RewardsViewController = storyboard?.instantiateViewController(withIdentifier: "BackgroundsViewController") as! BackgroundsViewController
-        RewardsViewController.stringPassed = myLabel.text!
-        RewardsViewController.intPassed = myInt
+        //RewardsViewController.stringPassed = myLabel.text!
+        //RewardsViewController.intPassed = myInt
         navigationController?.pushViewController(RewardsViewController, animated: true)
 
     }
     override func viewWillAppear(_ animated: Bool) {
  self.tabBarController?.tabBar.isHidden = false
+        BackgroundCol()
+        myLabel.text = "Coins: " + "\(GlobalCoins)"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        BackgroundCol()
-        myLabel.text = "Coins: " + "\(myInt)"
+      //  BackgroundCol()
+        
         
         
         }

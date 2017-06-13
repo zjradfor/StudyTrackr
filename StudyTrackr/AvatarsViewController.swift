@@ -58,12 +58,12 @@ class AvatarsViewController: UIViewController {
         @IBOutlet weak var secondLabel: UILabel!
     
         var stringPassed = ""
-        var intPassed = Int()
+       // var GlobalCoins = Int()
         
         override func viewDidLoad() {
             super.viewDidLoad()
             BackgroundCol()
-            secondLabel.text = "Coins: " + "\(intPassed)"
+            secondLabel.text = "Coins: " + "\(GlobalCoins)"
             
         }
         ////////////////////////////////////////////////////////////////////////////////
