@@ -86,7 +86,7 @@ class DeleteEventTableViewController: UITableViewController {
             indexOfDay = 0 + eventDayFromSegue
         }
 
-        
+        print("Number of rows \(DateInfoArr[j][indexOfDay].eventNumber)")
         return DateInfoArr[j][indexOfDay].eventNumber
     }
 

@@ -1022,40 +1022,14 @@
                                     <outlet property="delegate" destination="8CJ-vs-Fp8" id="C4N-QK-NEb"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZf-IU-VtR">
-                                <rect key="frame" x="16" y="20" width="45" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="OgQ-PZ-Wjb"/>
-                                </constraints>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="z5Z-78-BsP" kind="unwind" unwindAction="unwindToVC1WithSegue:" id="qz0-xB-Du6"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Events:" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YY-kD-Iqp">
-                                <rect key="frame" x="0.0" y="60" width="375" height="295"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Events:" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YY-kD-Iqp">
+                                <rect key="frame" x="0.0" y="84" width="375" height="242"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="295" id="oqd-yb-JT7"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfb-nc-K5H">
-                                <rect key="frame" x="168" y="64" width="40" height="24"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSy-yj-TwC">
-                                <rect key="frame" x="314" y="61" width="45" height="30"/>
-                                <state key="normal" title="Delete"/>
-                                <connections>
-                                    <segue destination="if5-W3-HIz" kind="show" identifier="deleteEvent" id="1nV-kP-u6G"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6A-7i-8fH">
                                 <rect key="frame" x="122" y="334" width="131" height="21"/>
                                 <constraints>
@@ -1065,14 +1039,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfb-nc-K5H">
+                                <rect key="frame" x="168" y="64" width="40" height="24"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZf-IU-VtR">
+                                <rect key="frame" x="16" y="63" width="45" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="ZQb-x6-NCa"/>
+                                    <constraint firstAttribute="width" constant="45" id="ouP-dt-CsZ"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="z5Z-78-BsP" kind="unwind" unwindAction="unwindToVC1WithSegue:" id="qz0-xB-Du6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSy-yj-TwC">
+                                <rect key="frame" x="314" y="61" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <segue destination="if5-W3-HIz" kind="show" identifier="deleteEvent" id="1nV-kP-u6G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8YY-kD-Iqp" firstAttribute="trailing" secondItem="gHA-DH-AtV" secondAttribute="trailing" id="0iB-9Y-Ihi"/>
-                            <constraint firstItem="YZf-IU-VtR" firstAttribute="top" secondItem="Nrt-oF-L87" secondAttribute="bottom" id="FFJ-ro-ZSR"/>
+                            <constraint firstItem="YZf-IU-VtR" firstAttribute="baseline" secondItem="bSy-yj-TwC" secondAttribute="firstBaseline" id="7L3-eX-Rlh"/>
                             <constraint firstItem="bSy-yj-TwC" firstAttribute="trailing" secondItem="a4j-HA-lIm" secondAttribute="trailingMargin" id="HHL-cE-9ou"/>
+                            <constraint firstItem="YZf-IU-VtR" firstAttribute="leading" secondItem="a4j-HA-lIm" secondAttribute="leadingMargin" id="JML-b9-Tsh"/>
+                            <constraint firstItem="8YY-kD-Iqp" firstAttribute="top" secondItem="rfb-nc-K5H" secondAttribute="bottom" constant="-4" id="Jmp-GE-LqU"/>
+                            <constraint firstItem="8YY-kD-Iqp" firstAttribute="leading" secondItem="gHA-DH-AtV" secondAttribute="leading" id="TmE-N5-lzW"/>
+                            <constraint firstItem="YZf-IU-VtR" firstAttribute="centerY" secondItem="rfb-nc-K5H" secondAttribute="centerY" id="Tr4-0A-amX"/>
+                            <constraint firstItem="8YY-kD-Iqp" firstAttribute="trailing" secondItem="gHA-DH-AtV" secondAttribute="trailing" id="Vcm-bX-Wik"/>
+                            <constraint firstItem="8YY-kD-Iqp" firstAttribute="bottom" secondItem="W6A-7i-8fH" secondAttribute="bottom" constant="-29" id="Wrv-07-2KD"/>
                             <constraint firstItem="rfb-nc-K5H" firstAttribute="top" secondItem="Nrt-oF-L87" secondAttribute="bottom" id="XYF-Ht-Wmg"/>
-                            <constraint firstItem="8YY-kD-Iqp" firstAttribute="bottom" secondItem="W6A-7i-8fH" secondAttribute="bottom" id="Yva-QJ-6f2"/>
                             <constraint firstItem="W6A-7i-8fH" firstAttribute="centerX" secondItem="rfb-nc-K5H" secondAttribute="centerX" id="ZRg-CA-TWa"/>
                             <constraint firstAttribute="trailing" secondItem="gHA-DH-AtV" secondAttribute="trailing" id="eMb-EZ-eEq"/>
                             <constraint firstItem="LhT-Ys-Nol" firstAttribute="top" secondItem="W6A-7i-8fH" secondAttribute="bottom" constant="312" id="hEt-sJ-WOy"/>
@@ -1080,11 +1082,9 @@
                             <constraint firstItem="rfb-nc-K5H" firstAttribute="leading" secondItem="a4j-HA-lIm" secondAttribute="leadingMargin" constant="152" id="lSP-FS-NHP"/>
                             <constraint firstItem="LhT-Ys-Nol" firstAttribute="top" secondItem="gHA-DH-AtV" secondAttribute="bottom" constant="8" symbolic="YES" id="mAs-Om-FVI"/>
                             <constraint firstItem="bSy-yj-TwC" firstAttribute="centerY" secondItem="rfb-nc-K5H" secondAttribute="centerY" id="qQD-E5-OkW"/>
-                            <constraint firstItem="8YY-kD-Iqp" firstAttribute="top" secondItem="YZf-IU-VtR" secondAttribute="bottom" constant="15" id="v0D-Io-zVc"/>
-                            <constraint firstItem="8YY-kD-Iqp" firstAttribute="leading" secondItem="gHA-DH-AtV" secondAttribute="leading" id="xjn-E8-KF7"/>
+                            <constraint firstItem="YZf-IU-VtR" firstAttribute="firstBaseline" secondItem="bSy-yj-TwC" secondAttribute="baseline" id="zkD-cE-tpv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="TQy-VD-3hc"/>
                     <connections>
                         <outlet property="Header" destination="rfb-nc-K5H" id="gUT-pl-MXJ"/>
                         <outlet property="showEventsField" destination="8YY-kD-Iqp" id="cP3-d7-emL"/>
