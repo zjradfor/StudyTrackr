@@ -92,14 +92,20 @@ class EventsViewController: UIViewController {
         performSegue(withIdentifier: "unwindSegueToVC2", sender: self)
      }
     
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if (segue.identifier == "event"){
-        let vc = segue.destination as! NewEventViewController
-        vc.eventFromSegue = eventToSegue
-        vc.eventDayFromSegue = dayFromSegue
-        vc.eventMonthFromSegue = monthFromSegue
-        vc.eventYearFromSegue = yearFromSegue
+        if (segue.identifier == "event"){
+            let vc = segue.destination as! NewEventViewController
+            vc.eventFromSegue = eventToSegue
+            vc.eventDayFromSegue = dayFromSegue
+            vc.eventMonthFromSegue = monthFromSegue
+            vc.eventYearFromSegue = yearFromSegue
+        }
+        if (segue.identifier == "deleteEvent"){
+            let vc = segue.destination as! DeleteEventTableViewController
+            vc.eventDayFromSegue = dayFromSegue
+            vc.eventMonthFromSegue = monthFromSegue
+            vc.eventYearFromSegue = yearFromSegue
         }
     }
     @IBAction func unwindToVC2(segue:UIStoryboardSegue) { }

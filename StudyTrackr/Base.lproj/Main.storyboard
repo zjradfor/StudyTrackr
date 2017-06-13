@@ -1053,7 +1053,7 @@
                                 <rect key="frame" x="314" y="17" width="45" height="30"/>
                                 <state key="normal" title="Delete"/>
                                 <connections>
-                                    <segue destination="fiF-Ud-qJs" kind="show" id="1nV-kP-u6G"/>
+                                    <segue destination="fiF-Ud-qJs" kind="show" identifier="deleteEvent" id="1nV-kP-u6G"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6A-7i-8fH">
