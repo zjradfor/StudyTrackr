@@ -11,6 +11,7 @@ import UIKit
 var GlobalBackCol = ""
 var GlobalCoins = 5000
 var GlobalFonts = 0
+var GlobalAvatars = 0
 class RewardsViewController: UIViewController {
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
