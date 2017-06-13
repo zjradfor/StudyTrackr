@@ -12,8 +12,10 @@ class DeleteEventTableViewController: UITableViewController {
     var eventDayFromSegue = 0
     var eventMonthFromSegue = 0
     var eventYearFromSegue = 0
+    var cellCounter = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        cellCounter = 0
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -87,9 +89,11 @@ class DeleteEventTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = UITableViewCell()
-        
-        
+        cell.textLabel.text =
+            
+        cellCounter += 1
         return cell
     }
     
