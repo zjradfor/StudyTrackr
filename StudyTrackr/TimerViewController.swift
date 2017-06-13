@@ -120,6 +120,7 @@ import UserNotifications
         @IBAction func startButtonTapped(_ sender: UIButton) {
             if isTimerRunning == false{
                 runTimer()
+                breakOrStudy.text = "Get studying!"
                 self.startButton.isEnabled = false
                 timerLabel.text = timeString(time:TimeInterval(seconds))
             }
@@ -144,6 +145,8 @@ import UserNotifications
 //Done Button
         @IBAction func doneButtonTapped(_ sender: UIButton) {
             timer.invalidate()
+            breakTimer.invalidate()
+            breakOrStudy.text = "Enter your study time"
             seconds = 0
             timerLabel.text = String(seconds)
             isTimerRunning = false
@@ -175,20 +178,20 @@ import UserNotifications
                 seconds -= 1
                 timerLabel.text = timeString(time: TimeInterval(seconds))
                 //Determines when to start the break timer and pause the study timer
-                if whenIsBreak == seconds{
-                    self.pauseButton.isEnabled = false
-                    self.doneButton.isEnabled = false
-                    timer.invalidate()
-                    runbreakTimer()
-                    breakTimerNotification()
-                    timerLabel.text = timeString(time:TimeInterval(breakTime))
-                    updatebreakTimer()
-                    breakOrStudy.text = "Break Time!"
-                }else{
-                    breakTimer.invalidate()
-                    self.pauseButton.isEnabled = true
-                    self.doneButton.isEnabled = true
-                    breakOrStudy.text = "Get Studying!"
+                if breakTime > 0{
+                    if whenIsBreak == seconds{
+                        self.pauseButton.isEnabled = false
+                        timer.invalidate()
+                        runbreakTimer()
+                        breakTimerNotification()
+                        timerLabel.text = timeString(time:TimeInterval(breakTime))
+                        updatebreakTimer()
+                        breakOrStudy.text = "Break Time!"
+                    }else{
+                        breakTimer.invalidate()
+                        self.pauseButton.isEnabled = true
+                        breakOrStudy.text = "Get Studying!"
+                    }
                 }
             }
         }
@@ -252,9 +255,8 @@ import UserNotifications
         
     }
         
- 
         
-    
+
         @IBOutlet weak var pauseButton: UIButton!
 
         @IBOutlet weak var startButton: UIButton!
