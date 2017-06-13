@@ -32,20 +32,44 @@ import UserNotifications
         }
 
         @IBOutlet weak var breakOrStudy: UILabel!
+        
+        
+        
+//PickerView Menu
         @IBOutlet weak var subjectPicker: UIPickerView!
         
-        var pickTheSubject = ["Math", "Language Arts", "Science"]
+        var pickTheSubject: [Subject] = []
         
+        func pickerView(_ subjectPicker: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
+            return pickTheSubject[row].name 
+        }
         
+        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+            return pickTheSubject.count
+        }
+
         
+        func numberOfComponents(in subjectPicker: UIPickerView) -> Int{
+            return 1
+        }
         
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+
+        func getData(){
+            do {
+                pickTheSubject = try context.fetch(Subject.fetchRequest())
+            }
+            catch{
+                print ("Fetching Failed")
+            }
+        }
+
     
         
         
 
         @IBOutlet weak var TimerValue: UITextField!
-        
-      
         
         @IBAction func breakTime10(_ sender: UIButton) {
             //seconds = seconds + (1*60)
@@ -219,17 +243,7 @@ import UserNotifications
 
         @IBOutlet weak var doneButton: UIButton!
         
-        func numberOfComponents(in subjectPicker: UIPickerView) -> Int{
-            return 1
-        }
         
-        func pickerView(_ subjectPicker: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
-            return pickTheSubject[row]
-        }
-
-        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-            return pickTheSubject.count
-        }
         
     override func viewDidLoad() {
         super.viewDidLoad()
