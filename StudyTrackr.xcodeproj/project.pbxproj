@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		07EAB5081EE5990A008E02DD /* MarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EAB5071EE5990A008E02DD /* MarksViewController.swift */; };
 		67F8F1591EDF09AC009B3F8A /* HelpButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F8F1581EDF09AC009B3F8A /* HelpButtonViewController.swift */; };
 		731E46C61EDC66F8001A12EA /* BackgroundColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731E46C51EDC66F8001A12EA /* BackgroundColour.swift */; };
+
 		7350C8D41EC1FE6D0054200B /* AvatarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */; };
 		7350C8D51EC1FE6D0054200B /* AvatarsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */; };
 		7350C8D91EC1FECE0054200B /* FontsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C8D71EC1FECE0054200B /* FontsViewController.swift */; };
@@ -23,7 +25,9 @@
 		73D108B81EC0BB4A00F2765F /* DailyGiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D108B61EC0BB4A00F2765F /* DailyGiftViewController.xib */; };
 		90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */; };
 		C57F79CD1ECC8CD400E69B2A /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57F79CC1ECC8CD400E69B2A /* EventTableViewController.swift */; };
+		C596BB321ECDDEC000D1018F /* studyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */; };
 		C5EE25C11ECB3DAF003A6904 /* StudyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */; };
+
 		DE01F72A1EE5ACA700E5BA8C /* studyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */; };
 		DE05881F1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE05881B1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld */; };
 		DE0588221EDC891800D30E6F /* AddSubjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0588201EDC891800D30E6F /* AddSubjectVC.swift */; };
@@ -43,15 +47,18 @@
 		DEA9CE871EEB045300D37250 /* SubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9CE861EEB045300D37250 /* SubjectTableViewCell.swift */; };
 		DEA9CE891EEB04D900D37250 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9CE881EEB04D900D37250 /* Event.swift */; };
 		DEA9CE8B1EEB06F400D37250 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9CE8A1EEB06F400D37250 /* EventsViewController.swift */; };
+
 		DEC18D501EB2375B00F9935C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D4E1EB2375B00F9935C /* Main.storyboard */; };
 		DEC18D521EB2375B00F9935C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D511EB2375B00F9935C /* Assets.xcassets */; };
 		DEC18D551EB2375B00F9935C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+
 		07EAB5071EE5990A008E02DD /* MarksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarksViewController.swift; sourceTree = "<group>"; };
 		67F8F1581EDF09AC009B3F8A /* HelpButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpButtonViewController.swift; sourceTree = "<group>"; };
 		731E46C51EDC66F8001A12EA /* BackgroundColour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColour.swift; sourceTree = "<group>"; };
+
 		7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarsViewController.swift; sourceTree = "<group>"; };
 		7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarsViewController.xib; sourceTree = "<group>"; };
 		7350C8D71EC1FECE0054200B /* FontsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontsViewController.swift; path = ../FontsViewController.swift; sourceTree = "<group>"; };
@@ -63,10 +70,11 @@
 		73D108AD1EBB750E00F2765F /* RewardsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RewardsViewController.xib; sourceTree = "<group>"; };
 		73D108B51EC0BB4A00F2765F /* DailyGiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyGiftViewController.swift; sourceTree = "<group>"; };
 		73D108B61EC0BB4A00F2765F /* DailyGiftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyGiftViewController.xib; sourceTree = "<group>"; };
-		90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; tabWidth = 5; };
 		C57F79CC1ECC8CD400E69B2A /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = studyEventTableViewCell.swift; path = ../studyEventTableViewCell.swift; sourceTree = "<group>"; };
 		C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyEvent.swift; sourceTree = "<group>"; };
+
 		DE05881C1EDC88BD00D30E6F /* StudyTrackr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudyTrackr.xcdatamodel; sourceTree = "<group>"; };
 		DE0588201EDC891800D30E6F /* AddSubjectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSubjectVC.swift; sourceTree = "<group>"; };
 		DE0588211EDC891800D30E6F /* MarkbookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkbookViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +93,7 @@
 		DEA9CE861EEB045300D37250 /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubjectTableViewCell.swift; path = ../SubjectTableViewCell.swift; sourceTree = "<group>"; };
 		DEA9CE881EEB04D900D37250 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Event.swift; path = ../Event.swift; sourceTree = "<group>"; };
 		DEA9CE8A1EEB06F400D37250 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+
 		DEC18D451EB2375B00F9935C /* StudyTrackr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyTrackr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC18D481EB2375B00F9935C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC18D4C1EB2375B00F9935C /* MarkBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkBook.swift; sourceTree = "<group>"; };
@@ -131,18 +140,18 @@
 				C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */,
 				C57F79CC1ECC8CD400E69B2A /* EventTableViewController.swift */,
 				C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */,
-				67F8F1581EDF09AC009B3F8A /* HelpButtonViewController.swift */,
 			);
 			name = Timer;
 			sourceTree = "<group>";
 		};
-		DE0588241EDC89FD00D30E6F /* Markbook */ = {
+		DE7A4A221EEED97000C5AF52 /* Markbook */ = {
 			isa = PBXGroup;
 			children = (
-				DE05881B1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld */,
-				DE0588201EDC891800D30E6F /* AddSubjectVC.swift */,
-				DE0588211EDC891800D30E6F /* MarkbookViewController.swift */,
-				07EAB5071EE5990A008E02DD /* MarksViewController.swift */,
+				DEC18D4C1EB2375B00F9935C /* MarkBook.swift */,
+				DE7A4A191EEED87700C5AF52 /* StudyTrackr.xcdatamodeld */,
+				DE7A4A1C1EEED96100C5AF52 /* AddSubjectVC.swift */,
+				DE7A4A1D1EEED96100C5AF52 /* MarkbookViewController.swift */,
+				DE7A4A1E1EEED96100C5AF52 /* MarksViewController.swift */,
 			);
 			name = Markbook;
 			sourceTree = "<group>";
@@ -167,14 +176,13 @@
 			isa = PBXGroup;
 			children = (
 				F11ECEB81EC9EE3A00ECBBB1 /* Calendar */,
-				DEC18D4E1EB2375B00F9935C /* Main.storyboard */,
 				7350C8D61EC1FEA60054200B /* Rewards Code Files */,
 				DEC18D481EB2375B00F9935C /* AppDelegate.swift */,
 				C592F64A1EC9EC5E004961AD /* Timer */,
-				DEC18D4C1EB2375B00F9935C /* MarkBook.swift */,
+				DE7A4A221EEED97000C5AF52 /* Markbook */,
+				DEC18D4E1EB2375B00F9935C /* Main.storyboard */,
 				DEC18D511EB2375B00F9935C /* Assets.xcassets */,
 				DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */,
-				DE0588241EDC89FD00D30E6F /* Markbook */,
 				DEC18D561EB2375B00F9935C /* Info.plist */,
 			);
 			path = StudyTrackr;
@@ -183,11 +191,13 @@
 		F117E0BA1ED873A70008D2BE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+
 				DEA9CE861EEB045300D37250 /* SubjectTableViewCell.swift */,
 				DEA9CE651EEB018600D37250 /* CalendarCell.swift */,
 				DEA9CE681EEB018600D37250 /* colourCell.swift */,
 				DEA9CE701EEB018600D37250 /* LocationTableViewCell.swift */,
 				DEA9CE721EEB018600D37250 /* NotesTableViewCell.swift */,
+
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -288,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				DEA9CE8B1EEB06F400D37250 /* EventsViewController.swift in Sources */,
 				DEA9CE891EEB04D900D37250 /* Event.swift in Sources */,
 				DEA9CE871EEB045300D37250 /* SubjectTableViewCell.swift in Sources */,
@@ -308,17 +319,17 @@
 				90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */,
 				DE05881F1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld in Sources */,
 				DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */,
+
 				7350C8D91EC1FECE0054200B /* FontsViewController.swift in Sources */,
 				739C48331EC20D7E00BFCC21 /* Rewards.swift in Sources */,
-				DE0588221EDC891800D30E6F /* AddSubjectVC.swift in Sources */,
 				7350C8D41EC1FE6D0054200B /* AvatarsViewController.swift in Sources */,
+
 				07EAB5081EE5990A008E02DD /* MarksViewController.swift in Sources */,
+
 				73D108AE1EBB750E00F2765F /* RewardsViewController.swift in Sources */,
 				731E46C61EDC66F8001A12EA /* BackgroundColour.swift in Sources */,
 				7350C8DF1EC1FF1A0054200B /* BackgroundsViewController.swift in Sources */,
-				DE0588231EDC891800D30E6F /* MarkbookViewController.swift in Sources */,
 				73D108B71EC0BB4A00F2765F /* DailyGiftViewController.swift in Sources */,
-				67F8F1591EDF09AC009B3F8A /* HelpButtonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,13 +502,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DE05881B1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld */ = {
+		DE7A4A191EEED87700C5AF52 /* StudyTrackr.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DE05881C1EDC88BD00D30E6F /* StudyTrackr.xcdatamodel */,
+				DE7A4A1A1EEED87700C5AF52 /* StudyTrackr.xcdatamodel */,
 			);
-			currentVersion = DE05881C1EDC88BD00D30E6F /* StudyTrackr.xcdatamodel */;
-			path = StudyTrackr.xcdatamodeld;
+			currentVersion = DE7A4A1A1EEED87700C5AF52 /* StudyTrackr.xcdatamodel */;
+			name = StudyTrackr.xcdatamodeld;
+			path = ../../../Downloads/StudyTrackr.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
