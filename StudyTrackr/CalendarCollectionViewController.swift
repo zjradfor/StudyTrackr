@@ -48,6 +48,8 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         //Storing core data
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext //Key that allows access to coreData
+        
+        //Requesting data
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
         
         request.returnsObjectsAsFaults = false
@@ -66,6 +68,8 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         } catch {
            //Proccess Error
         }
+        
+        
         let event = NSEntityDescription.insertNewObject(forEntityName: "Events", into: context)
         
         //event.setValue("math", forKey: "subject")

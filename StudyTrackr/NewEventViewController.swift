@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDelegate, SubjectCellDelegate, NotesCellDelegate {
     
@@ -28,6 +29,92 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
     override func viewDidLoad() {
         print(eventYearFromSegue)
         super.viewDidLoad()
+        
+        //Storing core data variables
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext //Key that allows access to coreData
+        
+        
+        //Requesting data
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
+        request.returnsObjectsAsFaults = false //Translates returned objects into a string
+        
+        var add = 0
+        var addMonth = 0
+        var i = 0
+        var j = 0
+        if eventYearFromSegue == calendar.component(.year, from: date) + 1 {
+            j = 1
+        }
+        
+        if leapYear == true {
+            if eventYearFromSegue == calendar.component(.year, from: date) {
+                add = 1
+            } else if leapYear2 == true {
+                if eventYearFromSegue == calendar.component(.year, from: date) + 1 {
+                    add = 1
+                }
+            }
+        }
+        
+        if eventMonthFromSegue == 2 {
+            addMonth = 31
+        } else if eventMonthFromSegue == 3 {
+            addMonth = 59 + add
+        } else if eventMonthFromSegue == 4 {
+            addMonth = 90 + add
+        } else if eventMonthFromSegue == 5 {
+            addMonth = 120 + add
+        } else if eventMonthFromSegue == 6 {
+            addMonth = 151 + add
+        } else if eventMonthFromSegue == 7 {
+            addMonth = 181 + add
+        } else if eventMonthFromSegue == 8 {
+            addMonth = 212 + add
+        } else if eventMonthFromSegue == 9 {
+            addMonth = 243 + add
+        } else if eventMonthFromSegue == 10 {
+            addMonth = 273 + add
+        } else if eventMonthFromSegue == 11 {
+            addMonth = 304 + add
+        } else if eventMonthFromSegue == 12 {
+            addMonth = 334 + add
+        } else {
+            addMonth = 0
+        }
+        
+        i = eventDayFromSegue + addMonth
+        
+        
+        do {
+            let results = try context.fetch(request)
+            
+            if results.count > 0 {
+                for result in results as! [NSManagedObject] {
+                    //RETRIEVING SUBJECT
+                    if  DateInfoArr[j][i].events[0].subject == result.value(forKey: "subject") as! String {
+                    }
+                }
+            }
+        } catch {
+            //Proccess Error
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         if eventFromSegue == 0{
             currentEventTitle.text = "Test"
         }
@@ -139,6 +226,10 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         } else {
             addMonth = 0
         }
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext //Key that allows access to coreData
+        let event = NSEntityDescription.insertNewObject(forEntityName: "Events", into: context)
+        event.setValue(eventSubject, forKey: "subject")
         
         i = eventDayFromSegue + addMonth
         
@@ -146,7 +237,8 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         DateInfoArr[j][i].events[0].type = currentEventTitle.text!
         DateInfoArr[j][i].events[0].colour = eventColour
         //Storing subject
-        DateInfoArr[j][i].events[0].subject = eventSubject
+        
+       // DateInfoArr[j][i].events[0].subject = eventSubject
         //Storing location
         DateInfoArr[j][i].events[0].location = eventLocation
         //Storing notes
