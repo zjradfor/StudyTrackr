@@ -927,7 +927,7 @@
                                 <rect key="frame" x="0.0" y="321" width="375" height="338"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="338" id="nwr-Jy-sfX"/>
+                                    <constraint firstAttribute="height" constant="338" id="eo5-dV-Mjs"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="EventsCell" textLabel="PYf-7U-bvG" style="IBUITableViewCellStyleDefault" id="Whx-v2-2Ip">
@@ -1023,7 +1023,7 @@
                                 </connections>
                             </tableView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Events:" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YY-kD-Iqp">
-                                <rect key="frame" x="0.0" y="84" width="375" height="242"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="230"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1048,8 +1048,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZf-IU-VtR">
                                 <rect key="frame" x="16" y="63" width="45" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="ZQb-x6-NCa"/>
-                                    <constraint firstAttribute="width" constant="45" id="ouP-dt-CsZ"/>
+                                    <constraint firstAttribute="width" constant="45" id="5Wt-Wn-r2l"/>
+                                    <constraint firstAttribute="height" constant="25" id="xfk-SL-0Qu"/>
                                 </constraints>
                                 <state key="normal" title="Back"/>
                                 <connections>
@@ -1066,23 +1066,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YZf-IU-VtR" firstAttribute="baseline" secondItem="bSy-yj-TwC" secondAttribute="firstBaseline" id="7L3-eX-Rlh"/>
-                            <constraint firstItem="bSy-yj-TwC" firstAttribute="trailing" secondItem="a4j-HA-lIm" secondAttribute="trailingMargin" id="HHL-cE-9ou"/>
-                            <constraint firstItem="YZf-IU-VtR" firstAttribute="leading" secondItem="a4j-HA-lIm" secondAttribute="leadingMargin" id="JML-b9-Tsh"/>
-                            <constraint firstItem="8YY-kD-Iqp" firstAttribute="top" secondItem="rfb-nc-K5H" secondAttribute="bottom" constant="-4" id="Jmp-GE-LqU"/>
-                            <constraint firstItem="8YY-kD-Iqp" firstAttribute="leading" secondItem="gHA-DH-AtV" secondAttribute="leading" id="TmE-N5-lzW"/>
-                            <constraint firstItem="YZf-IU-VtR" firstAttribute="centerY" secondItem="rfb-nc-K5H" secondAttribute="centerY" id="Tr4-0A-amX"/>
-                            <constraint firstItem="8YY-kD-Iqp" firstAttribute="trailing" secondItem="gHA-DH-AtV" secondAttribute="trailing" id="Vcm-bX-Wik"/>
-                            <constraint firstItem="8YY-kD-Iqp" firstAttribute="bottom" secondItem="W6A-7i-8fH" secondAttribute="bottom" constant="-29" id="Wrv-07-2KD"/>
-                            <constraint firstItem="rfb-nc-K5H" firstAttribute="top" secondItem="Nrt-oF-L87" secondAttribute="bottom" id="XYF-Ht-Wmg"/>
-                            <constraint firstItem="W6A-7i-8fH" firstAttribute="centerX" secondItem="rfb-nc-K5H" secondAttribute="centerX" id="ZRg-CA-TWa"/>
-                            <constraint firstAttribute="trailing" secondItem="gHA-DH-AtV" secondAttribute="trailing" id="eMb-EZ-eEq"/>
+                            <constraint firstItem="rfb-nc-K5H" firstAttribute="centerX" secondItem="a4j-HA-lIm" secondAttribute="centerX" id="0T4-wd-6V9"/>
+                            <constraint firstItem="8YY-kD-Iqp" firstAttribute="top" secondItem="YZf-IU-VtR" secondAttribute="bottom" constant="8" symbolic="YES" id="31c-hm-Jbd"/>
+                            <constraint firstItem="8YY-kD-Iqp" firstAttribute="leading" secondItem="a4j-HA-lIm" secondAttribute="leading" id="9yB-YJ-CjH"/>
+                            <constraint firstItem="gHA-DH-AtV" firstAttribute="centerX" secondItem="W6A-7i-8fH" secondAttribute="centerX" id="BE1-6e-xBq"/>
+                            <constraint firstAttribute="trailing" secondItem="8YY-kD-Iqp" secondAttribute="trailing" id="Dju-d5-bdR"/>
+                            <constraint firstItem="8YY-kD-Iqp" firstAttribute="trailing" secondItem="gHA-DH-AtV" secondAttribute="trailing" id="HY4-9n-1ca"/>
+                            <constraint firstItem="LhT-Ys-Nol" firstAttribute="top" secondItem="gHA-DH-AtV" secondAttribute="bottom" constant="8" symbolic="YES" id="IWV-S0-2h3"/>
+                            <constraint firstItem="rfb-nc-K5H" firstAttribute="top" secondItem="Nrt-oF-L87" secondAttribute="bottom" id="IfV-Ds-RqU"/>
+                            <constraint firstItem="gHA-DH-AtV" firstAttribute="leading" secondItem="a4j-HA-lIm" secondAttribute="leading" id="QE6-pC-3x5"/>
+                            <constraint firstItem="bSy-yj-TwC" firstAttribute="leading" secondItem="rfb-nc-K5H" secondAttribute="trailing" constant="106" id="QT7-bH-qac"/>
+                            <constraint firstItem="rfb-nc-K5H" firstAttribute="leading" secondItem="YZf-IU-VtR" secondAttribute="trailing" constant="107" id="T21-Td-LO1"/>
+                            <constraint firstItem="8YY-kD-Iqp" firstAttribute="leading" secondItem="gHA-DH-AtV" secondAttribute="leading" id="UA7-IR-iK1"/>
+                            <constraint firstItem="W6A-7i-8fH" firstAttribute="top" secondItem="8YY-kD-Iqp" secondAttribute="bottom" constant="8" symbolic="YES" id="b4q-Xq-9Zi"/>
                             <constraint firstItem="LhT-Ys-Nol" firstAttribute="top" secondItem="W6A-7i-8fH" secondAttribute="bottom" constant="312" id="hEt-sJ-WOy"/>
-                            <constraint firstItem="gHA-DH-AtV" firstAttribute="leading" secondItem="a4j-HA-lIm" secondAttribute="leading" id="jM1-8a-kxH"/>
-                            <constraint firstItem="rfb-nc-K5H" firstAttribute="leading" secondItem="a4j-HA-lIm" secondAttribute="leadingMargin" constant="152" id="lSP-FS-NHP"/>
-                            <constraint firstItem="LhT-Ys-Nol" firstAttribute="top" secondItem="gHA-DH-AtV" secondAttribute="bottom" constant="8" symbolic="YES" id="mAs-Om-FVI"/>
-                            <constraint firstItem="bSy-yj-TwC" firstAttribute="centerY" secondItem="rfb-nc-K5H" secondAttribute="centerY" id="qQD-E5-OkW"/>
-                            <constraint firstItem="YZf-IU-VtR" firstAttribute="firstBaseline" secondItem="bSy-yj-TwC" secondAttribute="baseline" id="zkD-cE-tpv"/>
+                            <constraint firstItem="YZf-IU-VtR" firstAttribute="top" secondItem="Nrt-oF-L87" secondAttribute="bottom" constant="-1" id="ifH-eT-Ytv"/>
+                            <constraint firstItem="bSy-yj-TwC" firstAttribute="top" secondItem="Nrt-oF-L87" secondAttribute="bottom" constant="-3" id="tt6-n5-nab"/>
+                            <constraint firstItem="gHA-DH-AtV" firstAttribute="centerX" secondItem="rfb-nc-K5H" secondAttribute="centerX" id="zdT-Iw-5gB"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1647,7 +1647,7 @@
             </objects>
             <point key="canvasLocation" x="1189.5999999999999" y="-1105.0974512743628"/>
         </scene>
-        <!--Delete Event Table View Controller-->
+        <!--Swipe Events To Delete-->
         <scene sceneID="fMn-AI-22H">
             <objects>
                 <tableViewController id="fiF-Ud-qJs" customClass="DeleteEventTableViewController" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
@@ -1670,7 +1670,7 @@
                             <outlet property="delegate" destination="fiF-Ud-qJs" id="hgo-IJ-oTE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="oBX-Dr-lGf">
+                    <navigationItem key="navigationItem" title="Swipe Events To Delete" id="oBX-Dr-lGf">
                         <barButtonItem key="backBarButtonItem" title="Back" systemItem="done" id="0eL-98-7ts"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="ncg-68-W52">
                             <connections>
