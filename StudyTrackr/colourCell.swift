@@ -1,20 +1,16 @@
 //
-//  StudyEventTableViewCell.swift
+//  colourCell.swift
 //  StudyTrackr
 //
-//  Created by Emily Klosa on 2017-05-16.
+//  Created by Tristan Devos on 2017-05-26.
 //  Copyright © 2017 John Slomka. All rights reserved.
 //
 
 import UIKit
 
-class StudyEventTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var timeStudied: UILabel!
-    
-    
-    
-    
+class colourCell: UITableViewCell{
+    //var delegate: NewEventViewDelegate?
+    @IBOutlet weak var colourButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
