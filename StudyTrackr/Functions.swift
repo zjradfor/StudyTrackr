@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 func monthTranslator(intMonth: Int) -> String {
     
     if intMonth == 1 {
@@ -71,6 +70,7 @@ func getNumberOfDaysInMonth(intMonth: Int, leapYear: Bool) -> Int {
         return 31
     }
 }
+
 
 
 

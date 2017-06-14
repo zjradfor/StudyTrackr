@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDelegate, SubjectCellDelegate, NotesCellDelegate {
     
@@ -27,6 +28,24 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Storing core data variables
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext //Key that allows access to coreData
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         if eventFromSegue == 0{
             currentEventTitle.text = "Test"
         }
@@ -142,6 +161,18 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         } else {
             addMonth = 0
         }
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext //Key that allows access to coreData
+        let event = NSEntityDescription.insertNewObject(forEntityName: "Events", into: context)
+        event.setValue(eventSubject, forKey: "subject")
+        do {
+            try context.save()
+            print("It should have saved")
+        } catch { //If do doesn't work then catch this...
+            //PROCESS ERROR
+            print("Failed to save")
+        }
+       
         
         i = eventDayFromSegue + addMonth
         
@@ -149,7 +180,8 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         DateInfoArr[j][i].events[0].type = currentEventTitle.text!
         DateInfoArr[j][i].events[0].colour = eventColour
         //Storing subject
-        DateInfoArr[j][i].events[0].subject = eventSubject
+        
+        //
         //Storing location
         DateInfoArr[j][i].events[0].location = eventLocation
         //Storing notes
@@ -160,6 +192,25 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         DateInfoArr[j][i].eventNumber += 1
         
         DateInfoArr[j][i].atLeastOneEvent = true
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
+        request.returnsObjectsAsFaults = false //Translates returned objects into a string
+        
+        do {
+            let results = try context.fetch(request)
+            
+            if results.count > 0 {
+                for result in results as! [NSManagedObject] {
+                    //RETRIEVING SUBJECT
+                    if let subject = result.value(forKey: "subject") as? String {
+                        DateInfoArr[j][i].events[0].subject = subject
+                    }
+                    
+                }
+            }
+        } catch {
+            //Proccess Error
+        }
     }
 
 }
