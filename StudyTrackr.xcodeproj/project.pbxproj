@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
 		07EAB5081EE5990A008E02DD /* MarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EAB5071EE5990A008E02DD /* MarksViewController.swift */; };
-
 		67F8F1591EDF09AC009B3F8A /* HelpButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F8F1581EDF09AC009B3F8A /* HelpButtonViewController.swift */; };
-
 		7350C8D41EC1FE6D0054200B /* AvatarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */; };
 		7350C8D51EC1FE6D0054200B /* AvatarsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */; };
 		7350C8D91EC1FECE0054200B /* FontsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C8D71EC1FECE0054200B /* FontsViewController.swift */; };
@@ -49,11 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-
 		07EAB5071EE5990A008E02DD /* MarksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarksViewController.swift; sourceTree = "<group>"; };
-
 		67F8F1581EDF09AC009B3F8A /* HelpButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpButtonViewController.swift; sourceTree = "<group>"; };
-
 		7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarsViewController.swift; sourceTree = "<group>"; };
 		7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarsViewController.xib; sourceTree = "<group>"; };
 		7350C8D71EC1FECE0054200B /* FontsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontsViewController.swift; path = ../FontsViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +72,6 @@
 		DEAF22451EE05B1C008F79F6 /* NotesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
 		DEC18D451EB2375B00F9935C /* StudyTrackr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyTrackr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC18D481EB2375B00F9935C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DEC18D4C1EB2375B00F9935C /* MarkBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkBook.swift; sourceTree = "<group>"; };
 		DEC18D4F1EB2375B00F9935C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DEC18D511EB2375B00F9935C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEC18D541EB2375B00F9935C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -117,7 +110,6 @@
 				73D108B61EC0BB4A00F2765F /* DailyGiftViewController.xib */,
 				7350C8DD1EC1FF1A0054200B /* BackgroundsViewController.swift */,
 				7350C8DE1EC1FF1A0054200B /* BackgroundsViewController.xib */,
-				731E46C51EDC66F8001A12EA /* BackgroundColour.swift */,
 				739C48321EC20D7E00BFCC21 /* Rewards.swift */,
 			);
 			name = "Rewards Code Files";
@@ -169,7 +161,6 @@
 				7350C8D61EC1FEA60054200B /* Rewards Code Files */,
 				DEC18D481EB2375B00F9935C /* AppDelegate.swift */,
 				C592F64A1EC9EC5E004961AD /* Timer */,
-				DEC18D4C1EB2375B00F9935C /* MarkBook.swift */,
 				DEC18D511EB2375B00F9935C /* Assets.xcassets */,
 				DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */,
 				DE0588241EDC89FD00D30E6F /* Markbook */,
@@ -305,13 +296,9 @@
 				7350C8D91EC1FECE0054200B /* FontsViewController.swift in Sources */,
 				739C48331EC20D7E00BFCC21 /* Rewards.swift in Sources */,
 				7350C8D41EC1FE6D0054200B /* AvatarsViewController.swift in Sources */,
-
 				07EAB5081EE5990A008E02DD /* MarksViewController.swift in Sources */,
-
 				F117E0B51ED86BB70008D2BE /* dpTableViewCell.swift in Sources */,
-
 				73D108AE1EBB750E00F2765F /* RewardsViewController.swift in Sources */,
-				731E46C61EDC66F8001A12EA /* BackgroundColour.swift in Sources */,
 				7350C8DF1EC1FF1A0054200B /* BackgroundsViewController.swift in Sources */,
 				DE0588231EDC891800D30E6F /* MarkbookViewController.swift in Sources */,
 				73D108B71EC0BB4A00F2765F /* DailyGiftViewController.swift in Sources */,
