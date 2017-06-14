@@ -20,19 +20,16 @@ class AddSubjectVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func ASButtonTapped(_ sender: UIButton) {
+    /*@IBAction func ASButtonTapped(_ sender: UIButton) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
         let spot = Subject(context: context)
-        spot.name = AddSubjectField.text!
+           spot.name = AddSubjectField.text!
         // save to coredata
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         let _ = navigationController?.popViewController(animated: true)    }
 
- 
-        
-    }
+    }*/
 
    
   // override func didReceiveMemoryWarning() {
@@ -51,4 +48,4 @@ class AddSubjectVC: UIViewController {
     //}
     
 
-//}
+}

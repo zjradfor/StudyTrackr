@@ -4,7 +4,7 @@
 //
 //  Created by Alex Berry on 2017-05-24.
 //  Copyright © 2017 John Slomka. All rights reserved.
-//
+// new
 
 import UIKit
 
@@ -29,6 +29,49 @@ class MarkbookViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewWillAppear(_ animated: Bool) {
         getData()
         tableView.reloadData()
+    }
+    
+    @IBAction func addSubject(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "New Subject",
+                                      message: "Add a new subject",
+                                      preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Save",
+                                       style: .default) {
+                                        
+                                        [unowned self] action in
+                                        
+                                        guard let textField = alert.textFields?.first,
+                                            let subjectToSave = textField.text else {
+                                                return
+                                                
+                                        }
+                                        
+                                        self.save(name: subjectToSave)
+                                        self.tableView.reloadData()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel",
+                                         style: .default)
+        
+        alert.addTextField()
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
+    }
+    
+    func save(name: String){
+      
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let spot = Subject(context: context)
+        spot.name = name
+        spot.mark = 0
+        spot.assignments = 0
+        // save to coredata
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        getData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -70,9 +113,9 @@ class MarkbookViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         tableView.reloadData()
     }
-    var markToSegue = 0
+    
     var nameToSegue = ""
-
+    var markToSegue: Subject?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mark"{
@@ -83,9 +126,9 @@ class MarkbookViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        markToSegue = indexPath.row
         let spot = subjects[indexPath.row]
         nameToSegue = spot.name!
+        markToSegue = spot
         self.performSegue(withIdentifier: "mark", sender: self)
     }
 
