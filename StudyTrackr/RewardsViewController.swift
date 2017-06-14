@@ -17,8 +17,23 @@ class RewardsViewController: UIViewController {
     ///////////////////////////////////////////////////////////////////////////////////////////////
     @IBOutlet weak var myLabel: UILabel!
     
+    @IBOutlet weak var AvatarDisplay: UIImageView!
    
-    
+    func ChosenAvatar() {
+        let DisplayAvatar = GlobalAvatars
+        
+        switch DisplayAvatar {
+        case 0:
+            AvatarDisplay.image = #imageLiteral(resourceName: "Avatar0")
+        case 1:
+            AvatarDisplay.image = #imageLiteral(resourceName: "Avatar1")
+        case 2:
+            AvatarDisplay.image = #imageLiteral(resourceName: "Avatar2")
+        case 3:
+            AvatarDisplay.image = #imageLiteral(resourceName: "Avatar3")
+        default: break
+        }
+    }
     //let myVC = storyboard?.instantiateViewControllerWithIdentifier("SecondVC") as! SecondVC
     //myVC.stringPassed = myLabel.text!
     //navigationController?.pushViewController(myVC, animated: true)
