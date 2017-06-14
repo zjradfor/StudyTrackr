@@ -554,12 +554,17 @@ Roundhand" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="
                     </view>
                     <connections>
                         <outlet property="AmericanPurchaseLabel" destination="7LA-Po-4CA" id="Jv0-ZL-OL8"/>
+                        <outlet property="DefaultLabel" destination="toQ-UA-N0W" id="hnf-WC-7vP"/>
                         <outlet property="DefaultPurchaseLabel" destination="78U-Og-hgE" id="wcm-E7-sMy"/>
                         <outlet property="FontStyle" destination="oEe-4P-TTw" id="uW5-jb-vGX"/>
                         <outlet property="FontsView" destination="Wks-H2-3Go" id="lnf-q7-8OK"/>
                         <outlet property="MarkerFeltPurchaseLabel" destination="2PW-nW-SJ3" id="td3-II-a1U"/>
+                        <outlet property="MarkerLabel" destination="TUD-t3-ERB" id="zpf-2m-Uci"/>
+                        <outlet property="NoteLabel" destination="ylJ-Sx-vjr" id="izL-PO-Sl1"/>
                         <outlet property="NoteWorthyPurchaseLabel" destination="Cko-tI-MiB" id="w40-3l-E2o"/>
                         <outlet property="RoundhandPurchaseLabel" destination="spk-A2-Leg" id="tkC-hc-aIG"/>
+                        <outlet property="SnellLabel" destination="t4e-aE-xDI" id="tiX-ZU-F8r"/>
+                        <outlet property="TypeLabel" destination="ydJ-oq-9vV" id="Gz8-PB-ZUF"/>
                         <outlet property="secondLabel" destination="3oj-QB-gen" id="mXs-Qc-6C0"/>
                     </connections>
                 </viewController>
