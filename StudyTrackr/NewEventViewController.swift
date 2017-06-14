@@ -207,7 +207,7 @@ extension NewEventViewController: UITableViewDataSource{
     }
 
     //func tableView
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    @objc(tableView:heightForRowAtIndexPath:) func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let row = indexPath.row
         switch row {
         case 0: return 44
