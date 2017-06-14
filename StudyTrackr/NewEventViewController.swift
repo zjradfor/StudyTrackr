@@ -211,7 +211,7 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
         request.returnsObjectsAsFaults = false //Translates returned objects into a string
         
-        //Events retrieving
+        //Adding Event values to array
         do {
             let results = try context.fetch(request)
             
@@ -227,7 +227,20 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
             //Proccess Error
         }
         
-        
+        //Adding Day values to array
+        do {
+            let results = try context.fetch(request)
+            for result in results as! [NSManagedObjectContext] {
+                if let day = result.value(forKey: "dayOfMonth") as? Int {
+                    DateInfoArr[j][i].day.dayOfMonth = day
+                }
+                if let year = result.value(forKey: "year") as? Int {
+                    DateInfoArr[j][i].day.year = year
+                }
+            }
+        } catch {
+            //Process Error
+        }
         
         
         
