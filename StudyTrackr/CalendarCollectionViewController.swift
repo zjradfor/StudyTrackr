@@ -487,7 +487,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             cell.textLabel.font = UIFont.systemFont(ofSize: 20)
         }
         else{
-        cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight2 / 6) - (screenHeight / 12) + 74), width: (screenSize.width / 7) - 2, height: (screenHeight2 / 6) - 2)
+        cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (screenSize.height - screenHeight2 - 49) + ((y - 1) * (screenHeight2 / 6) - 2), width: (screenSize.width / 7) - 2, height: (screenHeight2 / 6) - 2)
         
         //TAGS
         cell.textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
