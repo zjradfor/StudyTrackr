@@ -5,6 +5,7 @@
     <entity name="Markbook2" representedClassName="Markbook2" syncable="YES" codeGenerationType="class"/>
     <entity name="RewardsThings" representedClassName="RewardsThings" syncable="YES" codeGenerationType="class"/>
     <entity name="Subject" representedClassName="Subject" syncable="YES" codeGenerationType="class">
+        <attribute name="assignments" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="mark" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
