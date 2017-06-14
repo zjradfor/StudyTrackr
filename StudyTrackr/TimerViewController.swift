@@ -236,7 +236,18 @@ import UserNotifications
         pauseButton.isEnabled = false
         self.subjectPicker.dataSource = self
         self.subjectPicker.delegate = self
-            }
+        print("starting now")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        print("setting up done")
+        let newTimerThings = NSEntityDescription.insertNewObject(forEntityName: "TimerThings", into: context)
+        print("created new timerthings")
+        newTimerThings.setValue("May 17, 2017", forKey: "date")
+        newTimerThings.setValue("Math", forKey: "subjectStudied")
+        newTimerThings.setValue("15", forKey: "studyTime")
+        print("set all values")
+
+        }
 
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
