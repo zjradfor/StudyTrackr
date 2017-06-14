@@ -96,16 +96,17 @@
 		7350C8D61EC1FEA60054200B /* Rewards Code Files */ = {
 			isa = PBXGroup;
 			children = (
+				73D108AC1EBB750E00F2765F /* RewardsViewController.swift */,
+				73D108AD1EBB750E00F2765F /* RewardsViewController.xib */,
 				7350C8D71EC1FECE0054200B /* FontsViewController.swift */,
 				7350C8D81EC1FECE0054200B /* FontsViewController.xib */,
 				7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */,
 				7350C8D31EC1FE6D0054200B /* AvatarsViewController.xib */,
 				73D108B51EC0BB4A00F2765F /* DailyGiftViewController.swift */,
 				73D108B61EC0BB4A00F2765F /* DailyGiftViewController.xib */,
-				73D108AC1EBB750E00F2765F /* RewardsViewController.swift */,
-				73D108AD1EBB750E00F2765F /* RewardsViewController.xib */,
 				7350C8DD1EC1FF1A0054200B /* BackgroundsViewController.swift */,
 				7350C8DE1EC1FF1A0054200B /* BackgroundsViewController.xib */,
+				731E46C51EDC66F8001A12EA /* BackgroundColour.swift */,
 				739C48321EC20D7E00BFCC21 /* Rewards.swift */,
 			);
 			name = "Rewards Code Files";
@@ -223,7 +224,7 @@
 				TargetAttributes = {
 					DEC18D441EB2375B00F9935C = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 48V3J7K575;
+						DevelopmentTeam = YNY7BM4MUV;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -293,6 +294,7 @@
 				7350C8D41EC1FE6D0054200B /* AvatarsViewController.swift in Sources */,
 				F117E0B51ED86BB70008D2BE /* dpTableViewCell.swift in Sources */,
 				73D108AE1EBB750E00F2765F /* RewardsViewController.swift in Sources */,
+				731E46C61EDC66F8001A12EA /* BackgroundColour.swift in Sources */,
 				7350C8DF1EC1FF1A0054200B /* BackgroundsViewController.swift in Sources */,
 				73D108B71EC0BB4A00F2765F /* DailyGiftViewController.swift in Sources */,
 			);
@@ -418,7 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 48V3J7K575;
+				DEVELOPMENT_TEAM = YNY7BM4MUV;
 				INFOPLIST_FILE = StudyTrackr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -433,7 +435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 48V3J7K575;
+				DEVELOPMENT_TEAM = YNY7BM4MUV;
 				INFOPLIST_FILE = StudyTrackr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
