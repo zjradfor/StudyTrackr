@@ -91,6 +91,14 @@ class FontsViewController: UIViewController {
             
         case 3:
             UILabel.appearance().font = UIFont(name: "Noteworthy-Bold", size: 16.0)
+            UITextView.appearance().font = UIFont(name: "Noteworthy-Bold", size: 16.0)
+            UITextField.appearance().font = UIFont(name: "Noteworthy-Bold", size: 16.0)
+            //  UITableView.appearance().font = UIFont(name: "Noteworthy-Bold", size: 16.0)
+            UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: "Noteworthy-Bold"], for: .normal)
+           // UITabBarItem.appearance().font = UIFont(name: "Noteworthy-Bold", size: 16.0)
+            //setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Noteworthy-Bold", size: 10)!], for: .normal)
+            //UITableViewCell.appearance().font = UIFont(name: "Noteworthy-Bold", size: 16.0)
+            //  .appearance().font = UIFont(name: "Noteworthy-Bold", size: 16.0)
            // UIButton.appearance().titleLabel?.font = UIFont(name: "Noteworthy-Bold", size: 16.0)
             DefaultPurchaseLabel.text = "Select"
             if (ownershipArray[0] == 1){
