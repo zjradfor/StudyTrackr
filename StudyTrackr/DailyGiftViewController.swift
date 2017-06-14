@@ -10,6 +10,13 @@ import UIKit
 
 class DailyGiftViewController: UIViewController {
    
+    @IBAction func DailyGiftTop(_ sender: Any) {
+    }
+    @IBAction func DailyGiftLeft(_ sender: Any) {
+    }
+    @IBAction func DailyGiftRight(_ sender: Any) {
+    }
+    
     @IBOutlet var GiftsView: UIView!
 
     func BackgroundCol() {

@@ -583,6 +583,10 @@
                                     <constraint firstAttribute="height" constant="120" id="hLc-ak-RAQ"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="gift-clipart-Present5"/>
+                                <connections>
+                                    <action selector="DailyGift2:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="XnU-LW-7bo"/>
+                                    <action selector="DailyGiftLeft:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="GHN-nS-BIf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWX-Qe-aCl" userLabel="Gift C">
                                 <rect key="frame" x="233" y="395" width="110" height="120"/>
@@ -591,6 +595,10 @@
                                     <constraint firstAttribute="height" constant="120" id="oKM-9F-sql"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="gift-clipart-Present5"/>
+                                <connections>
+                                    <action selector="DailyGift3:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="yBG-4q-Flr"/>
+                                    <action selector="DailyGiftRight:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="hyj-5x-Ptk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUl-yQ-Mdb" userLabel="Gift A">
                                 <rect key="frame" x="133" y="205" width="110" height="120"/>
@@ -599,6 +607,10 @@
                                     <constraint firstAttribute="height" constant="120" id="T01-Fi-WBI"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="ECAD edited images.009"/>
+                                <connections>
+                                    <action selector="DailyGift1:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="ukT-Y3-ezE"/>
+                                    <action selector="DailyGiftTop:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="us2-Ra-S2f"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Gift" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smg-zJ-znQ">
                                 <rect key="frame" x="16" y="47" width="343" height="42"/>
