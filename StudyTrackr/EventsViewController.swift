@@ -10,7 +10,7 @@ import UIKit
 
 class EventsViewController: UIViewController {
     
-    @IBOutlet weak var Header: UILabel!
+    @IBOutlet weak var NavTitle: UINavigationItem!
     @IBOutlet weak var showEventsField: UITextView!
     
     var eventTextCounter = 0 // for cylcing through event labels
@@ -24,8 +24,7 @@ class EventsViewController: UIViewController {
         super.viewDidLoad()
         
         //Getting current date
-        Header.text = "\(monthTranslator(intMonth: monthFromSegue)) \(dayFromSegue)"
-
+        NavTitle.title = "\(monthTranslator(intMonth: monthFromSegue)) \(dayFromSegue)"
         // Do any additional setup after loading the view.
     }
 
@@ -100,7 +99,8 @@ class EventsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "event"){
-            let vc = segue.destination as! NewEventViewController
+            let navVC = segue.destination as? UINavigationController
+            let vc = navVC?.viewControllers.first as! NewEventViewController
             vc.eventFromSegue = eventToSegue
             vc.eventDayFromSegue = dayFromSegue
             vc.eventMonthFromSegue = monthFromSegue

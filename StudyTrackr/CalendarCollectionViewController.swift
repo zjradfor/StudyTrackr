@@ -410,7 +410,8 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "day"){
-            let vc = segue.destination as! EventsViewController
+            let navVC = segue.destination as? UINavigationController
+            let vc = navVC?.viewControllers.first as! EventsViewController
             vc.monthFromSegue = month
             vc.dayFromSegue = dayToSegue
             vc.yearFromSegue = year
@@ -453,13 +454,13 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             cell.textLabel.font = UIFont.systemFont(ofSize: 20)
         }
         else{
-        cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight2 / 6) - (screenHeight / 12) + 74), width: (screenSize.width / 7) - 2, height: (screenHeight2 / 6) - 2)
+        cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (screenSize.height - screenHeight2 - 49) + ((y - 1) * (screenHeight2 / 6) - 2), width: (screenSize.width / 7) - 2, height: (screenHeight2 / 6) - 2)
         
         //TAGS
         cell.textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         cell.textLabel.textAlignment = .natural
         cell.backgroundColor = UIColor.white
-            
+        cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height/2)) as! CGRect
             var yearToSend: Bool
             if yearToShow == 0 {
                 yearToSend = leapYear
@@ -513,7 +514,11 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             
             if tag != 0 && tag <= numberOfDaysThisMonth {
                 cell.textLabel.textAlignment = .natural
-                cell.textLabel.text = "\(tag)"
+                if tag > 9 {
+                    cell.textLabel.text = "\(tag)"
+                } else {
+                    cell.textLabel.text = "\(tag) "
+                }
                 if DateInfoArr[j][indexOfDay].atLeastOneEvent == true{
                     cell.textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
                     cell.textLabel.numberOfLines += 1
@@ -526,6 +531,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                             cell.textLabel.text! += "\n"
                             r += 1
                         }
+                        
                         cell.textLabel.text! += "●"
                         let newLabel = NSMutableAttributedString(string: cell.textLabel.text!)
                         for var k in 0...i + r {
@@ -535,7 +541,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                             } else {
                                 z = k
                             }
-                            newLabel.addAttribute(NSForegroundColorAttributeName, value: DateInfoArr[j][indexOfDay].events[z].colour, range: NSRange(location:k+2,length:1))
+                            newLabel.addAttribute(NSForegroundColorAttributeName, value: DateInfoArr[j][indexOfDay].events[z].colour, range: NSRange(location:k+3,length:1))
                             k += 1
                         }
                         cell.textLabel.attributedText! = newLabel
