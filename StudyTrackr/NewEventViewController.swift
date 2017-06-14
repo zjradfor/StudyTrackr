@@ -10,9 +10,9 @@ import UIKit
 
 class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDelegate, SubjectCellDelegate, NotesCellDelegate {
     
+    @IBOutlet weak var TitleBar: UINavigationItem!
     @IBOutlet weak var colourView: UIView!
     @IBOutlet weak var neweventtableView: UITableView!
-    @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var currentEventTitle: UILabel!
     var eventFromSegue = 0
     var eventDayFromSegue = 0
@@ -43,7 +43,7 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
             currentEventTitle.text = "Other"
         }
         
-        eventTitle.text = "\(monthTranslator(intMonth: eventMonthFromSegue)) \(eventDayFromSegue)"
+        TitleBar.title = "\(monthTranslator(intMonth: eventMonthFromSegue)) \(eventDayFromSegue)"
         // Do any additional setup after loading the view.
         cellCounter = 0
         //colourButton.setTitle(eventColour, for: any)

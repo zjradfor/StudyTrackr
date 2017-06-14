@@ -302,7 +302,8 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "day"){
-            let vc = segue.destination as! EventsViewController
+            let navVC = segue.destination as? UINavigationController
+            let vc = navVC?.viewControllers.first as! EventsViewController
             vc.monthFromSegue = month
             vc.dayFromSegue = dayToSegue
             vc.yearFromSegue = year
