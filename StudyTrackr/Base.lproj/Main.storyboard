@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -171,6 +171,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="y5c-g0-XIK"/>
                     <connections>
+                        <outlet property="AvatarDisplay" destination="DUv-4p-qSE" id="4jC-QJ-L40"/>
                         <outlet property="RewardsView" destination="WVa-Nb-AaK" id="ioK-hb-ruc"/>
                         <outlet property="myLabel" destination="Nfz-99-82k" id="jXJ-4W-rHC"/>
                     </connections>
