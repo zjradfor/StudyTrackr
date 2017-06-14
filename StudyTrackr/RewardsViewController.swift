@@ -100,6 +100,7 @@ class RewardsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
  self.tabBarController?.tabBar.isHidden = false
         BackgroundCol()
+        ChosenAvatar()
         myLabel.text = "Coins: " + "\(GlobalCoins)"
     }
     
