@@ -10,8 +10,7 @@ import UIKit
 
 class FontsViewController: UIViewController {
     var FontNum = 1
-    var ownershipArray = [0, 0, 0, 0]
-   
+    var firstOpener = 0
     @IBOutlet var FontsView: UIView!
     
     @IBOutlet weak var DefaultLabel: UILabel!
@@ -66,6 +65,7 @@ class FontsViewController: UIViewController {
                 NoteWorthyPurchaseLabel.text = "Cost: 250"
                 MarkerFeltPurchaseLabel.text = "Cost: 250"
                 RoundhandPurchaseLabel.text = "Cost: 250"
+            firstOpener = 1
             
         case 2:
     
@@ -76,6 +76,7 @@ class FontsViewController: UIViewController {
                 NoteWorthyPurchaseLabel.text = "Cost: 200"
                 MarkerFeltPurchaseLabel.text = "Cost: 200"
                 RoundhandPurchaseLabel.text = "Cost: 200"
+            firstOpener = 1
             
         case 3:
             UILabel.appearance().font = UIFont(name: "Noteworthy-Bold", size: 16.0)
@@ -85,6 +86,7 @@ class FontsViewController: UIViewController {
                 NoteWorthyPurchaseLabel.text = "Current Font"
                 MarkerFeltPurchaseLabel.text = "Cost: 200"
                 RoundhandPurchaseLabel.text = "Cost: 200"
+            firstOpener = 1
         
         case 4:
             UILabel.appearance().font = UIFont(name: "MarkerFelt-Thin", size: 16.0)
@@ -94,6 +96,7 @@ class FontsViewController: UIViewController {
                 NoteWorthyPurchaseLabel.text = "Cost: 200"
                 MarkerFeltPurchaseLabel.text = "Current Font"
                 RoundhandPurchaseLabel.text = "Cost: 200"
+            firstOpener = 1
             
         case 5:
             UILabel.appearance().font = UIFont(name: "SnellRoundhand-Bold", size: 16.0)
@@ -103,6 +106,7 @@ class FontsViewController: UIViewController {
                 NoteWorthyPurchaseLabel.text = "Cost: 200"
                 MarkerFeltPurchaseLabel.text = "Cost: 200"
                 RoundhandPurchaseLabel.text = "Current Font"
+            firstOpener = 1
                 
         default:
             break
@@ -176,14 +180,34 @@ class FontsViewController: UIViewController {
             BackgroundCol()
             secondLabel.text = "Coins: " + "\(GlobalCoins)"
             ForceFont()
+            FontChanger()
             //FontStyle.font = UIFont(name: "ArialMT", size: 16.0)
             
-            DefaultPurchaseLabel.text = "Current Font"
-            AmericanPurchaseLabel.text = "Cost: 250"
-            NoteWorthyPurchaseLabel.text = "Cost: 250"
-            MarkerFeltPurchaseLabel.text = "Cost: 250"
-            RoundhandPurchaseLabel.text = "Cost: 250"
+            DefaultPurchaseLabel.font = UIFont(name: "ArialMT", size: 16.0)
+            AmericanPurchaseLabel.font = UIFont(name: "ArialMT", size: 16.0)
+            NoteWorthyPurchaseLabel.font = UIFont(name: "ArialMT", size: 16.0)
+            MarkerFeltPurchaseLabel.font = UIFont(name: "ArialMT", size: 16.0)
+            RoundhandPurchaseLabel.font = UIFont(name: "ArialMT", size: 16.0)
+            secondLabel.font = UIFont(name: "ArialMT", size: 16.0)
             
+            if (UILabel.appearance().font == UIFont(name: "AmericanTypewriter", size: 16.0)){
+                GlobalFonts = 2
+            }
+            if (UILabel.appearance().font == UIFont(name: "Noteworthy-Bold", size: 16.0)){
+                GlobalFonts = 3
+            }
+            if (UILabel.appearance().font == UIFont(name: "MarkerFelt-Thin", size: 16.0)){
+                GlobalFonts = 4
+            }
+            if (UILabel.appearance().font == UIFont(name: "SnellRoundhand-Bold", size: 16.0)){
+                GlobalFonts = 5
+            }
+            if (firstOpener == 0){
+                GlobalFonts = 1
+            }
+            
+            
+            FontChanger()
     }
 ////////////////////////////////////////////////////////////////////////////////
     
