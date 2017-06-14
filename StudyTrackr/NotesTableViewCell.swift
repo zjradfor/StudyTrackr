@@ -1,18 +1,25 @@
 //
-//  StudyEventTableViewCell.swift
+//  NotesTableViewCell.swift
 //  StudyTrackr
 //
-//  Created by Emily Klosa on 2017-05-16.
+//  Created by John Slomka on 2017-06-01.
 //  Copyright © 2017 John Slomka. All rights reserved.
 //
 
 import UIKit
 
-class StudyEventTableViewCell: UITableViewCell {
+protocol NotesCellDelegate {
+    func getCellNotes(notes: String)
+}
+
+class NotesTableViewCell: UITableViewCell {
+    @IBOutlet weak var notesTextField: UITextField!
     
-    @IBOutlet weak var timeStudied: UILabel!
+    var delegate: NotesCellDelegate?
     
-    
+    @IBAction func notesTextChange(_ sender: Any) {
+         delegate?.getCellNotes(notes: notesTextField.text!)
+    }
     
     
     override func awakeFromNib() {

@@ -7,24 +7,29 @@
 //
 
 import Foundation
+import UIKit
 
 class Event {
-    var description: String
     var type: String
     var subject: String
+    var location: String
+    var notes: String
     var dueDate: Day
     var isComplete: Bool
     var studyTime: Int
     var mark: Double
-    var colour: String
+    var colour: UIColor
+    var time: String
     init () {
-        description = "Void"
         type = "Void"
         subject = "Void"
+        location = "Void"
+        notes = "Void"
         dueDate = Day()
         isComplete = false
         studyTime = 0
         mark = 0.0
-        colour = "white"
+        colour = UIColor.white
+        time = "Void"
     }
 }

@@ -14,13 +14,13 @@ class CalendarCell: UICollectionViewCell {
     override init(frame: CGRect){
         
         //Text
-        textLabel = UILabel(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height/2))
+        textLabel = UILabel(frame: CGRect(x: 2, y: 0, width: frame.size.width, height: frame.size.height/2))
         
         super.init(frame: frame)
         //Text
-        textLabel = UILabel(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height/2))
+        textLabel = UILabel(frame: CGRect(x: 2, y: 0, width: frame.size.width, height: frame.size.height))
         textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
-        textLabel.textAlignment = .natural
+        textLabel.textAlignment = .center
         textLabel.textColor = UIColor.darkText
         contentView.addSubview(textLabel)
     }
