@@ -493,7 +493,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         cell.textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         cell.textLabel.textAlignment = .natural
         cell.backgroundColor = UIColor.white
-            
+        cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height/2)) as! CGRect
             var yearToSend: Bool
             if yearToShow == 0 {
                 yearToSend = leapYear
