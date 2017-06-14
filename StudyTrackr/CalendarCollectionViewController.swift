@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 //Temp variables
 let weekChar = ["S","M","T","W","T","F","S"]
 var tag = 0
@@ -42,6 +42,71 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     override func viewDidLoad() {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        
+        //VIEW DID LOAD
+        var indexOfDay = 0
+        var j = 0
+        var add = 0
+        if year == calendar.component(.year, from: date) + 1 {
+            j = 1
+        }
+        
+        if leapYear == true {
+            if year == calendar.component(.year, from: date) {
+                add = 1
+            } else if leapYear2 == true {
+                if year == calendar.component(.year, from: date) + 1 {
+                    add = 1
+                }
+            }
+        }
+        
+        if month == 2 {
+            indexOfDay = 31 + tag
+        } else if month == 3 {
+            indexOfDay = 59 + add + tag
+        } else if month == 4 {
+            indexOfDay = 90 + add + tag
+        } else if month == 5 {
+            indexOfDay = 120 + add + tag
+        } else if month == 6 {
+            indexOfDay = 151 + add + tag
+        } else if month == 7 {
+            indexOfDay = 181 + add + tag
+        } else if month == 8 {
+            indexOfDay = 212 + add + tag
+        } else if month == 9 {
+            indexOfDay = 243 + add + tag
+        } else if month == 10 {
+            indexOfDay = 273 + add + tag
+        } else if month == 11 {
+            indexOfDay = 304 + add + tag
+        } else if month == 12 {
+            indexOfDay = 334 + add + tag
+        } else {
+            indexOfDay = 0 + tag
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
                                     // Get January first
                                    //Get current calendar info
         var firstWeekday = calendar.firstWeekday
@@ -74,22 +139,22 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             leapYear2 = false
         }
         
-        var add: Int
+        var add1: Int
         var add2: Int                               //Leap year needs to add an extra day
         if (leapYear == false) {                    //See Month/Day initalization
-           add = 0
+           add1 = 0
             if leapYear2 == false {
                 add2 = 0
             } else {
                 add2 = 1
             }
         } else {
-            add = 1
+            add1 = 1
             add2 = 0
         }
         for var j in 0...1 {
             DateInfoArr.append([DateInfo()])            //Initialize days
-        for var i in 0...365 + add + add2 {
+        for var i in 0...365 + add1 + add2 {
             //Fill Weekday
             DateInfoArr[j].append(DateInfo())
             if (firstWeekday == 1) {
@@ -159,12 +224,88 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             firstWeekday -= 1
             year += 1
         }
+        
         // Register cell classes
         year -= 2
         self.collectionView!.register(CalendarCell.self, forCellWithReuseIdentifier: "Cell")
         self.collectionView!.register(CalendarHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
         // Do any additional setup after loading the view.
        
+        
+        
+        
+        //Storing core data
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext //Key that allows access to coreData
+        
+        //Requesting data
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
+        
+        request.returnsObjectsAsFaults = false
+        do {
+            let results = try context.fetch(request)
+            var i = 0
+            if results.count > 0 {
+                
+                for result in results as! [NSManagedObject] {
+                    //RETRIEVING SUBJECT
+                    if let subject = result.value(forKey: "subject") as? String {
+                        DateInfoArr[j][indexOfDay].events.insert(Event.init(), at: 0)
+                        DateInfoArr[j][indexOfDay].atLeastOneEvent = true
+                        DateInfoArr[j][indexOfDay].eventNumber += 1
+                        DateInfoArr[j][indexOfDay].events[0].subject = subject
+                        i += 1
+                    }
+                    
+                }
+            }
+        } catch {
+            //Proccess Error
+        }
+        
+        
+        
+        
+        
+        
+        do {
+            let results = try context.fetch(request)
+            
+            
+            if results.count > 0 {
+                for result in results as! [NSManagedObject] {
+                    if let subject = result.value(forKey: "subject") as? String {
+                        //Access Subject
+                        print(subject)
+                    }
+                }
+            }
+        } catch {
+            //Proccess Error
+        }
+        
+        
+        let event = NSEntityDescription.insertNewObject(forEntityName: "Events", into: context)
+        
+        event.setValue("math", forKey: "subject")
+        
+        do {
+            try context.save()
+            print("Saved")
+        } catch { //If do doesn't work then catch this...
+            //PROCESS ERROR
+        }
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
     }
     
@@ -418,7 +559,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                     for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1{
                         if (i % 4 == 0) && (i != 0){
                             cell.textLabel.numberOfLines += 1
-                            cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height))
+                            cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height)) as! CGRect
                             cell.textLabel.text! += "\n"
                             r += 1
                         }
