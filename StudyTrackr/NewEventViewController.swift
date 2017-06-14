@@ -176,11 +176,6 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         
         
         
-        
-        
-        
-        
-        
         //Saves all stores
         do {
             try context.save()
@@ -208,6 +203,10 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         
         DateInfoArr[j][i].atLeastOneEvent = true
         
+        
+        
+        
+        
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
         request.returnsObjectsAsFaults = false //Translates returned objects into a string
         
@@ -228,9 +227,12 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         }
         
         //Adding Day values to array
+        let requestDay = NSFetchRequest<NSFetchRequestResult>(entityName: "Days")
+        requestDay.returnsObjectsAsFaults = false //Translates returned objects into a string
+
         do {
-            let results = try context.fetch(request)
-            for result in results as! [NSManagedObjectContext] {
+            let results = try context.fetch(requestDay)
+            for result in results as! [NSManagedObject] {
                 if let day = result.value(forKey: "dayOfMonth") as? Int {
                     DateInfoArr[j][i].day.dayOfMonth = day
                 }

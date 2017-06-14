@@ -44,67 +44,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         // self.clearsSelectionOnViewWillAppear = false
         
         //VIEW DID LOAD
-        var indexOfDay = 0
-        var j = 0
         var add = 0
-        if year == calendar.component(.year, from: date) + 1 {
-            j = 1
-        }
-        
-        if leapYear == true {
-            if year == calendar.component(.year, from: date) {
-                add = 1
-            } else if leapYear2 == true {
-                if year == calendar.component(.year, from: date) + 1 {
-                    add = 1
-                }
-            }
-        }
-        
-        if month == 2 {
-            indexOfDay = 31 + tag
-        } else if month == 3 {
-            indexOfDay = 59 + add + tag
-        } else if month == 4 {
-            indexOfDay = 90 + add + tag
-        } else if month == 5 {
-            indexOfDay = 120 + add + tag
-        } else if month == 6 {
-            indexOfDay = 151 + add + tag
-        } else if month == 7 {
-            indexOfDay = 181 + add + tag
-        } else if month == 8 {
-            indexOfDay = 212 + add + tag
-        } else if month == 9 {
-            indexOfDay = 243 + add + tag
-        } else if month == 10 {
-            indexOfDay = 273 + add + tag
-        } else if month == 11 {
-            indexOfDay = 304 + add + tag
-        } else if month == 12 {
-            indexOfDay = 334 + add + tag
-        } else {
-            indexOfDay = 0 + tag
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
                                     // Get January first
@@ -231,7 +171,47 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         self.collectionView!.register(CalendarHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
         // Do any additional setup after loading the view.
        
+        var indexOfDay = 0
+        var j = 0
+        if year == calendar.component(.year, from: date) + 1 {
+            j = 1
+        }
         
+        if leapYear == true {
+            if year == calendar.component(.year, from: date) {
+                add = 1
+            } else if leapYear2 == true {
+                if year == calendar.component(.year, from: date) + 1 {
+                    add = 1
+                }
+            }
+        }
+        
+        if month == 2 {
+            indexOfDay = 31 + tag
+        } else if month == 3 {
+            indexOfDay = 59 + add + tag
+        } else if month == 4 {
+            indexOfDay = 90 + add + tag
+        } else if month == 5 {
+            indexOfDay = 120 + add + tag
+        } else if month == 6 {
+            indexOfDay = 151 + add + tag
+        } else if month == 7 {
+            indexOfDay = 181 + add + tag
+        } else if month == 8 {
+            indexOfDay = 212 + add + tag
+        } else if month == 9 {
+            indexOfDay = 243 + add + tag
+        } else if month == 10 {
+            indexOfDay = 273 + add + tag
+        } else if month == 11 {
+            indexOfDay = 304 + add + tag
+        } else if month == 12 {
+            indexOfDay = 334 + add + tag
+        } else {
+            indexOfDay = 0 + tag
+        }
         
         
         //Storing core data
@@ -239,69 +219,53 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         let context = appDelegate.persistentContainer.viewContext //Key that allows access to coreData
         
         //Requesting data
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
+        let requestEvent = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
         
-        request.returnsObjectsAsFaults = false
+        requestEvent.returnsObjectsAsFaults = false
         do {
-            let results = try context.fetch(request)
+            let results = try context.fetch(requestEvent)
             var i = 0
             if results.count > 0 {
                 
                 for result in results as! [NSManagedObject] {
                     
-                    //RETRIEVING Event elements
-                    if let subject = result.value(forKey: "subject") as? String {
-                        DateInfoArr[j][indexOfDay].events.insert(Event.init(), at: 0)
-                        print("Added event")
-                        DateInfoArr[j][indexOfDay].atLeastOneEvent = true
-                        DateInfoArr[j][indexOfDay].eventNumber += 1
-                        DateInfoArr[j][indexOfDay].events[0].subject = subject
-                        print("Should have added to array")
-                    }
-                    
+            //RETRIEVING Event elements
+            if let subject = result.value(forKey: "subject") as? String {
+                    DateInfoArr[j][indexOfDay].events.insert(Event.init(), at: 0)
+                    DateInfoArr[j][indexOfDay].atLeastOneEvent = true
+                    DateInfoArr[j][indexOfDay].eventNumber += 1
+                    DateInfoArr[j][indexOfDay].events[0].subject = subject
+                    print("Should have added to array")
                 }
+                    
+            }
             }
         } catch {
             //Proccess Error
         }
+        
         
         //RETRIEVING day elements
-        
-        
-        
-        
-        
+        //Adding Day values to array
+        let requestDay = NSFetchRequest<NSFetchRequestResult>(entityName: "Days")
+        requestDay.returnsObjectsAsFaults = false
         do {
-            let results = try context.fetch(request)
-            
-            
+            let results = try context.fetch(requestDay)
             if results.count > 0 {
-                for result in results as! [NSManagedObject] {
-                    if let subject = result.value(forKey: "subject") as? String {
-                        //Access Subject
-                        print(subject)
-                    }
+                
+            for result in results as! [NSManagedObject] {
+                
+                if let day = result.value(forKey: "dayOfMonth") as? Int {
+                    DateInfoArr[j][indexOfDay].day.dayOfMonth = day
+                }
+                if let year = result.value(forKey: "year") as? Int {
+                    DateInfoArr[j][indexOfDay].day.year = year
                 }
             }
+            }
         } catch {
-            //Proccess Error
+            //Process Error
         }
-        
-        
-        let event = NSEntityDescription.insertNewObject(forEntityName: "Events", into: context)
-        
-        event.setValue("math", forKey: "subject")
-        
-        do {
-            try context.save()
-            print("Saved")
-        } catch { //If do doesn't work then catch this...
-            //PROCESS ERROR
-        }
-
-        
-        
-        
         
         
         
