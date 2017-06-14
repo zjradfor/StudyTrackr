@@ -248,13 +248,15 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             if results.count > 0 {
                 
                 for result in results as! [NSManagedObject] {
+                    
                     //RETRIEVING SUBJECT
                     if let subject = result.value(forKey: "subject") as? String {
                         DateInfoArr[j][indexOfDay].events.insert(Event.init(), at: 0)
+                        print("Added event")
                         DateInfoArr[j][indexOfDay].atLeastOneEvent = true
                         DateInfoArr[j][indexOfDay].eventNumber += 1
                         DateInfoArr[j][indexOfDay].events[0].subject = subject
-                        i += 1
+                        print("Should have added to array")
                     }
                     
                 }

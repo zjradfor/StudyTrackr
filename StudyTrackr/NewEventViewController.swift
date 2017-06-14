@@ -205,7 +205,6 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
                     if let subject = result.value(forKey: "subject") as? String {
                         DateInfoArr[j][i].events[0].subject = subject
                     }
-                    
                 }
             }
         } catch {
