@@ -186,37 +186,44 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                 }
             }
         }
-        
-        if month == 2 {
-            indexOfDay = 31 + tag
-        } else if month == 3 {
-            indexOfDay = 59 + add + tag
-        } else if month == 4 {
-            indexOfDay = 90 + add + tag
-        } else if month == 5 {
-            indexOfDay = 120 + add + tag
-        } else if month == 6 {
-            indexOfDay = 151 + add + tag
-        } else if month == 7 {
-            indexOfDay = 181 + add + tag
-        } else if month == 8 {
-            indexOfDay = 212 + add + tag
-        } else if month == 9 {
-            indexOfDay = 243 + add + tag
-        } else if month == 10 {
-            indexOfDay = 273 + add + tag
-        } else if month == 11 {
-            indexOfDay = 304 + add + tag
-        } else if month == 12 {
-            indexOfDay = 334 + add + tag
-        } else {
-            indexOfDay = 0 + tag
-        }
-        
-        
+       var temporaryDay = [Int]()
         //Storing core data
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext //Key that allows access to coreData
+        
+        //RETRIEVING day elements
+        //Adding Day values to array
+        let requestDay = NSFetchRequest<NSFetchRequestResult>(entityName: "Days")
+        requestDay.returnsObjectsAsFaults = false
+        do {
+            let results = try context.fetch(requestDay)
+            if results.count > 0 {
+                
+                for result in results as! [NSManagedObject] {
+                    print("Got day?")
+                    if let day = result.value(forKey: "dayOfMonth") as? Int {
+                        temporaryDay.insert(Int.init(), at: 0)
+                        temporaryDay[0] = day
+                        print(temporaryDay)
+                    }
+                    if let year = result.value(forKey: "year") as? Int {
+                        DateInfoArr[j][indexOfDay].day.year = year
+                    }
+                }
+            }
+        } catch {
+            //Process Error
+        }
+
+        
+        
+        for var g in 0...temporaryDay.count - 1 {
+        
+        if (month < 3) && (temporaryDay[g] < 365) {
+            indexOfDay = temporaryDay[g]
+        } else {
+            indexOfDay = temporaryDay[g] + add
+        }
         
         //Requesting data
         let requestEvent = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
@@ -243,29 +250,9 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         } catch {
             //Proccess Error
         }
-        
-        
-        //RETRIEVING day elements
-        //Adding Day values to array
-        let requestDay = NSFetchRequest<NSFetchRequestResult>(entityName: "Days")
-        requestDay.returnsObjectsAsFaults = false
-        do {
-            let results = try context.fetch(requestDay)
-            if results.count > 0 {
-                
-            for result in results as! [NSManagedObject] {
-                
-                if let day = result.value(forKey: "dayOfMonth") as? Int {
-                    DateInfoArr[j][indexOfDay].day.dayOfMonth = day
-                }
-                if let year = result.value(forKey: "year") as? Int {
-                    DateInfoArr[j][indexOfDay].day.year = year
-                }
-            }
-            }
-        } catch {
-            //Process Error
+            g += 1
         }
+        
         
         
         
@@ -460,7 +447,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         cell.textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         cell.textLabel.textAlignment = .natural
         cell.backgroundColor = UIColor.white
-        cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height/2)) as! CGRect
+        //cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height/2)) as! CGRect
             var yearToSend: Bool
             if yearToShow == 0 {
                 yearToSend = leapYear

@@ -161,6 +161,21 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         } else {
             addMonth = 0
         }
+        i = eventDayFromSegue + addMonth
+        DateInfoArr[j][i].events.insert(Event.init(), at: 0)
+        DateInfoArr[j][i].events[0].type = currentEventTitle.text!
+        DateInfoArr[j][i].events[0].colour = eventColour
+        //Storing location
+        DateInfoArr[j][i].events[0].location = eventLocation
+        //Storing notes
+        DateInfoArr[j][i].events[0].notes = eventNotes
+        //Store time
+        DateInfoArr[j][i].events[0].time = eventTime
+        //Counter
+        DateInfoArr[j][i].eventNumber += 1
+        
+        DateInfoArr[j][i].atLeastOneEvent = true
+
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext //Key that allows access to coreData
         let event = NSEntityDescription.insertNewObject(forEntityName: "Events", into: context)
@@ -179,29 +194,15 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         //Saves all stores
         do {
             try context.save()
-            print("Saved")
+            print("Saved Information")
         } catch { //If do doesn't work then catch this...
             //PROCESS ERROR
             print("Failed to save")
         }
        
         
-        i = eventDayFromSegue + addMonth
         
-        DateInfoArr[j][i].events.insert(Event.init(), at: 0)
-        DateInfoArr[j][i].events[0].type = currentEventTitle.text!
-        DateInfoArr[j][i].events[0].colour = eventColour
         
-        //Storing location
-        DateInfoArr[j][i].events[0].location = eventLocation
-        //Storing notes
-        DateInfoArr[j][i].events[0].notes = eventNotes
-        //Store time
-        DateInfoArr[j][i].events[0].time = eventTime
-        //Counter
-        DateInfoArr[j][i].eventNumber += 1
-        
-        DateInfoArr[j][i].atLeastOneEvent = true
         
         
         
@@ -219,6 +220,7 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
                     //RETRIEVING SUBJECT
                     if let subject = result.value(forKey: "subject") as? String {
                         DateInfoArr[j][i].events[0].subject = subject
+                        print(DateInfoArr[j][i].events[0].subject)
                     }
                 }
             }
@@ -235,6 +237,7 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
             for result in results as! [NSManagedObject] {
                 if let day = result.value(forKey: "dayOfMonth") as? Int {
                     DateInfoArr[j][i].day.dayOfMonth = day
+                    print(DateInfoArr[j][i].day.dayOfMonth)
                 }
                 if let year = result.value(forKey: "year") as? Int {
                     DateInfoArr[j][i].day.year = year
