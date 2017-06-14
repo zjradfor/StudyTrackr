@@ -405,7 +405,11 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             
             if tag != 0 && tag <= numberOfDaysThisMonth {
                 cell.textLabel.textAlignment = .natural
-                cell.textLabel.text = "\(tag)"
+                if tag > 9 {
+                    cell.textLabel.text = "\(tag)"
+                } else {
+                    cell.textLabel.text = "\(tag) "
+                }
                 if DateInfoArr[j][indexOfDay].atLeastOneEvent == true{
                     cell.textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
                     cell.textLabel.numberOfLines += 1
@@ -418,6 +422,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                             cell.textLabel.text! += "\n"
                             r += 1
                         }
+                        
                         cell.textLabel.text! += "●"
                         let newLabel = NSMutableAttributedString(string: cell.textLabel.text!)
                         for var k in 0...i + r {
@@ -427,7 +432,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                             } else {
                                 z = k
                             }
-                            newLabel.addAttribute(NSForegroundColorAttributeName, value: DateInfoArr[j][indexOfDay].events[z].colour, range: NSRange(location:k+2,length:1))
+                            newLabel.addAttribute(NSForegroundColorAttributeName, value: DateInfoArr[j][indexOfDay].events[z].colour, range: NSRange(location:k+3,length:1))
                             k += 1
                         }
                         cell.textLabel.attributedText! = newLabel
