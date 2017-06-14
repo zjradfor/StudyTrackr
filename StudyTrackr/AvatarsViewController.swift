@@ -11,15 +11,19 @@ import UIKit
 class AvatarsViewController: UIViewController {
 
     @IBAction func AvatarSmile(_ sender: Any) {
+        GlobalAvatars = 0
     }
     
     @IBAction func AvatarSpike(_ sender: Any) {
+        GlobalAvatars = 3
     }
     
     @IBAction func AvatarLola(_ sender: Any) {
+        GlobalAvatars = 1
     }
     
     @IBAction func AvatarFlub(_ sender: Any) {
+        GlobalAvatars = 2
     }
     @IBOutlet var AvatarsView: UIView!
 

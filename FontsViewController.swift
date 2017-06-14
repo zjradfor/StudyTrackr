@@ -14,6 +14,19 @@ class FontsViewController: UIViewController {
    
     @IBOutlet var FontsView: UIView!
     
+    @IBOutlet weak var DefaultLabel: UILabel!
+    @IBOutlet weak var TypeLabel: UILabel!
+    @IBOutlet weak var NoteLabel: UILabel!
+    @IBOutlet weak var MarkerLabel: UILabel!
+    @IBOutlet weak var SnellLabel: UILabel!
+    
+    func ForceFont() {
+        DefaultLabel.font = UIFont(name: "ArialMT", size: 16.0)
+        TypeLabel.font = UIFont(name: "AmericanTypewriter", size: 16.0)
+        NoteLabel.font = UIFont(name: "Noteworthy-Bold", size: 16.0)
+        MarkerLabel.font = UIFont(name: "MarkerFelt-Thin", size: 16.0)
+        SnellLabel.font = UIFont(name: "SnellRoundhand-Bold", size: 16.0)
+    }
     
     func BackgroundCol() {
         
@@ -162,8 +175,8 @@ class FontsViewController: UIViewController {
             super.viewDidLoad()
             BackgroundCol()
             secondLabel.text = "Coins: " + "\(GlobalCoins)"
-            
-            FontStyle.font = UIFont(name: "ArialMT", size: 16.0)
+            ForceFont()
+            //FontStyle.font = UIFont(name: "ArialMT", size: 16.0)
             
             DefaultPurchaseLabel.text = "Current Font"
             AmericanPurchaseLabel.text = "Cost: 250"
