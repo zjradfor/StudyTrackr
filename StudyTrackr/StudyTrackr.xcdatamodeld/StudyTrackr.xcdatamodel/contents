@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Calendar2" representedClassName="Calendar2" syncable="YES" codeGenerationType="class"/>
+    <entity name="Days" representedClassName="Days" syncable="YES" codeGenerationType="class">
+        <attribute name="dayOfMonth" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <entity name="Events" representedClassName="Events" syncable="YES" codeGenerationType="class">
         <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -12,7 +15,7 @@
     </entity>
     <entity name="TimerThings" representedClassName="TimerThings" syncable="YES" codeGenerationType="class"/>
     <elements>
-        <element name="Calendar2" positionX="-54" positionY="9" width="128" height="45"/>
+        <element name="Days" positionX="-54" positionY="9" width="128" height="75"/>
         <element name="Events" positionX="-63" positionY="0" width="128" height="60"/>
         <element name="Markbook2" positionX="0" positionY="45" width="128" height="45"/>
         <element name="RewardsThings" positionX="-18" positionY="27" width="128" height="45"/>

@@ -164,10 +164,27 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext //Key that allows access to coreData
         let event = NSEntityDescription.insertNewObject(forEntityName: "Events", into: context)
+        let day = NSEntityDescription.insertNewObject(forEntityName: "Days", into: context)
+        
+        
+        //Event storing
         event.setValue(eventSubject, forKey: "subject")
+        
+        //Day storing
+        day.setValue(i, forKey: "dayOfMonth")
+        day.setValue(j, forKey: "year")
+        
+        
+        
+        
+        
+        
+        
+        
+        //Saves all stores
         do {
             try context.save()
-            print("It should have saved")
+            print("Saved")
         } catch { //If do doesn't work then catch this...
             //PROCESS ERROR
             print("Failed to save")
@@ -179,9 +196,7 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         DateInfoArr[j][i].events.insert(Event.init(), at: 0)
         DateInfoArr[j][i].events[0].type = currentEventTitle.text!
         DateInfoArr[j][i].events[0].colour = eventColour
-        //Storing subject
         
-        //
         //Storing location
         DateInfoArr[j][i].events[0].location = eventLocation
         //Storing notes
@@ -196,6 +211,7 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
         request.returnsObjectsAsFaults = false //Translates returned objects into a string
         
+        //Events retrieving
         do {
             let results = try context.fetch(request)
             
@@ -210,6 +226,16 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         } catch {
             //Proccess Error
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
 }

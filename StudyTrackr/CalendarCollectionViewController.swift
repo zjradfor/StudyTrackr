@@ -249,7 +249,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                 
                 for result in results as! [NSManagedObject] {
                     
-                    //RETRIEVING SUBJECT
+                    //RETRIEVING Event elements
                     if let subject = result.value(forKey: "subject") as? String {
                         DateInfoArr[j][indexOfDay].events.insert(Event.init(), at: 0)
                         print("Added event")
@@ -265,6 +265,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             //Proccess Error
         }
         
+        //RETRIEVING day elements
         
         
         
