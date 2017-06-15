@@ -23,6 +23,7 @@ import UserNotifications
         var isBreakTimeAdded:Bool = false
         var studyEvents = [StudyEvent]()
         var studyTime = 0
+        var subject = ""
         func setDateValue() ->String{
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .medium
@@ -63,6 +64,10 @@ import UserNotifications
             catch{
                 print ("Fetching Failed")
             }
+        }
+        
+        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+            subject = pickTheSubject[row].name! 
         }
 
     
