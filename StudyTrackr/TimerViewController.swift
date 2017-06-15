@@ -174,7 +174,7 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             self.pauseButton.setTitle("Pause", for: .normal)
             //Create a new study event for the minute tracker
             let date = setDateValue()
-            guard let newStudyEvent = StudyEvent(studyTime: studyTime, subject: "Math", date: date) else{
+            guard let newStudyEvent = StudyEvent(studyTime: studyTime, subject: subject, date: date) else{
                 fatalError("cannot create study event")
             }
             print("starting now")
