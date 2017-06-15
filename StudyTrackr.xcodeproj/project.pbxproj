@@ -21,10 +21,10 @@
 		90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */; };
 		C57F79CD1ECC8CD400E69B2A /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57F79CC1ECC8CD400E69B2A /* EventTableViewController.swift */; };
 		C596BB321ECDDEC000D1018F /* studyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */; };
+		C5AC32D31EF2D650007D18F7 /* StudyTrackr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5AC32D11EF2D650007D18F7 /* StudyTrackr.xcdatamodeld */; };
 		C5EE25C11ECB3DAF003A6904 /* StudyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */; };
 		DE0AF5411EC5F62B0054F125 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */; };
 		DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */; };
-		DE232B581EF1839600CE0C89 /* StudyTrackr 2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE232B541EF1839600CE0C89 /* StudyTrackr 2.xcdatamodeld */; };
 		DE232B5A1EF1842C00CE0C89 /* MarkbookViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE232B591EF1842C00CE0C89 /* MarkbookViewController 2.swift */; };
 		DE232B5C1EF1848700CE0C89 /* MarksViewController 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE232B5B1EF1848700CE0C89 /* MarksViewController 2.swift */; };
 		DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D481EB2375B00F9935C /* AppDelegate.swift */; };
@@ -56,10 +56,10 @@
 		90C8B94B1EB7810700FF02C0 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; tabWidth = 5; };
 		C57F79CC1ECC8CD400E69B2A /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = studyEventTableViewCell.swift; path = ../studyEventTableViewCell.swift; sourceTree = "<group>"; };
+		C5AC32D21EF2D650007D18F7 /* StudyTrackr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudyTrackr.xcdatamodel; sourceTree = "<group>"; };
 		C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyEvent.swift; sourceTree = "<group>"; };
 		DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = ../EventsViewController.swift; sourceTree = "<group>"; };
 		DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
-		DE232B551EF1839600CE0C89 /* StudyTrackr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudyTrackr.xcdatamodel; sourceTree = "<group>"; };
 		DE232B591EF1842C00CE0C89 /* MarkbookViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MarkbookViewController 2.swift"; path = "../MarkbookViewController 2.swift"; sourceTree = "<group>"; };
 		DE232B5B1EF1848700CE0C89 /* MarksViewController 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MarksViewController 2.swift"; path = "../MarksViewController 2.swift"; sourceTree = "<group>"; };
 		DEC18D451EB2375B00F9935C /* StudyTrackr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyTrackr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +112,7 @@
 			children = (
 				DE232B591EF1842C00CE0C89 /* MarkbookViewController 2.swift */,
 				DE232B5B1EF1848700CE0C89 /* MarksViewController 2.swift */,
-				DE232B541EF1839600CE0C89 /* StudyTrackr 2.xcdatamodeld */,
+				C5AC32D11EF2D650007D18F7 /* StudyTrackr.xcdatamodeld */,
 			);
 			name = Markbook;
 			sourceTree = "<group>";
@@ -263,9 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5AC32D31EF2D650007D18F7 /* StudyTrackr.xcdatamodeld in Sources */,
 				DE232B5C1EF1848700CE0C89 /* MarksViewController 2.swift in Sources */,
 				DE232B5A1EF1842C00CE0C89 /* MarkbookViewController 2.swift in Sources */,
-				DE232B581EF1839600CE0C89 /* StudyTrackr 2.xcdatamodeld in Sources */,
 				C596BB321ECDDEC000D1018F /* studyEventTableViewCell.swift in Sources */,
 				C5EE25C11ECB3DAF003A6904 /* StudyEvent.swift in Sources */,
 				90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */,
@@ -459,13 +459,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DE232B541EF1839600CE0C89 /* StudyTrackr 2.xcdatamodeld */ = {
+		C5AC32D11EF2D650007D18F7 /* StudyTrackr.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DE232B551EF1839600CE0C89 /* StudyTrackr.xcdatamodel */,
+				C5AC32D21EF2D650007D18F7 /* StudyTrackr.xcdatamodel */,
 			);
-			currentVersion = DE232B551EF1839600CE0C89 /* StudyTrackr.xcdatamodel */;
-			path = "StudyTrackr 2.xcdatamodeld";
+			currentVersion = C5AC32D21EF2D650007D18F7 /* StudyTrackr.xcdatamodel */;
+			path = StudyTrackr.xcdatamodeld;
 			sourceTree = SOURCE_ROOT;
 			versionGroupType = wrapper.xcdatamodel;
 		};
