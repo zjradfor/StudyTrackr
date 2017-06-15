@@ -19,6 +19,7 @@ class EventsViewController: UIViewController {
     var monthFromSegue = 0
     var eventToSegue = 0
     var yearFromSegue = 0
+    var tooManyEvents = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,8 @@ class EventsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
        // self.TableView!.register(TableCell.self, forCellWithReuseIdentifier: "tableCell")
     }
+    
+    // MARK: - Displaying Events
     
     override func viewWillAppear(_ animated: Bool) {
         showEventsField.text = "Events:"
@@ -88,6 +91,12 @@ class EventsViewController: UIViewController {
                 i += 1
             }
         }
+        if DateInfoArr[j][indexOfDay].eventNumber >= 16{
+            tooManyEvents = true
+        }
+        else{
+            tooManyEvents = false
+        }
     }
     
     // MARK: - Navigation
@@ -99,6 +108,7 @@ class EventsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "event"){
+            
             let navVC = segue.destination as? UINavigationController
             let vc = navVC?.viewControllers.first as! NewEventViewController
             vc.eventFromSegue = eventToSegue
@@ -120,6 +130,7 @@ class EventsViewController: UIViewController {
     
 }
 
+    // MARK: - Cells for New Event
 extension EventsViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return 5
@@ -151,23 +162,21 @@ extension EventsViewController: UITableViewDataSource{
     
     
     //Selected Cell
-    //var eventToSegue:IndexPath = []
-    
-    /*
-    tableview
-    override func tableView(_ tableView: UITableView,
-                                 shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        dayToSegue = indexPath
-        self.performSegue(withIdentifier: "day", sender: self)
-        return false
-    }*/
 }
 extension EventsViewController: UITableViewDelegate{
     
     
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        eventToSegue = indexPath.row
-        self.performSegue(withIdentifier: "event", sender: self)
+        if tooManyEvents == false{
+            eventToSegue = indexPath.row
+            self.performSegue(withIdentifier: "event", sender: self)
+        }
+        else if tooManyEvents == true{
+            let alert = UIAlertController(title: "Alert", message: "You can not have more than 16 events in a day", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
     }
 }
 
