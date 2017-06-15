@@ -164,7 +164,24 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             guard let newStudyEvent = StudyEvent(studyTime: studyTime, subject: "Math", date: date) else{
                 fatalError("cannot create study event")
             }
-            studyEvents.insert(newStudyEvent, at: 0)
+            print("starting now")
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            print("setting up done")
+            let newTimerThings = NSEntityDescription.insertNewObject(forEntityName: "TimerThings", into: context)
+            print("created new timerthings")
+            newTimerThings.setValue(newStudyEvent.date, forKey: "date")
+            newTimerThings.setValue(newStudyEvent.subject, forKey: "subjectStudied")
+            newTimerThings.setValue(newStudyEvent.studyTime, forKey: "studyTime")
+            print("set all values")
+            do{
+                try context.save()
+                print ("saved")
+            }
+            catch{
+                print("error here")
+            }
+           // studyEvents.insert(newStudyEvent, at: 0)
             
             
             
@@ -282,16 +299,6 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         pauseButton.isEnabled = false
         self.subjectPicker.dataSource = self
         self.subjectPicker.delegate = self
-        print("starting now")
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        print("setting up done")
-        let newTimerThings = NSEntityDescription.insertNewObject(forEntityName: "TimerThings", into: context)
-        print("created new timerthings")
-        newTimerThings.setValue("May 17, 2017", forKey: "date")
-        newTimerThings.setValue("Math", forKey: "subjectStudied")
-        newTimerThings.setValue("15", forKey: "studyTime")
-        print("set all values")
 
         }
 
@@ -299,13 +306,13 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             super.didReceiveMemoryWarning()
         
         }
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "studyEventSegue"{
                 if let SecondViewController = segue.destination as? EventTableViewController{
                     SecondViewController.events = studyEvents
                 }
             }
-        }
+        }*/
 
 }
 

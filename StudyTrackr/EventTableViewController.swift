@@ -12,15 +12,27 @@ import CoreData
 class EventTableViewController: UITableViewController {
     var events = [StudyEvent]()
     override func viewDidLoad() {
+        //reloadEventTableViewController()
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TimerStuff")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TimerThings")
         request.returnsObjectsAsFaults = false
         
         do{
+            print("beginning")
             let results = try context.fetch(request)
-            events += results as! [StudyEvent]
+            print("partway")
+            if results.count>0{
+                print ("counted")
+                for result in results as! [NSManagedObject] {
+                    print("sorted")
+                    let newEvent = StudyEvent(studyTime: result.value(forKey: "studyTime") as! Int, subject: result.value(forKey: "subjectStudied") as! String, date: result.value(forKey: "date") as! String)
+                    print("assigned")
+                    events.append(newEvent!)
+                    print ("appended")
+                }
+            }
         }
         catch{
             print("error")
