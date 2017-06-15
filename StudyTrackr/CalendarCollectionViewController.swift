@@ -198,17 +198,18 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         do {
             let results = try context.fetch(requestDay)
             if results.count > 0 {
-                
+                var i = 0
                 for result in results as! [NSManagedObject] {
                     print("Got day?")
                     if let day = result.value(forKey: "dayOfMonth") as? Int {
-                        temporaryDay.insert(Int.init(), at: 0)
-                        temporaryDay[0] = day
+                        temporaryDay.append(Int.init())
+                        temporaryDay[i] = day
                         print(temporaryDay)
                     }
                     if let year = result.value(forKey: "year") as? Int {
                         DateInfoArr[j][indexOfDay].day.year = year
                     }
+                    i += 1
                 }
             }
         } catch {
@@ -217,13 +218,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
 
         
         
-        for var g in 0...temporaryDay.count - 1 {
         
-        if (month < 3) && (temporaryDay[g] < 365) {
-            indexOfDay = temporaryDay[g]
-        } else {
-            indexOfDay = temporaryDay[g] + add
-        }
         
         //Requesting data
         let requestEvent = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
@@ -231,10 +226,14 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         requestEvent.returnsObjectsAsFaults = false
         do {
             let results = try context.fetch(requestEvent)
-            var i = 0
             if results.count > 0 {
-                
+                var g = 0
                 for result in results as! [NSManagedObject] {
+                    if (month < 3) && (temporaryDay[g] < 365) {
+                        indexOfDay = temporaryDay[g]
+                    } else {
+                        indexOfDay = temporaryDay[g] + add
+                    }
                     
             //RETRIEVING Event elements
             if let subject = result.value(forKey: "subject") as? String {
@@ -243,14 +242,13 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                     DateInfoArr[j][indexOfDay].eventNumber += 1
                     DateInfoArr[j][indexOfDay].events[0].subject = subject
                     print("Retrieving: \(DateInfoArr[j][indexOfDay].events[0].subject)")
+                    print(temporaryDay[g])
                 }
-                    
+                g += 1
             }
             }
         } catch {
             //Proccess Error
-        }
-            g += 1
         }
         
         
