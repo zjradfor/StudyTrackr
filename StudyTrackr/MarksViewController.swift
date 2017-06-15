@@ -85,7 +85,7 @@ class MarksViewController: UIViewController {
     
     func save(mark: Double){
         
-        current!.mark = current!.mark + mark
+        current!.mark = Double(floor(current!.mark * 100)/100) + mark
         current!.assignments = current!.assignments + 1
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
