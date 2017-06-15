@@ -244,6 +244,19 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                     print("Retrieving: \(DateInfoArr[j][indexOfDay].events[0].subject)")
                     print(temporaryDay[g])
                 }
+                //ASSINGING TYPE
+                if let type = result.value(forKey: "type") as? String {
+                        DateInfoArr[j][indexOfDay].events[0].type = type
+                }
+                //ASSINGING LOCATION
+                if let location = result.value(forKey: "location") as? String {
+                        DateInfoArr[j][indexOfDay].events[0].type = location
+                    }
+                //ASSIGNING NOTES
+                if let notes = result.value(forKey: "notes") as? String {
+                        DateInfoArr[j][indexOfDay].events[0].type = notes
+                    }
+
                 g += 1
             }
             }
