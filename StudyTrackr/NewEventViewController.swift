@@ -163,19 +163,14 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         }
         i = eventDayFromSegue + addMonth
         DateInfoArr[j][i].events.insert(Event.init(), at: 0)
-        DateInfoArr[j][i].events[0].type = currentEventTitle.text!
         DateInfoArr[j][i].events[0].colour = eventColour
-        //Storing location
-        DateInfoArr[j][i].events[0].location = eventLocation
-        //Storing notes
-        DateInfoArr[j][i].events[0].notes = eventNotes
-        //Store time
-        DateInfoArr[j][i].events[0].time = eventTime
         //Counter
         DateInfoArr[j][i].eventNumber += 1
-        
         DateInfoArr[j][i].atLeastOneEvent = true
-
+        
+        
+        
+        //USING CORE DATA
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext //Key that allows access to coreData
         let event = NSEntityDescription.insertNewObject(forEntityName: "Events", into: context)
