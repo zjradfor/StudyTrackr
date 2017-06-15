@@ -186,64 +186,10 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                 }
             }
         }
-        
-        if month == 2 {
-            indexOfDay = 31 + tag
-        } else if month == 3 {
-            indexOfDay = 59 + add + tag
-        } else if month == 4 {
-            indexOfDay = 90 + add + tag
-        } else if month == 5 {
-            indexOfDay = 120 + add + tag
-        } else if month == 6 {
-            indexOfDay = 151 + add + tag
-        } else if month == 7 {
-            indexOfDay = 181 + add + tag
-        } else if month == 8 {
-            indexOfDay = 212 + add + tag
-        } else if month == 9 {
-            indexOfDay = 243 + add + tag
-        } else if month == 10 {
-            indexOfDay = 273 + add + tag
-        } else if month == 11 {
-            indexOfDay = 304 + add + tag
-        } else if month == 12 {
-            indexOfDay = 334 + add + tag
-        } else {
-            indexOfDay = 0 + tag
-        }
-        
-        
+       var temporaryDay = [Int]()
         //Storing core data
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext //Key that allows access to coreData
-        
-        //Requesting data
-        let requestEvent = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
-        
-        requestEvent.returnsObjectsAsFaults = false
-        do {
-            let results = try context.fetch(requestEvent)
-            var i = 0
-            if results.count > 0 {
-                
-                for result in results as! [NSManagedObject] {
-                    
-            //RETRIEVING Event elements
-            if let subject = result.value(forKey: "subject") as? String {
-                    DateInfoArr[j][indexOfDay].events.insert(Event.init(), at: 0)
-                    DateInfoArr[j][indexOfDay].atLeastOneEvent = true
-                    DateInfoArr[j][indexOfDay].eventNumber += 1
-                    DateInfoArr[j][indexOfDay].events[0].subject = subject
-                    print("Should have added to array")
-                }
-                    
-            }
-            }
-        } catch {
-            //Proccess Error
-        }
-        
         
         //RETRIEVING day elements
         //Adding Day values to array
@@ -252,20 +198,80 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         do {
             let results = try context.fetch(requestDay)
             if results.count > 0 {
-                
-            for result in results as! [NSManagedObject] {
-                
-                if let day = result.value(forKey: "dayOfMonth") as? Int {
-                    DateInfoArr[j][indexOfDay].day.dayOfMonth = day
+                var i = 0
+                for result in results as! [NSManagedObject] {
+                    print("Got day?")
+                    if let day = result.value(forKey: "dayOfMonth") as? Int {
+                        temporaryDay.append(Int.init())
+                        temporaryDay[i] = day
+                        print(temporaryDay)
+                    }
+                    if let year = result.value(forKey: "year") as? Int {
+                        DateInfoArr[j][indexOfDay].day.year = year
+                    }
+                    i += 1
                 }
-                if let year = result.value(forKey: "year") as? Int {
-                    DateInfoArr[j][indexOfDay].day.year = year
-                }
-            }
             }
         } catch {
             //Process Error
         }
+
+        
+        
+        
+        
+        //Requesting data
+        let requestEvent = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
+        
+        requestEvent.returnsObjectsAsFaults = false
+        do {
+            let results = try context.fetch(requestEvent)
+            if results.count > 0 {
+                var g = 0
+                for result in results as! [NSManagedObject] {
+                    if (month < 3) && (temporaryDay[g] < 365) {
+                        indexOfDay = temporaryDay[g]
+                    } else {
+                        indexOfDay = temporaryDay[g] + add
+                    }
+                    
+            //RETRIEVING Event elements
+            if let subject = result.value(forKey: "subject") as? String {
+                    DateInfoArr[j][indexOfDay].events.insert(Event.init(), at: 0)
+                    DateInfoArr[j][indexOfDay].atLeastOneEvent = true
+                    DateInfoArr[j][indexOfDay].eventNumber += 1
+                    DateInfoArr[j][indexOfDay].events[0].subject = subject
+                    print("Retrieving: \(DateInfoArr[j][indexOfDay].events[0].subject)")
+                    print(temporaryDay[g])
+                }
+                //ASSINGING TYPE
+                if let type = result.value(forKey: "type") as? String {
+                        DateInfoArr[j][indexOfDay].events[0].type = type
+                }
+                //ASSINGING LOCATION
+                if let location = result.value(forKey: "location") as? String {
+                        DateInfoArr[j][indexOfDay].events[0].location = location
+                    }
+                //ASSIGNING NOTES
+                if let notes = result.value(forKey: "notes") as? String {
+                        DateInfoArr[j][indexOfDay].events[0].notes = notes
+                    }
+                //ASSIGNING TIME
+                if let time = result.value(forKey: "time") as? String {
+                        DateInfoArr[j][indexOfDay].events[0].time = time
+                    }
+                //ASSINGING COLOUR
+                if let colour = result.value(forKey: "colour") as? UIColor {
+                        DateInfoArr[j][indexOfDay].events[0].colour = colour
+                    }
+
+                g += 1
+            }
+            }
+        } catch {
+            //Proccess Error
+        }
+        
         
         
         
@@ -460,7 +466,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         cell.textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         cell.textLabel.textAlignment = .natural
         cell.backgroundColor = UIColor.white
-        cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height/2)) as! CGRect
+        //cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height/2)) as! CGRect
             var yearToSend: Bool
             if yearToShow == 0 {
                 yearToSend = leapYear
@@ -527,7 +533,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                     for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1{
                         if (i % 4 == 0) && (i != 0){
                             cell.textLabel.numberOfLines += 1
-                            cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height)) as! CGRect
+   //                         cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height)) as! CGRect
                             cell.textLabel.text! += "\n"
                             r += 1
                         }
