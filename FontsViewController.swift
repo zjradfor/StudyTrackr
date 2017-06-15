@@ -73,38 +73,46 @@ class FontsViewController: UIViewController {
            // UIButton.appearance().titleLabel?.font = UIFont(name: "AmericanTypewriter", size: 16.0)
             DefaultPurchaseLabel.text = "Select"
                 AmericanPurchaseLabel.text = "Current Font"
-                NoteWorthyPurchaseLabel.text = "Cost: 200"
-                MarkerFeltPurchaseLabel.text = "Cost: 200"
-                RoundhandPurchaseLabel.text = "Cost: 200"
+                NoteWorthyPurchaseLabel.text = "Cost: 250"
+                MarkerFeltPurchaseLabel.text = "Cost: 250"
+                RoundhandPurchaseLabel.text = "Cost: 250"
             firstOpener = 1
             
         case 3:
             UILabel.appearance().font = UIFont(name: "Noteworthy-Bold", size: 16.0)
+            UITextView.appearance().font = UIFont(name: "Noteworthy-Bold", size: 16.0)
+            UITextField.appearance().font = UIFont(name: "Noteworthy-Bold", size: 16.0)
+            //  UITableView.appearance().font = UIFont(name: "Noteworthy-Bold", size: 16.0)
+            UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: "Noteworthy-Bold"], for: .normal)
+           // UITabBarItem.appearance().font = UIFont(name: "Noteworthy-Bold", size: 16.0)
+            //setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Noteworthy-Bold", size: 10)!], for: .normal)
+            //UITableViewCell.appearance().font = UIFont(name: "Noteworthy-Bold", size: 16.0)
+            //  .appearance().font = UIFont(name: "Noteworthy-Bold", size: 16.0)
            // UIButton.appearance().titleLabel?.font = UIFont(name: "Noteworthy-Bold", size: 16.0)
             DefaultPurchaseLabel.text = "Select"
-                AmericanPurchaseLabel.text = "Cost: 200"
+                AmericanPurchaseLabel.text = "Cost: 250"
                 NoteWorthyPurchaseLabel.text = "Current Font"
-                MarkerFeltPurchaseLabel.text = "Cost: 200"
-                RoundhandPurchaseLabel.text = "Cost: 200"
+                MarkerFeltPurchaseLabel.text = "Cost: 250"
+                RoundhandPurchaseLabel.text = "Cost: 250"
             firstOpener = 1
         
         case 4:
             UILabel.appearance().font = UIFont(name: "MarkerFelt-Thin", size: 16.0)
            // UIButton.appearance().titleLabel?.font = UIFont(name: "MarkerFelt-Thin", size: 16.0)
             DefaultPurchaseLabel.text = "Select"
-                AmericanPurchaseLabel.text = "Cost: 200"
-                NoteWorthyPurchaseLabel.text = "Cost: 200"
+                AmericanPurchaseLabel.text = "Cost: 250"
+                NoteWorthyPurchaseLabel.text = "Cost: 250"
                 MarkerFeltPurchaseLabel.text = "Current Font"
-                RoundhandPurchaseLabel.text = "Cost: 200"
+                RoundhandPurchaseLabel.text = "Cost: 250"
             firstOpener = 1
             
         case 5:
             UILabel.appearance().font = UIFont(name: "SnellRoundhand-Bold", size: 16.0)
         // UIButton.appearance().titleLabel?.font = UIFont(name: "SnellRoundhand-Bold", size: 16.0)
             DefaultPurchaseLabel.text = "Select"
-                AmericanPurchaseLabel.text = "Cost: 200"
-                NoteWorthyPurchaseLabel.text = "Cost: 200"
-                MarkerFeltPurchaseLabel.text = "Cost: 200"
+                AmericanPurchaseLabel.text = "Cost: 250"
+                NoteWorthyPurchaseLabel.text = "Cost: 250"
+                MarkerFeltPurchaseLabel.text = "Cost: 250"
                 RoundhandPurchaseLabel.text = "Current Font"
             firstOpener = 1
                 
@@ -158,6 +166,7 @@ class FontsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+        ForceFont()
     }
     
     //////////////////////////////////////////////////////////////////////////////
