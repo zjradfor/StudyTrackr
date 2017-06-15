@@ -211,6 +211,7 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         func updateTimer() {
             if seconds < 1{
                 timer.invalidate()
+                endOfStudyTimeNotification()
                 breakOrStudy.text = "Done!"
             }else{
                 seconds -= 1
@@ -221,7 +222,7 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
                         self.pauseButton.isEnabled = false
                         timer.invalidate()
                         runbreakTimer()
-                        breakTimerNotification()
+                        breakTimerStartNotification()
                         timerLabel.text = timeString(time:TimeInterval(breakTime))
                         updatebreakTimer()
                         breakOrStudy.text = "Break Time!"
@@ -254,14 +255,23 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         func updatebreakTimer(){
             if breakTime<1 {
                 breakTimer.invalidate()
+                breakTimerEndNotification()
                 runTimer()
+                breakOrStudy.text = "Get studying!"
             }else{
                 breakTime -= 1
                 timerLabel.text = timeString(time:TimeInterval(breakTime))
             }
         }
-//Notifications 
-        
+//Anything revelent to notifications
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool{
+        return true
+    }
+    
+   
+    
+ //Handles notifications when app is in the foreground
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                     willPresent notification: UNNotification,
                                     withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void){
@@ -270,12 +280,14 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             
     }
  
-    /*let center = UNUserNotificationCenter.current()
-    center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-    // Enable or disable features based on authorization.
-    }*/
-    
-    func breakTimerNotification(){
+ //Notification for the start of the user's break time
+    func breakTimerStartNotification(){
+        
+        var center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+          
+        }
             
             let content = UNMutableNotificationContent()
             content.title = "Break Time"
@@ -289,15 +301,66 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             
         
         // Schedule the notification.
-            let center = UNUserNotificationCenter.current()
+            center = UNUserNotificationCenter.current()
             center.add(breakTimeStart) { (error : Error?) in
                 if let theError = error {
                     print(theError.localizedDescription)
                 }
             }
     }
+    
+//Notification for the end of the user's break time
+    func breakTimerEndNotification(){
         
+        //Content of the Notification
+        let content = UNMutableNotificationContent()
+        content.title = "Break time over"
+        content.body = "Get back to studying!"
+        content.sound = UNNotificationSound.default()
         
+        //Notification Trigger
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1,  repeats: false)
+        
+        //Requesting the notification use
+        let breakTimeEndIdentifier = "end.of.break"
+        let breakTimeEnd = UNNotificationRequest(identifier: breakTimeEndIdentifier, content: content, trigger: trigger)
+
+        // Schedule the notification.
+        let center = UNUserNotificationCenter.current()
+        center.add(breakTimeEnd) { (error : Error?) in
+            if let theError = error {
+                print(theError.localizedDescription)
+            }
+        }
+
+    }
+    
+//Notification for the end of the user's total study time
+    func endOfStudyTimeNotification(){
+    //Content of the Notification
+        let content = UNMutableNotificationContent()
+        content.title = "Study time over"
+        content.body = "You are done studying, good work!"
+        content.sound = UNNotificationSound.default()
+        
+    //Notification Trigger
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1,  repeats: false)
+        
+    //Requesting the notification use
+        let studyTimeEndIdentifier = "end.of.studying"
+        let studyTimeEnd = UNNotificationRequest(identifier: studyTimeEndIdentifier, content: content, trigger: trigger)
+        
+    // Schedule the notification.
+        let center = UNUserNotificationCenter.current()
+        center.add(studyTimeEnd) { (error : Error?) in
+            if let theError = error {
+                print(theError.localizedDescription)
+            }
+        }
+
+        
+    }
+    
 
         @IBOutlet weak var pauseButton: UIButton!
 
