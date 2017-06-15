@@ -94,7 +94,9 @@ class DeleteEventTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        print(cellCounter)
         cell.textLabel!.text = DateInfoArr[j][indexOfDay].events[cellCounter].subject + DateInfoArr[j][indexOfDay].events[cellCounter].type
+        
         cellCounter += 1
         return cell
     }
@@ -115,23 +117,15 @@ class DeleteEventTableViewController: UITableViewController {
         if editingStyle == .delete {
             
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
             
             let result = try? context.fetch(fetchRequest)
             let  resultData = result as! [Events]
             
             var g = 0
-            for var i in 0...indexPath.row {
-                if temporaryDay[g] == indexOfDay {
-                    i += 1
-                }
-                g += 1
-            }
             
-            var spot = (g * 6)
+            context.delete(resultData[g])
             
-            for var i in 0...5 {
-            context.delete(resultData[spot])
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             
             do {
@@ -140,13 +134,12 @@ class DeleteEventTableViewController: UITableViewController {
             catch{
                 print ("Fetching Failed")
             }
-                i += 1
-            }
             DateInfoArr[j][indexOfDay].events.remove(at: indexPath.row)
             DateInfoArr[j][indexOfDay].eventNumber -= 1
             if DateInfoArr[j][indexOfDay].eventNumber == 0 {
                 DateInfoArr[j][indexOfDay].atLeastOneEvent = false
             }
+            cellCounter = 0
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
             // ADD ARRAY DELETE-ING HERE
