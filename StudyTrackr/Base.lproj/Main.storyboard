@@ -1332,6 +1332,14 @@
                                     <action selector="MarkAddPressed:" destination="WO6-eG-aIP" eventType="touchUpInside" id="gDx-nu-XeP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXz-PG-fIQ">
+                                <rect key="frame" x="263" y="90" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="helpButtonPressed:" destination="WO6-eG-aIP" eventType="touchUpInside" id="h3z-BS-5B4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

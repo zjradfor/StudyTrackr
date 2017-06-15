@@ -71,7 +71,9 @@ class MarksViewController: UIViewController {
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .default)
         
-        alert.addTextField()
+    
+        
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in textField.keyboardType = UIKeyboardType.decimalPad})
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
         
@@ -91,6 +93,14 @@ class MarksViewController: UIViewController {
         markLabel.text = String(current!.mark / current!.assignments)
     }
     
+    @IBAction func helpButtonPressed(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Help", message: "After every test/assignment, enter the mark you recieved to generate a running average for the class", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .default)
+        
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
+    }
     
     
     
