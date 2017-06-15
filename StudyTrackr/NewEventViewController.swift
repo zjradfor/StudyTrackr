@@ -187,7 +187,7 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         event.setValue(eventLocation, forKey: "location")
         event.setValue(eventNotes, forKey: "notes")
         event.setValue(currentEventTitle.text, forKey: "type")
-        
+        event.setValue(eventTime, forKey: "time")
         
         //Day storing
         day.setValue(i, forKey: "dayOfMonth")
@@ -232,11 +232,15 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
                     }
                     //ASSINGING LOCATION
                     if let location = result.value(forKey: "location") as? String {
-                        DateInfoArr[j][i].events[0].type = location
+                        DateInfoArr[j][i].events[0].location = location
                     }
                     //ASSIGNING NOTES
                     if let notes = result.value(forKey: "notes") as? String {
-                        DateInfoArr[j][i].events[0].type = notes
+                        DateInfoArr[j][i].events[0].notes = notes
+                    }
+                    //ASSIGNING TIME
+                    if let time = result.value(forKey: "time") as? String {
+                        DateInfoArr[j][i].events[0].time = time
                     }
                 }
             }

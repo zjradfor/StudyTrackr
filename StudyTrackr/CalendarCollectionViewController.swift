@@ -256,6 +256,10 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                 if let notes = result.value(forKey: "notes") as? String {
                         DateInfoArr[j][indexOfDay].events[0].type = notes
                     }
+                //ASSIGNING TIME
+                if let time = result.value(forKey: "time") as? String {
+                        DateInfoArr[j][indexOfDay].events[0].time = time
+                    }
 
                 g += 1
             }
