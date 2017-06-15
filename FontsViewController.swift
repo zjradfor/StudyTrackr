@@ -10,8 +10,7 @@ import UIKit
 
 class FontsViewController: UIViewController {
     var FontNum = 1
-    var ownershipArray = [0, 0, 0, 0]
-   
+    var firstOpener = 0
     @IBOutlet var FontsView: UIView!
     
     @IBOutlet weak var DefaultLabel: UILabel!
@@ -61,73 +60,54 @@ class FontsViewController: UIViewController {
         
             UILabel.appearance().font = UIFont(name: "ArialMT", size: 16.0)
            // UIButton.appearance().titleLabel?.font = UIFont(name: "ArialMT", size: 16.0)
-            if (ownershipArray[0] == 1){
-                AmericanPurchaseLabel.text = "Select"
-            }
-            if (ownershipArray[1] == 1){
-                NoteWorthyPurchaseLabel.text = "Select"
-            }
-            if (ownershipArray[2] == 1){
-                MarkerFeltPurchaseLabel.text = "Select"
-            }
-            if (ownershipArray[3] == 1){
-                RoundhandPurchaseLabel.text = "Select"
-            }
+                DefaultPurchaseLabel.text = "Current Font"
+                AmericanPurchaseLabel.text = "Cost: 250"
+                NoteWorthyPurchaseLabel.text = "Cost: 250"
+                MarkerFeltPurchaseLabel.text = "Cost: 250"
+                RoundhandPurchaseLabel.text = "Cost: 250"
+            firstOpener = 1
             
         case 2:
     
             UILabel.appearance().font = UIFont(name: "AmericanTypewriter", size: 16.0)
            // UIButton.appearance().titleLabel?.font = UIFont(name: "AmericanTypewriter", size: 16.0)
             DefaultPurchaseLabel.text = "Select"
-            if (ownershipArray[1] == 1){
-                NoteWorthyPurchaseLabel.text = "Select"
-            }
-            if (ownershipArray[2] == 1){
-                MarkerFeltPurchaseLabel.text = "Select"
-            }
-            if (ownershipArray[3] == 1){
-                RoundhandPurchaseLabel.text = "Select"
-            }
+                AmericanPurchaseLabel.text = "Current Font"
+                NoteWorthyPurchaseLabel.text = "Cost: 200"
+                MarkerFeltPurchaseLabel.text = "Cost: 200"
+                RoundhandPurchaseLabel.text = "Cost: 200"
+            firstOpener = 1
             
         case 3:
             UILabel.appearance().font = UIFont(name: "Noteworthy-Bold", size: 16.0)
            // UIButton.appearance().titleLabel?.font = UIFont(name: "Noteworthy-Bold", size: 16.0)
             DefaultPurchaseLabel.text = "Select"
-            if (ownershipArray[0] == 1){
-                AmericanPurchaseLabel.text = "Select"
-            }
-            if (ownershipArray[2] == 1){
-                MarkerFeltPurchaseLabel.text = "Select"
-            }
-            if (ownershipArray[3] == 1){
-                RoundhandPurchaseLabel.text = "Select"
-            }
+                AmericanPurchaseLabel.text = "Cost: 200"
+                NoteWorthyPurchaseLabel.text = "Current Font"
+                MarkerFeltPurchaseLabel.text = "Cost: 200"
+                RoundhandPurchaseLabel.text = "Cost: 200"
+            firstOpener = 1
+        
         case 4:
             UILabel.appearance().font = UIFont(name: "MarkerFelt-Thin", size: 16.0)
            // UIButton.appearance().titleLabel?.font = UIFont(name: "MarkerFelt-Thin", size: 16.0)
             DefaultPurchaseLabel.text = "Select"
-            if (ownershipArray[0] == 1){
-                AmericanPurchaseLabel.text = "Select"
-            }
-            if (ownershipArray[1] == 1){
-                NoteWorthyPurchaseLabel.text = "Select"
-            }
-            if (ownershipArray[3] == 1){
-                RoundhandPurchaseLabel.text = "Select"
-            }
+                AmericanPurchaseLabel.text = "Cost: 200"
+                NoteWorthyPurchaseLabel.text = "Cost: 200"
+                MarkerFeltPurchaseLabel.text = "Current Font"
+                RoundhandPurchaseLabel.text = "Cost: 200"
+            firstOpener = 1
+            
         case 5:
             UILabel.appearance().font = UIFont(name: "SnellRoundhand-Bold", size: 16.0)
         // UIButton.appearance().titleLabel?.font = UIFont(name: "SnellRoundhand-Bold", size: 16.0)
             DefaultPurchaseLabel.text = "Select"
-            if (ownershipArray[0] == 1){
-                AmericanPurchaseLabel.text = "Select"
-            }
-            if (ownershipArray[1] == 1){
-                NoteWorthyPurchaseLabel.text = "Select"
-            }
-            if (ownershipArray[2] == 1){
-                MarkerFeltPurchaseLabel.text = "Select"
-            }
+                AmericanPurchaseLabel.text = "Cost: 200"
+                NoteWorthyPurchaseLabel.text = "Cost: 200"
+                MarkerFeltPurchaseLabel.text = "Cost: 200"
+                RoundhandPurchaseLabel.text = "Current Font"
+            firstOpener = 1
+                
         default:
             break
         }
@@ -137,70 +117,42 @@ class FontsViewController: UIViewController {
     @IBAction func DefaultFont(_ sender: Any) {
         GlobalFonts = 1
         FontChanger()
-        DefaultPurchaseLabel.text = "Current Font"
     }
     
     @IBAction func TypewriterFont(_ sender: Any) {
-        if (GlobalCoins >= 250)&&(ownershipArray[0] == 0){          //not bought but enough money
+        if (GlobalCoins >= 250)&&(UILabel.appearance().font != UIFont(name: "AmericanTypewriter", size: 16.0)){          //not bought but enough money
             GlobalFonts = 2
             FontChanger()
             GlobalCoins = GlobalCoins - 250
             secondLabel.text = "Coins: " + "\(GlobalCoins)"
-            ownershipArray.insert (1, at: 0)
         } //end of the if (not bought but has the money) statement
-        
-        if (ownershipArray[0] == 1) && (FontNum != 2){       //already bought, not selected
-           FontChanger()
-           AmericanPurchaseLabel.text = "Current Font"
-            
-        } //end of the if (bought but not selected) statment
     }
     
     @IBAction func NoteworthyFont(_ sender: Any) {
-        if (GlobalCoins >= 250)&&(ownershipArray[1] == 0){          //not bought but enough money
+        if (GlobalCoins >= 250)&&(UILabel.appearance().font != UIFont(name: "Noteworthy-Bold", size: 16.0)){          //not bought but enough money
            GlobalFonts = 3
             FontChanger()
             GlobalCoins = GlobalCoins - 250
             secondLabel.text = "Coins: " + "\(GlobalCoins)"
-            ownershipArray.insert (1, at: 1)
         } //end of the if (not bought but has the money) statement
-        
-        if (ownershipArray[1] == 1) && (FontNum != 3){       //already bought, not selected
-           FontChanger()
-           NoteWorthyPurchaseLabel.text = "Currrent Font"
-            
-        } //end of the if (bought but not selected) statment
     }
     
     @IBAction func MarkerFont(_ sender: Any) {
-        if (GlobalCoins >= 250)&&(ownershipArray[2] == 0){          //not bought but enough money
+        if (GlobalCoins >= 250)&&(UILabel.appearance().font != UIFont(name: "MarkerFelt-Thin", size: 16.0)){          //not bought but enough money
             GlobalFonts = 4
             FontChanger()
             GlobalCoins = GlobalCoins - 250
             secondLabel.text = "Coins: " + "\(GlobalCoins)"
-            ownershipArray.insert (1, at: 2)
         } //end of the if (not bought but has the money) statement
-        
-        if (ownershipArray[2] == 1) && (FontNum != 4){       //already bought, not selected
-            FontChanger()
-            MarkerFeltPurchaseLabel.text = "Current Font"
-            
-        } //end of the if (bought but not selected) statment
     }
     
     @IBAction func RoundhandFont(_ sender: Any) {
-        if (GlobalCoins >= 250)&&(ownershipArray[3] == 0){          //not bought but enough money
+        if (GlobalCoins >= 250)&&(UILabel.appearance().font != UIFont(name: "SnellRoundhand-Bold", size: 16.0)){          //not bought but enough money
           GlobalFonts = 5
             FontChanger()
             GlobalCoins = GlobalCoins - 250
             secondLabel.text = "Coins: " + "\(GlobalCoins)"
-            ownershipArray.insert (1, at: 3)
         } //end of the if (not bought but has the money) statement
-        
-        if (ownershipArray[3] == 1) && (FontNum != 5){       //already bought, not selected
-            FontChanger()
-            RoundhandPurchaseLabel.text = "Current Font"
-        } //end of the if (bought but not selected) statment
     }
     
     
@@ -228,14 +180,34 @@ class FontsViewController: UIViewController {
             BackgroundCol()
             secondLabel.text = "Coins: " + "\(GlobalCoins)"
             ForceFont()
+            FontChanger()
             //FontStyle.font = UIFont(name: "ArialMT", size: 16.0)
             
-            DefaultPurchaseLabel.text = "Current Font"
-            AmericanPurchaseLabel.text = "Cost: 250"
-            NoteWorthyPurchaseLabel.text = "Cost: 250"
-            MarkerFeltPurchaseLabel.text = "Cost: 250"
-            RoundhandPurchaseLabel.text = "Cost: 250"
+            DefaultPurchaseLabel.font = UIFont(name: "ArialMT", size: 16.0)
+            AmericanPurchaseLabel.font = UIFont(name: "ArialMT", size: 16.0)
+            NoteWorthyPurchaseLabel.font = UIFont(name: "ArialMT", size: 16.0)
+            MarkerFeltPurchaseLabel.font = UIFont(name: "ArialMT", size: 16.0)
+            RoundhandPurchaseLabel.font = UIFont(name: "ArialMT", size: 16.0)
+            secondLabel.font = UIFont(name: "ArialMT", size: 16.0)
             
+            if (UILabel.appearance().font == UIFont(name: "AmericanTypewriter", size: 16.0)){
+                GlobalFonts = 2
+            }
+            if (UILabel.appearance().font == UIFont(name: "Noteworthy-Bold", size: 16.0)){
+                GlobalFonts = 3
+            }
+            if (UILabel.appearance().font == UIFont(name: "MarkerFelt-Thin", size: 16.0)){
+                GlobalFonts = 4
+            }
+            if (UILabel.appearance().font == UIFont(name: "SnellRoundhand-Bold", size: 16.0)){
+                GlobalFonts = 5
+            }
+            if (firstOpener == 0){
+                GlobalFonts = 1
+            }
+            
+            
+            FontChanger()
     }
 ////////////////////////////////////////////////////////////////////////////////
     
