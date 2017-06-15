@@ -9,16 +9,15 @@
 import UIKit
 import CoreData
 import UserNotifications
-    //Steph and Nadia worked on timer function (Timer and buttons)
-// Emily worked on break buttons and user input for the timer.
-    class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+
+class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
         @IBOutlet weak var timerLabel: UILabel!
         var seconds = 0
         var timer = Timer()
         var breakTimer = Timer()
         var isTimerRunning = false
         var resumeTapped = false
-        var breakTime:Int = 0
+        var breakTime = 0
         var whenIsBreak = 0
         var isBreakTimeAdded:Bool = false
         var studyEvents = [StudyEvent]()
@@ -149,24 +148,32 @@ import UserNotifications
         
 //Done Button
         @IBAction func doneButtonTapped(_ sender: UIButton) {
+            //Stop both timers
             timer.invalidate()
             breakTimer.invalidate()
+            //Reset text indicating if user is on break or study timer
             breakOrStudy.text = "Enter your study time"
+            //Reset timer values
             seconds = 0
+            breakTime = 0
+            //Reset timer on screen to zero
             timerLabel.text = String(seconds)
+            //
             isTimerRunning = false
             pauseButton.isEnabled = false
             startButton.isEnabled = true
+            self.resumeTapped = false
+            self.pauseButton.setTitle("Pause", for: .normal)
+            //Create a new study event for the minute tracker
             let date = setDateValue()
             guard let newStudyEvent = StudyEvent(studyTime: studyTime, subject: "Math", date: date) else{
                 fatalError("cannot create study event")
             }
             studyEvents.insert(newStudyEvent, at: 0)
-            self.resumeTapped = false
-            self.pauseButton.setTitle("Pause", for: .normal)
             
             
-                    }
+            
+        }
 
         func runTimer(){
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimerViewController.updateTimer)), userInfo: nil, repeats: true)
@@ -174,6 +181,7 @@ import UserNotifications
             pauseButton.isEnabled = true
             
         }
+        
 //Updates the study timer
         func updateTimer() {
             if seconds < 1{
@@ -195,7 +203,7 @@ import UserNotifications
                     }else{
                         breakTimer.invalidate()
                         self.pauseButton.isEnabled = true
-                        breakOrStudy.text = "Get Studying!"
+                        breakOrStudy.text = "Get studying!"
                     }
                 }
             }
@@ -236,7 +244,12 @@ import UserNotifications
             completionHandler(UNNotificationPresentationOptions.alert)
             
     }
-
+ 
+    /*let center = UNUserNotificationCenter.current()
+    center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+    // Enable or disable features based on authorization.
+    }*/
+    
     func breakTimerNotification(){
             
             let content = UNMutableNotificationContent()
@@ -257,7 +270,6 @@ import UserNotifications
                     print(theError.localizedDescription)
                 }
             }
-        
     }
         
         
