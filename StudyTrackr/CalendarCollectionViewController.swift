@@ -242,7 +242,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                     DateInfoArr[j][indexOfDay].atLeastOneEvent = true
                     DateInfoArr[j][indexOfDay].eventNumber += 1
                     DateInfoArr[j][indexOfDay].events[0].subject = subject
-                    print("Should have added to array")
+                    print("Retrieving: \(DateInfoArr[j][indexOfDay].events[0].subject)")
                 }
                     
             }
