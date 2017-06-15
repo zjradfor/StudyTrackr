@@ -57,8 +57,16 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
 
 
         func getData(){
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName:"Subject")
             do {
-                pickTheSubject = try context.fetch(Subject.fetchRequest())
+                let results = try context.fetch(request)
+                if results.count>0{
+                    for result in results as! [NSManagedObject]{
+                        pickTheSubject.append(result as! Subject)
+                    }
+                }
             }
             catch{
                 print ("Fetching Failed")
@@ -304,6 +312,7 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         pauseButton.isEnabled = false
         self.subjectPicker.dataSource = self
         self.subjectPicker.delegate = self
+        getData()
 
         }
 
