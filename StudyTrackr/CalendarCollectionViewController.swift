@@ -514,7 +514,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                     for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1{
                         if (i % 4 == 0) && (i != 0){
                             cell.textLabel.numberOfLines += 1
-                            cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height)) as! CGRect
+   //                         cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height)) as! CGRect
                             cell.textLabel.text! += "\n"
                             r += 1
                         }

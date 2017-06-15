@@ -184,6 +184,10 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         
         //Event storing
         event.setValue(eventSubject, forKey: "subject")
+        event.setValue(eventLocation, forKey: "location")
+        event.setValue(eventNotes, forKey: "notes")
+        event.setValue(currentEventTitle.text, forKey: "type")
+        
         
         //Day storing
         day.setValue(i, forKey: "dayOfMonth")
@@ -217,10 +221,22 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
             
             if results.count > 0 {
                 for result in results as! [NSManagedObject] {
-                    //RETRIEVING SUBJECT
+                    //ASSIGNING SUBJECT
                     if let subject = result.value(forKey: "subject") as? String {
                         DateInfoArr[j][i].events[0].subject = subject
                         print(DateInfoArr[j][i].events[0].subject)
+                    }
+                    //ASSINGING TYPE
+                    if let type = result.value(forKey: "type") as? String {
+                        DateInfoArr[j][i].events[0].type = type
+                    }
+                    //ASSINGING LOCATION
+                    if let location = result.value(forKey: "location") as? String {
+                        DateInfoArr[j][i].events[0].type = location
+                    }
+                    //ASSIGNING NOTES
+                    if let notes = result.value(forKey: "notes") as? String {
+                        DateInfoArr[j][i].events[0].type = notes
                     }
                 }
             }
