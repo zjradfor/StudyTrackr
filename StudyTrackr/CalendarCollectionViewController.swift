@@ -250,11 +250,11 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                 }
                 //ASSINGING LOCATION
                 if let location = result.value(forKey: "location") as? String {
-                        DateInfoArr[j][indexOfDay].events[0].type = location
+                        DateInfoArr[j][indexOfDay].events[0].location = location
                     }
                 //ASSIGNING NOTES
                 if let notes = result.value(forKey: "notes") as? String {
-                        DateInfoArr[j][indexOfDay].events[0].type = notes
+                        DateInfoArr[j][indexOfDay].events[0].notes = notes
                     }
                 //ASSIGNING TIME
                 if let time = result.value(forKey: "time") as? String {
