@@ -37,10 +37,10 @@ class MarksViewController: UIViewController {
         
         
         if current!.assignments == 0{
-        markLabel.text = String(current!.mark)
+        markLabel.text = String(current!.mark) + "%"
         }
         else{
-            markLabel.text = String(current!.mark / current!.assignments)
+            markLabel.text = String(current!.mark / current!.assignments) + "%"
         }
         //divide this by assignments, watch for 0
     }
@@ -90,7 +90,7 @@ class MarksViewController: UIViewController {
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         getData()
-        markLabel.text = String(current!.mark / current!.assignments)
+        markLabel.text = String(current!.mark / current!.assignments) + "%"
     }
     
     @IBAction func helpButtonPressed(_ sender: UIButton) {
