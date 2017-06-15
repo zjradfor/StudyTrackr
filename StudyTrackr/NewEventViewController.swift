@@ -183,6 +183,7 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
         event.setValue(eventNotes, forKey: "notes")
         event.setValue(currentEventTitle.text, forKey: "type")
         event.setValue(eventTime, forKey: "time")
+        event.setValue(eventColour, forKey: "colour")
         
         //Day storing
         day.setValue(i, forKey: "dayOfMonth")
@@ -236,6 +237,10 @@ class NewEventViewController: UIViewController, LocationCellDelegate, TimeCellDe
                     //ASSIGNING TIME
                     if let time = result.value(forKey: "time") as? String {
                         DateInfoArr[j][i].events[0].time = time
+                    }
+                    //ASSINGING COLOUR
+                    if let colour = result.value(forKey: "colour") as? UIColor {
+                        DateInfoArr[j][i].events[0].colour = colour
                     }
                 }
             }

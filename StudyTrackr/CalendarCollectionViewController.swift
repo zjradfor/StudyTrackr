@@ -260,6 +260,10 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                 if let time = result.value(forKey: "time") as? String {
                         DateInfoArr[j][indexOfDay].events[0].time = time
                     }
+                //ASSINGING COLOUR
+                if let colour = result.value(forKey: "colour") as? UIColor {
+                        DateInfoArr[j][indexOfDay].events[0].colour = colour
+                    }
 
                 g += 1
             }
