@@ -7,17 +7,36 @@
 //
 
 import UIKit
+import CoreData
 
 class EventTableViewController: UITableViewController {
     var events = [StudyEvent]()
     override func viewDidLoad() {
+        //reloadEventTableViewController()
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TimerThings")
+        request.returnsObjectsAsFaults = false
+        
+        do{
+            print("beginning")
+            let results = try context.fetch(request)
+            print("partway")
+            if results.count>0{
+                print ("counted")
+                for result in results as! [NSManagedObject] {
+                    print("sorted")
+                    let newEvent = StudyEvent(studyTime: result.value(forKey: "studyTime") as! Int, subject: result.value(forKey: "subjectStudied") as! String, date: result.value(forKey: "date") as! String)
+                    print("assigned")
+                    events.append(newEvent!)
+                    print ("appended")
+                }
+            }
+        }
+        catch{
+            print("error")
+        }
     }
 
     override func didReceiveMemoryWarning() {
