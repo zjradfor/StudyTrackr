@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 class DeleteEventTableViewController: UITableViewController {
     var eventDayFromSegue = 0
     var eventMonthFromSegue = 0
@@ -16,6 +16,7 @@ class DeleteEventTableViewController: UITableViewController {
     var indexOfDay = 0
     var add = 0
     var cellCounter = 0
+    var events: [Events] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         cellCounter = 0
@@ -110,7 +111,37 @@ class DeleteEventTableViewController: UITableViewController {
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
+            
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
+            
+            let result = try? context.fetch(fetchRequest)
+            let  resultData = result as! [Events]
+            
+            var g = 0
+            for var i in 0...indexPath.row {
+                if temporaryDay[g] == indexOfDay {
+                    i += 1
+                }
+                g += 1
+            }
+            
+            var spot = (g * 6)
+            
+            for var i in 0...5 {
+            context.delete(resultData[spot])
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            do {
+                events = try context.fetch(Events.fetchRequest())
+            }
+            catch{
+                print ("Fetching Failed")
+            }
+                i += 1
+            }
             DateInfoArr[j][indexOfDay].events.remove(at: indexPath.row)
             DateInfoArr[j][indexOfDay].eventNumber -= 1
             if DateInfoArr[j][indexOfDay].eventNumber == 0 {
@@ -120,6 +151,7 @@ class DeleteEventTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
             // ADD ARRAY DELETE-ING HERE
         }
+        tableView.reloadData()
     }
     
 

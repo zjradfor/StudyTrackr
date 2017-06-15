@@ -32,6 +32,7 @@ var month = calendar.component(.month, from: date)
 var year = calendar.component(.year, from: date)
 var buttonIsPressedR = false
 var buttonIsPressedL = false
+var temporaryDay = [Int]()
 
 class CalendarCollectionViewController: UICollectionViewController, CalendarHeaderDelegate {
     
@@ -164,7 +165,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             firstWeekday -= 1
             year += 1
         }
-        
+
         // Register cell classes
         year -= 2
         self.collectionView!.register(CalendarCell.self, forCellWithReuseIdentifier: "Cell")
@@ -186,7 +187,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                 }
             }
         }
-       var temporaryDay = [Int]()
+      
         //Storing core data
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext //Key that allows access to coreData
