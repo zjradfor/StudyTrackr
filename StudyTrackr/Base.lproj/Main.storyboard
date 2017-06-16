@@ -546,9 +546,8 @@
                                     <constraint firstAttribute="width" constant="110" id="eeO-ZK-jvT"/>
                                     <constraint firstAttribute="height" constant="120" id="hLc-ak-RAQ"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="gift-clipart-Present5"/>
+                                <state key="normal" title="Button" image="gift-box-clip-art-at-clker-com-vector-clip-art-online-royalty-free-clipart-gift-291_298"/>
                                 <connections>
-                                    <action selector="DailyGift2:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="XnU-LW-7bo"/>
                                     <action selector="DailyGiftLeft:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="GHN-nS-BIf"/>
                                 </connections>
                             </button>
@@ -557,9 +556,8 @@
                                     <constraint firstAttribute="width" constant="110" id="dWz-lJ-HUb"/>
                                     <constraint firstAttribute="height" constant="120" id="oKM-9F-sql"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="gift-clipart-Present5"/>
+                                <state key="normal" title="Button" image="gift-box-clip-art-at-clker-com-vector-clip-art-online-royalty-free-clipart-gift-291_298"/>
                                 <connections>
-                                    <action selector="DailyGift3:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="yBG-4q-Flr"/>
                                     <action selector="DailyGiftRight:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="hyj-5x-Ptk"/>
                                 </connections>
                             </button>
@@ -568,9 +566,8 @@
                                     <constraint firstAttribute="width" constant="110" id="3Hz-JL-mNl"/>
                                     <constraint firstAttribute="height" constant="120" id="T01-Fi-WBI"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="ECAD edited images.009"/>
+                                <state key="normal" title="Button" image="gift-box-clip-art-at-clker-com-vector-clip-art-online-royalty-free-clipart-gift-291_298"/>
                                 <connections>
-                                    <action selector="DailyGift1:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="ukT-Y3-ezE"/>
                                     <action selector="DailyGiftTop:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="us2-Ra-S2f"/>
                                 </connections>
                             </button>
@@ -592,6 +589,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lO2-SV-V3a">
+                                <rect key="frame" x="157" y="176" width="60" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="10O-Nb-Vvn"/>
+                                    <constraint firstAttribute="height" constant="21" id="wXY-5B-PhC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtX-Lt-bI7">
+                                <rect key="frame" x="45" y="366" width="60" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="WGL-Yx-Wgh"/>
+                                    <constraint firstAttribute="width" constant="60" id="wxN-cB-SF6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aji-um-djN">
+                                <rect key="frame" x="258" y="366" width="60" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="6YR-Nz-52q"/>
+                                    <constraint firstAttribute="height" constant="21" id="UJF-Mk-uq5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -599,12 +626,18 @@
                             <constraint firstItem="oUl-yQ-Mdb" firstAttribute="centerX" secondItem="BYv-et-yKL" secondAttribute="centerX" id="5fF-oH-aYF"/>
                             <constraint firstItem="iWX-Qe-aCl" firstAttribute="top" secondItem="Smg-zJ-znQ" secondAttribute="bottom" constant="306" id="9wK-aH-dRk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QZB-Wk-2JB" secondAttribute="trailing" constant="229" id="CP4-Wa-ura"/>
+                            <constraint firstItem="Aji-um-djN" firstAttribute="leading" secondItem="BYv-et-yKL" secondAttribute="leadingMargin" constant="242" id="DVr-iF-9G0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MtX-Lt-bI7" secondAttribute="trailing" constant="254" id="NB0-2L-yLF"/>
                             <constraint firstItem="87f-qa-Ffr" firstAttribute="leading" secondItem="BYv-et-yKL" secondAttribute="leadingMargin" constant="241" id="Ymq-0e-2gN"/>
                             <constraint firstItem="Smg-zJ-znQ" firstAttribute="top" secondItem="hVQ-FR-SJB" secondAttribute="bottom" constant="27" id="ZdH-5z-Ifl"/>
+                            <constraint firstItem="QZB-Wk-2JB" firstAttribute="top" secondItem="MtX-Lt-bI7" secondAttribute="bottom" constant="8" id="dJJ-Rc-gyR"/>
+                            <constraint firstItem="lO2-SV-V3a" firstAttribute="centerX" secondItem="BYv-et-yKL" secondAttribute="centerX" id="eZi-CZ-pBu"/>
+                            <constraint firstItem="oUl-yQ-Mdb" firstAttribute="top" secondItem="lO2-SV-V3a" secondAttribute="bottom" constant="8" id="iNC-hx-uln"/>
                             <constraint firstItem="QZB-Wk-2JB" firstAttribute="top" secondItem="Smg-zJ-znQ" secondAttribute="bottom" constant="306" id="l2b-KC-g1V"/>
                             <constraint firstItem="87f-qa-Ffr" firstAttribute="top" secondItem="hVQ-FR-SJB" secondAttribute="bottom" constant="8" id="nec-da-TvB"/>
                             <constraint firstItem="oUl-yQ-Mdb" firstAttribute="top" secondItem="Smg-zJ-znQ" secondAttribute="bottom" constant="116" id="tpA-ul-0Je"/>
                             <constraint firstItem="iWX-Qe-aCl" firstAttribute="leading" secondItem="BYv-et-yKL" secondAttribute="leadingMargin" constant="217" id="vkX-bv-62K"/>
+                            <constraint firstItem="iWX-Qe-aCl" firstAttribute="top" secondItem="Aji-um-djN" secondAttribute="bottom" constant="8" id="weW-d3-XhH"/>
                         </constraints>
                     </view>
                     <connections>
@@ -614,7 +647,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J3g-5e-NF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1655" y="2681"/>
+            <point key="canvasLocation" x="-1655.2" y="2680.2098950524742"/>
         </scene>
         <!--Backgrounds View Controller-->
         <scene sceneID="FfG-HM-oHP">
@@ -2005,11 +2038,10 @@
         <image name="Avatar1" width="300" height="300"/>
         <image name="Avatar2" width="300" height="300"/>
         <image name="Avatar3" width="300" height="300"/>
-        <image name="ECAD edited images.009" width="1024" height="768"/>
         <image name="FFC2F3" width="628" height="280"/>
         <image name="Yellow_icon.svg" width="1024" height="1024"/>
         <image name="circle-clip-art-yToeE5KLc" width="297" height="298"/>
-        <image name="gift-clipart-Present5" width="1298" height="1600"/>
+        <image name="gift-box-clip-art-at-clker-com-vector-clip-art-online-royalty-free-clipart-gift-291_298" width="291" height="298"/>
         <image name="purple circle" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
