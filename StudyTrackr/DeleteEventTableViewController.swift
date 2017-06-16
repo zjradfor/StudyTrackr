@@ -107,7 +107,7 @@ class DeleteEventTableViewController: UITableViewController {
         
         if editingStyle == .delete {
             
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            /*let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
             let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Days")
             
@@ -122,10 +122,17 @@ class DeleteEventTableViewController: UITableViewController {
                     i += 1
                 }
                 g += 1
+                if g == temporaryDay.count {
+                    break
+                }
+            }
+            if DateInfoArr[j][indexOfDay].eventNumber > 1 {
+                g -= 1
             }
             
             context.delete(resultData[g])
             context.delete(resultData2[g])
+            //temporaryDay.remove(at: g)
             
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             
@@ -135,7 +142,7 @@ class DeleteEventTableViewController: UITableViewController {
             }
             catch{
                 print ("Fetching Failed")
-            }
+            }*/
             DateInfoArr[j][indexOfDay].events.remove(at: indexPath.row)
             DateInfoArr[j][indexOfDay].eventNumber -= 1
             if DateInfoArr[j][indexOfDay].eventNumber == 0 {
