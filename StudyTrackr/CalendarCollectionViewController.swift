@@ -449,7 +449,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
         if y == 0 {
             cell.frame = CGRect(x: x * (screenSize.width / 7) + 2, y: (y * (screenHeight / 6)) + 65, width: (screenSize.width / 7) - 2, height: (screenHeight / 12) - 2)
-            cell.backgroundColor = UIColor.white
+            cell.backgroundColor = UIColor.white //GlobalUICol
             cell.textLabel.text = "\(weekChar[weekTag])"
             weekTag += 1
             cell.textLabel.textAlignment = .center
@@ -461,7 +461,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         //TAGS
         cell.textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         cell.textLabel.textAlignment = .natural
-        cell.backgroundColor = UIColor.white
+        cell.backgroundColor = UIColor.white //GlobalUICol
         cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height/2))
             var yearToSend: Bool
             if yearToShow == 0 {

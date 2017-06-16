@@ -133,7 +133,6 @@ class DeleteEventTableViewController: UITableViewController {
             cellCounter = 0
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
-            // ADD ARRAY DELETE-ING HERE
         }
         tableView.reloadData()
     }
