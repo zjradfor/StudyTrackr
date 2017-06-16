@@ -67,7 +67,7 @@ class AvatarsViewController: UIViewController {
             GlobalAvatars = 3
             AvatarOwnerArray[0] = 1
             AvatarFunction()
-             RewardsThings.setValue(GlobalAvatars, forKey: "globalAvatars")
+             RewardsThings.setValue(GlobalAvatars, forKey: "globalavatars")
             do {
                 try context.save()
             } catch {
@@ -87,7 +87,7 @@ class AvatarsViewController: UIViewController {
             GlobalAvatars = 1
             AvatarOwnerArray[1] = 1
             AvatarFunction()
-             RewardsThings.setValue(GlobalAvatars, forKey: "globalAvatars")
+             RewardsThings.setValue(GlobalAvatars, forKey: "globalavatars")
             do {
                 try context.save()
             } catch {
@@ -107,7 +107,7 @@ class AvatarsViewController: UIViewController {
             GlobalAvatars = 2
             AvatarOwnerArray[2] = 1
             AvatarFunction()
-             RewardsThings.setValue(GlobalAvatars, forKey: "globalAvatars")
+             RewardsThings.setValue(GlobalAvatars, forKey: "globalavatars")
             do {
                 try context.save()
             } catch {

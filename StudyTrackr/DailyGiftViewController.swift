@@ -17,10 +17,10 @@ class DailyGiftViewController: UIViewController {
     func DailyGift () {
         GiftCoins = Int(arc4random_uniform(76) + 25)
         GlobalCoins = GlobalCoins + GiftCoins
-        GlobalGiftLock = false
-        DailyGiftUp.isEnabled = GlobalGiftLock
-        DailyGiftEast.isEnabled = GlobalGiftLock
-        DailyGiftWest.isEnabled = GlobalGiftLock
+        GlobalGiftUnlock = false
+        DailyGiftUp.isEnabled = GlobalGiftUnlock
+        DailyGiftEast.isEnabled = GlobalGiftUnlock
+        DailyGiftWest.isEnabled = GlobalGiftUnlock
     }
     
    
@@ -86,10 +86,10 @@ class DailyGiftViewController: UIViewController {
         super.viewDidLoad()
         BackgroundCol()
         
-        if (GlobalGiftLock == false) {
-            DailyGiftUp.isEnabled = GlobalGiftLock
-            DailyGiftEast.isEnabled = GlobalGiftLock
-            DailyGiftWest.isEnabled = GlobalGiftLock
+        if (GlobalGiftUnlock == false) {
+            DailyGiftUp.isEnabled = GlobalGiftUnlock
+            DailyGiftEast.isEnabled = GlobalGiftUnlock
+            DailyGiftWest.isEnabled = GlobalGiftUnlock
         }
         
         secondLabel.text = "Coins: " + "\(GlobalCoins)"

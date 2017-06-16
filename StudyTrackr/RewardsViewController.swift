@@ -9,9 +9,10 @@
 import UIKit
 import CoreData
 
-var GlobalUser = Int32()
+var GlobalGiftUnlock = true
 var GlobalBackCol = ""
-var GlobalCoins = 5000
+var GlobalUICol = UIColor.white
+var GlobalCoins = 2500 // set a default coin value as getting things to save doesnt exactly work right now
 var GlobalFonts = 0
 var GlobalAvatars = 0
 var AvatarOwnerArray = [0,0,0]
@@ -113,12 +114,18 @@ class RewardsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  BackgroundCol()
         
-        RewardsThings.setValue(GlobalCoins, forKey: "globalCoins")
-        RewardsThings.setValue(GlobalAvatars, forKey: "globalAvatars")
-        RewardsThings.setValue(GlobalFonts, forKey: "globalFonts")
-        RewardsThings.setValue(GlobalBackCol, forKey: "globalBackCol")
+        
+        if GlobalGiftUnlock == false {
+            GlobalGiftUnlock = true
+        }
+        
+      //  BackgroundCol()
+    /*
+        RewardsThings.setValue(GlobalCoins, forKey: "globalcoins")
+        RewardsThings.setValue(GlobalAvatars, forKey: "globalavatars")
+        RewardsThings.setValue(GlobalFonts, forKey: "globalfonts")
+        RewardsThings.setValue(GlobalBackCol, forKey: "globalbackcol")
         
         do {
             try context.save()
@@ -134,17 +141,17 @@ class RewardsViewController: UIViewController {
             if results.count > 0 {
             for result in results as! [NSManagedObject] {
             
-                if let coins = result.value(forKey: "globalCoins") as? Int {
-                    GlobalCoins = coins
+                if let coins = result.value(forKey: "globalcoins") as? Int {
+                GlobalCoins = coins
                 }
-                if let avatars = result.value(forKey: "globalAvatars") as? Int {
-                    GlobalCoins = avatars
+                if let avatars = result.value(forKey: "globalavatars") as? Int {
+                    GlobalAvatars = avatars
                 }
-                if let fonts = result.value(forKey: "globalFonts") as? Int {
-                    GlobalCoins = fonts
+                if let fonts = result.value(forKey: "globalfonts") as? Int {
+                    GlobalFonts = fonts
                 }
-                if let backCol = result.value(forKey: "globalBackCol") as? Int {
-                    GlobalCoins = backCol
+                if let backCol = result.value(forKey: "globalbackcol") as? String {
+                    GlobalBackCol = backCol
                 }
                 
                 
@@ -156,8 +163,8 @@ class RewardsViewController: UIViewController {
         } catch {
             print("Error")
         }
-        
-        
+ 
+        */
         
         
         

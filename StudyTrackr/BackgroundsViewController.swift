@@ -18,6 +18,7 @@ class BackgroundsViewController: UIViewController {
             
         case "White":
             BackgroundView.backgroundColor = UIColor.white
+            GlobalUICol = UIColor.white
                 WhitePurchaseButton.text = "Current Background"
                 PurplePurchaseButton.text = "Cost: 200"
                 PinkPurchaseButton.text = "Cost: 200"
@@ -25,6 +26,7 @@ class BackgroundsViewController: UIViewController {
     
         case "Purple":
             BackgroundView.backgroundColor = UIColor.purple
+            GlobalUICol = UIColor.purple
             WhitePurchaseButton.text = "Select"
             PurplePurchaseButton.text = "Current Background"
             PinkPurchaseButton.text = "Cost: 200"
@@ -32,6 +34,7 @@ class BackgroundsViewController: UIViewController {
             
         case "Pink":
             BackgroundView.backgroundColor = UIColor(red:1.00, green:0.76, blue:0.95, alpha:1.0)
+            GlobalUICol = UIColor(red:1.00, green:0.76, blue:0.95, alpha:1.0)
             WhitePurchaseButton.text = "Select"
                 PurplePurchaseButton.text = "Cost: 200"
                 PinkPurchaseButton.text = "Current Background"
@@ -39,6 +42,7 @@ class BackgroundsViewController: UIViewController {
             
         case "Yellow":
             BackgroundView.backgroundColor = UIColor.yellow
+            GlobalUICol = UIColor.yellow
             WhitePurchaseButton.text = "Select"
                 PurplePurchaseButton.text = "Cost: 200"
                 PinkPurchaseButton.text = "Cost:200"
@@ -90,6 +94,7 @@ class BackgroundsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.tabBar.tintColor = GlobalUICol
     }
     
     
