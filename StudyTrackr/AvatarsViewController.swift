@@ -35,7 +35,7 @@ class AvatarsViewController: UIViewController {
     LolaLabel.text = "Lola is active"
     }
     if (GlobalAvatars != 1)&&(AvatarOwnerArray[1] == 1){
-    LolaLabel.text = "Lola Spike"
+    LolaLabel.text = "Select Lola"
     }
     if (AvatarOwnerArray[1] == 0){
     LolaLabel.text = "Lola's Cost: 300"
