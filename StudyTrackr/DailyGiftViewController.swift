@@ -15,17 +15,29 @@ class DailyGiftViewController: UIViewController {
     func DailyGift () {
         GiftCoins = Int(arc4random_uniform(76) + 25)
         GlobalCoins = GlobalCoins + GiftCoins
+        DailyGiftUp.isEnabled = false
+        DailyGiftEast.isEnabled = false
+        DailyGiftWest.isEnabled = false
     }
     
     @IBAction func DailyGiftTop(_ sender: UIButton) {
         DailyGift()
+        secondLabel.text = "Coins: " + "\(GlobalCoins)"
+        
     }
     @IBAction func DailyGiftLeft(_ sender: UIButton) {
         DailyGift()
+        secondLabel.text = "Coins: " + "\(GlobalCoins)"
     }
     @IBAction func DailyGiftRight(_ sender: UIButton) {
         DailyGift()
+        secondLabel.text = "Coins: " + "\(GlobalCoins)"
     }
+    @IBOutlet weak var DailyGiftUp: UIButton!
+    
+    @IBOutlet weak var DailyGiftEast: UIButton!
+    
+    @IBOutlet weak var DailyGiftWest: UIButton!
     
     @IBOutlet var GiftsView: UIView!
 

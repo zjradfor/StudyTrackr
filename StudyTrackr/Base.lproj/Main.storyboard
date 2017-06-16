@@ -688,6 +688,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="DailyGiftEast" destination="iWX-Qe-aCl" id="WS9-ef-lU1"/>
+                        <outlet property="DailyGiftUp" destination="oUl-yQ-Mdb" id="gqa-U6-Kyt"/>
+                        <outlet property="DailyGiftWest" destination="QZB-Wk-2JB" id="etc-OW-ieI"/>
                         <outlet property="GiftsView" destination="BYv-et-yKL" id="iFK-Ry-r8G"/>
                         <outlet property="secondLabel" destination="87f-qa-Ffr" id="R95-tu-zgj"/>
                     </connections>
