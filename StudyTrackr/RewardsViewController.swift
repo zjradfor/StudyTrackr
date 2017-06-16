@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
+var GlobalUser = Int32()
 var GlobalBackCol = ""
 var GlobalCoins = 5000
 var GlobalFonts = 0
 var GlobalAvatars = 0
 var AvatarOwnerArray = [0,0,0]
+
+let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+
 class RewardsViewController: UIViewController {
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -108,6 +114,61 @@ class RewardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       //  BackgroundCol()
+        
+        RewardsThings.setValue(GlobalCoins, forKey: "globalCoins")
+        RewardsThings.setValue(GlobalAvatars, forKey: "globalAvatars")
+        RewardsThings.setValue(GlobalFonts, forKey: "globalFonts")
+        RewardsThings.setValue(GlobalBackCol, forKey: "globalBackCol")
+        
+        do {
+            try context.save()
+        } catch {
+            print("ERROR")
+        }
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "RewardsThings")
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let results = try context.fetch(request)
+            if results.count > 0 {
+            for result in results as! [NSManagedObject] {
+            
+                if let coins = result.value(forKey: "globalCoins") as? Int {
+                    GlobalCoins = coins
+                }
+                if let avatars = result.value(forKey: "globalAvatars") as? Int {
+                    GlobalCoins = avatars
+                }
+                if let fonts = result.value(forKey: "globalFonts") as? Int {
+                    GlobalCoins = fonts
+                }
+                if let backCol = result.value(forKey: "globalBackCol") as? Int {
+                    GlobalCoins = backCol
+                }
+                
+                
+                
+                
+                
+            }
+            }
+        } catch {
+            print("Error")
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         

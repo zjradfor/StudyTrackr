@@ -139,7 +139,6 @@
 		DE0588241EDC89FD00D30E6F /* Markbook */ = {
 			isa = PBXGroup;
 			children = (
-				DE05881B1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld */,
 				DE0588201EDC891800D30E6F /* AddSubjectVC.swift */,
 				DE0588211EDC891800D30E6F /* MarkbookViewController.swift */,
 				07EAB5071EE5990A008E02DD /* MarksViewController.swift */,
@@ -176,6 +175,7 @@
 				DEC18D531EB2375B00F9935C /* LaunchScreen.storyboard */,
 				DE0588241EDC89FD00D30E6F /* Markbook */,
 				DEC18D561EB2375B00F9935C /* Info.plist */,
+				DE05881B1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld */,
 			);
 			path = StudyTrackr;
 			sourceTree = "<group>";
