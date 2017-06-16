@@ -24,7 +24,6 @@
 		C57F79CD1ECC8CD400E69B2A /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57F79CC1ECC8CD400E69B2A /* EventTableViewController.swift */; };
 		C5EE25C11ECB3DAF003A6904 /* StudyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */; };
 		DE01F72A1EE5ACA700E5BA8C /* studyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */; };
-		DE05881F1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE05881B1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld */; };
 		DE0588231EDC891800D30E6F /* MarkbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0588211EDC891800D30E6F /* MarkbookViewController.swift */; };
 		DE0AF5411EC5F62B0054F125 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */; };
 		DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */; };
@@ -63,7 +62,6 @@
 		C57F79CC1ECC8CD400E69B2A /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = studyEventTableViewCell.swift; path = ../studyEventTableViewCell.swift; sourceTree = "<group>"; };
 		C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyEvent.swift; sourceTree = "<group>"; };
-		DE05881C1EDC88BD00D30E6F /* StudyTrackr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudyTrackr.xcdatamodel; sourceTree = "<group>"; };
 		DE0588211EDC891800D30E6F /* MarkbookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkbookViewController.swift; sourceTree = "<group>"; };
 		DE0AF5401EC5F62B0054F125 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = ../EventsViewController.swift; sourceTree = "<group>"; };
 		DE1475DC1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 		DE0588241EDC89FD00D30E6F /* Markbook */ = {
 			isa = PBXGroup;
 			children = (
-				DE05881B1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld */,
 				DE0588211EDC891800D30E6F /* MarkbookViewController.swift */,
 				07EAB5071EE5990A008E02DD /* MarksViewController.swift */,
 			);
@@ -279,7 +276,6 @@
 				C5EE25C11ECB3DAF003A6904 /* StudyEvent.swift in Sources */,
 				90C8B94C1EB7810700FF02C0 /* TimerViewController.swift in Sources */,
 				C57F79CD1ECC8CD400E69B2A /* EventTableViewController.swift in Sources */,
-				DE05881F1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld in Sources */,
 				DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */,
 				F117F08E1ECF2B3B0073424B /* Event.swift in Sources */,
 				DE1475DD1EBA252A00E5F415 /* CalendarHeaderCollectionReusableView.swift in Sources */,
@@ -473,19 +469,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		DE05881B1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DE05881C1EDC88BD00D30E6F /* StudyTrackr.xcdatamodel */,
-			);
-			currentVersion = DE05881C1EDC88BD00D30E6F /* StudyTrackr.xcdatamodel */;
-			path = StudyTrackr.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = DEC18D3D1EB2375B00F9935C /* Project object */;
 }
