@@ -87,8 +87,14 @@ class DeleteEventTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        print(cellCounter)
-        cell.textLabel!.text = DateInfoArr[j][indexOfDay].events[cellCounter].subject + DateInfoArr[j][indexOfDay].events[cellCounter].type
+        
+        cell.textLabel!.text = "● \(DateInfoArr[j][indexOfDay].events[cellCounter].subject) \(DateInfoArr[j][indexOfDay].events[cellCounter].type)"
+        
+        let newLabel = NSMutableAttributedString(string: (cell.textLabel?.text)!)
+
+        newLabel.addAttribute(NSForegroundColorAttributeName, value: DateInfoArr[j][indexOfDay].events[cellCounter].colour, range: NSRange(location:0,length:1))
+
+        cell.textLabel?.attributedText! = newLabel
         
         cellCounter += 1
         return cell
