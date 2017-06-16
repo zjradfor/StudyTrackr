@@ -8,8 +8,6 @@
 
 import UIKit
 
-var AvatarOwnerArray = [0,0,0]
-
 class AvatarsViewController: UIViewController {
     
     func AvatarFunction() {
