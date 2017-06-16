@@ -8,6 +8,7 @@
 
 import UIKit
 
+var GlobalGiftLock = true
 var GlobalBackCol = ""
 var GlobalCoins = 5000
 var GlobalFonts = 0
