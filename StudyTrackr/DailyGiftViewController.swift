@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class DailyGiftViewController: UIViewController {
    
     var GiftCoins = Int()
@@ -15,17 +17,32 @@ class DailyGiftViewController: UIViewController {
     func DailyGift () {
         GiftCoins = Int(arc4random_uniform(76) + 25)
         GlobalCoins = GlobalCoins + GiftCoins
+        GlobalGiftLock = false
+        DailyGiftUp.isEnabled = GlobalGiftLock
+        DailyGiftEast.isEnabled = GlobalGiftLock
+        DailyGiftWest.isEnabled = GlobalGiftLock
     }
+    
+   
     
     @IBAction func DailyGiftTop(_ sender: UIButton) {
         DailyGift()
+        secondLabel.text = "Coins: " + "\(GlobalCoins)"
+        
     }
     @IBAction func DailyGiftLeft(_ sender: UIButton) {
         DailyGift()
+        secondLabel.text = "Coins: " + "\(GlobalCoins)"
     }
     @IBAction func DailyGiftRight(_ sender: UIButton) {
         DailyGift()
+        secondLabel.text = "Coins: " + "\(GlobalCoins)"
     }
+    @IBOutlet weak var DailyGiftUp: UIButton!
+    
+    @IBOutlet weak var DailyGiftEast: UIButton!
+    
+    @IBOutlet weak var DailyGiftWest: UIButton!
     
     @IBOutlet var GiftsView: UIView!
 
@@ -68,6 +85,13 @@ class DailyGiftViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         BackgroundCol()
+        
+        if (GlobalGiftLock == false) {
+            DailyGiftUp.isEnabled = GlobalGiftLock
+            DailyGiftEast.isEnabled = GlobalGiftLock
+            DailyGiftWest.isEnabled = GlobalGiftLock
+        }
+        
         secondLabel.text = "Coins: " + "\(GlobalCoins)"
         
     }
