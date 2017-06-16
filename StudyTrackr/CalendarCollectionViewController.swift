@@ -311,7 +311,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         } else if firstWeekDay == "Friday" {
             tileBuffer = -11
         } else {
-            tileBuffer = -12
+            tileBuffer = -5
         }
     }
  
@@ -371,7 +371,6 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         
         self.CalendarCollectionView?.reloadData()
         self.collectionView?.reloadData()
-
         
         x = 0
         y = 0
@@ -395,15 +394,11 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         } else if firstWeekDay == "Friday" {
             tileBuffer = -11
         } else {
-            tileBuffer = -12
+            tileBuffer = -5
         }
         
         
     }
-    
-    
-    
-    
     
     
     override func didReceiveMemoryWarning() {
@@ -466,7 +461,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         cell.textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         cell.textLabel.textAlignment = .natural
         cell.backgroundColor = UIColor.white
-        //cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height/2)) as! CGRect
+        cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height/2))
             var yearToSend: Bool
             if yearToShow == 0 {
                 yearToSend = leapYear
@@ -516,7 +511,6 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             } else {
                 indexOfDay = 0 + tag
             }
-
             
             if tag != 0 && tag <= numberOfDaysThisMonth {
                 cell.textLabel.textAlignment = .natural
@@ -533,7 +527,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                     for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1{
                         if (i % 4 == 0) && (i != 0){
                             cell.textLabel.numberOfLines += 1
-   //                         cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height)) as! CGRect
+                            cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height))
                             cell.textLabel.text! += "\n"
                             r += 1
                         }
@@ -575,12 +569,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
     
     // MARK: UICollectionViewDelegate
 
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
+
     
     //Selected Cell
     var dayToSegue = 0
@@ -602,7 +591,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         } else if firstWeekDay == "Friday" {
             subtract = 5
         } else {
-            subtract = 6
+            subtract = -1
         }
         
         var yearToSend: Bool
