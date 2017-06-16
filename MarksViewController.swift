@@ -40,7 +40,7 @@ class MarksViewController: UIViewController {
         markLabel.text = String(current!.mark) + "%"
         }
         else{
-            markLabel.text = String(current!.mark / current!.assignments) + "%"
+            markLabel.text = String(Double(floor(current!.mark / current!.assignments) * 100) / 100) + "%"
         }
         //divide this by assignments, watch for 0
     }
@@ -55,9 +55,9 @@ class MarksViewController: UIViewController {
         }
     
     @IBOutlet weak var markLabel: UILabel!
+
     
-    
-    @IBAction func MarkAddPressed(_ sender: UIButton) {
+    @IBAction func addMarkPressed(_ sender: UIButton) {
         let alert = UIAlertController(title: "Add Mark", message: "Enter mark here", preferredStyle: .alert)
         let saveAction = UIAlertAction(title: "Add", style: .default){
             [unowned self] action in
@@ -90,10 +90,11 @@ class MarksViewController: UIViewController {
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         getData()
-        markLabel.text = String(current!.mark / current!.assignments) + "%"
+        markLabel.text = String(Double(floor(current!.mark / current!.assignments) * 100) / 100) + "%"
     }
     
-    @IBAction func helpButtonPressed(_ sender: UIButton) {
+    @IBAction func helpButton(_ sender: UIButton) {
+        
         let alert = UIAlertController(title: "Help", message: "After every test/assignment, enter the mark you recieved to generate a running average for the class", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "OK", style: .default)
         

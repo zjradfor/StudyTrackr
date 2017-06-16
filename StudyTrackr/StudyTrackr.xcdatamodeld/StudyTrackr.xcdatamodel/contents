@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Calendar1" representedClassName="Calendar1" syncable="YES" codeGenerationType="class"/>
     <entity name="Calendar2" representedClassName="Calendar2" syncable="YES" codeGenerationType="class"/>
     <entity name="Markbook2" representedClassName="Markbook2" syncable="YES" codeGenerationType="class"/>
     <entity name="RewardsThings" representedClassName="RewardsThings" syncable="YES" codeGenerationType="class"/>
     <entity name="Subject" representedClassName="Subject" syncable="YES" codeGenerationType="class">
-        <attribute name="assingments" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="assignments" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="mark" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>

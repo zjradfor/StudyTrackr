@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1337,8 +1337,48 @@
                     <view key="view" contentMode="scaleToFill" id="ira-gq-8TJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xI-bX-22U">
+                                <rect key="frame" x="65" y="182" width="245" height="57"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0I-NO-oHR">
+                                <rect key="frame" x="125" y="318" width="122" height="30"/>
+                                <state key="normal" title="Add Mark"/>
+                                <connections>
+                                    <action selector="addMarkPressed:" destination="WO6-eG-aIP" eventType="touchUpInside" id="b8Y-Tg-w7b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7F-Xe-trj">
+                                <rect key="frame" x="264" y="72" width="46" height="30"/>
+                                <state key="normal" title="?"/>
+                                <connections>
+                                    <action selector="helpButton:" destination="WO6-eG-aIP" eventType="touchUpInside" id="a08-4Z-cX1"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l7F-Xe-trj" firstAttribute="top" secondItem="pf7-dV-Lch" secondAttribute="bottom" constant="8" id="0eh-9M-I5j"/>
+                            <constraint firstItem="P0I-NO-oHR" firstAttribute="leading" secondItem="ira-gq-8TJ" secondAttribute="leadingMargin" constant="148" id="1hq-zn-BgL"/>
+                            <constraint firstItem="zp0-aL-9Rg" firstAttribute="top" secondItem="1xI-bX-22U" secondAttribute="bottom" constant="379" id="6iX-IW-xvq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1xI-bX-22U" secondAttribute="trailing" constant="49" id="BRc-ZK-1Ah"/>
+                            <constraint firstItem="P0I-NO-oHR" firstAttribute="top" secondItem="1xI-bX-22U" secondAttribute="bottom" constant="79" id="EKf-TO-6IQ"/>
+                            <constraint firstItem="zp0-aL-9Rg" firstAttribute="top" secondItem="P0I-NO-oHR" secondAttribute="bottom" constant="270" id="Gcc-33-2Xt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="l7F-Xe-trj" secondAttribute="trailing" constant="49" id="HN7-tu-j9d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P0I-NO-oHR" secondAttribute="trailing" constant="149" id="Nqe-Ji-DkJ"/>
+                            <constraint firstItem="1xI-bX-22U" firstAttribute="leading" secondItem="ira-gq-8TJ" secondAttribute="leadingMargin" constant="49" id="ak8-kf-nmX"/>
+                            <constraint firstItem="l7F-Xe-trj" firstAttribute="leading" secondItem="ira-gq-8TJ" secondAttribute="leadingMargin" constant="248" id="cMw-s3-czR"/>
+                            <constraint firstItem="P0I-NO-oHR" firstAttribute="top" secondItem="pf7-dV-Lch" secondAttribute="bottom" constant="254" id="fQn-F9-qHd"/>
+                            <constraint firstItem="1xI-bX-22U" firstAttribute="top" secondItem="pf7-dV-Lch" secondAttribute="bottom" constant="118" id="hit-uH-zqa"/>
+                            <constraint firstItem="zp0-aL-9Rg" firstAttribute="top" secondItem="l7F-Xe-trj" secondAttribute="bottom" constant="516" id="wcq-wd-UxJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="markLabel" destination="1xI-bX-22U" id="Sw8-tp-wmt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VdS-6l-te0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1559,11 +1599,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="OQK-dk-qNt">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6e2-Jd-KVy">
-                            <connections>
-                                <segue destination="6k1-kB-ZDv" kind="show" id="jRN-h6-h86"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6e2-Jd-KVy"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="rsS-ex-Vm2" id="sD4-Bp-b0T"/>
@@ -1573,52 +1609,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjv-ih-lQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="434.39999999999998" y="-1105.0974512743628"/>
-        </scene>
-        <!--Add SubjectVC-->
-        <scene sceneID="YnV-yt-tec">
-            <objects>
-                <viewController id="6k1-kB-ZDv" customClass="AddSubjectVC" customModule="StudyTrackr" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="EF1-Va-BLX"/>
-                        <viewControllerLayoutGuide type="bottom" id="V8a-63-5sh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9ly-SS-sNE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a new subject" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lQi-Ah-Z3e">
-                                <rect key="frame" x="16" y="259" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmJ-lr-5RB">
-                                <rect key="frame" x="136" y="411" width="102" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="102" id="p7K-eS-3ba"/>
-                                </constraints>
-                                <state key="normal" title="Add subject"/>
-                                <connections>
-                                    <action selector="ASButtonTapped:" destination="6k1-kB-ZDv" eventType="touchUpInside" id="wZg-w9-66x"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="lQi-Ah-Z3e" firstAttribute="leading" secondItem="9ly-SS-sNE" secondAttribute="leadingMargin" id="IoD-4e-7qR"/>
-                            <constraint firstItem="V8a-63-5sh" firstAttribute="top" secondItem="jmJ-lr-5RB" secondAttribute="bottom" constant="177" id="OQi-a8-czi"/>
-                            <constraint firstItem="lQi-Ah-Z3e" firstAttribute="trailing" secondItem="9ly-SS-sNE" secondAttribute="trailingMargin" id="OXz-Iz-sp9"/>
-                            <constraint firstItem="lQi-Ah-Z3e" firstAttribute="centerX" secondItem="jmJ-lr-5RB" secondAttribute="centerX" id="ker-0i-r3Z"/>
-                            <constraint firstItem="lQi-Ah-Z3e" firstAttribute="top" secondItem="EF1-Va-BLX" secondAttribute="bottom" constant="195" id="wHB-Uq-mxL"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="AddSubjectField" destination="lQi-Ah-Z3e" id="Ept-H1-R97"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YbI-x1-bDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1189.5999999999999" y="-1105.0974512743628"/>
         </scene>
         <!--Main Tab Bar View Controller-->
         <scene sceneID="yl2-sM-qoP">
