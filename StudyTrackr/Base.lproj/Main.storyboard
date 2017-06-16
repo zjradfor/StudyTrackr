@@ -591,7 +591,6 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="gift-box-clip-art-at-clker-com-vector-clip-art-online-royalty-free-clipart-gift-291_298"/>
                                 <connections>
-                                    <action selector="DailyGift2:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="XnU-LW-7bo"/>
                                     <action selector="DailyGiftLeft:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="GHN-nS-BIf"/>
                                 </connections>
                             </button>
@@ -603,7 +602,6 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="gift-box-clip-art-at-clker-com-vector-clip-art-online-royalty-free-clipart-gift-291_298"/>
                                 <connections>
-                                    <action selector="DailyGift3:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="yBG-4q-Flr"/>
                                     <action selector="DailyGiftRight:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="hyj-5x-Ptk"/>
                                 </connections>
                             </button>
@@ -615,7 +613,6 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="gift-box-clip-art-at-clker-com-vector-clip-art-online-royalty-free-clipart-gift-291_298"/>
                                 <connections>
-                                    <action selector="DailyGift1:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="ukT-Y3-ezE"/>
                                     <action selector="DailyGiftTop:" destination="O9W-o5-HtJ" eventType="touchUpInside" id="us2-Ra-S2f"/>
                                 </connections>
                             </button>

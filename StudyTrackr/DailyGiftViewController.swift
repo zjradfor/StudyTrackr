@@ -10,11 +10,21 @@ import UIKit
 
 class DailyGiftViewController: UIViewController {
    
-    @IBAction func DailyGiftTop(_ sender: Any) {
+    var GiftCoins = Int()
+    
+    func DailyGift () {
+        GiftCoins = Int(arc4random_uniform(76) + 25)
+        GlobalCoins = GlobalCoins + GiftCoins
     }
-    @IBAction func DailyGiftLeft(_ sender: Any) {
+    
+    @IBAction func DailyGiftTop(_ sender: UIButton) {
+        DailyGift()
     }
-    @IBAction func DailyGiftRight(_ sender: Any) {
+    @IBAction func DailyGiftLeft(_ sender: UIButton) {
+        DailyGift()
+    }
+    @IBAction func DailyGiftRight(_ sender: UIButton) {
+        DailyGift()
     }
     
     @IBOutlet var GiftsView: UIView!
@@ -58,7 +68,7 @@ class DailyGiftViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         BackgroundCol()
-        secondLabel.text = "Coins: " + "\(intPassed)"
+        secondLabel.text = "Coins: " + "\(GlobalCoins)"
         
     }
     ////////////////////////////////////////////////////////////////////////////////
