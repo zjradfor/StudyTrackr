@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07EAB5081EE5990A008E02DD /* MarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EAB5071EE5990A008E02DD /* MarksViewController.swift */; };
 		67F8F1591EDF09AC009B3F8A /* HelpButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F8F1581EDF09AC009B3F8A /* HelpButtonViewController.swift */; };
 		731E46C61EDC66F8001A12EA /* BackgroundColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731E46C51EDC66F8001A12EA /* BackgroundColour.swift */; };
 		7350C8D41EC1FE6D0054200B /* AvatarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */; };
@@ -26,9 +25,9 @@
 		C5EE25C11ECB3DAF003A6904 /* StudyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */; };
 		DE01F72A1EE5ACA700E5BA8C /* studyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */; };
 		DE05881F1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE05881B1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld */; };
-		DE0588221EDC891800D30E6F /* AddSubjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0588201EDC891800D30E6F /* AddSubjectVC.swift */; };
-		DE0588231EDC891800D30E6F /* MarkbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0588211EDC891800D30E6F /* MarkbookViewController.swift */; };
 		DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC18D481EB2375B00F9935C /* AppDelegate.swift */; };
+		DE713B5E1EF42A9700454ADA /* MarkbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE713B5C1EF42A9700454ADA /* MarkbookViewController.swift */; };
+		DE713B5F1EF42A9700454ADA /* MarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE713B5D1EF42A9700454ADA /* MarksViewController.swift */; };
 		DEA9CE751EEB018600D37250 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9CE651EEB018600D37250 /* CalendarCell.swift */; };
 		DEA9CE761EEB018600D37250 /* CalendarCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9CE661EEB018600D37250 /* CalendarCollectionViewController.swift */; };
 		DEA9CE771EEB018600D37250 /* CalendarHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9CE671EEB018600D37250 /* CalendarHeaderCollectionReusableView.swift */; };
@@ -49,7 +48,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		07EAB5071EE5990A008E02DD /* MarksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarksViewController.swift; sourceTree = "<group>"; };
 		67F8F1581EDF09AC009B3F8A /* HelpButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpButtonViewController.swift; sourceTree = "<group>"; };
 		731E46C51EDC66F8001A12EA /* BackgroundColour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColour.swift; sourceTree = "<group>"; };
 		7350C8D21EC1FE6D0054200B /* AvatarsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarsViewController.swift; sourceTree = "<group>"; };
@@ -68,8 +66,8 @@
 		C596BB311ECDDEC000D1018F /* studyEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = studyEventTableViewCell.swift; path = ../studyEventTableViewCell.swift; sourceTree = "<group>"; };
 		C5EE25C01ECB3DAF003A6904 /* StudyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyEvent.swift; sourceTree = "<group>"; };
 		DE05881C1EDC88BD00D30E6F /* StudyTrackr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudyTrackr.xcdatamodel; sourceTree = "<group>"; };
-		DE0588201EDC891800D30E6F /* AddSubjectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSubjectVC.swift; sourceTree = "<group>"; };
-		DE0588211EDC891800D30E6F /* MarkbookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkbookViewController.swift; sourceTree = "<group>"; };
+		DE713B5C1EF42A9700454ADA /* MarkbookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MarkbookViewController.swift; path = ../MarkbookViewController.swift; sourceTree = "<group>"; };
+		DE713B5D1EF42A9700454ADA /* MarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MarksViewController.swift; path = ../MarksViewController.swift; sourceTree = "<group>"; };
 		DEA9CE651EEB018600D37250 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		DEA9CE661EEB018600D37250 /* CalendarCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewController.swift; sourceTree = "<group>"; };
 		DEA9CE671EEB018600D37250 /* CalendarHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -140,9 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				DE05881B1EDC88BD00D30E6F /* StudyTrackr.xcdatamodeld */,
-				DE0588201EDC891800D30E6F /* AddSubjectVC.swift */,
-				DE0588211EDC891800D30E6F /* MarkbookViewController.swift */,
-				07EAB5071EE5990A008E02DD /* MarksViewController.swift */,
+				DE713B5C1EF42A9700454ADA /* MarkbookViewController.swift */,
+				DE713B5D1EF42A9700454ADA /* MarksViewController.swift */,
 			);
 			name = Markbook;
 			sourceTree = "<group>";
@@ -288,6 +285,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE713B5E1EF42A9700454ADA /* MarkbookViewController.swift in Sources */,
+				DE713B5F1EF42A9700454ADA /* MarksViewController.swift in Sources */,
 				DEA9CE8B1EEB06F400D37250 /* EventsViewController.swift in Sources */,
 				DEA9CE891EEB04D900D37250 /* Event.swift in Sources */,
 				DEA9CE871EEB045300D37250 /* SubjectTableViewCell.swift in Sources */,
@@ -310,13 +309,10 @@
 				DE341C9A1ECB37D600A93D15 /* AppDelegate.swift in Sources */,
 				7350C8D91EC1FECE0054200B /* FontsViewController.swift in Sources */,
 				739C48331EC20D7E00BFCC21 /* Rewards.swift in Sources */,
-				DE0588221EDC891800D30E6F /* AddSubjectVC.swift in Sources */,
 				7350C8D41EC1FE6D0054200B /* AvatarsViewController.swift in Sources */,
-				07EAB5081EE5990A008E02DD /* MarksViewController.swift in Sources */,
 				73D108AE1EBB750E00F2765F /* RewardsViewController.swift in Sources */,
 				731E46C61EDC66F8001A12EA /* BackgroundColour.swift in Sources */,
 				7350C8DF1EC1FF1A0054200B /* BackgroundsViewController.swift in Sources */,
-				DE0588231EDC891800D30E6F /* MarkbookViewController.swift in Sources */,
 				73D108B71EC0BB4A00F2765F /* DailyGiftViewController.swift in Sources */,
 				67F8F1591EDF09AC009B3F8A /* HelpButtonViewController.swift in Sources */,
 			);
