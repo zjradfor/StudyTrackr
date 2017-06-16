@@ -17,6 +17,7 @@ class DeleteEventTableViewController: UITableViewController {
     var add = 0
     var cellCounter = 0
     var events: [Events] = []
+    var days: [Days] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         cellCounter = 0
@@ -35,7 +36,6 @@ class DeleteEventTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        indexOfDay = 0
         j = calendar.component(.year, from: date)
         add = 0
         
@@ -109,18 +109,29 @@ class DeleteEventTableViewController: UITableViewController {
             
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Events")
+            let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Days")
             
             let result = try? context.fetch(fetchRequest)
             let  resultData = result as! [Events]
+            let result2 = try? context.fetch(fetchRequest2)
+            let resultData2 = result2 as! [Days]
             
             var g = 0
+            for var i in 0...indexPath.row + 1 {
+                if indexOfDay == temporaryDay[g] {
+                    i += 1
+                }
+                g += 1
+            }
             
             context.delete(resultData[g])
+            context.delete(resultData2[g])
             
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             
             do {
                 events = try context.fetch(Events.fetchRequest())
+                days = try context.fetch(Days.fetchRequest())
             }
             catch{
                 print ("Fetching Failed")
