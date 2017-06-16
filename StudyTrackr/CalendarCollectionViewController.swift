@@ -99,7 +99,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             //Fill Weekday
             DateInfoArr[j].append(DateInfo())
             if (firstWeekday == 1) {
-                DateInfoArr[j][i].day.weekDay = "Saturday"
+                DateInfoArr[j][i].day.weekDay = "Sunday"
             } else if (firstWeekday == 2) {
                 DateInfoArr[j][i].day.weekDay = "Sunday"
             } else if (firstWeekday == 3) {
