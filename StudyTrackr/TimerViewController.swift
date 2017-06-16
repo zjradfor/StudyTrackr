@@ -22,7 +22,7 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         var isBreakTimeAdded:Bool = false
         var studyEvents = [StudyEvent]()
         var studyTime = 0
-    
+        var subject = ""
         func setDateValue() -> String{
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .medium
@@ -74,7 +74,7 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         }
         
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
-            subject = pickTheSubject[row].name! 
+            subject = pickTheSubject[row].name!
         }
 
     
