@@ -288,6 +288,10 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         self.CalendarCollectionView?.reloadData()
         self.collectionView?.reloadData()
         
+        //UNCOMMENT WHEN MERGE IS COMPLETE
+        //self.tabBarController?.tabBar.tintColor = GlobalUICol
+        
+        
         x = 0
         y = 0
         tag = 0
