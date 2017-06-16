@@ -66,9 +66,7 @@ class MarkbookViewController: UIViewController, UITableViewDataSource, UITableVi
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let spot = Subject(context: context)
         spot.name = name
-        spot.mark = 0
-        spot.assignments = 0
-        // save to coredata
+                // save to coredata
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         getData()
