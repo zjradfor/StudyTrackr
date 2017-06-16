@@ -101,17 +101,17 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             if (firstWeekday == 1) {
                 DateInfoArr[j][i].day.weekDay = "Sunday"
             } else if (firstWeekday == 2) {
-                DateInfoArr[j][i].day.weekDay = "Sunday"
-            } else if (firstWeekday == 3) {
                 DateInfoArr[j][i].day.weekDay = "Monday"
-            } else if (firstWeekday == 4) {
+            } else if (firstWeekday == 3) {
                 DateInfoArr[j][i].day.weekDay = "Tuesday"
-            } else if (firstWeekday == 5) {
+            } else if (firstWeekday == 4) {
                 DateInfoArr[j][i].day.weekDay = "Wednesday"
-            } else if (firstWeekday == 6) {
+            } else if (firstWeekday == 5) {
                 DateInfoArr[j][i].day.weekDay = "Thursday"
-            } else if (firstWeekday == 7) {
+            } else if (firstWeekday == 6) {
                 DateInfoArr[j][i].day.weekDay = "Friday"
+            } else if (firstWeekday == 7) {
+                DateInfoArr[j][i].day.weekDay = "Saturday"
             }
             if (firstWeekday < 7) {
                 firstWeekday += 1
@@ -300,19 +300,19 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[yearToShow], month: month)
         
         if firstWeekDay == "Sunday" {
-            tileBuffer = -6
-        } else if firstWeekDay == "Monday" {
-            tileBuffer = -7
-        } else if firstWeekDay == "Tuesday" {
-            tileBuffer = -8
-        } else if firstWeekDay == "Wednesday" {
-            tileBuffer = -9
-        } else if firstWeekDay == "Thursday" {
-            tileBuffer = -10
-        } else if firstWeekDay == "Friday" {
-            tileBuffer = -11
-        } else {
             tileBuffer = -5
+        } else if firstWeekDay == "Monday" {
+            tileBuffer = -6
+        } else if firstWeekDay == "Tuesday" {
+            tileBuffer = -7
+        } else if firstWeekDay == "Wednesday" {
+            tileBuffer = -8
+        } else if firstWeekDay == "Thursday" {
+            tileBuffer = -9
+        } else if firstWeekDay == "Friday" {
+            tileBuffer = -10
+        } else {
+            tileBuffer = -11
         }
     }
  
@@ -383,19 +383,19 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[yearToShow], month: month)
         
         if firstWeekDay == "Sunday" {
-            tileBuffer = -6
-        } else if firstWeekDay == "Monday" {
-            tileBuffer = -7
-        } else if firstWeekDay == "Tuesday" {
-            tileBuffer = -8
-        } else if firstWeekDay == "Wednesday" {
-            tileBuffer = -9
-        } else if firstWeekDay == "Thursday" {
-            tileBuffer = -10
-        } else if firstWeekDay == "Friday" {
-            tileBuffer = -11
-        } else {
             tileBuffer = -5
+        } else if firstWeekDay == "Monday" {
+            tileBuffer = -6
+        } else if firstWeekDay == "Tuesday" {
+            tileBuffer = -7
+        } else if firstWeekDay == "Wednesday" {
+            tileBuffer = -8
+        } else if firstWeekDay == "Thursday" {
+            tileBuffer = -9
+        } else if firstWeekDay == "Friday" {
+            tileBuffer = -10
+        } else {
+            tileBuffer = -11
         }
         
         
