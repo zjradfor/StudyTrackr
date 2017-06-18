@@ -1,10 +1,11 @@
 //
 //  EventColourPickerViewController.swift
-//  StudyTrackr
+//  StudyTrackr Final Project
 //
-//  Created by Tristan Devos on 2017-05-26.
-//  Copyright © 2017 John Slomka. All rights reserved.
+//  Created by ICS 4UI, Spring 2017.
+//  Copyright © 2017 EDSS. All rights reserved.
 //
+
 
 import UIKit
 

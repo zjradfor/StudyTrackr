@@ -1,10 +1,11 @@
 //
 //  MarkbookViewController.swift
-//  StudyTrackr
+//  StudyTrackr Final Project
 //
-//  Created by Alex Berry on 2017-05-24.
-//  Copyright © 2017 John Slomka. All rights reserved.
+//  Created by ICS 4UI, Spring 2017.
+//  Copyright © 2017 EDSS. All rights reserved.
 //
+
 
 import UIKit
 

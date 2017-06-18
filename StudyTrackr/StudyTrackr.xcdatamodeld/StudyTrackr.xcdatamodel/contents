@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Days" representedClassName="Days" syncable="YES" codeGenerationType="class">
         <attribute name="dayOfMonth" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -13,18 +13,28 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Markbook2" representedClassName="Markbook2" syncable="YES" codeGenerationType="class"/>
-    <entity name="RewardsThings" representedClassName="RewardsThings" syncable="YES" codeGenerationType="class"/>
+    <entity name="RewardsThings" representedClassName="RewardsThings" syncable="YES" codeGenerationType="class">
+        <attribute name="globalavatars" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="globalbackcol" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="globalcoins" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="globalfonts" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <entity name="Subject" representedClassName="Subject" syncable="YES" codeGenerationType="class">
+        <attribute name="assignments" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="mark" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="TimerThings" representedClassName="TimerThings" syncable="YES" codeGenerationType="class"/>
+    <entity name="TimerThings" representedClassName="TimerThings" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studyTime" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="subjectStudied" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Days" positionX="-54" positionY="9" width="128" height="75"/>
         <element name="Events" positionX="-63" positionY="0" width="128" height="135"/>
         <element name="Markbook2" positionX="0" positionY="45" width="128" height="45"/>
-        <element name="RewardsThings" positionX="-18" positionY="27" width="128" height="45"/>
-        <element name="Subject" positionX="-63" positionY="-18" width="128" height="75"/>
-        <element name="TimerThings" positionX="-36" positionY="18" width="128" height="45"/>
+        <element name="RewardsThings" positionX="-18" positionY="27" width="128" height="105"/>
+        <element name="Subject" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="TimerThings" positionX="-36" positionY="18" width="128" height="90"/>
     </elements>
 </model>

@@ -1,9 +1,9 @@
 //
 //  CalendarCollectionViewController.swift
-//  StudyTrackr
+//  StudyTrackr Final Project
 //
-//  Created by Tristan Devos on 2017-05-01.
-//  Copyright © 2017 John Slomka. All rights reserved.
+//  Created by ICS 4UI, Spring 2017.
+//  Copyright © 2017 EDSS. All rights reserved.
 //
 
 import UIKit
@@ -99,19 +99,19 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             //Fill Weekday
             DateInfoArr[j].append(DateInfo())
             if (firstWeekday == 1) {
-                DateInfoArr[j][i].day.weekDay = "Sunday"
+                DateInfoArr[j][i].day.weekDay = "Saturday"    // changed date from Sun to Sat etc.
             } else if (firstWeekday == 2) {
-                DateInfoArr[j][i].day.weekDay = "Monday"
+                DateInfoArr[j][i].day.weekDay = "Sunday"
             } else if (firstWeekday == 3) {
-                DateInfoArr[j][i].day.weekDay = "Tuesday"
+                DateInfoArr[j][i].day.weekDay = "Monday"
             } else if (firstWeekday == 4) {
-                DateInfoArr[j][i].day.weekDay = "Wednesday"
+                DateInfoArr[j][i].day.weekDay = "Tuesday"
             } else if (firstWeekday == 5) {
-                DateInfoArr[j][i].day.weekDay = "Thursday"
+                DateInfoArr[j][i].day.weekDay = "Wednesday"
             } else if (firstWeekday == 6) {
-                DateInfoArr[j][i].day.weekDay = "Friday"
+                DateInfoArr[j][i].day.weekDay = "Thursday"
             } else if (firstWeekday == 7) {
-                DateInfoArr[j][i].day.weekDay = "Saturday"
+                DateInfoArr[j][i].day.weekDay = "Friday"
             }
             if (firstWeekday < 7) {
                 firstWeekday += 1
@@ -304,19 +304,19 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[yearToShow], month: month)
         
         if firstWeekDay == "Sunday" {
-            tileBuffer = -5
+            tileBuffer = -6                        // CR changed from -5 to -6 etc
         } else if firstWeekDay == "Monday" {
-            tileBuffer = -6
-        } else if firstWeekDay == "Tuesday" {
             tileBuffer = -7
-        } else if firstWeekDay == "Wednesday" {
+        } else if firstWeekDay == "Tuesday" {
             tileBuffer = -8
-        } else if firstWeekDay == "Thursday" {
+        } else if firstWeekDay == "Wednesday" {
             tileBuffer = -9
-        } else if firstWeekDay == "Friday" {
+        } else if firstWeekDay == "Thursday" {
             tileBuffer = -10
-        } else {
+        } else if firstWeekDay == "Friday" {
             tileBuffer = -11
+        } else {
+            tileBuffer = -12
         }
     }
  
@@ -333,7 +333,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         case UICollectionElementKindSectionHeader:
         //3
         let headerLabel = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
-            headerLabel.delegate = self as! CalendarHeaderDelegate
+            headerLabel.delegate = self as CalendarHeaderDelegate   // CR changed as! to as due to warning
         if month == 1 {
             headerLabel.dateHeader.text = "January \(year)"
         } else if month == 2 {
@@ -387,19 +387,19 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr[yearToShow], month: month)
         
         if firstWeekDay == "Sunday" {
-            tileBuffer = -5
+            tileBuffer = -6                         // CR changed to -6 etc
         } else if firstWeekDay == "Monday" {
-            tileBuffer = -6
-        } else if firstWeekDay == "Tuesday" {
             tileBuffer = -7
-        } else if firstWeekDay == "Wednesday" {
+        } else if firstWeekDay == "Tuesday" {
             tileBuffer = -8
-        } else if firstWeekDay == "Thursday" {
+        } else if firstWeekDay == "Wednesday" {
             tileBuffer = -9
-        } else if firstWeekDay == "Friday" {
+        } else if firstWeekDay == "Thursday" {
             tileBuffer = -10
-        } else {
+        } else if firstWeekDay == "Friday" {
             tileBuffer = -11
+        } else {
+            tileBuffer = -12
         }
         
         
@@ -466,7 +466,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         cell.textLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         cell.textLabel.textAlignment = .natural
         cell.backgroundColor = UIColor.white //GlobalUICol
-        cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height/2))
+        //cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height/2))       // CR commented out due to error
             var yearToSend: Bool
             if yearToShow == 0 {
                 yearToSend = leapYear
@@ -532,7 +532,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
                     for var i in 0...DateInfoArr[j][indexOfDay].eventNumber - 1{
                         if (i % 4 == 0) && (i != 0){
                             cell.textLabel.numberOfLines += 1
-                            cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height))
+                            cell.textLabel.frame = (frame: CGRect(x: 2, y: 0, width: cell.frame.size.width, height: cell.frame.size.height)) as! CGRect     // CR added as! CGRect due to error
                             cell.textLabel.text! += "\n"
                             r += 1
                         }
@@ -596,7 +596,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         } else if firstWeekDay == "Friday" {
             subtract = 5
         } else {
-            subtract = -1
+            subtract = 6                   // CR changed from -1 to match Sprint 3
         }
         
         var yearToSend: Bool
