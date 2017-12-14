@@ -139,7 +139,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         self.collectionView!.register(CalendarCell.self, forCellWithReuseIdentifier: "Cell")
         self.collectionView!.register(CalendarHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
         // Do any additional setup after loading the view.
-        
+       
         
     }
     
@@ -188,17 +188,7 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CalendarHeaderCollectionReusableView",for: indexPath) as! CalendarHeaderCollectionReusableView
             headerView.delegate = self as! CalendarHeaderDelegate
             
-            if buttonIsPressedL == true {
-                month -= 1
-                x = 0
-                y = 0
-                tag = 0
-                tileBuffer = 0
-                weekTag = 0
-                print(month)
-                print("Made it")
-                buttonIsPressedL = false
-            }
+           
  
             return headerView
         default:
@@ -246,9 +236,47 @@ class CalendarCollectionViewController: UICollectionViewController, CalendarHead
         }
     }
     
+    
+    
+    //FUNCTION TYOU ARE LOOKING FOR
     func updateCalendarCollectionView() {
-        self.CalendarCollectionView.reloadData()
+        
+        self.CalendarCollectionView?.reloadData()
+        self.collectionView?.reloadData()
+
+        
+        x = 0
+        y = 0
+        tag = 0
+        tileBuffer = 0
+        weekTag = 0
+        var firstWeekDay = "Sunday"
+        
+        firstWeekDay = getFirstWeekDayOfMonth(leapYear: leapYear, days: DateInfoArr, month: month)
+        
+        if firstWeekDay == "Sunday" {
+            tileBuffer = -5
+        } else if firstWeekDay == "Monday" {
+            tileBuffer = -6
+        } else if firstWeekDay == "Tuesday" {
+            tileBuffer = -7
+        } else if firstWeekDay == "Wednesday" {
+            tileBuffer = -8
+        } else if firstWeekDay == "Thursday" {
+            tileBuffer = -9
+        } else if firstWeekDay == "Friday" {
+            tileBuffer = -10
+        } else {
+            tileBuffer = -11
+        }
+        
+        
     }
+    
+    
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
